@@ -17,6 +17,8 @@ jobs:
           python-version: '3.11'
       - name: Validate exact asset hashes and source links
         run: python scripts/verify_archive.py
+      - name: Verify recovered historical original sources
+        run: python scripts/verify_history_sources.py
       - name: Test Stokes mathematics and archive coherence
         run: python -m unittest discover -s tests -v
       - name: Verify standalone site and scientific data

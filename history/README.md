@@ -2,6 +2,8 @@
 
 This research archive now preserves **34 committed historical source/index files**, recovered from the original project file Library rather than reconstructed from summaries. The imported materials cover initial Rb-87 optical and Zeeman modelling, laboratory polarisation analysis, MATLAB and CST, split-ring/X-BSR geometry studies, HFSS candidate evaluation, scientific software testing, the interim thesis and successive manuscript reviews.
 
+**Provenance ledger:** [Original recovered source hashes](RECOVERED_SOURCE_PROVENANCE.csv) records each extracted text source's Git blob ID and its historical—not independently remeasured—status. The [history-specific integrity validator](../scripts/verify_history_sources.py) checks these records in CI. These files remain distinct from the 234 SHA-256-protected original imported primary assets.
+
 **Scientific provenance:** A recovered .m/.py script or review is original research history, but does not establish that every associated measurement, simulated figure or solver run was validated. Files in `recovered-evidence/` contain *historical* case-specific verdicts; cite the full case ID and original solver data. The final main-paper V44 numerical evidence remains under [evidence/hfss/v44-reproducibility](../evidence/hfss/v44-reproducibility/). These imported text files are faithful Library text extractions, not a claim of byte-for-byte parity with an earlier ZIP's original encoding.
 
 ## Browse original source by discipline
