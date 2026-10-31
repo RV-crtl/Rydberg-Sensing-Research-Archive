@@ -1,27 +1,75 @@
-# Manual release only. Review every site asset before public deployment.
+# Manual site publication. Setup: Settings > Pages > Source: GitHub Actions.
+# Safety: deploys only site/, never the private scientific archive.
 name: Publish reviewed research website (manual)
 on:
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
-  id-token: write
 concurrency:
   group: reviewed-pages
   cancel-in-progress: true
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  preflight:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    outputs:
+      enabled: ${{ steps.pages.outputs.enabled }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Audit site-only output
+      - name: Validate research website and source matrix
         run: python scripts/verify_site.py
+      - name: Determine whether Pages is enabled
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          status="$(curl --silent --show-error --location \
+            --output "$RUNNER_TEMP/pages.json" --write-out '%{http_code}' \
+            --header "Authorization: Bearer $GH_TOKEN" \
+            --header "Accept: application/vnd.github+json" \
+            "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/pages")"
+          if [[ "$status" == "200" ]]; then
+            build_type="$(jq -r '.build_type // empty' "$RUNNER_TEMP/pages.json")"
+            if [[ "$build_type" == "workflow" ]]; then
+              echo "enabled=true" >> "$GITHUB_OUTPUT"
+              echo "Pages is configured for GitHub Actions; deployment may proceed." >> "$GITHUB_STEP_SUMMARY"
+            else
+              echo "enabled=false" >> "$GITHUB_OUTPUT"
+              echo "::warning::Pages is not configured for GitHub Actions (build type: $build_type)."
+              echo "### Website verified, but not deployed: set **Settings → Pages → Source: GitHub Actions**." >> "$GITHUB_STEP_SUMMARY"
+            fi
+          elif [[ "$status" == "404" || "$status" == "403" ]]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::Pages is not enabled or is inaccessible (HTTP $status). Repository owner must configure Pages in Settings."
+            {
+              echo "### Website verified; deployment skipped"
+              echo "Pages returned HTTP $status. Enable Pages in **Settings → Pages → Build and deployment → GitHub Actions**, if your GitHub plan allows private repository Pages."
+              echo "Then rerun the manual workflow. **No website was published.**"
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::error::Unexpected Pages API status: $status."
+            exit 1
+          fi
+  deploy:
+    needs: preflight
+    if: ${{ needs.preflight.outputs.enabled == 'true' }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
