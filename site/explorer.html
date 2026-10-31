@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07141d">
+<meta name="description" content="Explore the verified research history and numerical Stokes model of a Rydberg RF sensing programme.">
+<title>Research Explorer · Rydberg RF Sensing</title>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="explorer.css">
+<script src="explorer.js" type="module"></script>
+</head>
+<body class="explorer-page">
+<a class="skip" href="#explorer-main">Skip to research explorer</a>
+<header class="nav">
+ <a class="brand" href="index.html"><span class="atom" aria-hidden="true">◉</span><span>RYDBERG <span class="muted">/ RESEARCH EXPLORER</span></span></a>
+ <nav aria-label="Explorer navigation"><a href="index.html">Overview</a><a href="#model">Stokes model</a><a href="#timeline">Timeline</a><a href="#inventory">Archive search</a></nav>
+ <a class="navcta" href="https://github.com/RV-crtl/Rydberg-Sensing-Research-Archive">GitHub ↗</a>
+</header>
+<main id="explorer-main">
+<section class="ex-hero">
+ <div><span class="section-id">EVIDENCE-LED SCIENTIFIC EXPLORER · Rb-87 / RF</span>
+ <h1>Explore the <em>measurement basis.</em><br>Trace the evidence.</h1>
+ <p>Interact with the six-state, four-coordinate analyser model imported from the actual HFSS-derived paper data. Navigate the work by date and search files already tracked in GitHub. All calculations are browser-side demonstrations of the documented linear model—not new RF measurements, atom-cell reconstructions or solver runs.</p>
+ <div class="actions"><a class="button primary" href="#model">Launch model ↘</a><a class="button subtle" href="#inventory">Find a source ↗</a></div></div>
+ <div class="ex-hero-facts"><div><strong>6 × 4</strong><span>Source instrument matrix</span></div><div><strong>1.925 <small>GHz</small></strong><span>Source frequency</span></div><div><strong>314</strong><span>Initial tracked file inventory</span></div></div>
+</section>
+<section class="ex-section" id="model" aria-labelledby="model-title">
+ <div class="ex-head"><span class="section-id">01 / INTERACTIVE MODEL</span><h2 id="model-title">From incident Stokes state to <em>six analyser outputs.</em></h2><p>Vary orientation and ellipticity of an ideal completely polarised input. The plotted response is <code>y = A S</code>, using the source matrix. It is not a simulated optical EIT signal or a measured instrument output.</p></div>
+ <div class="model-grid">
+  <div class="ex-panel sphere-box"><div class="panel-top"><strong>Poincaré sphere</strong><span>Normalised, pure-state input</span></div>
+   <svg id="sphere" viewBox="0 0 440 440" aria-label="Interactive Poincaré sphere showing the incident pure polarisation state" role="img"><circle cx="220" cy="220" r="154" stroke="#47616c" stroke-width="1.5" fill="none" /><text x="220" y="225" fill="#b5c8cc" text-anchor="middle">Loading sphere…</text></svg>
+   <div class="sphere-actions"><button id="rotate-left" class="quiet-btn" type="button" aria-label="Rotate sphere left">↶ Rotate</button><span id="vector-label" aria-live="polite">S = [1, …]</span><button id="rotate-right" class="quiet-btn" type="button" aria-label="Rotate sphere right">Rotate ↷</button></div>
+  </div>
+  <div class="ex-panel controls"><div class="panel-top"><strong>Incident polarisation</strong><span>Jones / Stokes convention</span></div>
+    <label for="azimuth">Linear azimuth ψ <output id="azimuth-value" for="azimuth">0°</output></label>
+    <input id="azimuth" type="range" min="-90" max="90" value="0" step="1">
+    <label for="ellipticity">Ellipticity angle χ <output id="ellipticity-value" for="ellipticity">0°</output></label>
+    <input id="ellipticity" type="range" min="-45" max="45" value="0" step="1">
+    <div class="presets" role="group" aria-label="Polarisation presets"><button type="button" data-preset="H">H</button><button type="button" data-preset="V">V</button><button type="button" data-preset="D">D</button><button type="button" data-preset="A">A</button><button type="button" data-preset="R">R*</button><button type="button" data-preset="L">L*</button></div>
+    <p class="hint">*R/L follow the displayed +S3/−S3 convention; different IEEE/optical handedness definitions can reverse these labels.</p>
+    <div class="stokes-readout" id="stokes-values" aria-live="polite"><span>Stokes values loading…</span></div>
+    <div class="control-actions"><button class="quiet-btn" id="reset-state" type="button">Reset orientation</button><button class="quiet-btn" id="export-response" type="button">Export model CSV ↓</button></div>
+  </div>
+ </div>
+ <div class="ex-panel response-card">
+  <div class="panel-top"><strong>HFSS-derived analyser responses · y = A S</strong><span>Source: V42_C033 matrix; no added noise</span></div>
+  <div id="response-bars" class="response-bars" aria-label="Six source-matrix linear response values" aria-live="polite"><p>Loading source data…</p></div>
+  <details class="matrix-accordion"><summary>Inspect the complete 6 × 4 source matrix and state ordering</summary><div id="matrix-grid" role="region" aria-label="Actual HFSS-derived instrument matrix"></div></details><div class="model-footer"><div class="data-point"><b id="rank-label">4</b><span>Reported matrix rank</span></div><div class="data-point"><b>9.53</b><span>Source row-normalised κ₂ at 1.925 GHz</span></div><div class="data-point"><b id="dwell-criterion">40.8%</b><span>Reduction in archived modelled inverse-trace criterion</span></div></div>
+  <p class="hint">Responses use the actual six-row matrix at a single frequency. They do not represent a frequency sweep, validated finite-panel calibration transfer, physical diode states or measured Stokes reconstruction. See <a href="https://github.com/RV-crtl/Rydberg-Sensing-Research-Archive/blob/main/papers/manuscript-source/data/V42_C033_INSTRUMENT_MATRIX.csv">matrix source</a>, <a href="https://github.com/RV-crtl/Rydberg-Sensing-Research-Archive/blob/main/evidence/hfss/v44-reproducibility/analysis/V44_FIXED_BUDGET_RESULTS.json">allocation source</a> and <a href="https://github.com/RV-crtl/Rydberg-Sensing-Research-Archive/blob/main/docs/simulations/VERIFICATION_AND_INFORMATION_MATRIX.md">interpretation</a>.</p>
+ </div>
+</section>
+<section class="ex-section" id="timeline" aria-labelledby="timeline-title">
+ <div class="ex-head"><span class="section-id">02 / RESEARCH HISTORY</span><h2 id="timeline-title">The programme <em>from first principles.</em></h2><p>Select a research stream to explore the documented transition from optical experiments and initial polarisation filters to field-based HFSS inference and publications.</p></div>
+ <div class="chipbar" role="group" aria-label="Timeline stream"><button type="button" data-timeline-filter="All" aria-pressed="true" class="chosen">All</button><button type="button" data-timeline-filter="Laboratory">Laboratory</button><button type="button" data-timeline-filter="Design">Design</button><button type="button" data-timeline-filter="Simulation">Simulation</button><button type="button" data-timeline-filter="Publication">Publication</button></div>
+ <ol class="history-list" id="history-list"><li>Loading the research chronology…</li></ol>
+</section>
+<section class="ex-section" id="inventory" aria-labelledby="inventory-title">
+ <div class="ex-head"><span class="section-id">03 / VERIFIED REPOSITORY FILES</span><h2 id="inventory-title">Find the <em>original source.</em></h2><p>Search the file paths actually tracked in the GitHub repository at this site's source-index snapshot. These are different from the 1,280 historical records catalogued for future import.</p></div>
+ <div class="chipbar scope-line" id="scope-control" role="group" aria-label="Source-index scope"><button type="button" data-scope="tracked" class="chosen" aria-pressed="true">Committed GitHub files</button><button type="button" data-scope="historical" aria-pressed="false">Historical discovery (1,280)</button></div><p class="hint" id="scope-description">Showing files physically tracked in GitHub. Historical source records are listed separately and are not automatically imported.</p><div class="search-rail"><label for="source-query">Search filenames, paths and research areas</label><div class="search-row"><input id="source-query" type="search" autocomplete="off" placeholder="Try: HFSS, Jones, finite, optical, manuscript…"><button id="clear-query" type="button" class="quiet-btn">Clear</button></div><div class="chipbar" id="inventory-filters" role="group" aria-label="Filter by file group"></div></div>
+ <div class="results-bar"><span id="result-count" role="status" aria-live="polite">Loading source register…</span><span>GitHub may require repository sign-in</span></div><div class="file-results" id="file-results"></div><button type="button" id="show-more" class="quiet-btn loadmore" hidden>Show more results</button>
+</section>
+<section class="ex-end"><p class="section-id">SOURCE INTEGRITY / REPRODUCIBILITY</p><h2>A scientific archive is only useful when the <em>evidence survives.</em></h2><p>The original numerical results are preserved independently of this interactive teaching model. Use the handover for instrumentation, mesh, finite-aperture and manuscript reproduction.</p><div class="actions"><a class="button primary" href="https://github.com/RV-crtl/Rydberg-Sensing-Research-Archive/blob/main/docs/handover/HANDOVER.md">Read engineering handover ↗</a><a class="button subtle" href="index.html">Return to overview ↗</a></div></section>
+</main>
+<footer><div><strong>RYDBERG / RF SENSING</strong><p>Research explorer • HFSS-derived numerical models and verified source file index. No external telemetry or third-party plotting library.</p></div><div><a href="index.html">Overview</a><a href="https://github.com/RV-crtl/Rydberg-Sensing-Research-Archive">GitHub</a><a href="https://github.com/RV-crtl/Rydberg-Sensing-Research-Archive/blob/main/docs/operations/RELEASE_POLICY.md">Release policy</a></div></footer>
+</body></html>

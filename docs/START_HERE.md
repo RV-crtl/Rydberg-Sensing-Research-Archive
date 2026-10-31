@@ -26,3 +26,13 @@ Use the [asset register](traceability/ASSET_REGISTER.csv) to identify exactly wh
 - **Reliable continuation:** [Evidence-status policy](traceability/RECORD_STATUS_POLICY.md), [stream matrix](traceability/RESEARCH_STREAM_STATUS.csv), [completeness / import tracker](handover/RESEARCH_COMPLETENESS_AND_IMPORTS.md), [technical continuation](handover/TECHNICAL_HANDOVER_NEXT_STEPS.md).
 
 Dated Library indexes are **not** statements that every binary is mirrored. Keep original experimental and solver records and permissions distinct from narrative reconstruction.
+
+## Advanced research explorer and reproducibility guides
+
+- [Interactive Stokes, archive and research-history explorer](../site/explorer.html) (source HFSS matrix; not a new solver run or atomic measurement).
+- [Master 55-work-package register](handover/MASTER_WORK_PACKAGE_REGISTER.md): experiments, atomic models, RF/PCB, native HFSS, software, papers and operations.
+- [End-to-end experimental calibration and RF controls](methods/CALIBRATION_AND_RECOVERY_PROTOCOL.md).
+- [Native HFSS export and results reproduction](methods/HFSS_NATIVE_RESULT_REPRODUCTION.md).
+- [GitHub research infrastructure and release](governance/GITHUB_RESEARCH_OPERATIONS.md).
+
+The historical 1,280-name catalogue represents discovery metadata for source recovery; only file objects already tracked in GitHub count as imported assets.

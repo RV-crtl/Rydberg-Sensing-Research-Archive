@@ -1,0 +1,24 @@
+name: Repository or website bug
+description: Report a broken link, scientific plotting bug or test regression.
+title: "[BUG] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Expected and observed behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Exact reproduction steps
+      description: Version/branch, browser or Python/Node, file and error logs (no secrets).
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [Website, HFSS evidence, Laboratory data, Documents, GitHub Actions, Scientific code]
+    validations:
+      required: true

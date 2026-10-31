@@ -1,0 +1,37 @@
+name: Laboratory experiment
+description: Propose or document a calibrated optical/RF experiment.
+title: "[LAB] "
+body:
+  - type: markdown
+    attributes:
+      value: "Attach source evidence only if you have permission. Do not put restricted raw data into an issue."
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Research question and predicted observable
+      description: Separate atomic optical measurements from conventional RF-chain measurements.
+    validations:
+      required: true
+  - type: textarea
+    id: apparatus
+    attributes:
+      label: Apparatus and calibration
+      description: Laser lines, Rb cell, RF state, antennas, detector, reference plane, coil and uncertainty.
+    validations:
+      required: true
+  - type: textarea
+    id: outputs
+    attributes:
+      label: Original data, sample/repeat plan and acceptance criteria
+      description: Provide private file locations, hashes and the analysis plan.
+    validations:
+      required: true
+  - type: checkboxes
+    id: evidence
+    attributes:
+      label: Evidence safeguards
+      options:
+        - label: Experimental / simulated / theoretical claims are explicitly distinguished.
+          required: true
+        - label: Private data and lab credentials will not be pasted into this issue.
+          required: true
