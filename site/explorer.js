@@ -120,7 +120,7 @@ try{
  if(!response.ok || !historicalResponse.ok)throw new Error("HTTP source "+response.status+" / history "+historicalResponse.status);
  const data=await response.json(),history=await historicalResponse.json();validateAtlas(data);
  if(history.schema!==1 || history.status!=="discovery-only" || !Array.isArray(history.records))throw new Error("Invalid historical inventory");
- model=data.matrix;sourceFiles=data.files;allTimeline=data.timeline;historicalRecords=history.records;init();
+ model=data.matrix;sourceFiles=data.files;allTimeline=data.timeline;historicalRecords=history.records;const counter=byId('tracked-file-total');if(counter)counter.textContent=sourceFiles.length;init();
 }catch(error){
  for(const id of ["response-bars","file-results","history-list"]){const p=el("p","hint","Research source data could not be loaded: "+error.message+". Serve the site using an HTTP server or visit GitHub.");byId(id)?.replaceChildren(p);}
  console.error("Research explorer source load:",error);
