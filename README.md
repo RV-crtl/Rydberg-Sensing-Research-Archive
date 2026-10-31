@@ -15,6 +15,26 @@
 
 ---
 
+## Complete project history and technical dossiers
+
+The original source-backed article and V44 numerical evidence are only part of the programme. The expanded archive also reconstructs the prior atomic-receiver experiments, systematic design progression, simulation campaigns, original communication and research software. Start with:
+
+| Dossier | What is preserved / explained |
+|---|---|
+| [Complete chronology](docs/history/DETAILED_RESEARCH_CHRONOLOGY.md) | March–October research phases, experimental-to-simulation progression, scientific decisions and source anchors |
+| [Atomic receiver and laboratory](docs/laboratory/OPTICAL_AND_ATOMIC_RECEIVER.md) · [linear measurements](docs/laboratory/POLARISATION_MEASUREMENTS.md) | 780/480 nm Rb-EIT platform, RF references and Stokes equator distinction |
+| [RF design lineage](docs/design/POLARISER_AND_METASURFACE_DESIGN_LINEAGE.md) | Rod grids, analytical PCB polarisers, chiral CP selectors, SAP18B, TetraVia–Omega, finite folded and six-state surfaces |
+| [HFSS campaign history](docs/simulations/HFSS_CAMPAIGN_LINEAGE.md) · [verification criteria](docs/simulations/VERIFICATION_AND_INFORMATION_MATRIX.md) | Multi-branch V1–V44 development, complex-field evidence, mesh, conditioning and finite aperture |
+| [Atomic modelling and Workbench](docs/software/ATOMIC_MODELLING_AND_WORKBENCH.md) | ARC, Rydiqule, MATLAB, CST, automated HFSS and desktop scientific software |
+| [Literature synthesis](docs/literature/THEMATIC_LITERATURE_AND_RESEARCH_GAP.md) · [Stokes derivation](docs/methods/STOKES_MATHEMATICS_AND_DERIVATION_NOTES.md) | Thematic background, research gaps and mathematical conventions |
+| [Equipment and engagement](docs/operations/EQUIPMENT_PROCUREMENT_FABRICATION_ENGAGEMENT_HISTORY.md) | Components, PCB processes, quotation-versus-purchase evidence, academic and external engagement |
+| [Publication history](docs/publications/PUBLICATION_AND_PRESENTATION_HISTORY.md) | Interim thesis, posters, ICTON conference, APL/IEEE manuscript evolution |
+| [Historical asset catalogues](docs/catalog/README.md) | **1,280 additional named Library records discovered**; indexed for retrieval, not misrepresented as GitHub-imported files |
+| [Source completeness](docs/handover/RESEARCH_COMPLETENESS_AND_IMPORTS.md) · [next steps](docs/handover/TECHNICAL_HANDOVER_NEXT_STEPS.md) | Import gates, primary evidence gaps, instructions for a successor |
+| [Evidence status](docs/traceability/RECORD_STATUS_POLICY.md) · [research stream matrix](docs/traceability/RESEARCH_STREAM_STATUS.csv) | Explicit measured vs simulated vs proposed vs fabricated/purchased/published controls |
+
+**Archive count clarity:** the original release contained 290 actual files. The discovery catalogue lists 1,280 *additional historical source records*, many overlapping/versioned. Their filenames are not automatically original GitHub assets; consult the source-completeness register before claiming a complete byte-for-byte historical mirror.
+
 ## The research in one minute
 
 This archive documents a microwave sensing programme combining **rubidium-87 Rydberg electromagnetically induced transparency (EIT)**, RF polarisation conditioning and **HFSS-designed, switch-programmable metasurfaces**. The objective is to understand how multiple known analyser states can convert polarisation-dependent responses into a well-conditioned Stokes measurement basis compatible with an atomic receiver.
