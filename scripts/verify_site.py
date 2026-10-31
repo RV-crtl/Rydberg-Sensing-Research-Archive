@@ -11,7 +11,7 @@ import sys
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 ALLOWED = {".html", ".css", ".js", ".mjs", ".json", ".png", ".jpg", ".jpeg",
-           ".svg", ".webp", ".ico", ".txt"}
+           ".svg", ".webp", ".ico", ".txt", ".md"}
 
 class Links(HTMLParser):
     def __init__(self):
