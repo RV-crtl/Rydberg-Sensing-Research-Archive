@@ -22,7 +22,7 @@ jobs:
           python-version: '3.11'
       - name: Audit site-only output
         run: python scripts/verify_site.py
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
