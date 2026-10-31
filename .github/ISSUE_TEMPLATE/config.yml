@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Research methodology and source evidence
+    url: https://github.com/RV-crtl/Rydberg-Sensing-Research-Archive/blob/main/docs/traceability/RECORD_STATUS_POLICY.md
+    about: Read the scientific evidence policy before opening an issue.

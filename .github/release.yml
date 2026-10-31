@@ -1,0 +1,14 @@
+changelog:
+  exclude:
+    labels: [ignore-for-release]
+  categories:
+    - title: Scientific data and solver evidence
+      labels: [simulation, data]
+    - title: Website, accessibility and interactive tooling
+      labels: [website, enhancement]
+    - title: Documentation, literature and handover
+      labels: [documentation]
+    - title: Verification and engineering infrastructure
+      labels: [testing, infrastructure]
+    - title: Other changes
+      labels: ["*"]
