@@ -1,0 +1,8 @@
+original_case,frequency_GHz,rank,condition_number,matrix_difference_pct,worst_cross_mesh_stokes_transfer_pct,scope
+"V4.11 periodic 1.825",1.825,4,32.03490350094846,0.2608710207162955,3.080060444885371,"HFSS periodic"
+"V4.11 periodic 1.850",1.850,4,22.056032610763502,0.7493175592889552,3.7061352615842194,"HFSS periodic"
+"V4.11 B125 1.8375",1.8375,4,24.965404199946036,,,"HFSS periodic"
+"V4.11 B110 1.8375",1.8375,4,25.47046676954721,,,"HFSS periodic"
+"V4.18 C033 algebra 1.925",1.925,4,9.528217428109983,,,"HFSS-derived mathematical check"
+"V4.21 finite 5 mm",1.850,4,24.724535285845082,6.179931793380745,76.91661145390538,"HFSS finite mesh comparison FAILED"
+"V4.21 finite 10 mm",1.850,4,24.822275668545196,4.853110142993593,55.091517218551154,"HFSS finite mesh comparison FAILED"
