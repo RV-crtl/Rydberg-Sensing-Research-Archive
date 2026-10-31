@@ -30,7 +30,7 @@ Consequently, I would **not** begin with an array of many small periodic cells. 
 
 The complete seed-design package is available here:
 
-**[Download the complete X-BSR V1 design package ZIP](sandbox:/mnt/data/XBSR_V1_seed_design_package.zip)**
+****Download the complete X-BSR V1 design package ZIP** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/XBSR_V1_seed_design_package.zip`)***
 
 It contains the vector copper artwork, engineering drawing, annotated architecture, exact coordinates and machine-readable parameters. These files are intended as **simulation/CAD masters, not as unvalidated production Gerbers**; the correct route is SVG/coordinates → CST/HFSS + KiCad/Altium → optimization → DRC → native Gerber export.
 
@@ -54,9 +54,9 @@ The physical stack is:
 \text{Rb interaction volume}.
 \]
 
-![Annotated X-BSR architecture showing front, rear and superimposed layers](sandbox:/mnt/data/xbsr_design/XBSR_architecture_annotated_600dpi.png)
+!**Annotated X-BSR architecture showing front, rear and superimposed layers** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_architecture_annotated_600dpi.png`)*
 
-**[600-dpi architecture PNG](sandbox:/mnt/data/xbsr_design/XBSR_architecture_annotated_600dpi.png)** · **[Vector architecture SVG](sandbox:/mnt/data/xbsr_design/XBSR_architecture_annotated.svg)**
+****600-dpi architecture PNG** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_architecture_annotated_600dpi.png`)*** · ****Vector architecture SVG** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_architecture_annotated.svg`)***
 
 The front red conductor is one continuous **folded open loop**. Starting at one side of the central capacitor, current follows a bow-tie plate, rises through a narrow stem, travels around the large C-shaped outer inductive path, returns down the opposite stem and terminates at the second bow-tie plate. The electrical discontinuity is therefore the **central 0.60 mm gap**, not an inconvenient gap somewhere at the edge of the board.
 
@@ -104,9 +104,9 @@ Rydberg atoms themselves are capable of vector polarimetry: Sedlacek *et al.* de
 
 The dimensioned drawing below is the geometry I would place into CST/HFSS first.
 
-![Dimensioned engineering drawing of the X-BSR](sandbox:/mnt/data/xbsr_design/XBSR_engineering_drawing_600dpi.png)
+!**Dimensioned engineering drawing of the X-BSR** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_engineering_drawing_600dpi.png`)*
 
-**[600-dpi engineering drawing PNG](sandbox:/mnt/data/xbsr_design/XBSR_engineering_drawing_600dpi.png)** · **[Vector engineering drawing SVG](sandbox:/mnt/data/xbsr_design/XBSR_engineering_drawing.svg)**
+****600-dpi engineering drawing PNG** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_engineering_drawing_600dpi.png`)*** · ****Vector engineering drawing SVG** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_engineering_drawing.svg`)***
 
 The fabrication-coordinate system is defined in the PCB plane with the **origin at the geometric board centre**, \(+x\) along the 70 mm dimension and \(+y\) along the 50 mm dimension. In a PCB package that prefers positive coordinates, simply use
 
@@ -118,10 +118,10 @@ Y_{\rm CAD}=y+25~{\rm mm}.
 
 The raw copper files are:
 
-**[L1 front/X copper vector SVG](sandbox:/mnt/data/xbsr_design/XBSR_L1_front_X_copper.svg)**  
-**[L2 back/Y copper vector SVG](sandbox:/mnt/data/xbsr_design/XBSR_L2_back_Y_copper.svg)**  
-**[Exact geometry-coordinate CSV](sandbox:/mnt/data/xbsr_design/XBSR_geometry_coordinates.csv)**  
-**[Machine-readable parameter JSON](sandbox:/mnt/data/xbsr_design/XBSR_seed_parameters.json)**
+****L1 front/X copper vector SVG** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_L1_front_X_copper.svg`)***  
+****L2 back/Y copper vector SVG** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_L2_back_Y_copper.svg`)***  
+****Exact geometry-coordinate CSV** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_geometry_coordinates.csv`)***  
+****Machine-readable parameter JSON** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_seed_parameters.json`)***
 
 The nominal and optimization parameters are:
 
@@ -606,12 +606,12 @@ PCBWay's current form permits removal or specified placement of its product numb
 
 The design package to use as the **Geometry-001 / V1 simulation seed** is:
 
-**[Complete X-BSR V1 package](sandbox:/mnt/data/XBSR_V1_seed_design_package.zip)**  
-**[Engineering drawing — PNG](sandbox:/mnt/data/xbsr_design/XBSR_engineering_drawing_600dpi.png)**  
-**[Engineering drawing — SVG](sandbox:/mnt/data/xbsr_design/XBSR_engineering_drawing.svg)**  
-**[Architecture — PNG](sandbox:/mnt/data/xbsr_design/XBSR_architecture_annotated_600dpi.png)**  
-**[Architecture — SVG](sandbox:/mnt/data/xbsr_design/XBSR_architecture_annotated.svg)**  
-**[L1 X copper — SVG](sandbox:/mnt/data/xbsr_design/XBSR_L1_front_X_copper.svg)**  
-**[L2 Y copper — SVG](sandbox:/mnt/data/xbsr_design/XBSR_L2_back_Y_copper.svg)**  
-**[Geometry coordinates — CSV](sandbox:/mnt/data/xbsr_design/XBSR_geometry_coordinates.csv)**  
-**[Parameters — JSON](sandbox:/mnt/data/xbsr_design/XBSR_seed_parameters.json)**
+****Complete X-BSR V1 package** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/XBSR_V1_seed_design_package.zip`)***  
+****Engineering drawing — PNG** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_engineering_drawing_600dpi.png`)***  
+****Engineering drawing — SVG** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_engineering_drawing.svg`)***  
+****Architecture — PNG** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_architecture_annotated_600dpi.png`)***  
+****Architecture — SVG** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_architecture_annotated.svg`)***  
+****L1 X copper — SVG** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_L1_front_X_copper.svg`)***  
+****L2 Y copper — SVG** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_L2_back_Y_copper.svg`)***  
+****Geometry coordinates — CSV** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_geometry_coordinates.csv`)***  
+****Parameters — JSON** *(historic session-only asset, not yet imported: `sandbox:/mnt/data/xbsr_design/XBSR_seed_parameters.json`)***
