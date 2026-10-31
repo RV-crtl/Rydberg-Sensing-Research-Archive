@@ -2,7 +2,7 @@ path,git_blob_sha1
 README.md,c21f5449165d48707cd0cef1599148ed2d2ed1ce
 CHANGELOG.md,c4bb0313c02c2a5167ec0a093f388a7b9ff9c983
 docs/START_HERE.md,49b2faedc7689621f1998453884f06e1615d6ae9
-site/index.html,a924f3e82c3aee5e192bf5add5dceba7e4083c25
+site/index.html,f37855208ea704f5d4b9bc202c0bfc4a869e0022
 scripts/verify_archive.py,7e2b5a44379763b6826b9c2a9a77686679112ca6
 .github/workflows/pages.yml,c00d07b4cb4d765c230cf4d38417af8384bbf232
 .github/workflows/validate.yml,8dc1d8bc6ad3edd68bb2823357d16cf327f48890
