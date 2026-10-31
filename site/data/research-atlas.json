@@ -79,9 +79,39 @@
       "bytes": 197
     },
     {
+      "p": ".github/CODEOWNERS",
+      "g": "Repository",
+      "bytes": 185
+    },
+    {
+      "p": ".github/dependabot.yml",
+      "g": "Repository",
+      "bytes": 145
+    },
+    {
+      "p": ".github/ISSUE_TEMPLATE/bug.yml",
+      "g": "Repository",
+      "bytes": 694
+    },
+    {
+      "p": ".github/ISSUE_TEMPLATE/config.yml",
+      "g": "Repository",
+      "bytes": 286
+    },
+    {
       "p": ".github/ISSUE_TEMPLATE/evidence_intake.md",
       "g": "Repository",
       "bytes": 387
+    },
+    {
+      "p": ".github/ISSUE_TEMPLATE/hfss-case.yml",
+      "g": "Repository",
+      "bytes": 1000
+    },
+    {
+      "p": ".github/ISSUE_TEMPLATE/research-experiment.yml",
+      "g": "Repository",
+      "bytes": 1324
     },
     {
       "p": ".github/pull_request_template.md",
@@ -89,14 +119,19 @@
       "bytes": 497
     },
     {
+      "p": ".github/release.yml",
+      "g": "Repository",
+      "bytes": 474
+    },
+    {
       "p": ".github/workflows/pages.yml",
       "g": "Repository",
-      "bytes": 602
+      "bytes": 3263
     },
     {
       "p": ".github/workflows/validate.yml",
       "g": "Repository",
-      "bytes": 596
+      "bytes": 1037
     },
     {
       "p": ".gitignore",
@@ -106,7 +141,7 @@
     {
       "p": "CHANGELOG.md",
       "g": "Repository",
-      "bytes": 1626
+      "bytes": 2591
     },
     {
       "p": "CITATION.cff",
@@ -119,19 +154,9 @@
       "bytes": 1025
     },
     {
-      "p": "README.md",
-      "g": "Repository",
-      "bytes": 9472
-    },
-    {
       "p": "designs/portable-rydberg-system-proposal.pptx",
-      "g": "Hardware design",
+      "g": "Hardware concepts",
       "bytes": 1358710
-    },
-    {
-      "p": "docs/START_HERE.md",
-      "g": "Research documentation",
-      "bytes": 3379
     },
     {
       "p": "docs/catalog/HISTORICAL_SOURCE_INDEX_BATCH_A.csv",
@@ -189,9 +214,19 @@
       "bytes": 2256
     },
     {
+      "p": "docs/governance/GITHUB_RESEARCH_OPERATIONS.md",
+      "g": "Research documentation",
+      "bytes": 3112
+    },
+    {
       "p": "docs/handover/HANDOVER.md",
       "g": "Research documentation",
       "bytes": 5176
+    },
+    {
+      "p": "docs/handover/MASTER_WORK_PACKAGE_REGISTER.md",
+      "g": "Research documentation",
+      "bytes": 16579
     },
     {
       "p": "docs/handover/RESEARCH_COMPLETENESS_AND_IMPORTS.md",
@@ -234,6 +269,11 @@
       "bytes": 2195
     },
     {
+      "p": "docs/methods/CALIBRATION_AND_RECOVERY_PROTOCOL.md",
+      "g": "Research documentation",
+      "bytes": 7198
+    },
+    {
       "p": "docs/methods/CODE_AND_DATA.md",
       "g": "Research documentation",
       "bytes": 2503
@@ -242,6 +282,11 @@
       "p": "docs/methods/EXPERIMENTAL_SOP.md",
       "g": "Research documentation",
       "bytes": 2418
+    },
+    {
+      "p": "docs/methods/HFSS_NATIVE_RESULT_REPRODUCTION.md",
+      "g": "Research documentation",
+      "bytes": 6654
     },
     {
       "p": "docs/methods/HFSS_SOP.md",
@@ -264,14 +309,19 @@
       "bytes": 2175
     },
     {
-      "p": "docs/operations/ENGAGEMENT.md",
+      "p": "docs/operations/CI_PAGES_ERROR_GUIDE.md",
       "g": "Research documentation",
-      "bytes": 1396
+      "bytes": 3580
     },
     {
       "p": "docs/operations/ENGAGEMENT_REGISTER.csv",
       "g": "Research documentation",
       "bytes": 368
+    },
+    {
+      "p": "docs/operations/ENGAGEMENT.md",
+      "g": "Research documentation",
+      "bytes": 1396
     },
     {
       "p": "docs/operations/EQUIPMENT_PROCUREMENT_FABRICATION_ENGAGEMENT_HISTORY.md",
@@ -354,6 +404,11 @@
       "bytes": 4739
     },
     {
+      "p": "docs/START_HERE.md",
+      "g": "Research documentation",
+      "bytes": 4194
+    },
+    {
       "p": "docs/traceability/ASSET_REGISTER.csv",
       "g": "Research documentation",
       "bytes": 48528
@@ -364,19 +419,19 @@
       "bytes": 1996
     },
     {
-      "p": "docs/traceability/CLAIMS.md",
-      "g": "Research documentation",
-      "bytes": 883
-    },
-    {
       "p": "docs/traceability/CLAIM_EVIDENCE.csv",
       "g": "Research documentation",
       "bytes": 2434
     },
     {
+      "p": "docs/traceability/CLAIMS.md",
+      "g": "Research documentation",
+      "bytes": 883
+    },
+    {
       "p": "docs/traceability/CURATED_DOCUMENT_BLOBS.csv",
       "g": "Research documentation",
-      "bytes": 308
+      "bytes": 505
     },
     {
       "p": "docs/traceability/DECISION_LOG.md",
@@ -404,6 +459,11 @@
       "bytes": 2216
     },
     {
+      "p": "evidence/hfss/v44-reproducibility/analysis/draw_native_copper.py",
+      "g": "Simulation evidence",
+      "bytes": 5764
+    },
+    {
       "p": "evidence/hfss/v44-reproducibility/analysis/EVIDENCE_CHECKS.json",
       "g": "Simulation evidence",
       "bytes": 438
@@ -417,6 +477,31 @@
       "p": "evidence/hfss/v44-reproducibility/analysis/NEW_CROSS_MESH_RECONSTRUCTION.json",
       "g": "Simulation evidence",
       "bytes": 636
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/package_v44.py",
+      "g": "Simulation evidence",
+      "bytes": 2200
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/poincare_3d.py",
+      "g": "Simulation evidence",
+      "bytes": 3269
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/rebuild_figures.py",
+      "g": "Simulation evidence",
+      "bytes": 19006
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/revise_manuscript_v44.py",
+      "g": "Simulation evidence",
+      "bytes": 10371
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/revise_manuscript.py",
+      "g": "Simulation evidence",
+      "bytes": 22532
     },
     {
       "p": "evidence/hfss/v44-reproducibility/analysis/V32_FINAL_FIGURE_SOURCE.py",
@@ -434,6 +519,11 @@
       "bytes": 525
     },
     {
+      "p": "evidence/hfss/v44-reproducibility/analysis/v37_verify_extra.py",
+      "g": "Simulation evidence",
+      "bytes": 791
+    },
+    {
       "p": "evidence/hfss/v44-reproducibility/analysis/V40_EQUATION_PROOF_FROM_MIX_RESULTS.json",
       "g": "Simulation evidence",
       "bytes": 489
@@ -449,6 +539,11 @@
       "bytes": 777
     },
     {
+      "p": "evidence/hfss/v44-reproducibility/analysis/V41/generate_information_figures.py",
+      "g": "Simulation evidence",
+      "bytes": 9785
+    },
+    {
       "p": "evidence/hfss/v44-reproducibility/analysis/V41/INFORMATION_GEOMETRY_RESULTS.json",
       "g": "Simulation evidence",
       "bytes": 2311
@@ -457,11 +552,6 @@
       "p": "evidence/hfss/v44-reproducibility/analysis/V41/MESH_VERIFICATION_BY_FREQUENCY.csv",
       "g": "Simulation evidence",
       "bytes": 1226
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/V41/generate_information_figures.py",
-      "g": "Simulation evidence",
-      "bytes": 9785
     },
     {
       "p": "evidence/hfss/v44-reproducibility/analysis/V41/verify_information_geometry.py",
@@ -487,41 +577,6 @@
       "p": "evidence/hfss/v44-reproducibility/analysis/V44_FIXED_BUDGET_RESULTS.json",
       "g": "Simulation evidence",
       "bytes": 4374
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/draw_native_copper.py",
-      "g": "Simulation evidence",
-      "bytes": 5764
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/package_v44.py",
-      "g": "Simulation evidence",
-      "bytes": 2200
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/poincare_3d.py",
-      "g": "Simulation evidence",
-      "bytes": 3269
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/rebuild_figures.py",
-      "g": "Simulation evidence",
-      "bytes": 19006
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/revise_manuscript.py",
-      "g": "Simulation evidence",
-      "bytes": 22532
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/revise_manuscript_v44.py",
-      "g": "Simulation evidence",
-      "bytes": 10371
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/v37_verify_extra.py",
-      "g": "Simulation evidence",
-      "bytes": 791
     },
     {
       "p": "evidence/hfss/v44-reproducibility/analysis/v44_fixed_budget.py",
@@ -564,11 +619,6 @@
       "bytes": 1116
     },
     {
-      "p": "evidence/hfss/v44-reproducibility/data/SUPPLEMENT_LOCAL_RF_SPECTRA.tex",
-      "g": "Simulation evidence",
-      "bytes": 1512
-    },
-    {
       "p": "evidence/hfss/v44-reproducibility/data/SUPPLEMENT_LOCAL_RF_SPECTRA_PART1.tex",
       "g": "Simulation evidence",
       "bytes": 756
@@ -577,6 +627,11 @@
       "p": "evidence/hfss/v44-reproducibility/data/SUPPLEMENT_LOCAL_RF_SPECTRA_PART2.tex",
       "g": "Simulation evidence",
       "bytes": 756
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/SUPPLEMENT_LOCAL_RF_SPECTRA.tex",
+      "g": "Simulation evidence",
+      "bytes": 1512
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V21_P8G_ALL_FREQUENCIES.tex",
@@ -607,6 +662,16 @@
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/HFSS_SOURCE_ARCHIVE_SHA256.json",
       "g": "Simulation evidence",
       "bytes": 788
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410_INSTRUMENT_FINE_1850.csv",
+      "g": "Simulation evidence",
+      "bytes": 523
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410_SCIENTIFIC_VERDICT.json",
+      "g": "Simulation evidence",
+      "bytes": 6644
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/EMPTY_V00_M00_L110_F1825/RESULT.json",
@@ -774,14 +839,9 @@
       "bytes": 301
     },
     {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410_INSTRUMENT_FINE_1850.csv",
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411_VERDICT.json",
       "g": "Simulation evidence",
-      "bytes": 523
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410_SCIENTIFIC_VERDICT.json",
-      "g": "Simulation evidence",
-      "bytes": 6644
+      "bytes": 6802
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/HFSS_PROJECTS/EMPTY_V00_M00_B110_F1838/RESULT.json",
@@ -857,11 +917,6 @@
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/V411_RESULTS/V411_POINTS.csv",
       "g": "Simulation evidence",
       "bytes": 224
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411_VERDICT.json",
-      "g": "Simulation evidence",
-      "bytes": 6802
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V413_SCIENTIFIC_STATUS.json",
@@ -1244,19 +1299,194 @@
       "bytes": 1800
     },
     {
-      "p": "evidence/hfss/v44-reproducibility/source_evidence/V418_NATIVE_HFSS_RETURN_COMPACT.zip",
-      "g": "Simulation evidence",
-      "bytes": 11502802
-    },
-    {
       "p": "evidence/hfss/v44-reproducibility/source_evidence/mix_results_20261025.zip",
       "g": "Simulation evidence",
       "bytes": 8416907
     },
     {
+      "p": "evidence/hfss/v44-reproducibility/source_evidence/V418_NATIVE_HFSS_RETURN_COMPACT.zip",
+      "g": "Simulation evidence",
+      "bytes": 11502802
+    },
+    {
       "p": "governance/Supervisor_Assessment_Rubric_v3.xlsx",
       "g": "Governance",
       "bytes": 12769
+    },
+    {
+      "p": "history/binary-imports/ORIGINAL_BINARY_SOURCES_TO_IMPORT.csv",
+      "g": "Source-intake manifests",
+      "bytes": 2821
+    },
+    {
+      "p": "history/binary-imports/README.md",
+      "g": "Source-intake manifests",
+      "bytes": 2481
+    },
+    {
+      "p": "history/editorial-reviews/Rydberg_V45_Supervisor_Feedback_and_Harsh_Grade.md",
+      "g": "Peer and academic reviews",
+      "bytes": 4840
+    },
+    {
+      "p": "history/editorial-reviews/Rydberg_V46_University_and_IEEE_Access_Brutal_Review.md",
+      "g": "Peer and academic reviews",
+      "bytes": 7460
+    },
+    {
+      "p": "history/editorial-reviews/Rydberg_V47_Critical_University_and_Publication_Review.md",
+      "g": "Peer and academic reviews",
+      "bytes": 6967
+    },
+    {
+      "p": "history/editorial-reviews/Rydberg_V52_Engineering_Evidence_Check.md",
+      "g": "Peer and academic reviews",
+      "bytes": 3253
+    },
+    {
+      "p": "history/original-research-plans/2026-09-28_APL_PHOTONICS_RESEARCH_PLAN.md",
+      "g": "Original research plans",
+      "bytes": 37998
+    },
+    {
+      "p": "history/original-research-plans/2026-09-28_XBSR_70x50_DESIGN_BASIS.md",
+      "g": "Original research plans",
+      "bytes": 47880
+    },
+    {
+      "p": "history/original-research-plans/2026-09-28_XBSR_MANUFACTURABLE_DESIGN_STUDY.md",
+      "g": "Original research plans",
+      "bytes": 32804
+    },
+    {
+      "p": "history/README.md",
+      "g": "Research history",
+      "bytes": 8023
+    },
+    {
+      "p": "history/recovered-code/arc/README_rydberg_tqe_simulations.md",
+      "g": "Recovered ARC",
+      "bytes": 1990
+    },
+    {
+      "p": "history/recovered-code/atomic/rydberg_polarization_simulation_workflow.py",
+      "g": "Recovered atomic modelling",
+      "bytes": 29059
+    },
+    {
+      "p": "history/recovered-code/cst/cp_fullwave_results_TEMPLATE.csv",
+      "g": "Recovered CST",
+      "bytes": 200
+    },
+    {
+      "p": "history/recovered-code/cst/CST2025_FIRST_RUN_CARD.txt",
+      "g": "Recovered CST",
+      "bytes": 1251
+    },
+    {
+      "p": "history/recovered-code/cst/README_CST2025.md",
+      "g": "Recovered CST",
+      "bytes": 7274
+    },
+    {
+      "p": "history/recovered-code/figures/APL_FIGURE_RULES.md",
+      "g": "Figure generators",
+      "bytes": 1664
+    },
+    {
+      "p": "history/recovered-code/figures/generate_v90_apl_plots.py",
+      "g": "Figure generators",
+      "bytes": 13052
+    },
+    {
+      "p": "history/recovered-code/figures/HFSS_POSTER_COPY.md",
+      "g": "Figure generators",
+      "bytes": 2404
+    },
+    {
+      "p": "history/recovered-code/matlab/02_generate_matlab_poster_figures.m",
+      "g": "Recovered MATLAB",
+      "bytes": 14515
+    },
+    {
+      "p": "history/recovered-code/matlab/03_replot_arc_outputs_in_matlab.m",
+      "g": "Recovered MATLAB",
+      "bytes": 5325
+    },
+    {
+      "p": "history/recovered-code/matlab/analyse_new_polariser_data.m",
+      "g": "Recovered MATLAB",
+      "bytes": 12512
+    },
+    {
+      "p": "history/recovered-code/matlab/plot_digitized_rydberg_data.m",
+      "g": "Recovered MATLAB",
+      "bytes": 9129
+    },
+    {
+      "p": "history/recovered-code/matlab/plot_verified_rydberg_figures_v3.m",
+      "g": "Recovered MATLAB",
+      "bytes": 7463
+    },
+    {
+      "p": "history/recovered-code/matlab/plot_verified_rydberg_figures.m",
+      "g": "Recovered MATLAB",
+      "bytes": 9083
+    },
+    {
+      "p": "history/recovered-code/workbench/Rydberg_Workbench_v0.4_Validation.md",
+      "g": "Recovered Workbench",
+      "bytes": 6447
+    },
+    {
+      "p": "history/recovered-code/workbench/Rydberg_Workbench_v1.0_RC1_SetupFix_Validation.md",
+      "g": "Recovered Workbench",
+      "bytes": 1545
+    },
+    {
+      "p": "history/recovered-code/workbench/Rydberg_Workbench_v1.0_RC1_Validation.md",
+      "g": "Recovered Workbench",
+      "bytes": 1523
+    },
+    {
+      "p": "history/recovered-evidence/earlier_laws/final_law_results.csv",
+      "g": "Historical HFSS and numerical records",
+      "bytes": 1405
+    },
+    {
+      "p": "history/recovered-evidence/earlier_laws/LAW_VERDICT.json",
+      "g": "Historical HFSS and numerical records",
+      "bytes": 618
+    },
+    {
+      "p": "history/recovered-evidence/hfss-historical/APL_V4_1_EVIDENCE_AND_V5_DESIGN_GATES.md",
+      "g": "Historical HFSS and numerical records",
+      "bytes": 8535
+    },
+    {
+      "p": "history/recovered-evidence/hfss-historical/LATEST_RETURN_5.json",
+      "g": "Historical HFSS and numerical records",
+      "bytes": 413
+    },
+    {
+      "p": "history/recovered-evidence/hfss-historical/V6_RETURN_VERDICT_AND_NEXT_STEPS.md",
+      "g": "Historical HFSS and numerical records",
+      "bytes": 4416
+    },
+    {
+      "p": "history/recovered-reports/2026-06-revised-interim-report-original.tex",
+      "g": "Original thesis and presentations",
+      "bytes": 136343
+    },
+    {
+      "p": "history/recovered-reports/Rydberg_Polarimetry_SPEAKER_TRANSCRIPT.md",
+      "g": "Original thesis and presentations",
+      "bytes": 8312
+    },
+    {
+      "p": "history/recovered-reports/Rydberg_Thesis_Methods_Draft.md",
+      "g": "Original thesis and presentations",
+      "bytes": 8832
     },
     {
       "p": "index.html",
@@ -1314,11 +1544,6 @@
       "bytes": 295227
     },
     {
-      "p": "papers/manuscript-source/figure_source/fig5_coupled_modes.tex",
-      "g": "Manuscripts",
-      "bytes": 1346
-    },
-    {
       "p": "papers/manuscript-source/figure_source/fig5_coupled_modes_v48.pdf",
       "g": "Manuscripts",
       "bytes": 80352
@@ -1362,6 +1587,11 @@
       "p": "papers/manuscript-source/figure_source/fig5_coupled_modes_v48c.tex",
       "g": "Manuscripts",
       "bytes": 1520
+    },
+    {
+      "p": "papers/manuscript-source/figure_source/fig5_coupled_modes.tex",
+      "g": "Manuscripts",
+      "bytes": 1346
     },
     {
       "p": "papers/manuscript-source/figure_source/original_native_hfss_geometry.pdf",
@@ -1559,6 +1789,11 @@
       "bytes": 2059155
     },
     {
+      "p": "README.md",
+      "g": "Repository",
+      "bytes": 11038
+    },
+    {
       "p": "reports/2026-06-magnetically-biased-rydberg-receiver.pdf",
       "g": "Research reports",
       "bytes": 4085429
@@ -1574,6 +1809,11 @@
       "bytes": 61181
     },
     {
+      "p": "scripts/rebuild_research_atlas.py",
+      "g": "Verification",
+      "bytes": 4463
+    },
+    {
       "p": "scripts/summarise_evidence.py",
       "g": "Verification",
       "bytes": 1251
@@ -1581,12 +1821,17 @@
     {
       "p": "scripts/verify_archive.py",
       "g": "Verification",
-      "bytes": 4302
+      "bytes": 4055
     },
     {
-      "p": "site/README.md",
-      "g": "Website",
-      "bytes": 652
+      "p": "scripts/verify_site.py",
+      "g": "Verification",
+      "bytes": 5215
+    },
+    {
+      "p": "SECURITY.md",
+      "g": "Repository",
+      "bytes": 1684
     },
     {
       "p": "site/app.js",
@@ -1629,9 +1874,44 @@
       "bytes": 119705
     },
     {
+      "p": "site/data/historical-index.json",
+      "g": "Website",
+      "bytes": 120117
+    },
+    {
+      "p": "site/data/research-atlas.json",
+      "g": "Website",
+      "bytes": 52567
+    },
+    {
+      "p": "site/explorer.css",
+      "g": "Website",
+      "bytes": 7528
+    },
+    {
+      "p": "site/explorer.html",
+      "g": "Website",
+      "bytes": 10097
+    },
+    {
+      "p": "site/explorer.js",
+      "g": "Website",
+      "bytes": 11143
+    },
+    {
       "p": "site/index.html",
       "g": "Website",
-      "bytes": 12863
+      "bytes": 15814
+    },
+    {
+      "p": "site/model.mjs",
+      "g": "Website",
+      "bytes": 3528
+    },
+    {
+      "p": "site/README.md",
+      "g": "Website",
+      "bytes": 2932
     },
     {
       "p": "site/style.css",
@@ -1639,9 +1919,19 @@
       "bytes": 7883
     },
     {
+      "p": "tests/test_immutable_sources.py",
+      "g": "Verification",
+      "bytes": 1415
+    },
+    {
       "p": "tests/test_research_archive.py",
       "g": "Verification",
       "bytes": 1505
+    },
+    {
+      "p": "tests/test_site_model.mjs",
+      "g": "Verification",
+      "bytes": 2150
     }
   ],
   "timeline": [
@@ -1729,5 +2019,6 @@
       "description": "Traceable source register, equipment, methods, publications and source intake.",
       "path": "docs/handover/HANDOVER.md"
     }
-  ]
+  ],
+  "sourceIndexNote": "Git-tracked file metadata from indexed research branch; historical Library discovery data is listed separately and is not a byte-for-byte source mirror."
 }

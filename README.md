@@ -45,6 +45,12 @@ The original source-backed article and V44 numerical evidence are only part of t
 
 > **Website publication:** the Pages workflow is deliberately manual and packages only the reviewed `site/` folder, never the private archive's raw paper, lab, supplier or solver directories. Publishing remains subject to institutional and asset release approval.
 
+## Recovered original research source library
+
+The [historical source library](history/README.md) now preserves the actual text of prior **X-BSR electromagnetic design studies, the APL Photonics research plan, MATLAB polarisation/plotting scripts, atomic transition screening, CST setup, scientific software verification, the early editable thesis, HFSS historical verdicts and later manuscript reviews**. This content is organised separately from the V44 main-paper HFSS evidence. It is source material, not a claim of verified fabrication or independent experiment.
+
+An additional [byte-level intake register](history/binary-imports/README.md) identifies 13 original binary HFSS, Rydberg Workbench and manuscript archives with exact SHA-256. **These binary archives are not yet uploaded to GitHub.** Follow the [completeness ledger](docs/handover/RESEARCH_COMPLETENESS_AND_IMPORTS.md) for untransferred raw data and the historical 1,280-name Library discovery index.
+
 ## The research in one minute
 
 This archive documents a microwave sensing programme combining **rubidium-87 Rydberg electromagnetically induced transparency (EIT)**, RF polarisation conditioning and **HFSS-designed, switch-programmable metasurfaces**. The objective is to understand how multiple known analyser states can convert polarisation-dependent responses into a well-conditioned Stokes measurement basis compatible with an atomic receiver.

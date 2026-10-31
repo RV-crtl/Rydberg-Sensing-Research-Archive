@@ -36,3 +36,11 @@ Dated Library indexes are **not** statements that every binary is mirrored. Keep
 - [GitHub research infrastructure and release](governance/GITHUB_RESEARCH_OPERATIONS.md).
 
 The historical 1,280-name catalogue represents discovery metadata for source recovery; only file objects already tracked in GitHub count as imported assets.
+
+## Recovered original research and source code
+
+- **[Recovered historical source library](../history/README.md)** — original planning documents, X-BSR designs, atomic workflow, MATLAB/CST scripts, Workbench validation, thesis source and past HFSS cases.
+- [Original binary source checksums and import status](../history/binary-imports/README.md) — 13 preserved original archives awaiting the final Git binary import; not equivalent to tracked data.
+- [Repeatable source atlas generator](../scripts/rebuild_research_atlas.py) — builds a current search index of committed source files for the website.
+
+Keep HFSS results, experiment measurements, numerical models and design proposals in their distinct evidence classes.

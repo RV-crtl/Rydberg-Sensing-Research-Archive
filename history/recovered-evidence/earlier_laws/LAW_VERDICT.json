@@ -1,0 +1,23 @@
+{
+  "numerical_validity_pass": false,
+  "recentering_gate_pass": false,
+  "independent_verify_gate_pass": false,
+  "Q_gate_pass": false,
+  "recenter_limit_MHz": 15.0,
+  "verify_limit_pct": 5.0,
+  "max_final_recentering_shift_MHz": 199.99999999999994,
+  "max_independent_gain_error_pct": 43.62425998290503,
+  "missing_Q_cases": [
+    "S01_50x36",
+    "S02_55x38",
+    "S03_60x40",
+    "S04_70x50",
+    "S05_90x60",
+    "S06_110x70"
+  ],
+  "constant_Gamma_supported": false,
+  "Gamma_fit_per_m3": null,
+  "Gamma_CV_pct": null,
+  "heldout_MAPE_pct": null,
+  "interpretation": "Numerics invalid: no Gamma fit permitted."
+}

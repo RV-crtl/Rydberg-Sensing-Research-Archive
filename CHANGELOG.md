@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-31 — Original research file recovery
+
+- Imported complete extracted original APL/ X-BSR plans, 2026 interim thesis LaTeX, experimental/atomic Python and MATLAB files, CST setup, Workbench verification, manuscript figure generators, historical HFSS numerical verdicts and review records.
+- Added a browsable historical source library with original-file classifications and a 13-file binary intake SHA-256 register (the binary archives themselves remain separately preserved and are not falsely marked committed).
+- Refreshed the interactive research atlas from the Git tree; added regenerated inventory on website publication and removed stale fixed source-count text.
+- Distinguished historic session-only missing design asset links from functioning GitHub source links.
+
+
 ## 2026-10-31 — Interactive source-backed research website and engineering deep-dive
 
 - Added standalone scientific explorer with live Poincaré sphere, real six-row HFSS-derived instrument responses, polarisation presets and model CSV export.

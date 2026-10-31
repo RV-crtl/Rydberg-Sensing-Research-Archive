@@ -1,0 +1,24 @@
+RYDBERG CP CST 2025 — FIRST RUN CARD
+====================================
+
+1. New Microwave & RF project.
+2. Save the empty .cst project.
+3. Home > Macros > Open VBA Macro.
+4. Optional: run 00_TEST_EXPORT_PATH_CST2025.bas; it must create the path-test file.
+5. Open 01_BUILD_SOLVE_EXPORT_RYDBERG_CP_UNITCELL_CST2025.bas.
+6. Cursor inside Sub Main > F5.
+7. Confirm: bilayer copper, FR-4 between layers, NO ground plane.
+8. Confirm: x/y unit-cell boundaries, open z boundaries, Zmin/Zmax Floquet ports.
+9. Confirm: two orthogonal fundamental Floquet modes at each port.
+10. Confirm all eight complex S-parameter traces named in README_CST2025.md.
+11. Inspect %USERPROFILE%\Rydberg_CST_Exports\RYDBERG_CP_BASELINE_JONES_AND_METRICS.csv.
+12. Only then run 02_RUN_GUARDED_RYDBERG_CP_OPTIMISER_CST2025.bas.
+13. Run 03_EXPORT_CURRENT_BEST_CP_RESULTS_CST2025.bas.
+14. Save the optimised project under a new name.
+
+STOP if any result-tree name is missing. Update the TREE_... constants first.
+STOP if the modes are not the two orthogonal fundamental plane waves.
+STOP if pass power + reflected pass power materially exceeds 1.
+STOP if the geometry contains a continuous ground plane.
+
+The macro's optimum is a simulation candidate, not a fabrication release.
