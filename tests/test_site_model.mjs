@@ -29,3 +29,5 @@ test("invalid shapes and inputs rejected",()=>{
  assert.throws(()=>stokesFromAngles(0,50));
  assert.throws(()=>matrixResponses([[1,2,3,4]],[1,0,0,0]));
 });
+
+test("historical inventory is separate and metadata-only",()=>{const h=JSON.parse(readFileSync(new URL("../site/data/historical-index.json",import.meta.url),"utf8"));assert.equal(h.records.length,1280);assert.equal(h.status,"discovery-only");assert.ok(h.records.every(x=>x.n&&x.batch));});

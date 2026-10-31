@@ -75,6 +75,11 @@ def check():
         errors.append("Equal allocation criterion differs from HFSS-derived result")
     if not math.isclose(data["dwell"]["optimizedTrace"], original_budget["six_opt_trace"], rel_tol=1e-12):
         errors.append("Optimized allocation criterion differs from HFSS-derived result")
+    historical=json.loads((SITE/"data/historical-index.json").read_text(encoding="utf-8"))
+    if historical.get("schema") != 1 or historical.get("status") != "discovery-only":
+        errors.append("Historical records are not labelled discovery-only")
+    if len(historical.get("records", [])) != 1280:
+        errors.append("Historical inventory count mismatch: expected 1,280 metadata rows")
     source_files={p["p"] for p in atlas["files"]}
     if len(source_files) != len(atlas["files"]):
         errors.append("Duplicate path in website source index")

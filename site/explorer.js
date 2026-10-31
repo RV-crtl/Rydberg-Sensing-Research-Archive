@@ -1,7 +1,7 @@
 import {stokesFromAngles,matrixResponses,improvementPercent,filterFiles,githubFileUrl,validateAtlas,rank} from "./model.mjs";
 const byId=id=>document.getElementById(id);
 const svgNS="http://www.w3.org/2000/svg";
-let model=null,sourceFiles=[],allTimeline=[],activeGroup="All",activeTimeline="All",visible=16,yaw=-0.45,pitch=0.38,psi=0,chi=0;
+let model=null,sourceFiles=[],allTimeline=[],historicalRecords=[],sourceScope="tracked",activeGroup="All",activeTimeline="All",visible=16,yaw=-0.45,pitch=0.38,psi=0,chi=0;
 const presets={H:[0,0],V:[90,0],D:[45,0],A:[-45,0],R:[0,45],L:[0,-45]};
 function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;}
 function svg(name,attrs){const e=document.createElementNS(svgNS,name);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,String(v));return e;}
@@ -62,20 +62,31 @@ function renderTimeline(){
  document.querySelectorAll("[data-timeline-filter]").forEach(b=>{const on=b.dataset.timelineFilter===activeTimeline;b.classList.toggle("chosen",on);b.setAttribute("aria-pressed",String(on));});
 }
 function renderFiles(){
- const q=byId("source-query").value,matches=filterFiles(sourceFiles,q,activeGroup);
- byId("result-count").textContent=matches.length+" matching tracked files · "+sourceFiles.length+" indexed at snapshot";
+ const q=byId("source-query").value.toLocaleLowerCase().trim(),historic=sourceScope==="historical";
+ const matches=historic?historicalRecords.filter(f=>(f.n+" "+f.d+" "+f.batch).toLocaleLowerCase().includes(q)):filterFiles(sourceFiles,q,activeGroup);
+ byId("result-count").textContent=matches.length+" matching "+(historic?"historical source records (discovery only)":"tracked GitHub files");
  const root=byId("file-results");root.replaceChildren();
  for(const f of matches.slice(0,visible)){
-  const card=el("article","file-result");card.append(el("span","group",f.g),el("h3","name",f.p.split("/").at(-1)),el("div","meta",f.p));
-  const row=el("div","rowend");row.append(el("span","",new Intl.NumberFormat().format(f.bytes)+" bytes"));
-  const a=el("a","","Open in GitHub ↗");a.href=githubFileUrl(f.p);a.rel="noopener noreferrer";row.append(a);card.append(row);root.append(card);
+  const card=el("article","file-result");
+  if(historic){
+   card.append(el("span","group","Library discovery · batch "+f.batch));
+   card.append(el("h3","name",f.n),el("div","meta","Library record date: "+f.d+" · not verified as a committed source"));
+   const row=el("div","rowend");row.append(el("span","",new Intl.NumberFormat().format(f.b)+" bytes"));
+   const a=el("a","","Open source catalogue ↗");a.href=githubFileUrl("docs/catalog/HISTORICAL_SOURCE_INDEX_BATCH_"+f.batch+".csv");a.rel="noopener noreferrer";row.append(a);card.append(row);
+  }else{
+   card.append(el("span","group",f.g),el("h3","name",f.p.split("/").at(-1)),el("div","meta",f.p));
+   const row=el("div","rowend");row.append(el("span","",new Intl.NumberFormat().format(f.bytes)+" bytes"));
+   const a=el("a","","Open in GitHub ↗");a.href=githubFileUrl(f.p);a.rel="noopener noreferrer";row.append(a);card.append(row);
+  }
+  root.append(card);
  }
- if(!matches.length)root.append(el("p","hint","No matching tracked files. Try a broader term or consult the historical source-discovery ledger."));
+ if(!matches.length)root.append(el("p","hint","No matches. Try another keyword or switch research source scope."));
  const more=byId("show-more");more.hidden=matches.length<=visible;more.textContent="Show more ("+(matches.length-visible)+" remaining)";
 }
 function init(){
  const cats=["All",...new Set(sourceFiles.map(f=>f.g))].sort((a,b)=>a==="All"?-1:b==="All"?1:a.localeCompare(b));
  const filterBar=byId("inventory-filters");
+ document.querySelectorAll("[data-scope]").forEach(b=>b.addEventListener("click",()=>{sourceScope=b.dataset.scope;visible=16;document.querySelectorAll("[data-scope]").forEach(x=>{const on=x===b;x.classList.toggle("chosen",on);x.setAttribute("aria-pressed",String(on));});filterBar.hidden=sourceScope==="historical";byId("scope-description").textContent=sourceScope==="historical"?"Historical Library records are filenames and sizes only: not checked-in artefacts, measurements or proof of simulation completion. Open the associated catalogue in GitHub to locate an original.":"Showing files physically tracked in GitHub in the indexed repository snapshot.";renderFiles();}));
  cats.forEach(cat=>{const b=el("button",cat==="All"?"chosen":"",cat);b.type="button";b.setAttribute("aria-pressed",String(cat==="All"));b.addEventListener("click",()=>{activeGroup=cat;visible=16;filterBar.querySelectorAll("button").forEach(c=>{let on=c===b;c.classList.toggle("chosen",on);c.setAttribute("aria-pressed",String(on));});renderFiles();});filterBar.append(b);});
  byId("source-query").addEventListener("input",()=>{visible=16;renderFiles();});
  byId("clear-query").addEventListener("click",()=>{byId("source-query").value="";visible=16;renderFiles();byId("source-query").focus();});
@@ -96,9 +107,11 @@ function init(){
  calculate();renderTimeline();renderFiles();
 }
 try{
- const response=await fetch("./data/research-atlas.json",{cache:"no-store"});
- if(!response.ok)throw new Error("HTTP "+response.status);
- const data=await response.json();validateAtlas(data);model=data.matrix;sourceFiles=data.files;allTimeline=data.timeline;init();
+ const [response,historicalResponse]=await Promise.all([fetch("./data/research-atlas.json",{cache:"no-store"}),fetch("./data/historical-index.json",{cache:"no-store"})]);
+ if(!response.ok || !historicalResponse.ok)throw new Error("HTTP source "+response.status+" / history "+historicalResponse.status);
+ const data=await response.json(),history=await historicalResponse.json();validateAtlas(data);
+ if(history.schema!==1 || history.status!=="discovery-only" || !Array.isArray(history.records))throw new Error("Invalid historical inventory");
+ model=data.matrix;sourceFiles=data.files;allTimeline=data.timeline;historicalRecords=history.records;init();
 }catch(error){
  for(const id of ["response-bars","file-results","history-list"]){const p=el("p","hint","Research source data could not be loaded: "+error.message+". Serve the site using an HTTP server or visit GitHub.");byId(id)?.replaceChildren(p);}
  console.error("Research explorer source load:",error);
