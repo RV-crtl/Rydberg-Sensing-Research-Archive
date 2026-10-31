@@ -21,6 +21,8 @@ jobs:
         run: python scripts/verify_history_sources.py
       - name: Test Stokes mathematics and archive coherence
         run: python -m unittest discover -s tests -v
+      - name: Rebuild current research source index
+        run: python scripts/rebuild_research_atlas.py
       - name: Verify standalone site and scientific data
         run: python scripts/verify_site.py
       - uses: actions/setup-node@v7
