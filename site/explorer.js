@@ -51,6 +51,15 @@ function exportCsv(){
  const file=new Blob([[head,...rows].join("\r\n")+"\r\n"],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(file);
  const a=el("a");a.href=url;a.download="rydberg_stokes_linear_model.csv";a.click();URL.revokeObjectURL(url);
 }
+function renderMatrix(){
+ const root=byId("matrix-grid"),table=el("table","matrix-table"),head=el("thead"),hrow=el("tr");
+ for(const label of ["Mask","S0","S1","S2","S3"])hrow.append(el("th","",label));
+ head.append(hrow);table.append(head);const body=el("tbody");
+ const limit=Math.max(...model.rows.flat().map(Math.abs));
+ model.rows.forEach((row,i)=>{const tr=el("tr");tr.append(el("th","","M"+model.maskOrder[i]));
+  row.forEach(v=>{const td=el("td","",v.toFixed(6));td.style.backgroundColor=v<0?"rgba(223,128,130,"+(0.08+0.50*Math.abs(v)/limit).toFixed(3)+")":"rgba(182,241,115,"+(0.04+0.38*Math.abs(v)/limit).toFixed(3)+")";tr.append(td);});body.append(tr);});
+ table.append(body);root.replaceChildren(table);
+}
 function renderTimeline(){
  const list=byId("history-list");list.replaceChildren();
  allTimeline.filter(t=>activeTimeline==="All"||t.group===activeTimeline).forEach(t=>{
@@ -104,7 +113,7 @@ function init(){
  sphere.addEventListener("pointermove",e=>{if(lastX===null)return;const d=e.clientX-lastX;lastX=e.clientX;yaw+=d/190;calculate();});
  for(const event of ["pointerup","pointercancel"])sphere.addEventListener(event,()=>{lastX=null;});
  document.querySelectorAll("[data-timeline-filter]").forEach(b=>b.addEventListener("click",()=>{activeTimeline=b.dataset.timelineFilter;renderTimeline();}));
- calculate();renderTimeline();renderFiles();
+ renderMatrix();calculate();renderTimeline();renderFiles();
 }
 try{
  const [response,historicalResponse]=await Promise.all([fetch("./data/research-atlas.json",{cache:"no-store"}),fetch("./data/historical-index.json",{cache:"no-store"})]);
