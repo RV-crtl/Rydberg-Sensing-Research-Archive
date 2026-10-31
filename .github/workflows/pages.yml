@@ -1,5 +1,5 @@
-# Manual publishing: run only after release-rights review.
-name: Publish research site (manual)
+# Manual release only. Review every site asset before public deployment.
+name: Publish reviewed research website (manual)
 on:
   workflow_dispatch:
 permissions:
@@ -7,7 +7,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: pages
+  group: reviewed-pages
   cancel-in-progress: true
 jobs:
   deploy:
@@ -17,9 +17,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Audit site-only output
+        run: python scripts/verify_site.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: site
       - id: deployment
         uses: actions/deploy-pages@v4

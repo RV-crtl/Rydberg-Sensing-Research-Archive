@@ -17,5 +17,15 @@ jobs:
         run: python scripts/verify_archive.py
       - name: Test Stokes mathematics and archive coherence
         run: python -m unittest discover -s tests -v
+      - name: Verify standalone site and scientific data
+        run: python scripts/verify_site.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax and model tests
+        run: |
+          node --check site/model.mjs
+          node --input-type=module --check < site/explorer.js
+          node --test tests/test_site_model.mjs
       - name: Evidence summary
         run: python scripts/summarise_evidence.py
