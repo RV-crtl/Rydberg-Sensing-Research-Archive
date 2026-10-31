@@ -1,0 +1,14 @@
+stream,primary_question,observational_basis,repository_anchor,current_claim_status,missing_source_priority
+Atomic receiver,Can microwave RF be optically sensed with Rydberg EIT?,Interim laboratory report,reports/2026-06-magnetically-biased-rydberg-receiver.pdf,Reported exploratory laboratory work,High raw acquisition
+Linear discrimination,Can known orthogonal RF states be distinguished?,Different laboratory RF front-end references,docs/laboratory/POLARISATION_MEASUREMENTS.md,Measured under configuration-specific conditions,High angle sweeps
+Zeeman and bias,Can magnetic field improve independent polarisation sensitivity?,Coil setup and preliminary atomic modelling,docs/laboratory/OPTICAL_AND_ATOMIC_RECEIVER.md,Exploratory not completed full-Stokes calibration,Medium coil logs
+ARC and Rydiqule,Which rubidium transitions are optically and microwave accessible?,Source code and atomic-model documentation,research-code/arc/rydberg_tqe_advanced_poster_simulations.py,Theory and numerical modelling,Medium environment
+MATLAB polarisers,What geometry meets RF and fabrication requirements?,Historical analytical/PCB design studies,docs/design/POLARISER_AND_METASURFACE_DESIGN_LINEAGE.md,Design and surrogate modelling,High source project
+CST polarisers,What response has a meshed electromagnetic unit cell?,CST study design history,docs/software/ATOMIC_MODELLING_AND_WORKBENCH.md,Precursor studies not fully archived,High native CST
+HFSS analyser,Are states linearly independent and numerically robust?,Complex HFSS fields and V44 reproducibility archive,evidence/hfss/v44-reproducibility/,Model-specific simulation evidence,High missing AEDT
+Full-Stokes mathematics,Does the instrument span S0-S3?,V42/V44 instrument and analysis scripts,papers/manuscript-source/data/V42_C033_INSTRUMENT_MATRIX.csv,Simulated rank-four basis,Existing
+Finite aperture,Does periodic calibration transfer near Rb cell?,3x3 array HFSS data and mesh checks,docs/simulations/VERIFICATION_AND_INFORMATION_MATRIX.md,Qualified simulation study,High raw model
+Manufacturing,Can one copper PCB and switches be released for production?,PCB constraints and design studies,docs/engineering/PCB_FABRICATION_SPECIFICATIONS.md,Not verified as fabricated final analyser,High production files
+Procurement,Which instruments and materials were ordered or paid for?,Proposal and equipment documentation,docs/operations/EQUIPMENT_PROCUREMENT_FABRICATION_ENGAGEMENT_HISTORY.md,Partial quotation and equipment history,High actual invoices
+Scientific communication,What original research was disseminated?,Poster/report and IEEE conference DOI,docs/publications/PUBLICATION_AND_PRESENTATION_HISTORY.md,Separate published conference and manuscript draft,Existing
+Workbench,Can a research software simulator support flexible workflows?,Workbench RC archives in external Library,docs/software/ATOMIC_MODELLING_AND_WORKBENCH.md,Software prototype historical,Medium original ZIP
