@@ -79,9 +79,39 @@
       "bytes": 197
     },
     {
+      "p": ".github/CODEOWNERS",
+      "g": "Repository",
+      "bytes": 185
+    },
+    {
+      "p": ".github/dependabot.yml",
+      "g": "Repository",
+      "bytes": 145
+    },
+    {
+      "p": ".github/ISSUE_TEMPLATE/bug.yml",
+      "g": "Repository",
+      "bytes": 694
+    },
+    {
+      "p": ".github/ISSUE_TEMPLATE/config.yml",
+      "g": "Repository",
+      "bytes": 286
+    },
+    {
       "p": ".github/ISSUE_TEMPLATE/evidence_intake.md",
       "g": "Repository",
       "bytes": 387
+    },
+    {
+      "p": ".github/ISSUE_TEMPLATE/hfss-case.yml",
+      "g": "Repository",
+      "bytes": 1000
+    },
+    {
+      "p": ".github/ISSUE_TEMPLATE/research-experiment.yml",
+      "g": "Repository",
+      "bytes": 1324
     },
     {
       "p": ".github/pull_request_template.md",
@@ -89,14 +119,19 @@
       "bytes": 497
     },
     {
+      "p": ".github/release.yml",
+      "g": "Repository",
+      "bytes": 474
+    },
+    {
       "p": ".github/workflows/pages.yml",
       "g": "Repository",
-      "bytes": 602
+      "bytes": 3263
     },
     {
       "p": ".github/workflows/validate.yml",
       "g": "Repository",
-      "bytes": 596
+      "bytes": 1037
     },
     {
       "p": ".gitignore",
@@ -106,7 +141,7 @@
     {
       "p": "CHANGELOG.md",
       "g": "Repository",
-      "bytes": 1626
+      "bytes": 2591
     },
     {
       "p": "CITATION.cff",
@@ -119,19 +154,9 @@
       "bytes": 1025
     },
     {
-      "p": "README.md",
-      "g": "Repository",
-      "bytes": 9472
-    },
-    {
       "p": "designs/portable-rydberg-system-proposal.pptx",
-      "g": "Hardware design",
+      "g": "Hardware concepts",
       "bytes": 1358710
-    },
-    {
-      "p": "docs/START_HERE.md",
-      "g": "Research documentation",
-      "bytes": 3379
     },
     {
       "p": "docs/catalog/HISTORICAL_SOURCE_INDEX_BATCH_A.csv",
@@ -189,9 +214,19 @@
       "bytes": 2256
     },
     {
+      "p": "docs/governance/GITHUB_RESEARCH_OPERATIONS.md",
+      "g": "Research documentation",
+      "bytes": 3112
+    },
+    {
       "p": "docs/handover/HANDOVER.md",
       "g": "Research documentation",
       "bytes": 5176
+    },
+    {
+      "p": "docs/handover/MASTER_WORK_PACKAGE_REGISTER.md",
+      "g": "Research documentation",
+      "bytes": 16579
     },
     {
       "p": "docs/handover/RESEARCH_COMPLETENESS_AND_IMPORTS.md",
@@ -234,6 +269,11 @@
       "bytes": 2195
     },
     {
+      "p": "docs/methods/CALIBRATION_AND_RECOVERY_PROTOCOL.md",
+      "g": "Research documentation",
+      "bytes": 7198
+    },
+    {
       "p": "docs/methods/CODE_AND_DATA.md",
       "g": "Research documentation",
       "bytes": 2503
@@ -242,6 +282,11 @@
       "p": "docs/methods/EXPERIMENTAL_SOP.md",
       "g": "Research documentation",
       "bytes": 2418
+    },
+    {
+      "p": "docs/methods/HFSS_NATIVE_RESULT_REPRODUCTION.md",
+      "g": "Research documentation",
+      "bytes": 6654
     },
     {
       "p": "docs/methods/HFSS_SOP.md",
@@ -264,14 +309,19 @@
       "bytes": 2175
     },
     {
-      "p": "docs/operations/ENGAGEMENT.md",
+      "p": "docs/operations/CI_PAGES_ERROR_GUIDE.md",
       "g": "Research documentation",
-      "bytes": 1396
+      "bytes": 3580
     },
     {
       "p": "docs/operations/ENGAGEMENT_REGISTER.csv",
       "g": "Research documentation",
       "bytes": 368
+    },
+    {
+      "p": "docs/operations/ENGAGEMENT.md",
+      "g": "Research documentation",
+      "bytes": 1396
     },
     {
       "p": "docs/operations/EQUIPMENT_PROCUREMENT_FABRICATION_ENGAGEMENT_HISTORY.md",
@@ -354,6 +404,11 @@
       "bytes": 4739
     },
     {
+      "p": "docs/START_HERE.md",
+      "g": "Research documentation",
+      "bytes": 4194
+    },
+    {
       "p": "docs/traceability/ASSET_REGISTER.csv",
       "g": "Research documentation",
       "bytes": 48528
@@ -364,19 +419,19 @@
       "bytes": 1996
     },
     {
-      "p": "docs/traceability/CLAIMS.md",
-      "g": "Research documentation",
-      "bytes": 883
-    },
-    {
       "p": "docs/traceability/CLAIM_EVIDENCE.csv",
       "g": "Research documentation",
       "bytes": 2434
     },
     {
+      "p": "docs/traceability/CLAIMS.md",
+      "g": "Research documentation",
+      "bytes": 883
+    },
+    {
       "p": "docs/traceability/CURATED_DOCUMENT_BLOBS.csv",
       "g": "Research documentation",
-      "bytes": 308
+      "bytes": 505
     },
     {
       "p": "docs/traceability/DECISION_LOG.md",
@@ -404,859 +459,1034 @@
       "bytes": 2216
     },
     {
+      "p": "evidence/hfss/v44-reproducibility/analysis/draw_native_copper.py",
+      "g": "Native simulation evidence",
+      "bytes": 5764
+    },
+    {
       "p": "evidence/hfss/v44-reproducibility/analysis/EVIDENCE_CHECKS.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 438
     },
     {
       "p": "evidence/hfss/v44-reproducibility/analysis/NEW_CROSS_MESH_RECONSTRUCTION.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 123113
     },
     {
       "p": "evidence/hfss/v44-reproducibility/analysis/NEW_CROSS_MESH_RECONSTRUCTION.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 636
     },
     {
-      "p": "evidence/hfss/v44-reproducibility/analysis/V32_FINAL_FIGURE_SOURCE.py",
-      "g": "Simulation evidence",
-      "bytes": 9253
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/V32_RYDBERG_FIGURE.py",
-      "g": "Simulation evidence",
-      "bytes": 1804
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/V37_FINITE_SINGULAR_SPECTRA.json",
-      "g": "Simulation evidence",
-      "bytes": 525
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/V40_EQUATION_PROOF_FROM_MIX_RESULTS.json",
-      "g": "Simulation evidence",
-      "bytes": 489
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/V40_EXACT_SWITCH_COORDINATES.json",
-      "g": "Simulation evidence",
-      "bytes": 447
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/V41/FOUR_STATE_SUBSETS.csv",
-      "g": "Simulation evidence",
-      "bytes": 777
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/V41/INFORMATION_GEOMETRY_RESULTS.json",
-      "g": "Simulation evidence",
-      "bytes": 2311
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/V41/MESH_VERIFICATION_BY_FREQUENCY.csv",
-      "g": "Simulation evidence",
-      "bytes": 1226
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/V41/generate_information_figures.py",
-      "g": "Simulation evidence",
-      "bytes": 9785
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/V41/verify_information_geometry.py",
-      "g": "Simulation evidence",
-      "bytes": 2136
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/V42_C033_INSTRUMENT_MATRIX.csv",
-      "g": "Simulation evidence",
-      "bytes": 618
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/V42_GAIN_AWARE_RESULTS.json",
-      "g": "Simulation evidence",
-      "bytes": 1931
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/V44_FIXED_BUDGET_ALL_SUBSETS.csv",
-      "g": "Simulation evidence",
-      "bytes": 2061
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/V44_FIXED_BUDGET_RESULTS.json",
-      "g": "Simulation evidence",
-      "bytes": 4374
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/analysis/draw_native_copper.py",
-      "g": "Simulation evidence",
-      "bytes": 5764
-    },
-    {
       "p": "evidence/hfss/v44-reproducibility/analysis/package_v44.py",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2200
     },
     {
       "p": "evidence/hfss/v44-reproducibility/analysis/poincare_3d.py",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 3269
     },
     {
       "p": "evidence/hfss/v44-reproducibility/analysis/rebuild_figures.py",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 19006
     },
     {
-      "p": "evidence/hfss/v44-reproducibility/analysis/revise_manuscript.py",
-      "g": "Simulation evidence",
-      "bytes": 22532
-    },
-    {
       "p": "evidence/hfss/v44-reproducibility/analysis/revise_manuscript_v44.py",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 10371
     },
     {
+      "p": "evidence/hfss/v44-reproducibility/analysis/revise_manuscript.py",
+      "g": "Native simulation evidence",
+      "bytes": 22532
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/V32_FINAL_FIGURE_SOURCE.py",
+      "g": "Native simulation evidence",
+      "bytes": 9253
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/V32_RYDBERG_FIGURE.py",
+      "g": "Native simulation evidence",
+      "bytes": 1804
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/V37_FINITE_SINGULAR_SPECTRA.json",
+      "g": "Native simulation evidence",
+      "bytes": 525
+    },
+    {
       "p": "evidence/hfss/v44-reproducibility/analysis/v37_verify_extra.py",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 791
     },
     {
+      "p": "evidence/hfss/v44-reproducibility/analysis/V40_EQUATION_PROOF_FROM_MIX_RESULTS.json",
+      "g": "Native simulation evidence",
+      "bytes": 489
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/V40_EXACT_SWITCH_COORDINATES.json",
+      "g": "Native simulation evidence",
+      "bytes": 447
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/V41/FOUR_STATE_SUBSETS.csv",
+      "g": "Native simulation evidence",
+      "bytes": 777
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/V41/generate_information_figures.py",
+      "g": "Native simulation evidence",
+      "bytes": 9785
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/V41/INFORMATION_GEOMETRY_RESULTS.json",
+      "g": "Native simulation evidence",
+      "bytes": 2311
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/V41/MESH_VERIFICATION_BY_FREQUENCY.csv",
+      "g": "Native simulation evidence",
+      "bytes": 1226
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/V41/verify_information_geometry.py",
+      "g": "Native simulation evidence",
+      "bytes": 2136
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/V42_C033_INSTRUMENT_MATRIX.csv",
+      "g": "Native simulation evidence",
+      "bytes": 618
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/V42_GAIN_AWARE_RESULTS.json",
+      "g": "Native simulation evidence",
+      "bytes": 1931
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/V44_FIXED_BUDGET_ALL_SUBSETS.csv",
+      "g": "Native simulation evidence",
+      "bytes": 2061
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/analysis/V44_FIXED_BUDGET_RESULTS.json",
+      "g": "Native simulation evidence",
+      "bytes": 4374
+    },
+    {
       "p": "evidence/hfss/v44-reproducibility/analysis/v44_fixed_budget.py",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 5834
     },
     {
       "p": "evidence/hfss/v44-reproducibility/analysis/verify_evidence.py",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2186
     },
     {
       "p": "evidence/hfss/v44-reproducibility/analysis/verify_v42.py",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 1327
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/FIGURE_PROVENANCE.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 1290
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/HFSS_V15_independent_mesh.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 1705
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/HFSS_V15_screening_scores.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 740
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/SOURCE_HFSS_CHECKSUMS.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 4076
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/SUPPLEMENT_ALL_FREQUENCIES.tex",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 1116
     },
     {
-      "p": "evidence/hfss/v44-reproducibility/data/SUPPLEMENT_LOCAL_RF_SPECTRA.tex",
-      "g": "Simulation evidence",
-      "bytes": 1512
-    },
-    {
       "p": "evidence/hfss/v44-reproducibility/data/SUPPLEMENT_LOCAL_RF_SPECTRA_PART1.tex",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 756
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/SUPPLEMENT_LOCAL_RF_SPECTRA_PART2.tex",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 756
     },
     {
+      "p": "evidence/hfss/v44-reproducibility/data/SUPPLEMENT_LOCAL_RF_SPECTRA.tex",
+      "g": "Native simulation evidence",
+      "bytes": 1512
+    },
+    {
       "p": "evidence/hfss/v44-reproducibility/data/V21_P8G_ALL_FREQUENCIES.tex",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 603
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/FINITE_V412_C3X3_M10_PX_F1850_TOTAL_FIELD.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 27969
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/FINITE_V412_C3X3_M10_PY_F1850_TOTAL_FIELD.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 28007
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/FINITE_V412_C3X3_MREF_PX_F1850_TOTAL_FIELD.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 28879
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/FINITE_V412_C3X3_MREF_PY_F1850_TOTAL_FIELD.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 28981
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/HFSS_SOURCE_ARCHIVE_SHA256.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 788
     },
     {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/EMPTY_V00_M00_L110_F1825/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2606
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/EMPTY_V00_M00_L125_F1825/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2607
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/EMPTY_V00_M00_L125_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2601
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/EMPTY_V00_M00_R110_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2599
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/EMPTY_V00_M00_R125_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2600
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M03_L110_F1825/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2682
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M03_L125_F1825/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2685
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M03_L125_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2683
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M03_R110_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2683
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M03_R125_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2681
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M06_L110_F1825/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2676
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M06_L125_F1825/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2677
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M06_L125_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2677
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M06_R110_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2670
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M06_R125_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2677
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M08_L110_F1825/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2676
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M08_L125_F1825/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2680
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M08_L125_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2678
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M08_R110_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2676
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M08_R125_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2677
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M10_L110_F1825/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2681
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M10_L125_F1825/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2680
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M10_R110_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2675
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M10_R125_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2678
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M12_L110_F1825/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2679
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M12_L125_F1825/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2680
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M12_R110_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2676
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M12_R125_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2679
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M13_L110_F1825/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2681
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M13_L125_F1825/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2681
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M13_R110_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2679
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M13_R125_F1850/RESULT.json",
-      "g": "Simulation evidence",
-      "bytes": 2682
-    },
-    {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/V410_RESULTS/V410_SCREEN.csv",
-      "g": "Simulation evidence",
-      "bytes": 301
-    },
-    {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410_INSTRUMENT_FINE_1850.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 523
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410_SCIENTIFIC_VERDICT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 6644
     },
     {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/EMPTY_V00_M00_L110_F1825/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2606
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/EMPTY_V00_M00_L125_F1825/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2607
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/EMPTY_V00_M00_L125_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2601
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/EMPTY_V00_M00_R110_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2599
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/EMPTY_V00_M00_R125_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2600
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M03_L110_F1825/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2682
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M03_L125_F1825/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2685
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M03_L125_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2683
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M03_R110_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2683
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M03_R125_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2681
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M06_L110_F1825/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2676
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M06_L125_F1825/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2677
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M06_L125_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2677
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M06_R110_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2670
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M06_R125_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2677
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M08_L110_F1825/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2676
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M08_L125_F1825/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2680
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M08_L125_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2678
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M08_R110_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2676
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M08_R125_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2677
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M10_L110_F1825/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2681
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M10_L125_F1825/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2680
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M10_R110_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2675
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M10_R125_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2678
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M12_L110_F1825/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2679
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M12_L125_F1825/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2680
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M12_R110_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2676
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M12_R125_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2679
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M13_L110_F1825/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2681
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M13_L125_F1825/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2681
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M13_R110_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2679
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/HFSS_PROJECTS/SINGLEPCB_V01_M13_R125_F1850/RESULT.json",
+      "g": "Native simulation evidence",
+      "bytes": 2682
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V410/V410_RESULTS/V410_SCREEN.csv",
+      "g": "Native simulation evidence",
+      "bytes": 301
+    },
+    {
+      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411_VERDICT.json",
+      "g": "Native simulation evidence",
+      "bytes": 6802
+    },
+    {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/HFSS_PROJECTS/EMPTY_V00_M00_B110_F1838/RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2607
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/HFSS_PROJECTS/EMPTY_V00_M00_B125_F1838/RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2607
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/HFSS_PROJECTS/SINGLEPCB_V01_M03_B110_F1838/RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2687
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/HFSS_PROJECTS/SINGLEPCB_V01_M03_B125_F1838/RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2688
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/HFSS_PROJECTS/SINGLEPCB_V01_M06_B110_F1838/RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2681
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/HFSS_PROJECTS/SINGLEPCB_V01_M06_B125_F1838/RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2683
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/HFSS_PROJECTS/SINGLEPCB_V01_M08_B110_F1838/RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2682
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/HFSS_PROJECTS/SINGLEPCB_V01_M08_B125_F1838/RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2680
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/HFSS_PROJECTS/SINGLEPCB_V01_M10_B110_F1838/RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2685
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/HFSS_PROJECTS/SINGLEPCB_V01_M10_B125_F1838/RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2686
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/HFSS_PROJECTS/SINGLEPCB_V01_M12_B110_F1838/RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2682
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/HFSS_PROJECTS/SINGLEPCB_V01_M12_B125_F1838/RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2684
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/HFSS_PROJECTS/SINGLEPCB_V01_M13_B110_F1838/RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2689
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/HFSS_PROJECTS/SINGLEPCB_V01_M13_B125_F1838/RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2688
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411/V411_RESULTS/V411_POINTS.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 224
     },
     {
-      "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V411_VERDICT.json",
-      "g": "Simulation evidence",
-      "bytes": 6802
-    },
-    {
       "p": "evidence/hfss/v44-reproducibility/data/V25_NATIVE_EVIDENCE/V413_SCIENTIFIC_STATUS.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 9381
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/APERTURE_DIMENSIONLESS_DIAGNOSTICS.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 3353
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/C000_HFSS_DISCOVERY.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 85871
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/C000_POINCARE_1.8250.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 397121
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/C000_POINCARE_1.8500.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 395469
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/C000_POINCARE_1.9500.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 397594
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/C015_HFSS_DISCOVERY.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 85753
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/C015_POINCARE_1.7500.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 395294
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/C015_POINCARE_1.8750.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 396078
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/C015_POINCARE_1.9500.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 396949
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/C015_POINCARE_2.0000.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 393472
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/C033_HFSS_DISCOVERY.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 85756
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/C033_POINCARE_1.7500.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 394784
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/C033_POINCARE_1.8750.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 396654
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/C033_POINCARE_1.9250.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 397783
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/C033_POINCARE_2.0000.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 395482
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/CANDIDATE_TRADEOFF.svg",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 36604
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/FIGURE_AND_EVIDENCE_PROVENANCE_V26.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 1287
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/OPTIMISATION_PROGRESS.svg",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 38071
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/OPTIMISATION_RANKING.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 17237
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/THREE_DESIGNS_11_PARAMETERS.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 623
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/V416_OPTIMISATION_VERDICT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 1297
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/V417_FREQUENCY_VERDICT.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 3200
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/V418_EQUATION_AUDIT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 33918
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/V418_EVIDENCE_LEDGER.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 5301
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V26_ARCHIVED_HFSS/WINDMILL_CIRCULAR_SPECTRA.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 26215
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V27_FINITE_CONDITION_VS_DISTANCE.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 418
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V27_FINITE_EVIDENCE_AUDIT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 31617
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V27_PRIMARY_SOURCE_ARCHIVES/RETURN_TO_CHATGPT_V420_20261024_185556.zip",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 503506
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V27_PRIMARY_SOURCE_ARCHIVES/RETURN_TO_CHATGPT_V421_COMPACT_20261024_202048.zip",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 609817
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V27_PRIMARY_SOURCE_ARCHIVES/RETURN_TO_CHATGPT_V422_COMPACT_20261024_210027.zip",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 77669
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V3_BEST_CANDIDATE_1P8.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 1678
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V3_HFSS_FIELD_SOURCE_HASHES.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 14703
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V3_NEW_FIGURE_PROVENANCE.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 613
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V3_SCIENTIFIC_VERDICT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 844
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V3_SCREEN_V00_1P8.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 11585
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V3_SCREEN_V01_1P8.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 11545
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V3_SCREEN_V02_1P8.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 11517
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V3_SCREEN_V03_1P8.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 11561
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_BEST_CANDIDATE_1P8.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 1691
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_INDEPENDENT_MESH.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 216
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_INDEPENDENT_NUMERICAL_AUDIT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2644
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__EMPTY_V00_M00_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2105
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M00_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2108
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M01_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2110
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M02_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2106
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M03_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2112
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M03_REFINE__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2115
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M04_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2107
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M05_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2111
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M06_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2106
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M06_REFINE__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2110
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M07_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2108
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M08_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2106
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M08_REFINE__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2110
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M09_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2112
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M10_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2108
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M10_REFINE__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2112
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M11_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2111
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M12_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2109
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M12_REFINE__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2111
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M13_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2109
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M13_REFINE__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2110
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M14_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2108
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_NATIVE_JONES_RESULTS/HFSS_PROJECTS__SINGLEPCB_V01_M15_PILOT__RESULT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 2114
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_ORIGINAL_VERIFIED_COMPACT_RETURN.zip",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 755246
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_SCIENTIFIC_VERDICT.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 911
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_SCREEN_V00_1P8.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 11505
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_SCREEN_V01_1P8.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 11497
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V4_V3_COMPARISON.json",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 446
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V7401_1p625_P8E_instrument_matrix.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 416
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V7401_1p625_P8E_row_normalised_matrix.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 416
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V7401_1p625_six_state_cross_mesh.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 1447
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V7401_DENSE_HFSS_INSTRUMENT_5MHz.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 26666
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V7401_DENSE_HFSS_SPECTRA_5MHz.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 63765
     },
     {
       "p": "evidence/hfss/v44-reproducibility/data/V7401_P8E_NINE_POINT_HFSS_QUADRATURE_SPECTRA.csv",
-      "g": "Simulation evidence",
+      "g": "Native simulation evidence",
       "bytes": 1800
     },
     {
-      "p": "evidence/hfss/v44-reproducibility/source_evidence/V418_NATIVE_HFSS_RETURN_COMPACT.zip",
-      "g": "Simulation evidence",
-      "bytes": 11502802
+      "p": "evidence/hfss/v44-reproducibility/source_evidence/mix_results_20261025.zip",
+      "g": "Native simulation evidence",
+      "bytes": 8416907
     },
     {
-      "p": "evidence/hfss/v44-reproducibility/source_evidence/mix_results_20261025.zip",
-      "g": "Simulation evidence",
-      "bytes": 8416907
+      "p": "evidence/hfss/v44-reproducibility/source_evidence/V418_NATIVE_HFSS_RETURN_COMPACT.zip",
+      "g": "Native simulation evidence",
+      "bytes": 11502802
     },
     {
       "p": "governance/Supervisor_Assessment_Rubric_v3.xlsx",
       "g": "Governance",
       "bytes": 12769
+    },
+    {
+      "p": "history/binary-imports/ORIGINAL_BINARY_SOURCES_TO_IMPORT.csv",
+      "g": "Source-intake manifests",
+      "bytes": 2821
+    },
+    {
+      "p": "history/binary-imports/README.md",
+      "g": "Source-intake manifests",
+      "bytes": 2481
+    },
+    {
+      "p": "history/editorial-reviews/Rydberg_V45_Supervisor_Feedback_and_Harsh_Grade.md",
+      "g": "Peer and academic reviews",
+      "bytes": 4840
+    },
+    {
+      "p": "history/editorial-reviews/Rydberg_V46_University_and_IEEE_Access_Brutal_Review.md",
+      "g": "Peer and academic reviews",
+      "bytes": 7460
+    },
+    {
+      "p": "history/editorial-reviews/Rydberg_V47_Critical_University_and_Publication_Review.md",
+      "g": "Peer and academic reviews",
+      "bytes": 6967
+    },
+    {
+      "p": "history/editorial-reviews/Rydberg_V52_Engineering_Evidence_Check.md",
+      "g": "Peer and academic reviews",
+      "bytes": 3253
+    },
+    {
+      "p": "history/original-research-plans/2026-09-28_APL_PHOTONICS_RESEARCH_PLAN.md",
+      "g": "Original research plans",
+      "bytes": 37998
+    },
+    {
+      "p": "history/original-research-plans/2026-09-28_XBSR_70x50_DESIGN_BASIS.md",
+      "g": "Original research plans",
+      "bytes": 47880
+    },
+    {
+      "p": "history/original-research-plans/2026-09-28_XBSR_MANUFACTURABLE_DESIGN_STUDY.md",
+      "g": "Original research plans",
+      "bytes": 32804
+    },
+    {
+      "p": "history/README.md",
+      "g": "Research history",
+      "bytes": 8023
+    },
+    {
+      "p": "history/recovered-code/arc/README_rydberg_tqe_simulations.md",
+      "g": "Recovered ARC",
+      "bytes": 1990
+    },
+    {
+      "p": "history/recovered-code/atomic/rydberg_polarization_simulation_workflow.py",
+      "g": "Recovered atomic modelling",
+      "bytes": 29059
+    },
+    {
+      "p": "history/recovered-code/cst/cp_fullwave_results_TEMPLATE.csv",
+      "g": "Recovered CST",
+      "bytes": 200
+    },
+    {
+      "p": "history/recovered-code/cst/CST2025_FIRST_RUN_CARD.txt",
+      "g": "Recovered CST",
+      "bytes": 1251
+    },
+    {
+      "p": "history/recovered-code/cst/README_CST2025.md",
+      "g": "Recovered CST",
+      "bytes": 7274
+    },
+    {
+      "p": "history/recovered-code/figures/APL_FIGURE_RULES.md",
+      "g": "Figure generators",
+      "bytes": 1664
+    },
+    {
+      "p": "history/recovered-code/figures/generate_v90_apl_plots.py",
+      "g": "Figure generators",
+      "bytes": 13052
+    },
+    {
+      "p": "history/recovered-code/figures/HFSS_POSTER_COPY.md",
+      "g": "Figure generators",
+      "bytes": 2404
+    },
+    {
+      "p": "history/recovered-code/matlab/02_generate_matlab_poster_figures.m",
+      "g": "Recovered MATLAB",
+      "bytes": 14515
+    },
+    {
+      "p": "history/recovered-code/matlab/03_replot_arc_outputs_in_matlab.m",
+      "g": "Recovered MATLAB",
+      "bytes": 5325
+    },
+    {
+      "p": "history/recovered-code/matlab/analyse_new_polariser_data.m",
+      "g": "Recovered MATLAB",
+      "bytes": 12512
+    },
+    {
+      "p": "history/recovered-code/matlab/plot_digitized_rydberg_data.m",
+      "g": "Recovered MATLAB",
+      "bytes": 9129
+    },
+    {
+      "p": "history/recovered-code/matlab/plot_verified_rydberg_figures_v3.m",
+      "g": "Recovered MATLAB",
+      "bytes": 7463
+    },
+    {
+      "p": "history/recovered-code/matlab/plot_verified_rydberg_figures.m",
+      "g": "Recovered MATLAB",
+      "bytes": 9083
+    },
+    {
+      "p": "history/recovered-code/workbench/Rydberg_Workbench_v0.4_Validation.md",
+      "g": "Recovered Workbench",
+      "bytes": 6447
+    },
+    {
+      "p": "history/recovered-code/workbench/Rydberg_Workbench_v1.0_RC1_SetupFix_Validation.md",
+      "g": "Recovered Workbench",
+      "bytes": 1545
+    },
+    {
+      "p": "history/recovered-code/workbench/Rydberg_Workbench_v1.0_RC1_Validation.md",
+      "g": "Recovered Workbench",
+      "bytes": 1523
+    },
+    {
+      "p": "history/recovered-evidence/earlier_laws/final_law_results.csv",
+      "g": "Historical HFSS and numerical records",
+      "bytes": 1405
+    },
+    {
+      "p": "history/recovered-evidence/earlier_laws/LAW_VERDICT.json",
+      "g": "Historical HFSS and numerical records",
+      "bytes": 618
+    },
+    {
+      "p": "history/recovered-evidence/hfss-historical/APL_V4_1_EVIDENCE_AND_V5_DESIGN_GATES.md",
+      "g": "Historical HFSS and numerical records",
+      "bytes": 8535
+    },
+    {
+      "p": "history/recovered-evidence/hfss-historical/LATEST_RETURN_5.json",
+      "g": "Historical HFSS and numerical records",
+      "bytes": 413
+    },
+    {
+      "p": "history/recovered-evidence/hfss-historical/V6_RETURN_VERDICT_AND_NEXT_STEPS.md",
+      "g": "Historical HFSS and numerical records",
+      "bytes": 4416
+    },
+    {
+      "p": "history/recovered-reports/2026-06-revised-interim-report-original.tex",
+      "g": "Original thesis and presentations",
+      "bytes": 136343
+    },
+    {
+      "p": "history/recovered-reports/Rydberg_Polarimetry_SPEAKER_TRANSCRIPT.md",
+      "g": "Original thesis and presentations",
+      "bytes": 8312
+    },
+    {
+      "p": "history/recovered-reports/Rydberg_Thesis_Methods_Draft.md",
+      "g": "Original thesis and presentations",
+      "bytes": 8832
     },
     {
       "p": "index.html",
@@ -1270,262 +1500,262 @@
     },
     {
       "p": "papers/current-manuscript-draft.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 1602535
     },
     {
       "p": "papers/manuscript-source/build_local.sh",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 220
     },
     {
       "p": "papers/manuscript-source/bullet.png",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 430
     },
     {
       "p": "papers/manuscript-source/data/CORRECTED_SUBSET_COMPARISON.csv",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 241
     },
     {
       "p": "papers/manuscript-source/data/FOUR_STATE_SUBSETS.csv",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 777
     },
     {
       "p": "papers/manuscript-source/data/MESH_VERIFICATION_BY_FREQUENCY.csv",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 1226
     },
     {
       "p": "papers/manuscript-source/data/V42_C033_INSTRUMENT_MATRIX.csv",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 618
     },
     {
       "p": "papers/manuscript-source/data/V44_FIXED_BUDGET_ALL_SUBSETS.csv",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 2061
     },
     {
       "p": "papers/manuscript-source/figure_source/fig5_complete_print.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 295227
     },
     {
-      "p": "papers/manuscript-source/figure_source/fig5_coupled_modes.tex",
-      "g": "Manuscripts",
-      "bytes": 1346
-    },
-    {
       "p": "papers/manuscript-source/figure_source/fig5_coupled_modes_v48.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 80352
     },
     {
       "p": "papers/manuscript-source/figure_source/fig5_coupled_modes_v48.png",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 83557
     },
     {
       "p": "papers/manuscript-source/figure_source/fig5_coupled_modes_v48.tex",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 1722
     },
     {
       "p": "papers/manuscript-source/figure_source/fig5_coupled_modes_v48b.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 80256
     },
     {
       "p": "papers/manuscript-source/figure_source/fig5_coupled_modes_v48b.png",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 79770
     },
     {
       "p": "papers/manuscript-source/figure_source/fig5_coupled_modes_v48b.tex",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 1614
     },
     {
       "p": "papers/manuscript-source/figure_source/fig5_coupled_modes_v48c.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 60451
     },
     {
       "p": "papers/manuscript-source/figure_source/fig5_coupled_modes_v48c.png",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 61429
     },
     {
       "p": "papers/manuscript-source/figure_source/fig5_coupled_modes_v48c.tex",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 1520
     },
     {
+      "p": "papers/manuscript-source/figure_source/fig5_coupled_modes.tex",
+      "g": "Manuscript sources",
+      "bytes": 1346
+    },
+    {
       "p": "papers/manuscript-source/figure_source/original_native_hfss_geometry.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 31661
     },
     {
       "p": "papers/manuscript-source/figure_source/rebuild_verified_figures.py",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 9335
     },
     {
       "p": "papers/manuscript-source/figure_source/regenerate_and_install_v52.py",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 834
     },
     {
       "p": "papers/manuscript-source/figures/F01_REAL_LAB_PHOTO.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 93035
     },
     {
       "p": "papers/manuscript-source/figures/F02_RYDBERG_LEVELS.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 28524
     },
     {
       "p": "papers/manuscript-source/figures/F05_SWITCHING_COMPACT.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 17600
     },
     {
       "p": "papers/manuscript-source/figures/F06_PHOTOGRAPHIC_POLARISER.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 340166
     },
     {
       "p": "papers/manuscript-source/figures/F11_FINITE_SINGULAR_SPECTRA.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 16474
     },
     {
       "p": "papers/manuscript-source/figures/FINAL_F04_FINITE_PCB_METATOM_CIRCUIT.png",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 332783
     },
     {
       "p": "papers/manuscript-source/figures/FINAL_F06_LINEAR_EXPERIMENT.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 15991
     },
     {
       "p": "papers/manuscript-source/figures/FINAL_F07_OPTIMISATION.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 24967
     },
     {
       "p": "papers/manuscript-source/figures/FINAL_F08_ADAPTED_RESULTS.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 24905
     },
     {
       "p": "papers/manuscript-source/figures/FINAL_F09_STOKES_AB_VECTOR.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 180879
     },
     {
       "p": "papers/manuscript-source/figures/FINAL_F10_FINITE_DISTANCE.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 20714
     },
     {
       "p": "papers/manuscript-source/figures/FINAL_F10_FINITE_DISTANCE.png",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 139617
     },
     {
       "p": "papers/manuscript-source/figures/V41_FIG_INDEPENDENT_HFSS_PASS.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 27832
     },
     {
       "p": "papers/manuscript-source/figures/V41_FIG_RESPONSE_AND_SUBSETS.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 33950
     },
     {
       "p": "papers/manuscript-source/figures/V42_FIG_GAIN_AWARE_INFORMATION.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 26023
     },
     {
       "p": "papers/manuscript-source/figures/V44_FIXED_BUDGET.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 26250
     },
     {
       "p": "papers/manuscript-source/figures/V50_FIG_GAIN_AWARE_INFORMATION_STACKED.png",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 345467
     },
     {
       "p": "papers/manuscript-source/figures/V51_FIG_GAIN_AWARE_INFORMATION.pdf",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 26979
     },
     {
       "p": "papers/manuscript-source/ieee_references.tex",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 7605
     },
     {
       "p": "papers/manuscript-source/ieeeaccess.cls",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 49999
     },
     {
       "p": "papers/manuscript-source/logo.png",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 9705
     },
     {
       "p": "papers/manuscript-source/main.tex",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 105452
     },
     {
       "p": "papers/manuscript-source/notaglinelogo.png",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 3150
     },
     {
       "p": "papers/manuscript-source/spotcolor.sty",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 2231
     },
     {
       "p": "papers/manuscript-source/supplementary_data/FOUR_STATE_SUBSETS.csv",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 777
     },
     {
       "p": "papers/manuscript-source/supplementary_data/MESH_VERIFICATION_BY_FREQUENCY.csv",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 1226
     },
     {
       "p": "papers/manuscript-source/supplementary_data/V42_C033_INSTRUMENT_MATRIX.csv",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 618
     },
     {
       "p": "papers/manuscript-source/supplementary_data/V44_FIXED_BUDGET_ALL_SUBSETS.csv",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 2061
     },
     {
       "p": "papers/manuscript-source/supplementary_data/verify_v47_citation_order.py",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 598
     },
     {
       "p": "papers/manuscript-source/supplementary_data/verify_v47_standalone.py",
-      "g": "Manuscripts",
+      "g": "Manuscript sources",
       "bytes": 1715
     },
     {
@@ -1559,6 +1789,11 @@
       "bytes": 2059155
     },
     {
+      "p": "README.md",
+      "g": "Repository",
+      "bytes": 11038
+    },
+    {
       "p": "reports/2026-06-magnetically-biased-rydberg-receiver.pdf",
       "g": "Research reports",
       "bytes": 4085429
@@ -1574,6 +1809,11 @@
       "bytes": 61181
     },
     {
+      "p": "scripts/rebuild_research_atlas.py",
+      "g": "Verification",
+      "bytes": 4463
+    },
+    {
       "p": "scripts/summarise_evidence.py",
       "g": "Verification",
       "bytes": 1251
@@ -1581,12 +1821,17 @@
     {
       "p": "scripts/verify_archive.py",
       "g": "Verification",
-      "bytes": 4302
+      "bytes": 4055
     },
     {
-      "p": "site/README.md",
-      "g": "Website",
-      "bytes": 652
+      "p": "scripts/verify_site.py",
+      "g": "Verification",
+      "bytes": 5215
+    },
+    {
+      "p": "SECURITY.md",
+      "g": "Repository",
+      "bytes": 1684
     },
     {
       "p": "site/app.js",
@@ -1629,9 +1874,44 @@
       "bytes": 119705
     },
     {
+      "p": "site/data/historical-index.json",
+      "g": "Website",
+      "bytes": 120117
+    },
+    {
+      "p": "site/data/research-atlas.json",
+      "g": "Website",
+      "bytes": 52567
+    },
+    {
+      "p": "site/explorer.css",
+      "g": "Website",
+      "bytes": 7528
+    },
+    {
+      "p": "site/explorer.html",
+      "g": "Website",
+      "bytes": 10097
+    },
+    {
+      "p": "site/explorer.js",
+      "g": "Website",
+      "bytes": 11143
+    },
+    {
       "p": "site/index.html",
       "g": "Website",
-      "bytes": 12863
+      "bytes": 15814
+    },
+    {
+      "p": "site/model.mjs",
+      "g": "Website",
+      "bytes": 3528
+    },
+    {
+      "p": "site/README.md",
+      "g": "Website",
+      "bytes": 2932
     },
     {
       "p": "site/style.css",
@@ -1639,9 +1919,19 @@
       "bytes": 7883
     },
     {
+      "p": "tests/test_immutable_sources.py",
+      "g": "Verification",
+      "bytes": 1415
+    },
+    {
       "p": "tests/test_research_archive.py",
       "g": "Verification",
       "bytes": 1505
+    },
+    {
+      "p": "tests/test_site_model.mjs",
+      "g": "Verification",
+      "bytes": 2150
     }
   ],
   "timeline": [
@@ -1729,5 +2019,6 @@
       "description": "Traceable source register, equipment, methods, publications and source intake.",
       "path": "docs/handover/HANDOVER.md"
     }
-  ]
+  ],
+  "sourceIndexNote": "Git-tracked file metadata from indexed research branch; historical Library discovery data is listed separately and is not a byte-for-byte source mirror."
 }
