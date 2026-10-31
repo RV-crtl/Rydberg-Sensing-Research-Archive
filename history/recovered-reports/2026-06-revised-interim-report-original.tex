@@ -1,0 +1,2093 @@
+\documentclass{ieeeaccess}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\graphicspath{{figures/}}
+
+\usepackage{comment}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+\title{Magnetically-biased Rydberg Microwave Receiver for Polarization Estimation [INTERIM]}
+\author{\uppercase{Ryan N. Verghese}\authorrefmark{1}}
+\address[1]{School of Engineering and Technology, University of New South Wales, Canberra, ACT 2600 Australia}
+\markboth
+{R. N. Verghese: Magnetically-biased Rydberg Microwave Receiver for Polarization Estimation [INTERIM]}
+{R. N. Verghese: Magnetically-biased Rydberg Microwave Receiver for Polarization Estimation [INTERIM]}
+
+\corresp{Corresponding author: Ryan N. Verghese (email: r.verghese@student.unsw.edu.au).}
+
+\begin{abstract}
+Microwave receivers are usually evaluated using scalar quantities such as frequency, power, phase, and signal-to-noise ratio, but these quantities do not fully describe the polarization state of an electromagnetic field. This interim report investigates a receiver-engineering pathway toward microwave polarization estimation using a magnetically biased rubidium Rydberg electromagnetically induced transparency receiver. The proposed approach combines independently validated radio-frequency polarization-conditioning hardware, magnetic-bias calibration, Rydberg optical readout, and feature-based interpretation. A log-periodic dipole antenna arrangement, a custom steel-rod linear polarizer, and a candidate circularly polarized antenna were characterized using vector network analyzer measurements near the operating band. The linear reference measurements showed clear co-polar, angled, and cross-polar separation, while the custom polarizer produced a practical pass/reject contrast of approximately \(14\text{--}15~\mathrm{dB}\). The magnetic-bias coil was calibrated against current, giving an approximately linear local relationship \(B_0(I)=2.302I+0.028~\mathrm{mT}\), with \(R^2=0.981\) and root-mean-square error of \(0.103~\mathrm{mT}\). Exploratory Rydberg measurements under calibrated magnetic bias produced measurable but nonmonotonic response levels and do not yet support a claim of repeatable magnetic-bias-dependent polarimetric sensitivity. The main contribution of this interim work is therefore a calibrated experimental and modelling foundation for future Rydberg microwave polarization experiments. The final thesis stage should focus on transition screening, magnetic-field mapping, repeated Rydberg sweeps, and feature-separability testing before classification or Stokes-vector estimation is attempted.
+\end{abstract}
+
+\begin{keywords}
+Autler--Townes splitting, electromagnetically induced transparency, magnetic bias, microwave polarimetry, polarization estimation, quantum receiver, Rydberg atoms, Rydberg-EIT receiver, Stokes parameters, Zeeman splitting.
+\end{keywords}
+
+\titlepgskip=-15pt
+
+\maketitle
+
+\section*{Nomenclature}
+\addcontentsline{toc}{section}{Nomenclature}
+
+\begin{IEEEdescription}[\IEEEusemathlabelsep\IEEEsetlabelwidth{$\Omega_{\mathrm{RF}}$}]
+
+\item[$\mathbf{S}$] Stokes vector describing the incident microwave polarization state.
+\item[$S_0$] Total microwave field intensity.
+\item[$S_1$] Difference between orthogonal linear polarization components.
+\item[$S_2$] Linear polarization content in the \(45^\circ/-45^\circ\) basis.
+\item[$S_3$] Circular polarization content, subject to the stated handedness convention.
+\item[$\mathbf{E}_{\mathrm{RF}}$] Incident radio-frequency electric-field vector.
+\item[$E_{+1},E_0,E_{-1}$] Spherical-basis RF field components driving \(\sigma^+\), \(\pi\), and \(\sigma^-\) pathways.
+\item[$B_0$] Applied magnetic-bias flux density.
+\item[$\Omega_p$] Probe-laser Rabi frequency.
+\item[$\Omega_c$] Coupling-laser Rabi frequency.
+\item[$\Omega_{\mathrm{RF}}$] RF Rabi frequency coupling neighbouring Rydberg states.
+\item[$\Delta_p,\Delta_c$] Probe and coupling detunings.
+\item[$\rho$] Atomic density matrix.
+\item[$\rho_{ge}$] Optical coherence associated with probe absorption.
+\item[$T(\Delta_p)$] Probe transmission as a function of probe detuning.
+\item[$\mathbf{y}$] Extracted optical feature vector used for future polarization inference.
+\item[$\widehat{\mathbf{S}}$] Estimated Stokes vector, treated as a future target in this interim report.
+
+\end{IEEEdescription}
+
+
+\section{Introduction}
+\label{sec:introduction}
+
+\IEEEPARstart{M}{icrowave} receivers are normally described using carrier frequency, bandwidth, received power, phase, and signal-to-noise ratio. These quantities are essential, but they do not fully describe an electromagnetic wave. A propagating radio-frequency (RF) field also has a polarization state, which describes the orientation and phase relationship of the electric-field components transverse to the direction of propagation. Polarization affects antenna alignment, received power, multipath response, scattering behaviour, and the ability to distinguish one field state from another. A receiver that measures only scalar field strength therefore observes only part of the available electromagnetic information.
+
+Conventional microwave polarization measurement projects the incident field onto known analyzer states, such as horizontal, vertical, \(45^\circ\), and circular bases, and then combines the measured powers into a polarization description such as a Stokes vector \cite{Balanis2016,Collett2005}. This approach is effective, but it depends on calibrated RF hardware. This interim thesis report investigates a different but complementary pathway: whether a magnetically biased Rydberg electromagnetically induced transparency (EIT) receiver can be engineered so that its optical response contains useful information about microwave polarization.
+
+Rydberg atoms are attractive for RF sensing because highly excited atomic states have large electric-dipole moments and strong sensitivity to microwave-frequency electric fields \cite{Gallagher2005,Holloway2014,Schlossberger2024Review}. In a room-temperature rubidium vapor-cell receiver, a \(780~\mathrm{nm}\) probe laser and a \(480~\mathrm{nm}\) coupling laser establish a ladder-type Rydberg-EIT readout. An applied RF field couples neighbouring Rydberg states and modifies the transmitted probe signal. Rydberg RF sensing has already demonstrated field measurement, spectrum analysis, phase-sensitive reception, and receiver-style operation \cite{Sedlacek2012,Simons2019Mixer,Meyer2021Spectrum,ArtusioGlimpse2022}. The question here is not whether Rydberg atoms can sense RF fields in general; it is whether the receiver chain can be controlled well enough for future microwave polarization estimation.
+
+Polarization estimation is an inverse receiver problem. The atom does not directly output ``horizontal'', ``vertical'', ``right-hand circular'', or ``left-hand circular''. Instead, the incident RF field changes the atomic response, the optical system converts that response into a measured signal, and signal processing extracts a feature vector. At the receiver level, the measurement can be written as
+\begin{equation}
+\mathbf{y}=f(\mathbf{S},B_0,\theta,\mathbf{x})+\boldsymbol{\eta},
+\label{eq:intro_forward_model}
+\end{equation}
+where \(\mathbf{y}\) is the measured feature vector, \(\mathbf{S}\) is the incident polarization state, \(B_0\) is the applied magnetic-bias field, \(\theta\) represents the RF analyzer or antenna configuration, \(\mathbf{x}\) contains operating and nuisance parameters, and \(\boldsymbol{\eta}\) represents noise and model mismatch. The engineering task is to make this mapping observable, repeatable, and sufficiently calibrated to support later inference.
+
+The magnetic-bias field is the central mechanism explored in this work. A static field \(B_0\) defines the atomic quantization axis and can separate magnetic-sublevel pathways through Zeeman splitting. Relative to this axis, the RF electric field can be decomposed into \(\sigma^+\), \(\pi\), and \(\sigma^-\) components, corresponding to \(\Delta m=+1\), 0, and \(-1\) pathways. In principle, two RF fields with the same scalar power but different polarization states can drive different combinations of these pathways. If those combinations produce distinguishable optical features, a magnetically biased Rydberg-EIT receiver can become polarization sensitive.
+
+The unresolved engineering problem is that such a receiver cannot be judged from the atomic response alone. Apparent polarization sensitivity could also arise from antenna mismatch, chamber coupling, imperfect polarizer behaviour, circular-antenna axial-ratio error, cable movement, magnetic-field nonuniformity, laser drift, or unresolved atomic structure. For this reason, the project is treated as a complete RF-to-optical receiver chain rather than as a single spectroscopy effect. The RF input states must be validated, the magnetic-bias field must be calibrated, the Rydberg transition must be physically plausible, and the optical features must be interpreted with explicit attention to uncertainty and repeatability.
+
+Figure~\ref{fig:receiver_architecture} shows the receiver architecture used to frame this interim work. A conditioned RF field interrogates a \(^{87}\mathrm{Rb}\) vapor cell under magnetic bias. The \(780~\mathrm{nm}\) probe and \(480~\mathrm{nm}\) coupling beams provide the Rydberg-EIT optical readout, and the detected probe signal is reduced to features for future classification or Stokes-vector estimation.
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.98\columnwidth]{intro_receiver_architecture.pdf}
+    \caption{Receiver architecture for magnetically biased Rydberg microwave polarization estimation.}
+    \label{fig:receiver_architecture}
+\end{figure}
+
+The research question for this interim report is:
+\begin{quote}
+Can a polarization-conditioned RF front end and a magnetically biased rubidium Rydberg-EIT receiver produce optical observables that are sufficiently repeatable and interpretable to support future microwave polarization estimation?
+\end{quote}
+This question is deliberately staged. The present report does not claim complete Stokes-vector reconstruction or a finished Rydberg polarimeter. It evaluates whether the experimental and modelling foundations required for that goal are being established.
+
+At the interim stage, the work has validated the RF polarization-conditioning chain, calibrated the magnetic-bias actuator, developed a receiver-level modelling framework, and analysed exploratory Rydberg measurements. The RF and magnetic subsystems are now supported by quantitative evidence, while the Rydberg response remains measurable but inconclusive. This distinction defines the remaining thesis work.
+
+The main technical risk is that the available low-GHz RF range may not strongly address a useful Rydberg transition under the present optical and magnetic-field conditions. Low-GHz operation is attractive for practical microwave receiver work, but it is not guaranteed by Rydberg sensitivity alone. The selected Rydberg states, RF field strength, optical linewidths, Doppler averaging, vapor-cell geometry, magnetic-field uniformity, and antenna coupling all affect whether a useful optical feature can be observed. ARC transition screening and RydIQule or equivalent optical-Bloch simulation are therefore required before stronger claims about polarimetric capability can be made \cite{Sibalic2017ARC,Rydiqule2024}.
+
+This report is organized as an interim engineering report. Section~\ref{sec:background} gives the background needed to understand microwave polarization, Rydberg-EIT readout, and magnetic-bias selection rules. Section~\ref{sec:literature} reviews the relevant literature and defines the gap addressed by this thesis. Section~\ref{sec:methodology} describes the experimental and simulation methodology. Section~\ref{sec:results} presents RF-front-end, magnetic-calibration, and exploratory Rydberg results. Section~\ref{sec:discussion} interprets the evidence strength, limitations, and uncertainty. Section~\ref{sec:conclusion} gives the interim conclusion, and Section~\ref{sec:way_forward} defines the final-thesis plan.
+
+In summary, the interim contribution is not a final demonstration of full polarimetry. It is a calibrated engineering foundation: the RF input chain has been validated, the magnetic-bias control has been quantified, the receiver model has been defined, and the first Rydberg measurements have identified what must be improved before polarization inference can be claimed.
+
+\section{Background}
+\label{sec:background}
+
+This section provides the technical background required for the receiver chain in Fig.~\ref{fig:receiver_architecture}. The emphasis is on the concepts needed to understand the interim work: microwave polarization, RF analyzer states, Rydberg-EIT optical readout, RF coupling between Rydberg states, magnetic-bias selection rules, and feature-based interpretation. Extended derivations are retained in the annex so that the main report remains focused on the engineering argument.
+
+\subsection{Microwave Polarization and Target State Representation}
+\label{subsec:bg_microwave_polarization}
+
+A narrowband microwave field propagating along \(\hat{\mathbf{z}}\) can be described by two transverse electric-field components with a relative phase. Linear polarization occurs when the components are in phase or antiphase. Circular polarization occurs when the components have equal magnitude and a \(\pm 90^\circ\) phase difference. The general case is elliptical polarization.
+
+For receiver-level interpretation, the target representation is the Stokes vector,
+\begin{equation}
+\mathbf{S}=
+\begin{bmatrix}
+S_0&S_1&S_2&S_3
+\end{bmatrix}^{T},
+\label{eq:bg_stokes_vector_compact}
+\end{equation}
+where \(S_0\) is total intensity, \(S_1\) and \(S_2\) describe linear polarization content in orthogonal bases, and \(S_3\) describes circular polarization content. The sign convention for \(S_3\) depends on propagation and handedness conventions, so any future circular-polarization result must state the convention used.
+
+The Poincar\'e sphere in Fig.~\ref{fig:poincare_sphere} provides a geometric view of the Stokes-vector representation. Linear polarization states lie on the equator, circular states lie at the poles, and intermediate points represent elliptical polarization. In this interim report, the Poincar\'e sphere is the target representation for future polarization estimation; the present experiments do not yet reconstruct a point on the sphere.
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.92\columnwidth]{fig02_poincare_sphere.pdf}
+    \caption{Poincar\'e-sphere representation of microwave polarization states.}
+    \label{fig:poincare_sphere}
+\end{figure}
+
+\subsection{RF Analyzer States and Ground-Truth Inputs}
+\label{subsec:bg_rf_analyzers}
+
+The RF front end provides known input states for later Rydberg testing. The main hardware elements are log-periodic dipole antennas (LPDAs), a custom steel-rod linear polarizer, and a candidate circularly polarized antenna. Their purpose is not only to deliver RF power, but to create input states that can be checked before any atomic response is interpreted.
+
+For LPDA measurements, the co-polar configuration provides a high-transmission linear reference and the \(90^\circ\) rotated configuration provides a cross-polar reference. Cross-polar isolation is evaluated from
+\begin{equation}
+\mathrm{XPI}(f)=S_{21,\mathrm{co}}(f)-S_{21,\mathrm{cross}}(f).
+\label{eq:bg_xpi}
+\end{equation}
+The custom steel-rod polarizer is assessed using its extinction ratio,
+\begin{equation}
+\mathrm{ER}(f)=S_{21,\mathrm{pass}}(f)-S_{21,\mathrm{reject}}(f).
+\label{eq:bg_extinction_ratio}
+\end{equation}
+The circular antenna is treated more conservatively. A low \(0^\circ/90^\circ\) orientation sensitivity is consistent with circular or weakly elliptical behaviour, but it does not prove handedness or axial ratio. This distinction is important because the final Rydberg interpretation must not rely on assumed antenna behaviour.
+
+\subsection{Rydberg-EIT Optical Readout}
+\label{subsec:bg_eit_readout}
+
+Rydberg atoms are atoms excited to high principal quantum numbers. Their large electric-dipole moments make neighbouring Rydberg transitions sensitive to microwave-frequency electric fields \cite{Gallagher2005,Holloway2014}. In this thesis, the sensing platform is a room-temperature rubidium vapor cell interrogated using ladder-type EIT. A weak \(780~\mathrm{nm}\) probe laser couples the ground state \(|g\rangle\) to an intermediate state \(|e\rangle\), while a \(480~\mathrm{nm}\) coupling laser connects \(|e\rangle\) to a Rydberg state \(|r\rangle\). The photodetector measures a probe-transmission response that has been modified by the RF interaction with the atoms.
+
+Figure~\ref{fig:bg_rydberg_eit_levels} summarizes the simplified atomic interaction. The real vapor-cell response also includes Doppler averaging, finite linewidths, optical alignment sensitivity, magnetic-field variation, and multiple neighbouring states. These effects are why the experiment must be treated as a calibrated receiver system rather than as an ideal isolated transition.
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=0.90\columnwidth]{intro_atomic_interaction_model.pdf}
+    \caption{Simplified magnetically biased Rydberg-EIT interaction.}
+    \label{fig:bg_rydberg_eit_levels}
+\end{figure}
+
+\subsection{RF Coupling, Magnetic Bias, and Optical Features}
+\label{subsec:bg_rf_magnetic_features}
+
+When the incident RF field couples a Rydberg state \(|r\rangle\) to a nearby state \(|s\rangle\), the optical spectrum can change through Autler--Townes splitting, line shifts, linewidth changes, contrast changes, asymmetry, or measured level changes. The RF Rabi frequency is
+\begin{equation}
+\Omega_{\mathrm{RF}}=\frac{|\mathbf{d}_{rs}\cdot\mathbf{E}_{\mathrm{RF}}|}{\hbar},
+\label{eq:bg_rf_rabi}
+\end{equation}
+where \(\mathbf{d}_{rs}\) is the Rydberg--Rydberg transition dipole moment and \(\mathbf{E}_{\mathrm{RF}}\) is the local RF electric field at the atoms. Equation~\eqref{eq:bg_rf_rabi} is the central link between the RF front end and the atomic response: the atom responds to the field component that projects onto an allowed transition dipole.
+
+The magnetic-bias field \(B_0\) provides the reference axis needed for vector interpretation. Once \(B_0\) defines the quantization axis, the RF field can be decomposed into spherical-basis components,
+\begin{equation}
+\mathbf{E}_{\mathrm{RF}}=
+E_{+1}\hat{\mathbf{e}}_{+1}+E_0\hat{\mathbf{e}}_0+E_{-1}\hat{\mathbf{e}}_{-1}.
+\label{eq:bg_spherical_decomposition}
+\end{equation}
+These components drive \(\sigma^+\), \(\pi\), and \(\sigma^-\) transition pathways. Two RF fields with the same scalar power but different polarization states may therefore drive different combinations of pathways. If those combinations produce distinguishable optical features, the measured feature vector may contain polarization information.
+
+For this reason, the receiver output is treated as a feature vector,
+\begin{equation}
+\mathbf{y}=\begin{bmatrix}
+\nu_0&\Gamma&C&\Delta f_{\mathrm{AT}}&\mathcal{A}&M
+\end{bmatrix}^{T},
+\label{eq:bg_feature_vector}
+\end{equation}
+where \(\nu_0\) is line centre, \(\Gamma\) is linewidth, \(C\) is contrast, \(\Delta f_{\mathrm{AT}}\) is splitting, \(\mathcal{A}\) is asymmetry, and \(M\) is a measured level or modulation metric. The exact final feature set will depend on the quality of the recorded spectra.
+
+\subsection{Receiver-Level Interpretation}
+\label{subsec:bg_receiver_interpretation}
+
+The complete receiver chain can be summarized as
+\begin{equation}
+\mathbf{S}\xrightarrow{\;\theta_{\mathrm{RF}}\;}\mathbf{E}_{\mathrm{RF}}
+\xrightarrow{\;B_0\;}(E_{+1},E_0,E_{-1})
+\xrightarrow{\;H(B_0)\;}\rho_{ge}
+\xrightarrow{\;\mathrm{EIT}\;}T(\Delta_p)
+\xrightarrow{\;\mathcal{F}\;}\mathbf{y}.
+\label{eq:bg_receiver_chain}
+\end{equation}
+At the interim stage, the final inverse step from \(\mathbf{y}\) to an estimated polarization state is treated as a future objective. ARC is used to screen candidate Rydberg transitions, and RydIQule or an equivalent optical-Bloch model is used to simulate how RF detuning, RF field strength, and magnetic bias may affect the EIT response \cite{Sibalic2017ARC,Rydiqule2024}. Experiment is still required because real vapor-cell measurements depend on alignment, source stability, field uniformity, RF geometry, and detector behaviour.
+
+In summary, the proposed receiver is a coupled RF, atomic, optical, and signal-processing system. The background theory explains why magnetically biased Rydberg reception may contain polarization information, but it also shows why calibration is necessary before any polarimetric claim can be made.
+
+\section{Structured Literature Review and Research Gap}
+\label{sec:literature}
+
+Section~\ref{sec:background} introduced the technical basis for microwave polarization, Rydberg-EIT readout, RF coupling, and magnetic-bias selection rules. This section reviews the published work from a receiver-engineering perspective. The central question is not simply whether Rydberg atoms can detect microwave fields. That has already been established. The question is what remains unresolved for a practical low-GHz, magnetically biased Rydberg microwave receiver intended for future polarization estimation.
+
+\subsection{Review Method and Scope}
+\label{subsec:lit_method}
+
+The review was conducted as a structured thematic survey across Rydberg RF electrometry, atom-based microwave receivers, vector or polarization-sensitive Rydberg sensing, magnetic-bias spectroscopy, low-GHz Rydberg operation, and RF polarization validation. The purpose was to identify what has already been demonstrated and which calibration steps are required before a Rydberg polarimetric claim is defensible.
+
+The main sources were peer-reviewed papers, review articles, experimental preprints with clear technical content, and software papers relevant to modelling. Papers were prioritized if they addressed Rydberg-EIT microwave sensing, Autler--Townes field extraction, receiver-style operation, vector or polarization-sensitive sensing, magnetic-bias control, low-frequency operation, transition screening, or explicit calibration and uncertainty treatment. Conventional antenna and RF-polarization references were included where they directly supported input-state preparation or validation.
+
+\begin{table*}[!t]
+\caption{Structured literature-search strategy used to define the research gap.}
+\label{tab:lit_search_strategy}
+\centering
+\renewcommand{\arraystretch}{1.10}
+\scriptsize
+\begin{tabular}{p{0.18\textwidth} p{0.25\textwidth} p{0.20\textwidth} p{0.27\textwidth}}
+\hline
+\textbf{Search block} & \textbf{Representative terms} & \textbf{Source types} & \textbf{Purpose} \\
+\hline
+Rydberg RF electrometry & Rydberg EIT electrometry; Autler--Townes microwave sensing & Reviews and experiments & Establish the sensing foundation. \\
+Rydberg receiver architectures & Rydberg receiver; atomic mixer; spectrum analyser & Receiver demonstrations & Identify observables beyond scalar field strength. \\
+Vector and polarization sensing & Vector electrometry; Rydberg polarimetry; Stokes reconstruction & Experiments and modelling papers & Assess existing vector-sensitive approaches. \\
+Magnetic bias and Zeeman structure & Zeeman splitting; magnetically biased Rydberg sensor & Experiments and models & Evaluate \(B_0\) as a receiver variable. \\
+Low-GHz operation and transition selection & Low-frequency Rydberg sensing; ARC; RydIQule & Experiments and software papers & Assess feasibility and state-selection risk. \\
+RF polarization validation & Cross-polar isolation; wire-grid polarizer; axial ratio & Antenna and RF sources & Support input-state validation. \\
+\hline
+\end{tabular}
+\end{table*}
+
+The review is limited to open literature. Some Rydberg RF receiver and polarization-sensitive sensing work may be defence- or government-linked and not fully available publicly. The gap statement is therefore framed carefully: it identifies what is not yet well established in the accessible literature, rather than claiming that no related system has ever been attempted.
+
+\subsection{Research Landscape and Temporal Development}
+\label{subsec:lit_landscape_temporal}
+
+The project lies at the intersection of Rydberg RF sensing, magnetic-bias spectroscopy, RF polarization engineering, and receiver-level inference. Figure~\ref{fig:research_intersection} shows this intersection. The thesis is not only an atomic-spectroscopy problem; it is a receiver problem in which the RF state must be prepared, the atomic response must be controlled, and the measured optical features must be interpreted against calibrated input states.
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=0.92\textwidth]{fig03_research_intersection.pdf}
+    \caption{Research intersection addressed by this thesis.}
+    \label{fig:research_intersection}
+\end{figure*}
+
+The field developed in several stages, summarized in Fig.~\ref{fig:literature_timeline}. Early work established Rydberg-EIT readout in alkali vapor cells \cite{Mohapatra2007,Fleischhauer2005,Finkelstein2023PracticalGuide}. Microwave electrometry then linked RF fields to optical spectra, especially through Autler--Townes splitting \cite{Sedlacek2012,Holloway2014}. Later work extended Rydberg systems toward receiver architectures, including mixers, phase-sensitive reception, voltage measurement, and spectrum analysis \cite{Simons2019Mixer,Holloway2019PhaseModReceiver,Meyer2021Spectrum,Holloway2022Voltage}. More recent studies have demonstrated vector or polarization-sensitive operation, often using projection, Floquet, mixer, or local-oscillator methods \cite{Sedlacek2013,Jiao2017Floquet,Wang2023Polarization,Gomes2024PolSpec,Elgee2024Polarimetry,Yin2024Polarization}. Magnetic-bias and state-selection studies show that Zeeman structure and transition choice can strongly affect whether a useful response exists \cite{Naber2016Magnetic,Li2023Magnetic,Schlossberger2024Zeeman,Chopinaud2021Optimal,Cloutman2024PolarizationInsensitive}.
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=0.92\textwidth]{fig04_literature_timeline.pdf}
+    \caption{Temporal development of work relevant to magnetically biased Rydberg polarization estimation.}
+    \label{fig:literature_timeline}
+\end{figure*}
+
+\subsection{Receiver Observables and Polarization-Sensitive Rydberg Measurement}
+\label{subsec:lit_observables_polarization}
+
+Rydberg RF electrometry is well established for scalar electric-field measurement. In the resolved Autler--Townes regime, the splitting of the EIT feature is proportional to the RF Rabi frequency, which depends on the projection of the local RF field onto a Rydberg transition dipole. That projection relationship is the bridge from scalar field measurement to vector-sensitive measurement.
+
+Scalar electrometry does not by itself solve polarization estimation. A single splitting measurement can be excellent for electric-field amplitude extraction but insufficient for polarization estimation if it provides only one projection. The receiver literature broadens the usable feature set: weak-field mixers, phase-sensitive receivers, and spectrum-analyser demonstrations show that Rydberg systems can operate even when resolved Autler--Townes splitting is not the only usable feature \cite{Simons2019Mixer,Holloway2019PhaseModReceiver,Meyer2021Spectrum}. This is important because the low-GHz exploratory data may appear as level changes, line shifts, contrast changes, asymmetries, or weak modulation rather than a clean doublet.
+
+Vector and polarization-sensitive Rydberg measurements provide the closest precedent for this thesis. Existing demonstrations show that RF polarization information can be encoded atomically when the measurement architecture provides enough independent observables \cite{Sedlacek2013,Wang2023Polarization,Gomes2024PolSpec,Elgee2024Polarimetry,Yin2024Polarization}. Many of the strongest demonstrations, however, use architectures, frequencies, or calibration methods that differ from the present low-GHz magnetically biased vapor-cell pathway. The aim of the interim work is therefore not to claim finished polarimetry, but to test whether the necessary foundations exist for this simpler calibrated receiver architecture.
+
+\subsection{Magnetic Bias, Low-GHz Operation, and RF Validation}
+\label{subsec:lit_bias_lowghz_rf}
+
+Magnetic bias can define a quantization axis and separate magnetic-sublevel pathways. From a polarimetry perspective, this is useful because \(\sigma^+\), \(\pi\), and \(\sigma^-\) pathways may respond differently to different RF polarization states. The same mechanism also introduces risk. If the bias field is too weak, poorly aligned, or spatially nonuniform, pathway separation may be unresolved. If the selected transition is unsuitable, the response may be weak, crowded, nonlinear, or insensitive to the polarization components of interest.
+
+This risk is especially important in the low-GHz regime. Low-GHz operation overlaps practical microwave receiver bands and available laboratory hardware, but Rydberg transition frequencies are set by atomic structure rather than engineering convenience. Recent low-frequency and broadband demonstrations support feasibility \cite{Hu2022Tunable,Rotunno2023VHF}, but they generally target field detection or spectrum analysis rather than magnetically biased polarization estimation. ARC-based transition screening and RydIQule modelling are therefore necessary before stronger Rydberg claims are made \cite{Sibalic2017ARC,Rydiqule2024}.
+
+A second missing link is RF input validation. For scalar field measurement, antenna states are sometimes treated as known from geometry. For polarimetry, that is not sufficient. Antenna mismatch, finite cross-polar isolation, polarizer imperfection, chamber coupling, axial-ratio error, cable movement, and near-field geometry can imitate or obscure an atomic polarization response. The RF front end must therefore be measured first using \(S_{11}\), \(S_{21}\), cross-polar isolation, extinction ratio, and circular-antenna orientation or axial-ratio tests \cite{Balanis2016}.
+
+\subsection{Representative Literature Comparison}
+\label{subsec:lit_representative_comparison}
+
+Table~\ref{tab:lit_representative_works} compares representative works against the requirements of this thesis. The purpose is not to list every Rydberg sensing paper, but to show which parts of the receiver chain have already been demonstrated and which combination remains unresolved.
+
+\begin{table*}[!t]
+\caption{Representative published works relevant to magnetically biased Rydberg microwave polarization estimation.}
+\label{tab:lit_representative_works}
+\centering
+\renewcommand{\arraystretch}{1.10}
+\scriptsize
+\begin{tabular}{p{0.14\textwidth} p{0.18\textwidth} p{0.19\textwidth} p{0.25\textwidth} p{0.14\textwidth}}
+\hline
+\textbf{Work} & \textbf{Capability} & \textbf{Observable} & \textbf{Relevance and limitation} & \textbf{Role} \\
+\hline
+Mohapatra \emph{et al.} \cite{Mohapatra2007} & Room-temperature Rydberg-EIT readout & Optical EIT resonance & Establishes vapor-cell Rydberg readout; not an RF receiver. & Foundation \\
+Sedlacek \emph{et al.} \cite{Sedlacek2012} and Holloway \emph{et al.} \cite{Holloway2014} & RF field measurement & Autler--Townes splitting & Links RF field strength to optical spectra; primarily scalar. & Foundation \\
+Simons \emph{et al.} \cite{Simons2019Mixer} and Holloway \emph{et al.} \cite{Holloway2019PhaseModReceiver} & Receiver operation & Beat-note, phase, modulation & Shows receiver-style operation; does not solve polarization estimation. & Receiver precedent \\
+Sedlacek \emph{et al.} \cite{Sedlacek2013}, Wang \emph{et al.} \cite{Wang2023Polarization}, and Elgee \emph{et al.} \cite{Elgee2024Polarimetry} & Vector/polarization sensing & Projection-dependent features & Demonstrates vector information; uses different architectures or calibration pathways. & Polarimetry precedent \\
+Li \emph{et al.} \cite{Li2023Magnetic} and Schlossberger \emph{et al.} \cite{Schlossberger2024Zeeman} & Magnetic-bias sensing & Zeeman-resolved spectra & Supports \(B_0\) as a receiver variable; not a full RF-polarization validation. & Bias precedent \\
+Chopinaud \emph{et al.} \cite{Chopinaud2021Optimal} and Cloutman \emph{et al.} \cite{Cloutman2024PolarizationInsensitive} & State selection & Transition-dependent sensitivity & Shows state choice can determine whether a useful response exists. & Design warning \\
+Balanis \cite{Balanis2016} & Classical RF polarization & \(S\)-parameters and antenna metrics & Supports RF input-state validation; not an atomic receiver model. & RF baseline \\
+\hline
+\end{tabular}
+\end{table*}
+
+The comparison shows that the individual ingredients exist: Rydberg electrometry, atom-based receivers, vector-sensitive operation, magnetic-bias spectroscopy, and RF polarization measurement. The missing combination is a calibrated low-GHz pathway that integrates these pieces into a single receiver experiment for future microwave polarization estimation.
+
+\subsection{Research Gap, Open Questions, and Thesis Position}
+\label{subsec:lit_gap}
+
+The research gap addressed in this thesis is the absence, in the accessible literature, of a clearly validated low-GHz receiver pathway that combines independently measured RF polarization input states, calibrated magnetic-bias control, transition-aware Rydberg-EIT modelling, exploratory vapor-cell measurement, and feature-based inference. This is not a claim that Rydberg polarimetry has not been demonstrated. The gap is narrower and more engineering-specific: existing work demonstrates important parts of the problem, but the practical integration of RF polarization conditioning, magnetic-bias calibration, low-GHz Rydberg-EIT operation, and receiver-level inference remains insufficiently established for the platform investigated here.
+
+The final thesis stage is therefore organized around the open questions in Table~\ref{tab:open_questions}. These questions link the literature gap directly to the methodology.
+
+\begin{table}[!t]
+\caption{Open technical questions addressed by the final thesis stage.}
+\label{tab:open_questions}
+\centering
+\renewcommand{\arraystretch}{1.10}
+\scriptsize
+\begin{tabular}{p{0.46\linewidth} p{0.44\linewidth}}
+\hline
+\textbf{Open question} & \textbf{Required evidence} \\
+\hline
+Which Rydberg transition is suitable at the available RF frequency? & ARC screening and RF-coupled EIT spectra. \\
+Can magnetic bias produce repeatable feature changes? & Repeated \(B_0\) sweeps with mapped field uncertainty. \\
+Can known RF polarization states be separated optically? & Feature clusters exceeding measured covariance. \\
+Can classification or Stokes estimation be justified? & Validated inference with uncertainty bounds. \\
+\hline
+\end{tabular}
+\end{table}
+
+The thesis makes three staged contributions. First, it validates the RF polarization front end so that later atomic measurements are not interpreted against assumed antenna behaviour. Second, it calibrates magnetic bias as a controlled receiver variable. Third, it frames the Rydberg measurement as a forward-model and feature-extraction problem, where full polarization inference is attempted only if the measured features are repeatable and separable.
+
+\section{Methodology}
+\label{sec:methodology}
+
+The methodology was designed to answer the research question posed in Section~\ref{sec:introduction}. It validates the forward receiver chain before attempting the inverse polarization problem. A full Stokes-vector estimate cannot be attempted until the RF input states, magnetic-bias field, Rydberg transition choice, optical readout, and feature-extraction process are each constrained.
+
+The interim methodology asks four linked validation questions: can practical RF polarization input states be generated and independently validated; can \(B_0\) be calibrated as a controlled receiver variable; can transition screening and optical-Bloch modelling identify plausible Rydberg operating regimes; and do the available Rydberg measurements show repeatable optical changes under calibrated magnetic-bias conditions? A change in optical signal is not interpreted as polarization sensitivity unless the RF state, magnetic bias, transition physics, and repeatability are sufficiently constrained.
+
+\subsection{Overall Research Design}
+\label{subsec:method_overall_design}
+
+The project uses a receiver-engineering methodology rather than a purely spectroscopic methodology. The RF hardware, magnetic-bias system, atomic medium, optical readout, and signal-processing stage are treated as coupled subsystems. Each subsystem has a validation role, summarized in Table~\ref{tab:method_validation_plan}. The detailed controlled-factor, constant, noise-variable, and output list is retained in the annex.
+
+\begin{table*}[!t]
+\caption{Staged validation plan used in the interim methodology.}
+\label{tab:method_validation_plan}
+\centering
+\renewcommand{\arraystretch}{1.10}
+\scriptsize
+\begin{tabular}{p{0.18\textwidth} p{0.28\textwidth} p{0.27\textwidth} p{0.18\textwidth}}
+\hline
+\textbf{Stage} & \textbf{Purpose} & \textbf{Measured or modelled quantities} & \textbf{Interim interpretation} \\
+\hline
+RF-front-end validation & Verify known input RF states. & \(S_{11}\), \(S_{21}\), XPI, extinction ratio, circular-antenna sensitivity. & Validates practical inputs. \\
+Magnetic-bias calibration & Convert coil current into measured \(B_0\). & \(B_0(I)\), fit, residuals, RMSE. & Validates \(B_0\) as a controlled variable. \\
+Transition screening and modelling & Identify plausible Rydberg operating regimes. & Transition frequency, dipole moment, selection pathways, simulated EIT features. & Guides final experiments. \\
+Exploratory Rydberg measurement & Check whether optical readout changes under RF and bias. & Raw traces, spectral levels, \(\Delta P\), possible feature changes. & Exploratory unless repeated. \\
+Decision gates & Decide whether inference is justified. & Feature vector, covariance, separability, repeatability. & Classification only if gates pass. \\
+\hline
+\end{tabular}
+\end{table*}
+
+The process flow is shown in Fig.~\ref{fig:method_process_flow}. RF validation and magnetic calibration are performed before Rydberg interpretation. ARC transition screening and RydIQule or equivalent optical-Bloch modelling guide the next Rydberg-EIT measurements. Extracted features and decision gates determine whether the experiment can proceed toward polarization-state testing or must return to parameter refinement.
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=0.90\textwidth]{fig05_method_process_flow.pdf}
+    \caption{Methodological process flow for staged RF, magnetic-bias, simulation, and Rydberg-EIT validation.}
+    \label{fig:method_process_flow}
+\end{figure*}
+
+\begin{table}[!t]
+\caption{Author contribution in the interim stage.}
+\label{tab:author_contribution}
+\centering
+\renewcommand{\arraystretch}{1.10}
+\scriptsize
+\begin{tabular}{p{0.42\linewidth} p{0.48\linewidth}}
+\hline
+\textbf{Area} & \textbf{Author contribution} \\
+\hline
+RF front end & Designed validation approach, processed VNA data, analysed polarization-state separation. \\
+Custom polarizer & Designed, fabricated with technical support, and validated steel-rod polarizer. \\
+Magnetic calibration & Processed field measurements, fitted calibration, analysed residuals and uncertainty. \\
+Rydberg measurements & Analysed preliminary data and interpreted results through the receiver model. \\
+Report integration & Developed receiver-level framework, literature synthesis, methodology, and forward plan. \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Simulation Methodology}
+\label{subsec:method_simulation}
+
+Simulation is used as a design and interpretation tool; it is not used to replace measurement. ARC is used to screen rubidium Rydberg states and candidate microwave transitions \cite{Sibalic2017ARC}. Candidate transitions are assessed by transition frequency, dipole moment, allowed \(\Delta m\) pathways, sensitivity to stray fields, compatibility with the available optical ladder, and likelihood of producing polarization-sensitive rather than polarization-insensitive response.
+
+RydIQule or an equivalent optical-Bloch model is used to simulate EIT spectra under RF coupling, detuning, and magnetic-bias variation \cite{Rydiqule2024}. Figure~\ref{fig:simulation_guidance} shows the type of forward-model output used to guide the final Rydberg measurement strategy. These simulations are design guidance only; the interim experimental Rydberg measurements are not yet fitted quantitatively to this model.
+
+\begin{figure*}[!t]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{sim01_baseline_eit.png}
+        \vspace{1pt}\small (a)
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{sim02_rf_autler_townes_sweep.png}
+        \vspace{1pt}\small (b)
+    \end{minipage}
+    \vspace{6pt}
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{sim03_rf_detuning_map.png}
+        \vspace{1pt}\small (c)
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{sim04_magnetic_bias_map.png}
+        \vspace{1pt}\small (d)
+    \end{minipage}
+    \caption{Illustrative forward-model outputs for baseline EIT, RF-coupled EIT, RF-detuning response, and Zeeman-bias response.}
+    \label{fig:simulation_guidance}
+\end{figure*}
+
+The final simulation output should be a ranked transition table and a small set of predicted feature maps. Quantitative agreement with experiment will require measured optical powers, beam waists, vapor temperature, magnetic-field map, RF field strength, and transition choice.
+
+\subsection{RF-Front-End Validation}
+\label{subsec:method_rf_frontend}
+
+The RF-front-end methodology establishes the incident polarization states before the Rydberg sensor is used. Measurements are performed in an anechoic chamber using an Agilent Technologies E5071C ENA Series vector network analyzer covering \(300~\mathrm{kHz}\) to \(20~\mathrm{GHz}\). The operating region is centred near \(1.8~\mathrm{GHz}\), with operating-band statistics evaluated over \(1.7\text{--}1.9~\mathrm{GHz}\) unless otherwise stated.
+
+The RF validation has four parts. First, antenna return loss is measured using \(S_{11}\), which is converted to reflected-power and accepted-power fractions. Second, two LPDAs are measured in co-polar, \(45^\circ\), and cross-polar orientations to establish linearly polarized reference states. Third, the custom steel-rod polarizer is measured in no-polarizer, pass, \(45^\circ\), and reject configurations. Fourth, a circularly polarized printed antenna is measured in two in-plane orientations separated by \(90^\circ\). The circular-antenna result is used only as evidence of reduced orientation sensitivity; it does not prove handedness or axial ratio.
+
+\subsection{Magnetic-Bias Calibration}
+\label{subsec:method_magnetic_calibration}
+
+The magnetic-bias field is generated using a coil from the available Helmholtz-coil assembly. At the interim stage, a single energized coil is treated as a practical calibrated actuator, not as a perfectly uniform-field source. Coil drive voltage is converted to current using the nominal coil resistance, and the measured magnetic flux density is fitted using
+\begin{equation}
+B_0(I)=\alpha I+\beta.
+\label{eq:method_b_calibration}
+\end{equation}
+Fit residuals, \(R^2\), RMSE, and a conservative magnetometer uncertainty model are used to assess calibration quality. A finite-coil Biot--Savart calculation is retained as a consistency check, but the fitted calibration is used as the primary current-to-field conversion for the exploratory Rydberg analysis.
+
+\subsection{Exploratory Rydberg Measurement and Feature Extraction}
+\label{subsec:method_rydberg_feature}
+
+The Rydberg experiment uses a room-temperature rubidium vapor cell interrogated by optical beams near \(780~\mathrm{nm}\) and \(480~\mathrm{nm}\). The transmitted probe signal is recorded while the RF field and calibrated magnetic bias are varied. At this interim stage, the measurement is exploratory. The aim is to determine whether the detected level or spectral feature changes systematically with calibrated magnetic bias under the available RF and optical conditions.
+
+All RF and Rydberg measurements are processed using reproducible MATLAB scripts. RF scripts import VNA CSV files, compute operating-band statistics, and export figures and processed data. Magnetic-calibration scripts compute the linear fit, residuals, uncertainty bounds, RMSE, \(R^2\), and calibrated \(B_0\). Rydberg processing is intentionally simple because the dataset is preliminary: the main reduced quantities are measured level, relative level change \(\Delta P\), raw time-domain traces, and notebook-derived spectral peak readings.
+
+\subsection{Success Metrics and Decision Gates}
+\label{subsec:method_decision_gates}
+
+The methodology uses decision gates to prevent premature claims. RF input states must be independently separable, \(B_0\) must be calibrated, the Rydberg response must exceed baseline variation, and known polarization states must form separable feature distributions before classification or Stokes estimation is attempted. A possible future classifier is
+\begin{equation}
+\widehat{c}=\arg\min_c
+\left\|\mathbf{y}_{\mathrm{meas}}-\boldsymbol{\mu}_c\right\|^2_{\mathbf{\Sigma}_c^{-1}},
+\label{eq:method_classifier}
+\end{equation}
+where \(c\) is a calibrated polarization class, \(\boldsymbol{\mu}_c\) is the class mean, and \(\mathbf{\Sigma}_c\) is the feature covariance. This classifier defines a future pathway only; it is not claimed as an achieved interim result.
+
+\section{Experimental Results}
+\label{sec:results}
+
+This section presents the interim experimental results from RF-front-end validation, magnetic-bias calibration, and exploratory Rydberg measurements. The aim is not to claim complete microwave polarization reconstruction. The aim is to determine whether the foundations required for that goal are being established: validated RF polarization input states, calibrated magnetic-bias control, and a measurable Rydberg response under applied RF and magnetic conditions.
+
+\subsection{Experimental Configuration and Headline Outcomes}
+\label{subsec:results_configuration}
+
+Two experimental environments were used. The first was an RF validation environment in which antennas and polarization-conditioning hardware were characterized using an Agilent Technologies E5071C ENA Series network analyzer. The second was the Rydberg optical-table environment, where a rubidium vapor cell was interrogated by \(780~\mathrm{nm}\) probe and \(480~\mathrm{nm}\) coupling beams while an external RF field and magnetic-bias coil were applied near the sensing region.
+
+\begin{figure*}[!t]
+    \centering
+    \begin{minipage}[t]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{shared image (11).jpg}
+        \vspace{1pt}\small (a)
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{shared image (12).jpg}
+        \vspace{1pt}\small (b)
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{IMG-20260429-WA0001.jpg}
+        \vspace{1pt}\small (c)
+    \end{minipage}
+    \caption{Experimental configurations for RF-front-end validation, custom polarizer testing, and Rydberg optical-table measurements.}
+    \label{fig:results_setup}
+\end{figure*}
+
+\begin{table}[!t]
+\caption{Headline interim measurement outcomes.}
+\label{tab:headline_results}
+\centering
+\renewcommand{\arraystretch}{1.10}
+\scriptsize
+\begin{tabular}{p{0.46\linewidth} p{0.44\linewidth}}
+\hline
+\textbf{Measurement} & \textbf{Interim outcome} \\
+\hline
+LPDA linear reference & Co-, \(45^\circ\), and cross-polar states separated; XPI \(\approx 33~\mathrm{dB}\). \\
+Steel-rod polarizer & Pass/reject contrast \(\approx 14\text{--}15~\mathrm{dB}\). \\
+Circular antenna & \(0^\circ/90^\circ\) sensitivity within practical \(3~\mathrm{dB}\) band near operating point. \\
+Magnetic bias & \(B_0(I)=2.302I+0.028~\mathrm{mT}\), \(R^2=0.981\), RMSE \(=0.103~\mathrm{mT}\). \\
+Rydberg response & Measurable but nonmonotonic; not yet classifiable. \\
+\hline
+\end{tabular}
+\end{table}
+
+The RF-front-end results are the strongest because they are based on direct VNA measurements in an anechoic chamber. The magnetic-bias calibration is also sufficiently mature for interim analysis because it provides a quantitative conversion from coil current to \(B_0\). The Rydberg response is exploratory because the present measurements do not yet show a repeatable, monotonic, or classifiable magnetic-bias-dependent optical response.
+
+\subsection{Antenna Matching and RF Power Delivery}
+\label{subsec:results_s11}
+
+Antenna return loss was measured to quantify RF power delivery near the intended operating band. Fig.~\ref{fig:results_s11} shows the measured \(S_{11}\) responses for the circular antenna and the two LPDAs. The analysis uses values near \(1.8~\mathrm{GHz}\) and operating-band statistics over \(1.7\text{--}1.9~\mathrm{GHz}\).
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=0.92\textwidth]{Fig5_Antenna_S11_TQE_Clean.pdf}
+    \caption{Antenna return-loss characterization near the operating band.}
+    \label{fig:results_s11}
+\end{figure*}
+
+At \(1.8~\mathrm{GHz}\), the circular antenna showed the strongest match of the three measured antennas, with \(S_{11}\approx-15.8~\mathrm{dB}\). This corresponds to a reflected-power fraction of approximately \(2.6\%\) and an accepted-power fraction of approximately \(97.4\%\). LPDA 1 showed \(S_{11}\approx-10.7~\mathrm{dB}\), corresponding to approximately \(91\%\) accepted power. LPDA 2 was more weakly matched at the measured point, with \(S_{11}\approx-8~\mathrm{dB}\), corresponding to approximately \(84\%\) accepted power. These results show that the antennas are usable near \(1.8~\mathrm{GHz}\), while antenna mismatch remains an amplitude uncertainty for later Rydberg measurements.
+
+\subsection{Linear and Circular Polarization Validation}
+\label{subsec:results_polarization_validation}
+
+The LPDA pair was used to establish linearly polarized RF reference states. Three relative orientations were tested: co-polar, \(45^\circ\), and cross-polar. The measured traces follow the expected ordering
+\begin{equation}
+S_{21,\mathrm{co}}>S_{21,45^\circ}>S_{21,\mathrm{cross}}.
+\label{eq:results_lpda_ordering}
+\end{equation}
+The cross-polar isolation was approximately \(33~\mathrm{dB}\) across the operating band, confirming that the LPDA arrangement can generate clearly distinguishable linear reference states.
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=0.92\textwidth]{Fig6_LPDA_Polarization_Validation_TQE_FIXED.pdf}
+    \caption{LPDA polarization-validation results for co-polar, \(45^\circ\), and cross-polar states.}
+    \label{fig:lpda_polarization_validation}
+\end{figure*}
+
+The custom steel-rod polarizer was tested as a practical RF polarization-conditioning element. It consists of 17 steel rods of \(6~\mathrm{mm}\) diameter with \(15~\mathrm{mm}\) centre-to-centre spacing in a polymer holder of approximately \(250~\mathrm{mm}\times254~\mathrm{mm}\). The measured pass, \(45^\circ\), and reject states show clear ordering, with an extinction ratio of approximately \(14\text{--}15~\mathrm{dB}\) near the operating band.
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=0.92\textwidth]{Fig7_Linear_Polarizer_Validation_TQE.pdf}
+    \caption{Custom steel-rod linear-polarizer validation near the operating band.}
+    \label{fig:linear_polarizer_validation}
+\end{figure*}
+
+The circularly polarized printed antenna was tested by measuring transmission between an LPDA and the circular antenna in two in-plane orientations separated by \(90^\circ\). Near \(1.8~\mathrm{GHz}\), the measured \(0^\circ/90^\circ\) difference was within the adopted \(3~\mathrm{dB}\) practical tolerance band, with a representative operating-band value of approximately \(2~\mathrm{dB}\). This supports treating the antenna as a candidate circular or weakly elliptical RF source, but does not prove handedness or axial ratio.
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=0.92\textwidth]{Fig8_Circular_Antenna_Validation_TQE.pdf}
+    \caption{Circular-antenna orientation-validation results near the operating band.}
+    \label{fig:circular_antenna_validation}
+\end{figure*}
+
+\subsection{Magnetic-Bias Calibration}
+\label{subsec:results_magnetic_calibration}
+
+The magnetic-bias field was calibrated by measuring magnetic flux density as a function of coil current. A single coil from the available Helmholtz assembly was energized for the interim calibration. The result is therefore treated as a local \(I\)-to-\(B_0\) conversion at the measurement position, not as a complete uniform-field map of the vapor-cell interaction region.
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=0.92\textwidth]{Fig9_Magnetic_Field_Calibration_TQE_Clean.pdf}
+    \caption{Magnetic-bias calibration and residuals for the Rydberg receiver experiments.}
+    \label{fig:magnetic_field_calibration}
+\end{figure*}
+
+The measured calibration was approximately linear over the tested range:
+\begin{equation}
+B_0(I)=2.302I+0.028\quad\mathrm{mT},
+\label{eq:results_b_calibration}
+\end{equation}
+where \(I\) is current in amperes. The fit quality was \(R^2=0.981\) with RMSE \(=0.103~\mathrm{mT}\). Most residuals are small relative to the total measured field range, although some points deviate by amounts comparable to the nominal tolerance. The fitted calibration is used as the primary current-to-\(B_0\) conversion for the exploratory Rydberg analysis.
+
+\subsection{Exploratory Rydberg Response Versus Magnetic Bias}
+\label{subsec:results_rydberg_response}
+
+The exploratory Rydberg measurement tested whether the detected level changed as calibrated magnetic bias was varied. The response was referenced to a no-field baseline:
+\begin{equation}
+\Delta P(B_0)=P(B_0)-P_{\mathrm{ref}}.
+\label{eq:results_deltaP}
+\end{equation}
+The present dataset used a measured component near \(1.56~\mathrm{GHz}\) and a reference value of approximately \(-25.28~\mathrm{dBm}\). A point uncertainty of approximately \(\pm0.5~\mathrm{dB}\) was used as a conservative readout tolerance, and the figure uses a \(\pm1~\mathrm{dB}\) practical no-significant-change band.
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=0.92\textwidth]{Fig10_Exploratory_Rydberg_Response_TQE.pdf}
+    \caption{Exploratory Rydberg receiver response versus calibrated magnetic bias.}
+    \label{fig:exploratory_rydberg_response}
+\end{figure*}
+
+The measured response is nonmonotonic. Some points move outside the adopted \(\pm1~\mathrm{dB}\) practical band, but the trend does not show a systematic increase, decrease, or clearly classifiable dependence on \(B_0\). The present dataset therefore does not support a claim of demonstrated magnetically induced Rydberg polarimetric sensitivity. It identifies the atomic-response stage as the unresolved bottleneck.
+
+\subsection{Section Summary}
+\label{subsec:results_summary}
+
+The experimental results show strong progress in RF-front-end validation and magnetic-bias calibration. The LPDA measurements establish practical linearly polarized reference states, the steel-rod polarizer provides pass/reject polarization conditioning, and the circular antenna shows low in-plane orientation sensitivity near the operating band. The magnetic calibration provides a usable linear relationship between coil current and \(B_0\). The exploratory Rydberg response is measurable but nonmonotonic and inconclusive.
+
+\section{Discussion}
+\label{sec:discussion}
+
+The results show that the project has progressed from a theoretical Rydberg polarimetry concept to a partially validated receiver chain. The RF-front-end and magnetic-bias subsystems now have quantitative evidence behind them, whereas the Rydberg response remains exploratory and inconclusive. The thesis has not yet demonstrated a complete microwave polarization receiver, but it has established several experimental prerequisites required before such a receiver can be claimed.
+
+\subsection{Progress Against the Research Question}
+\label{subsec:discussion_research_question}
+
+The research question asked whether a polarization-conditioned RF front end and a magnetically biased rubidium Rydberg-EIT receiver can produce optical observables that are sufficiently repeatable and interpretable to support future microwave polarization estimation. At the interim stage, the answer is conditional.
+
+The RF-front-end part of the question has been answered positively. The LPDA measurements show that co-polar, \(45^\circ\), and cross-polar linear reference states can be generated with clear separation. The custom steel-rod polarizer produces a measurable pass/reject contrast near the operating band. The circular antenna shows reduced in-plane orientation sensitivity compared with a linearly polarized reference, although handedness and axial ratio remain unverified.
+
+The magnetic-bias part has also been answered positively at the calibration level. Coil current now maps to a measured local field through \(B_0(I)=2.302I+0.028~\mathrm{mT}\). This allows \(B_0\) to be treated as a controlled variable rather than an arbitrary drive setting. The Rydberg-observable part has not yet been answered positively: the exploratory \(\Delta P(B_0)\) response is measurable, but it is nonmonotonic and not repeatably classifiable.
+
+\subsection{Evidence Strength and Claim Boundaries}
+\label{subsec:discussion_claim_boundaries}
+
+A strong interim interpretation must separate evidence, interpretation, and future potential. Table~\ref{tab:discussion_claim_boundaries} summarizes what can and cannot be claimed from the present results.
+
+\begin{table*}[!t]
+\caption{Evidence strength and defensible claims from the interim results.}
+\label{tab:discussion_claim_boundaries}
+\centering
+\renewcommand{\arraystretch}{1.10}
+\scriptsize
+\begin{tabular}{p{0.22\textwidth} p{0.35\textwidth} p{0.34\textwidth}}
+\hline
+\textbf{Area} & \textbf{Defensible interim claim} & \textbf{Claim not yet supported} \\
+\hline
+RF polarization input & Known linear states and a practical pass/reject polarizer have been validated. & Exact RF state at the vapor-cell location is fully known in amplitude, phase, and polarization. \\
+Circular antenna & Low \(0^\circ/90^\circ\) orientation sensitivity near \(1.8~\mathrm{GHz}\). & Handedness and axial ratio are fully characterized. \\
+Magnetic bias & Coil current provides an approximately linear local \(B_0\) control variable. & Field is uniform and directionally mapped across the full vapor-cell volume. \\
+Receiver model & Model identifies plausible mechanisms for polarization sensitivity. & Model is a calibrated digital twin of the apparatus. \\
+Rydberg response & Exploratory \(\Delta P(B_0)\) response has been recorded. & Repeatable magnetically induced Rydberg polarimetric response has been demonstrated. \\
+Polarization estimation & Several prerequisites for future classification have been established. & Full Stokes reconstruction or unknown-polarization estimation has been achieved. \\
+\hline
+\end{tabular}
+\end{table*}
+
+These boundaries prevent overclaiming. A spectral change under magnetic bias is not automatically a polarization response. A two-orientation circular-antenna measurement is not automatically an axial-ratio measurement. A simulation framework is not automatically experimental classification. Final polarimetric claims require controlled input states, repeatable atomic response, and validated inference.
+
+\subsection{Why the Rydberg Response Is Currently Inconclusive}
+\label{subsec:discussion_rydberg_inconclusive}
+
+The exploratory Rydberg response shows measurable variation with magnetic bias, but not a systematic dependence. Several causes are plausible. The applied RF frequency may not have been sufficiently matched to a useful Rydberg--Rydberg transition. The selected transition may not have provided strong polarization contrast. The magnetic-field geometry may have been insufficiently uniform or aligned. The RF field at the vapor cell may differ from the field validated in the anechoic chamber because nearby hardware can perturb the local field. The reduced metric may also be too coarse: a single measured level can miss information contained in line shape, line centre, linewidth, contrast, splitting, or asymmetry.
+
+The present dataset also lacks sufficient repeated sweeps to distinguish physical response from drift. Laser detuning drift, photodetector offset, RF source variation, mechanical motion, and optical alignment changes can produce dB-level changes. The appropriate interpretation is therefore that the acquisition and reduction workflow has been exercised under calibrated magnetic-bias conditions, but a repeatable magnetic-bias-dependent atomic response suitable for polarization estimation has not yet been demonstrated.
+
+\subsection{Uncertainty, Repeatability, and Low-GHz Risk}
+\label{subsec:discussion_uncertainty_lowghz}
+
+The results show why measurement-system analysis is essential for the final stage. In RF measurements, uncertainty enters through VNA calibration, cable motion, connector repeatability, chamber coupling, antenna mismatch, and alignment. In magnetic calibration, uncertainty enters through magnetometer tolerance, coil resistance, probe positioning, ambient field offset, and field nonuniformity. In Rydberg measurements, optical, RF, atomic, and mechanical variables interact; repeated references and interleaved bias settings will be required to separate physical response from drift.
+
+The low-GHz operating range is attractive because it overlaps practical RF systems and available laboratory hardware. It is risky because Rydberg transition frequencies are determined by atomic structure rather than engineering convenience. A low-GHz source may require high-\(n\) states, detuned operation, Stark or Zeeman tuning, weak-field mixing, or non-adjacent transitions. The final experiment should therefore be designed around transition screening rather than repeated trial-and-error sweeps.
+
+\subsection{Comparison With the Literature Gap and Overall Significance}
+\label{subsec:discussion_significance}
+
+The literature gap was the lack of a practical low-GHz receiver pathway that integrates calibrated RF polarization inputs, magnetic-bias control, transition-aware Rydberg-EIT modelling, and receiver-style feature extraction. The interim results address this gap partially. They address the RF-input part by measuring polarization-conditioning hardware, the magnetic-bias part by calibrating \(B_0\), and the modelling part by defining a forward receiver framework. They do not yet address the complete receiver-demonstration part because the Rydberg response is not repeatably separable.
+
+The significance of the interim work is that it converts the thesis from a broad concept into a testable receiver architecture. The project now has a validated RF polarization-conditioning path, a custom linear polarizer with measured pass/reject behaviour, a candidate circular or weakly elliptical RF source, a calibrated magnetic-bias actuator, a receiver model, and an initial Rydberg dataset showing the current limitations. The main unresolved layer is the atomic feature-generation stage.
+
+\subsection{Discussion Summary}
+\label{subsec:discussion_summary}
+
+The interim results support a disciplined but conservative conclusion. The RF polarization-conditioning subsystem is credible, the magnetic-bias calibration is usable, and the receiver model identifies a plausible pathway toward polarization-sensitive Rydberg readout. However, the present Rydberg measurements are exploratory and inconclusive. The project is therefore not yet a demonstrated Rydberg polarimeter. It is a partially validated receiver platform with a clear remaining bottleneck: producing repeatable, transition-aware, magnetic-bias-dependent Rydberg features under known RF polarization inputs.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+This interim report investigated whether a polarization-conditioned RF front end and a magnetically biased rubidium Rydberg-EIT receiver can produce optical observables that are sufficiently repeatable and interpretable to support future microwave polarization estimation. The work deliberately treated the problem as a receiver-engineering chain rather than as a single atomic-spectroscopy measurement. This framing is necessary because any apparent atomic polarization response can be affected by RF input uncertainty, antenna mismatch, chamber coupling, magnetic-field nonuniformity, optical drift, transition mismatch, and measurement noise.
+
+The strongest interim outcomes are the RF-front-end and magnetic-bias results. The LPDA measurements demonstrated separable linearly polarized input states, the custom steel-rod polarizer produced a practical pass/reject contrast of approximately \(14\text{--}15~\mathrm{dB}\), and the circular antenna showed low in-plane orientation sensitivity near the operating band. These results mean that later Rydberg measurements can be performed against RF states that have been measured rather than assumed. The magnetic-bias calibration produced an approximately linear local relationship, \(B_0(I)=2.302I+0.028~\mathrm{mT}\), with \(R^2=0.981\) and RMSE \(=0.103~\mathrm{mT}\). This gives the project a quantified magnetic-bias control variable for future Zeeman-sensitive measurements.
+
+The exploratory Rydberg measurements are measurable but inconclusive. The recorded response versus calibrated magnetic bias is nonmonotonic and does not yet support a claim of repeatable magnetic-bias-dependent polarimetric sensitivity. This result does not invalidate the thesis direction. Instead, it identifies the main remaining bottleneck: the atomic readout must be improved through transition screening, stronger and better-characterized RF coupling, repeated sweeps, full spectral acquisition, and magnetic-field mapping.
+
+The interim contribution is therefore a calibrated foundation for future Rydberg microwave polarization experiments. The project has established the RF and magnetic infrastructure, clarified the literature gap, defined the forward receiver model, and identified the decision gates required before classification or Stokes-vector estimation can be attempted. The final thesis stage should only claim polarization inference if measured Rydberg feature vectors are repeatable, separable, and tied to independently validated RF input states.
+
+\section{Way Forward}
+\label{sec:way_forward}
+
+The interim results show that the project should now move from broad feasibility testing to targeted receiver validation. The RF-front-end measurements and magnetic-bias calibration have established controlled input and control subsystems. The unresolved bottleneck is the Rydberg response: the present data are measurable but not yet repeatable, monotonic, or separable enough to support polarization inference.
+
+\subsection{Forward Strategy}
+\label{subsec:way_forward_strategy}
+
+The final thesis objective is to identify and validate a Rydberg-EIT observable that changes repeatably with known RF polarization state under calibrated magnetic bias. This objective avoids premature claims of full polarimetry. A final claim of microwave polarization estimation will only be defensible if known RF input states produce repeatable optical feature vectors whose separation exceeds measurement variation.
+
+\begin{table*}[!t]
+\caption{Forward validation strategy for the final thesis stage.}
+\label{tab:way_forward_strategy}
+\centering
+\renewcommand{\arraystretch}{1.10}
+\scriptsize
+\begin{tabular}{p{0.15\textwidth} p{0.27\textwidth} p{0.30\textwidth} p{0.18\textwidth}}
+\hline
+\textbf{Stage} & \textbf{Purpose} & \textbf{Required evidence} & \textbf{Decision} \\
+\hline
+Transition selection & Identify a compatible Rydberg transition. & ARC table, dipole strengths, detuning estimates, allowed pathways. & Proceed if plausible. \\
+Baseline stabilization & Establish stable optical readout. & Repeated RF-off spectra, linewidth, contrast, baseline drift. & Proceed if stable. \\
+RF-coupled response & Verify repeatable atomic response to RF. & RF-on/off spectra, power sweep, detuning sweep, repeated bias sweeps. & Proceed if response exceeds drift. \\
+Magnetic-bias response & Test whether \(B_0\) changes features repeatably. & Repeated \(B_0\) maps and field uncertainty. & Proceed if \(B_0\) is useful. \\
+Known-polarization testing & Test separability of validated RF states. & Feature vectors for linear, polarizer, and candidate circular states. & Classify only if separable. \\
+Inference & Classify or estimate Stokes components if justified. & Confusion matrix, covariance, uncertainty bounds. & Claim only if supported. \\
+\hline
+\end{tabular}
+\end{table*}
+
+\subsection{Priority Work Packages}
+\label{subsec:way_forward_work_packages}
+
+The first work package is transition selection and simulation refinement. ARC should be used to rank candidate \(^{87}\mathrm{Rb}\) Rydberg transitions by transition frequency, detuning from available RF sources, dipole matrix element, allowed \(\sigma^+\), \(\pi\), and \(\sigma^-\) pathways, estimated Zeeman sensitivity, and risk from neighbouring states or stray fields. RydIQule or equivalent optical-Bloch modelling should then predict which observables are expected for each candidate.
+
+The second work package is magnetic-field improvement and mapping. The interim calibration established a local relationship between current and \(B_0\), but the final experiment requires a sensing-region calibration. The field magnitude and direction should be mapped around the optical beam overlap, preferably using the full Helmholtz-pair geometry if available. This is required because polarization-sensitive coupling depends on the orientation of the local RF electric field relative to the magnetic quantization axis.
+
+The third work package is baseline Rydberg-EIT stabilization. Before RF-polarization testing, the RF-off EIT spectrum, detector baseline, line centre, linewidth, contrast, probe power, coupling power, and drift over a typical bias sweep must be quantified. Later RF-induced feature changes must be judged relative to baseline covariance, not visual inspection.
+
+The fourth work package is RF-coupled Rydberg response. The initial test should use the simplest known input state, the co-polar LPDA reference. The measurement sequence should include RF-off spectra, RF-on spectra, RF-power sweep, RF-detuning sweep, repeated \(B_0\) sweeps, and repeated references. A response should be considered useful only if it exceeds baseline variation across repeated measurements.
+
+The fifth work package is known-polarization-state testing. Only after a repeatable RF-coupled Rydberg feature is obtained should the RF input state be varied. The first inference target should be classification among known states, not full Stokes reconstruction. Linear states, polarizer pass/reject states, and candidate circular or weakly elliptical states should be tested using repeated spectra and feature vectors.
+
+\subsection{Risk Register and Decision Gates}
+\label{subsec:way_forward_risks}
+
+\begin{table*}[!t]
+\caption{Risk register for the remaining thesis work.}
+\label{tab:way_forward_risk_register}
+\centering
+\renewcommand{\arraystretch}{1.10}
+\scriptsize
+\begin{tabular}{p{0.18\textwidth} p{0.28\textwidth} p{0.36\textwidth} p{0.10\textwidth}}
+\hline
+\textbf{Risk} & \textbf{Impact} & \textbf{Mitigation} & \textbf{Priority} \\
+\hline
+No suitable low-GHz transition & No repeatable RF-coupled response. & ARC screening; test multiple candidates; consider detuned, Stark-tuned, Zeeman-tuned, or mixer-like regimes. & High \\
+Weak RF coupling at vapor cell & Response remains below measurement variation. & Estimate local RF field; improve antenna placement; reduce losses; verify delivered field. & High \\
+Magnetic-field nonuniformity & Zeeman features broaden or average out. & Use Helmholtz geometry; map \(B_0\); include field uncertainty in model. & High \\
+Laser or detector drift & False \(\Delta P\) response or poor repeatability. & Use repeated references; interleave bias settings; monitor optical power. & High \\
+Circular state not fully characterized & Cannot claim handedness or \(S_3\) sensitivity. & Measure axial ratio or use calibrated circular reference antenna. & Medium \\
+Feature vector not separable & Classification or Stokes estimation is not possible. & Change transition, \(B_0\), RF power, optical settings, or feature set. & High \\
+\hline
+\end{tabular}
+\end{table*}
+
+If a stage fails its evidence gate, the correct action is to return to the relevant subsystem rather than proceed to a stronger claim. If RF-coupled response fails, the project should return to transition selection, RF coupling, or optical stabilization. If known-polarization separability fails, the project should revise the feature set, magnetic bias, or RF input-state preparation before attempting classification.
+
+\subsection{Way Forward Summary}
+\label{subsec:way_forward_summary}
+
+The final thesis stage should convert the validated RF and magnetic infrastructure into a repeatable Rydberg receiver experiment. The immediate priorities are transition screening, magnetic-field mapping, baseline EIT stabilization, RF-coupled response validation, and known-polarization-state testing. Classification or Stokes estimation should remain conditional on measured feature separability. This staged pathway preserves the ambition of the thesis while keeping the claims scientifically defensible.
+
+
+\section*{Acknowledgment}
+\label{sec:acknowledgment}
+
+The author gratefully acknowledges the guidance, technical feedback, and project direction provided by his thesis supervisors, Professor Haroldo T. Hattori and Professor Andrey E. Miroshnichenko. Their advice has been important in refining the project scope, clarifying the receiver-level research question, and interpreting the interim experimental outcomes.
+
+The author also thanks Muthugalage I. U. Weerasinghe for assistance with access to preliminary Rydberg measurement data and for support during the early vapor-cell receiver experiments. This assistance contributed to the exploratory magnetic-bias response analysis reported in this interim work.
+
+The author further acknowledges the UNSW Canberra Technical Support Group (TSG) for practical support in sourcing materials for the custom steel-rod linear polarizer and for assisting with access to the Helmholtz-coil hardware used during magnetic-bias calibration. Their support enabled key RF-front-end and magnetic-field validation measurements in the interim stage.
+
+The author also acknowledges the laboratory facilities and technical environment at UNSW Canberra that made the RF validation, magnetic-bias calibration, and exploratory Rydberg receiver work possible.
+
+\begin{thebibliography}{99}
+
+\bibitem{Balanis2016}
+C. A. Balanis, \emph{Antenna Theory: Analysis and Design}, 4th ed. Hoboken, NJ, USA: Wiley, 2016.
+
+\bibitem{Collett2005}
+E. Collett, \emph{Field Guide to Polarization}. Bellingham, WA, USA: SPIE Press, 2005.
+
+\bibitem{Gallagher2005}
+T. F. Gallagher, \emph{Rydberg Atoms}. Cambridge, U.K.: Cambridge University Press, 2005.
+
+\bibitem{Holloway2014}
+C. L. Holloway, J. A. Gordon, S. Jefferts, A. Schwarzkopf, D. A. Anderson, S. A. Miller, N. Thaicharoen, and G. Raithel, ``Broadband Rydberg atom-based electric-field probe for SI-traceable, self-calibrated measurements,'' \emph{IEEE Transactions on Antennas and Propagation}, vol. 62, no. 12, pp. 6169--6182, Dec. 2014, doi: 10.1109/TAP.2014.2360208.
+
+\bibitem{Schlossberger2024Review}
+N. Schlossberger, N. Prajapati, S. Berweger, A. Rotunno, A. B. Artusio-Glimpse, A. Sheikh, E. B. Norrgard, C. L. Holloway, and S. Eckel, ``Rydberg states of alkali atoms in atomic vapour as SI-traceable field probes and communications receivers,'' \emph{Nature Reviews Physics}, vol. 6, pp. 606--620, 2024, doi: 10.1038/s42254-024-00756-7.
+
+\bibitem{Sedlacek2012}
+J. A. Sedlacek, A. Schwettmann, H. K{\"u}bler, R. L{\"o}w, T. Pfau, and J. P. Shaffer, ``Microwave electrometry with Rydberg atoms in a vapour cell using bright atomic resonances,'' \emph{Nature Physics}, vol. 8, no. 11, pp. 819--824, Nov. 2012, doi: 10.1038/nphys2423.
+
+\bibitem{Simons2019Mixer}
+M. T. Simons, A. H. Haddab, J. A. Gordon, and C. L. Holloway, ``A Rydberg atom-based mixer: Measuring the phase of a radio frequency wave,'' \emph{Applied Physics Letters}, vol. 114, no. 11, Art. no. 114101, Mar. 2019, doi: 10.1063/1.5088821.
+
+\bibitem{Meyer2021Spectrum}
+D. H. Meyer, P. D. Kunz, and K. C. Cox, ``Waveguide-coupled Rydberg spectrum analyzer from 0 to 20 GHz,'' \emph{Physical Review Applied}, vol. 15, no. 1, Art. no. 014053, Jan. 2021, doi: 10.1103/PhysRevApplied.15.014053.
+
+\bibitem{ArtusioGlimpse2022}
+A. B. Artusio-Glimpse, M. T. Simons, N. Prajapati, and C. L. Holloway, ``Modern RF measurements with hot atoms: A technology review of Rydberg atom-based radio frequency field sensors,'' \emph{IEEE Microwave Magazine}, vol. 23, no. 5, pp. 44--56, May 2022, doi: 10.1109/MMM.2022.3148705.
+
+\bibitem{Sibalic2017ARC}
+N. {\v{S}}ibali{\'c}, J. D. Pritchard, C. S. Adams, and K. J. Weatherill, ``ARC: An open-source library for calculating properties of alkali Rydberg atoms,'' \emph{Computer Physics Communications}, vol. 220, pp. 319--331, Nov. 2017, doi: 10.1016/j.cpc.2017.06.015.
+
+\bibitem{Rydiqule2024}
+B. N. Miller, D. H. Meyer, T. Virtanen, C. M. O'Brien, and K. C. Cox, ``RydIQule: A graph-based paradigm for modeling Rydberg and atomic sensors,'' \emph{Computer Physics Communications}, vol. 294, Art. no. 108952, Jan. 2024, doi: 10.1016/j.cpc.2023.108952.
+
+\bibitem{Mohapatra2007}
+A. K. Mohapatra, T. R. Jackson, and C. S. Adams, ``Coherent optical detection of highly excited Rydberg states using electromagnetically induced transparency,'' \emph{Physical Review Letters}, vol. 98, no. 11, Art. no. 113003, Mar. 2007, doi: 10.1103/PhysRevLett.98.113003.
+
+\bibitem{Fleischhauer2005}
+M. Fleischhauer, A. Imamo\u{g}lu, and J. P. Marangos, ``Electromagnetically induced transparency: Optics in coherent media,'' \emph{Reviews of Modern Physics}, vol. 77, no. 2, pp. 633--673, Apr. 2005, doi: 10.1103/RevModPhys.77.633.
+
+\bibitem{Finkelstein2023PracticalGuide}
+R. Finkelstein, S. Bali, O. Firstenberg, and I. Novikova, ``A practical guide to electromagnetically induced transparency in atomic vapor,'' \emph{New Journal of Physics}, vol. 25, no. 3, Art. no. 035001, Mar. 2023, doi: 10.1088/1367-2630/acbc40.
+
+\bibitem{Holloway2017Uncertainty}
+C. L. Holloway, M. T. Simons, J. A. Gordon, A. Dienstfrey, D. A. Anderson, and G. Raithel, ``Electric field metrology for SI traceability: Systematic measurement uncertainties in electromagnetically induced transparency in atomic vapor,'' \emph{Journal of Applied Physics}, vol. 121, no. 23, Art. no. 233106, Jun. 2017, doi: 10.1063/1.4984201.
+
+\bibitem{Simons2021Review}
+M. T. Simons, A. B. Artusio-Glimpse, A. K. Robinson, N. Prajapati, and C. L. Holloway, ``Rydberg atom-based sensors for radio-frequency electric field metrology, sensing, and communications,'' \emph{Measurement: Sensors}, vol. 18, Art. no. 100273, Dec. 2021, doi: 10.1016/j.measen.2021.100273.
+
+\bibitem{Holloway2019PhaseModReceiver}
+C. L. Holloway, M. T. Simons, J. A. Gordon, and D. Novotny, ``Detecting and receiving phase-modulated signals with a Rydberg atom-based receiver,'' \emph{IEEE Antennas and Wireless Propagation Letters}, vol. 18, no. 9, pp. 1853--1857, Sep. 2019, doi: 10.1109/LAWP.2019.2931450.
+
+\bibitem{Holloway2022Voltage}
+C. L. Holloway, N. Prajapati, J. A. Sherman, A. B. Artusio-Glimpse, M. T. Simons, A. K. Robinson, D. S. La Mantia, and E. B. Norrgard, ``Electromagnetically induced transparency based Rydberg-atom sensor for traceable voltage measurements,'' \emph{AVS Quantum Science}, vol. 4, no. 3, Art. no. 034401, Sep. 2022, doi: 10.1116/5.0097746.
+
+\bibitem{Sedlacek2013}
+J. A. Sedlacek, A. Schwettmann, H. K{\"u}bler, and J. P. Shaffer, ``Atom-based vector microwave electrometry using rubidium Rydberg atoms in a vapor cell,'' \emph{Physical Review Letters}, vol. 111, no. 6, Art. no. 063001, Aug. 2013, doi: 10.1103/PhysRevLett.111.063001.
+
+\bibitem{Jiao2017Floquet}
+Y. Jiao, L. Hao, X. Han, S. Bai, G. Raithel, J. Zhao, and S. Jia, ``Atom-based radio-frequency field calibration and polarization measurement using cesium \(nD_J\) Floquet states,'' arXiv:1703.02286, 2017.
+
+\bibitem{Wang2023Polarization}
+Y. Wang, F. Jia, J. Hao, Y. Cui, F. Zhou, X. Liu, J. Mei, Y. Yu, Y. Liu, J. Zhang, F. Xie, and Z. Zhong, ``Precise measurement of microwave polarization using a Rydberg atom-based mixer,'' \emph{Optics Express}, vol. 31, no. 6, pp. 10449--10457, Mar. 2023, doi: 10.1364/OE.485662.
+
+\bibitem{Gomes2024PolSpec}
+N. D. Gomes, V. M. Pepino, B.-H. V. Borges, D. V. Magalh{\~a}es, R. de J. Napolitano, M. A. L. Torres, J. D. M. Kondo, and L. G. Marcassa, ``Rydberg atom-based microwave electrometry using polarization spectroscopy,'' \emph{Journal of Physics B: Atomic, Molecular and Optical Physics}, vol. 57, no. 23, Art. no. 235502, Dec. 2024, doi: 10.1088/1361-6455/ad8a34.
+
+\bibitem{Elgee2024Polarimetry}
+P. K. Elgee, K. C. Cox, J. C. Hill, P. D. Kunz, and D. H. Meyer, ``Complete three-dimensional vector polarimetry with a Rydberg-atom RF electrometer,'' \emph{Physical Review Applied}, vol. 22, no. 6, Art. no. 064012, Dec. 2024, doi: 10.1103/PhysRevApplied.22.064012.
+
+\bibitem{Yin2024Polarization}
+W. Yin, J. Zhang, F. Jia, Y. Wang, Y. Wang, J. Hao, Y. Cui, Y. Liu, and Z. Zhong, ``Measurement of microwave polarization using two polarization orthogonal local microwave electric fields in a Rydberg atom-based mixer,'' arXiv:2408.00988, 2024.
+
+\bibitem{Naber2016Magnetic}
+J. B. Naber, A. Tauschinsky, H. B. van Linden van den Heuvell, and R. J. C. Spreeuw, ``Electromagnetically induced transparency with Rydberg atoms across the Breit--Rabi regime,'' arXiv:1606.08260, 2016.
+
+\bibitem{Li2023Magnetic}
+X. Li, Y. Cui, J. Hao, F. Zhou, F. Jia, J. Zhang, F. Xie, and Z. Zhong, ``Magnetic-field-induced splitting of Rydberg electromagnetically induced transparency and Autler--Townes spectra in \(^{87}\mathrm{Rb}\) vapor cell,'' \emph{Optics Express}, vol. 31, no. 23, pp. 38165--38178, Nov. 2023, doi: 10.1364/OE.505488.
+
+\bibitem{Schlossberger2024Zeeman}
+N. Schlossberger, A. P. Rotunno, A. B. Artusio-Glimpse, N. Prajapati, S. Berweger, D. Shylla, M. T. Simons, and C. L. Holloway, ``Zeeman-resolved Autler--Townes splitting in Rydberg atoms with tunable resonances and a single transition dipole moment,'' arXiv:2311.07665, 2023.
+
+\bibitem{Chopinaud2021Optimal}
+A. Chopinaud and J. D. Pritchard, ``Optimal state choice for Rydberg-atom microwave sensors,'' \emph{Physical Review Applied}, vol. 16, no. 2, Art. no. 024008, Aug. 2021, doi: 10.1103/PhysRevApplied.16.024008.
+
+\bibitem{Cloutman2024PolarizationInsensitive}
+M. Cloutman, M. Chilcott, A. Elliott, J. S. Otto, A. B. Deb, and N. Kj{\ae}rgaard, ``Polarization-insensitive microwave electrometry using Rydberg atoms,'' arXiv:2312.01974, 2023.
+
+\bibitem{Hu2022Tunable}
+J. Hu, H. Li, R. Song, J. Bai, Y. Jiao, J. Zhao, and S. Jia, ``Continuously tunable radio frequency electrometry with Rydberg atoms,'' \emph{Applied Physics Letters}, vol. 121, no. 1, Art. no. 014002, Jul. 2022, doi: 10.1063/5.0086357.
+
+\bibitem{Rotunno2023VHF}
+A. P. Rotunno, S. Berweger, N. Prajapati, M. T. Simons, A. B. Artusio-Glimpse, C. L. Holloway, M. Jayaseelan, R. M. Potvliege, and C. S. Adams, ``Detection of HF and VHF fields through Floquet sideband gaps by Rabi matching dressed Rydberg atoms,'' arXiv:2212.03304, 2022.
+
+\end{thebibliography}
+
+\clearpage
+\appendices
+
+\section{Annex Nomenclature and Acronyms}
+\label{annex:nomenclature}
+
+This annex defines symbols, metrics, and acronyms used mainly in the supporting data, raw measurements, calibration analysis, forward modelling, and simulation documentation. The main report nomenclature is limited to the core receiver quantities. The extended definitions below keep the main body concise while preserving technical traceability.
+
+\subsection{Annex Nomenclature}
+
+\begin{IEEEdescription}[\IEEEusemathlabelsep\IEEEsetlabelwidth{$\Delta S_{21,\mathrm{CP}}$}]
+
+\item[$f$] Operating frequency (Hz).
+\item[$f_0$] Nominal operating frequency used for RF-front-end analysis, typically \(1.8~\mathrm{GHz}\).
+\item[$f_{\mathrm{RF}}$] Applied radio-frequency or microwave frequency (Hz).
+\item[$f_{rs}$] Transition frequency between Rydberg states \(|r\rangle\) and \(|s\rangle\) (Hz).
+\item[$\Delta f$] Frequency span or analysis bandwidth (Hz).
+\item[$\lambda$] Wavelength corresponding to \(f\) (m).
+\item[$Z_0$] Reference impedance, typically \(50~\Omega\).
+\item[$Z_{\mathrm{in}}$] Input impedance of an antenna or RF device (\(\Omega\)).
+\item[$R$] Real part of \(Z_{\mathrm{in}}\), representing resistance (\(\Omega\)).
+\item[$X$] Imaginary part of \(Z_{\mathrm{in}}\), representing reactance (\(\Omega\)).
+\item[$S_{11}$] Input reflection coefficient expressed in dB.
+\item[$S_{21}$] Forward transmission coefficient expressed in dB.
+\item[$\Gamma$] Voltage reflection coefficient.
+\item[$|\Gamma|^2$] Reflected-power fraction.
+\item[$P_{\mathrm{acc}}$] Accepted-power fraction, \(P_{\mathrm{acc}}=1-|\Gamma|^2\).
+\item[$\mathrm{VSWR}$] Voltage standing-wave ratio.
+\item[$G$] Antenna gain (dBi).
+\item[$G_r$] Realized antenna gain including mismatch losses (dBi).
+\item[$\eta_{\mathrm{rad}}$] Radiation efficiency.
+\item[$\eta_{\mathrm{tot}}$] Total efficiency including mismatch and ohmic losses.
+\item[$\mathbf{E}_{\mathrm{lab}}$] Laboratory-frame RF electric-field vector.
+\item[$\mathbf{E}_{B}$] RF electric-field vector expressed in the magnetic-bias frame.
+\item[$\mathbf{E}_{\mathrm{near}}$] Near-field electric-field vector (V/m).
+\item[$\mathbf{H}_{\mathrm{near}}$] Near-field magnetic-field vector (A/m).
+\item[$\mathbf{E}_{\mathrm{far}}$] Far-field electric-field vector (V/m).
+\item[$E_{+1},E_0,E_{-1}$] Spherical-basis RF components driving \(\sigma^+\), \(\pi\), and \(\sigma^-\) pathways.
+\item[$\theta,\phi$] Spherical coordinate angles or polarization-state angles, depending on context.
+\item[$\theta_{\mathrm{RF}}$] RF analyzer or antenna orientation state.
+\item[$\mathbf{R}_{\theta}$] Rotation matrix representing antenna or analyzer orientation.
+\item[$\mathbf{R}_{B}$] Rotation matrix aligning the laboratory frame with the magnetic-bias frame.
+\item[$\mathrm{BW}$] Bandwidth, expressed in Hz or as fractional bandwidth.
+\item[$Q$] Quality factor of an antenna or resonant response.
+\item[$\mathrm{XPI}$] Cross-polar isolation, defined as \(S_{21,\mathrm{co}}-S_{21,\mathrm{cross}}\).
+\item[$\mathrm{ER}$] Extinction ratio of the linear polarizer, defined as \(S_{21,\mathrm{pass}}-S_{21,\mathrm{reject}}\).
+\item[$L_{45}$] Transmission loss of the \(45^\circ\) state relative to the co-polar or pass reference.
+\item[$L_{\mathrm{pass}}$] Pass-state insertion penalty relative to the no-polarizer baseline.
+\item[$\Delta S_{21,\mathrm{CP}}$] Circular-antenna orientation-sensitivity metric, \(|S_{21,0^\circ}-S_{21,90^\circ}|\).
+\item[$V$] Coil drive voltage or measured voltage, depending on context (V).
+\item[$I$] Coil current (A).
+\item[$R_{\mathrm{nom}}$] Nominal coil resistance used to estimate current from voltage (\(\Omega\)).
+\item[$B_0$] Magnetic-bias flux density at the measurement location (mT).
+\item[$u_B$] Estimated uncertainty in magnetic-field measurement (mT).
+\item[$r_i$] Residual of the \(i\)-th magnetic-field calibration point.
+\item[$\mathrm{RMSE}$] Root-mean-square error of a fitted model.
+\item[$R^2$] Coefficient of determination for a fitted model.
+\item[$V_{\mathrm{cell}}$] Rubidium vapor cell used for Rydberg-EIT sensing.
+\item[$\Omega_{m,q}$] RF Rabi frequency for the pathway \(|r,m\rangle\rightarrow|s,m+q\rangle\).
+\item[$d_{m,q}$] Dipole matrix element for the pathway \(|r,m\rangle\rightarrow|s,m+q\rangle\).
+\item[$\Delta_{2,m}$] Magnetic-sublevel-dependent two-photon detuning.
+\item[$\Delta_{3,m,q}$] Magnetic-sublevel-dependent three-photon detuning.
+\item[$\gamma_{ge},\gamma_{gr},\gamma_{gs}$] Effective coherence decay rates.
+\item[$\chi$] Optical susceptibility.
+\item[$\mathrm{OD}$] Effective optical depth.
+\item[$w_q$] Relative weighting of RF polarization pathway \(q\).
+\item[$v_{\mathrm{out}}(t)$] Photodetector or oscilloscope voltage trace (V).
+\item[$v_{\mathrm{dark}}$] Detector dark offset or baseline voltage (V).
+\item[$P(B_0)$] Measured spectral or detector level at magnetic bias \(B_0\) (dBm or V, depending on measurement).
+\item[$P_{\mathrm{ref}}$] Reference level used for relative response calculations.
+\item[$\Delta P$] Relative measured level change, \(P(B_0)-P_{\mathrm{ref}}\) (dB).
+\item[$V[k]$] Discrete Fourier transform of a measured time-domain trace.
+\item[$V_{\mathrm{dB}}[k]$] FFT magnitude expressed in dB relative to a chosen voltage reference.
+\item[$N$] Number of samples in a discrete trace or number of turns in a coil, depending on context.
+\item[$T_s$] Sampling period of a recorded trace (s).
+\item[$F_s$] Sampling frequency of a recorded trace (Hz).
+\item[$\Delta f_{\mathrm{FFT}}$] FFT frequency resolution (Hz).
+\item[$Q_1,Q_3$] First and third quartiles of an operating-band data distribution.
+\item[$\mathrm{IQR}$] Interquartile range, \(Q_3-Q_1\).
+\item[$\widetilde{S}_{\mathrm{band}}$] Median value of an \(S\)-parameter over the defined operating band.
+\item[$\mu_c$] Mean feature vector for polarization class \(c\).
+\item[$\mathbf{\Sigma}_c$] Feature covariance matrix for polarization class \(c\).
+\item[$D_{ij}$] Separability distance between feature classes \(i\) and \(j\).
+
+\end{IEEEdescription}
+
+\subsection{Annex Acronyms}
+
+\begin{IEEEdescription}[\IEEEusemathlabelsep\IEEEsetlabelwidth{RydIQule}]
+
+\item[ARC] Alkali Rydberg Calculator.
+\item[AT] Autler--Townes.
+\item[CP] Circular polarization or circularly polarized, depending on context.
+\item[CSV] Comma-separated values file.
+\item[DSP] Digital signal processing.
+\item[EIT] Electromagnetically induced transparency.
+\item[FFT] Fast Fourier transform.
+\item[HF] Higher-frequency spectral component or reading.
+\item[IQR] Interquartile range.
+\item[LPDA] Log-periodic dipole antenna.
+\item[OBE] Optical-Bloch equations.
+\item[RF] Radio frequency.
+\item[RMSE] Root-mean-square error.
+\item[RydIQule] Rydberg Interactive Quantum module.
+\item[SOP] Standard operating procedure.
+\item[VNA] Vector network analyzer.
+\item[VSWR] Voltage standing-wave ratio.
+\item[XPI] Cross-polar isolation.
+
+\end{IEEEdescription}
+
+\section{Annex Overview and Evidence Traceability}
+\label{annex:overview}
+
+The annexes support the interim report by preserving the technical evidence behind the main claims without overloading the main body. The main report is intentionally focused on motivation, literature gap, methodology, principal results, discussion, conclusion, and way forward. The annexes provide supporting detail for traceability: extended theory, receiver modelling, simulation settings, raw measurements, processed-data definitions, standard operating procedures, uncertainty calculations, and additional setup documentation.
+
+The annexes are organized as follows:
+\begin{itemize}
+    \item Annex~\ref{annex:traceability_matrix} maps main-report claims to supporting evidence.
+    \item Annex~\ref{annex:extended_theory} preserves extended theory and the receiver forward model removed from the main body.
+    \item Annex~\ref{annex:simulation_parameters} documents ARC/RydIQule simulation logic, parameter traceability, and decision metrics.
+    \item Annex~\ref{annex:rf_support} documents RF-front-end measurement definitions and data products.
+    \item Annex~\ref{annex:magnetic_calibration} provides the magnetic-bias calibration data and uncertainty model.
+    \item Annex~\ref{annex:raw_traces} provides representative raw oscilloscope traces.
+    \item Annex~\ref{annex:spectral_peaks} provides notebook-derived spectral peak readings.
+    \item Annex~\ref{annex:setup_photos} preserves additional experimental setup photographs.
+    \item Annex~\ref{annex:sop} provides standard operating procedures for repeatability.
+    \item Annex~\ref{annex:uncertainty} provides supporting uncertainty, repeatability, and decision-gate calculations.
+\end{itemize}
+
+These annexes do not introduce claims stronger than the main report. Their purpose is to show how the interim conclusions were derived and to preserve the technical pathway for the final thesis stage. Where the present Rydberg response is exploratory or inconclusive, the annex keeps the supporting data visible rather than hiding the limitation.
+
+\section{Claim-to-Evidence Traceability Matrix}\label{annex:traceability_matrix}
+
+Table~\ref{tab:annex_claim_traceability} links the main claims of the interim report to the supporting evidence. This is included because the project spans RF hardware, magnetic-field calibration, Rydberg-EIT sensing, and modelling. The table makes clear which parts of the receiver chain have already been validated and which remain future work.
+
+\begin{table*}[!t]
+\caption{Traceability between interim-report claims and supporting annex evidence.}
+\label{tab:annex_claim_traceability}
+\centering
+\renewcommand{\arraystretch}{1.12}
+\scriptsize
+\begin{tabular}{p{0.23\textwidth} p{0.30\textwidth} p{0.27\textwidth} p{0.12\textwidth}}
+\hline
+\textbf{Main-report claim} & \textbf{Supporting evidence} & \textbf{Relevant annex material} & \textbf{Status} \\
+\hline
+The RF front end can generate and compare practical polarization-conditioned states. &
+VNA \(S_{11}\) and \(S_{21}\) measurements for LPDA, polarizer, and circular-antenna configurations. &
+Annex~\ref{annex:rf_support}; exported MATLAB summaries from Figs.~\ref{fig:results_s11}, \ref{fig:lpda_polarization_validation}, \ref{fig:linear_polarizer_validation}, and \ref{fig:circular_antenna_validation}. &
+Validated at subsystem level. \\
+
+The custom steel-rod polarizer provides useful pass/reject RF discrimination near the operating band. &
+Measured pass, reject, and \(45^\circ\) transmission states. &
+Annex~\ref{annex:rf_polarizer_support}. &
+Validated as practical analyzer, not an ideal polarizer. \\
+
+The circular antenna is a candidate circular or weakly elliptical source, but handedness and axial ratio are not yet fully proven. &
+Measured \(0^\circ/90^\circ\) orientation sensitivity. &
+Annex~\ref{annex:rf_circular_support}. &
+Conservative candidate-state evidence only. \\
+
+The magnetic-bias field is a controlled experimental variable. &
+Measured \(B_0\) versus coil current, linear fit, residuals, and uncertainty model. &
+Annex~\ref{annex:magnetic_calibration}. &
+Validated locally; field mapping still required. \\
+
+The present Rydberg data are measurable but not yet sufficient for a polarimetric claim. &
+Exploratory level readings versus \(B_0\), raw traces, and notebook-derived spectral readings. &
+Annexes~\ref{annex:raw_traces} and \ref{annex:spectral_peaks}. &
+Exploratory and inconclusive. \\
+
+The final thesis requires transition-aware simulation before stronger Rydberg claims are made. &
+ARC transition screening, optical-Bloch modelling, and feature-separability decision gates. &
+Annexes~\ref{annex:extended_theory}, \ref{annex:simulation_parameters}, and \ref{annex:uncertainty}. &
+Method defined; final validation pending. \\
+\hline
+\end{tabular}
+\end{table*}
+
+\section{Extended Theory and Receiver Forward Model}
+\label{annex:extended_theory}
+
+This annex preserves the detailed receiver model that is too long for the main body. The main report retains only the equations required to motivate the method. The material below supports reproducibility and provides the theoretical basis for later final-thesis modelling.
+
+\subsection{Polarization Representation}
+\label{annex:polarization_representation}
+
+For a narrowband field propagating along \(\hat{\mathbf{z}}\), the transverse electric-field phasor is
+\begin{equation}
+\tilde{\mathbf{E}}
+=
+E_x\hat{\mathbf{x}}
++
+E_y e^{j\phi}\hat{\mathbf{y}}.
+\label{eq:annex_field_phasor}
+\end{equation}
+The Jones vector is
+\begin{equation}
+\mathbf{J}
+=
+\begin{bmatrix}
+E_x\\
+E_y e^{j\phi}
+\end{bmatrix},
+\label{eq:annex_jones}
+\end{equation}
+and the corresponding Stokes vector is
+\begin{equation}
+\mathbf{S}
+=
+\begin{bmatrix}
+S_0\\S_1\\S_2\\S_3
+\end{bmatrix},
+\label{eq:annex_stokes_vector}
+\end{equation}
+where
+\begin{equation}
+\begin{aligned}
+S_0 &= |E_x|^2+|E_y|^2,\\
+S_1 &= |E_x|^2-|E_y|^2,\\
+S_2 &= 2\mathrm{Re}\{E_xE_y^\ast\},\\
+S_3 &= -2\mathrm{Im}\{E_xE_y^\ast\}.
+\end{aligned}
+\label{eq:annex_stokes_components}
+\end{equation}
+The sign convention for \(S_3\) depends on the propagation and handedness convention. For that reason, this interim report treats circular-polarization evidence conservatively unless a calibrated circular reference or axial-ratio measurement is available.
+
+\subsection{Receiver Mapping}
+\label{annex:receiver_forward_model}
+
+The receiver can be represented as a mapping from an incident microwave polarization state to measured optical features:
+\begin{equation}
+\mathbf{y}
+=
+f(\mathbf{S},B_0,\theta_{\mathrm{RF}},f_{\mathrm{RF}},P_{\mathrm{RF}},\boldsymbol{\eta})
++
+\boldsymbol{\epsilon},
+\label{eq:annex_forward_general_mapping}
+\end{equation}
+where \(\mathbf{S}\) is the incident Stokes vector, \(B_0\) is the magnetic-bias field, \(\theta_{\mathrm{RF}}\) represents the RF analyzer or antenna state, \(f_{\mathrm{RF}}\) is the RF frequency, \(P_{\mathrm{RF}}\) is applied RF power, \(\boldsymbol{\eta}\) contains nuisance parameters, and \(\boldsymbol{\epsilon}\) represents measurement noise and model error.
+
+The complete forward chain is
+\begin{equation}
+\mathbf{S}
+\xrightarrow{\;\theta_{\mathrm{RF}}\;}
+\mathbf{E}_{\mathrm{RF}}
+\xrightarrow{\;B_0\;}
+(E_{+1},E_0,E_{-1})
+\xrightarrow{\;H(B_0)\;}
+\rho_{ge}
+\xrightarrow{\;\mathrm{EIT}\;}
+T(\Delta_p)
+\xrightarrow{\;\mathcal{F}\;}
+\mathbf{y}.
+\label{eq:annex_forward_chain}
+\end{equation}
+At the interim stage, the inverse step from \(\mathbf{y}\) to \(\widehat{\mathbf{S}}\) is a future objective rather than a demonstrated result.
+
+\subsection{Coordinate Frames and Spherical-Basis Projection}
+\label{annex:coordinate_projection}
+
+The atom responds to the RF electric field expressed in the magnetic-bias frame, not simply to laboratory labels such as horizontal, vertical, or circular. Let the complex laboratory-frame microwave field be
+\begin{equation}
+\mathbf{E}_{\mathrm{lab}}
+=
+\begin{bmatrix}
+E_x & E_y & E_z
+\end{bmatrix}^{T}.
+\label{eq:annex_lab_field}
+\end{equation}
+The RF front end and magnetic-bias geometry transform this field into the bias-field frame:
+\begin{equation}
+\mathbf{E}_{B}
+=
+\mathbf{R}_{B}^{-1}
+\mathbf{R}_{\theta}
+\mathbf{E}_{\mathrm{lab}},
+\label{eq:annex_bias_frame}
+\end{equation}
+where \(\mathbf{R}_{\theta}\) represents the antenna or analyzer orientation and \(\mathbf{R}_{B}\) aligns the coordinate system with the magnetic-bias direction.
+
+Once the field is expressed in the magnetic-bias frame, it is decomposed into spherical-basis components:
+\begin{equation}
+\begin{bmatrix}
+E_{+1}\\
+E_{0}\\
+E_{-1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+-\left(E_{B,x}+iE_{B,y}\right)/\sqrt{2}\\
+E_{B,z}\\
+\left(E_{B,x}-iE_{B,y}\right)/\sqrt{2}
+\end{bmatrix}.
+\label{eq:annex_spherical_components_detailed}
+\end{equation}
+The components \(E_{+1}\), \(E_0\), and \(E_{-1}\) drive \(\sigma^+\), \(\pi\), and \(\sigma^-\) pathways, respectively.
+
+The RF Rabi frequency for the transition \(|r,m\rangle\rightarrow|s,m+q\rangle\) is
+\begin{equation}
+\Omega_{m,q}
+=
+\frac{E_q d_{m,q}}{\hbar},
+\qquad
+q\in\{-1,0,+1\},
+\label{eq:annex_rabi_polarized}
+\end{equation}
+where
+\begin{equation}
+d_{m,q}
+=
+\langle s,m+q|d_q|r,m\rangle.
+\label{eq:annex_dipole_component}
+\end{equation}
+This is the essential link between RF polarization and Rydberg optical response. Two RF fields with the same scalar power can produce different optical signatures if they populate the \(\sigma^+\), \(\pi\), and \(\sigma^-\) pathways differently.
+
+\subsection{Zeeman-Resolved Four-Level Model}
+\label{annex:zeeman_model}
+
+For one magnetic-sublevel pathway, the Rydberg-EIT receiver can be represented by
+\begin{equation}
+|g\rangle
+\xleftrightarrow{\Omega_p}
+|e\rangle
+\xleftrightarrow{\Omega_c}
+|r,m\rangle
+\xleftrightarrow{\Omega_{m,q}}
+|s,m+q\rangle.
+\label{eq:annex_four_level_pathway}
+\end{equation}
+The applied magnetic field shifts the Rydberg magnetic sublevels. In angular-frequency units,
+\begin{equation}
+\delta_{r,m}(B_0)
+=
+\frac{\mu_B g_r m B_0}{\hbar},
+\qquad
+\delta_{s,m+q}(B_0)
+=
+\frac{\mu_B g_s (m+q) B_0}{\hbar}.
+\label{eq:annex_zeeman_shifts}
+\end{equation}
+
+The magnetic-sublevel-dependent two-photon and three-photon detunings are
+\begin{equation}
+\Delta_{2,m}
+=
+(\omega_p+\omega_c)
+-
+\omega_{gr,m}(B_0),
+\label{eq:annex_two_photon_detuning}
+\end{equation}
+and
+\begin{equation}
+\Delta_{3,m,q}
+=
+(\omega_p+\omega_c+\omega_{\mathrm{RF}})
+-
+\omega_{gs,m+q}(B_0).
+\label{eq:annex_three_photon_detuning}
+\end{equation}
+
+A compact rotating-frame Hamiltonian for the pathway is
+\begin{equation}
+\frac{H_{m,q}}{\hbar}
+=
+\begin{bmatrix}
+0 & \Omega_p/2 & 0 & 0\\
+\Omega_p/2 & -\Delta_p & \Omega_c/2 & 0\\
+0 & \Omega_c/2 & -\Delta_{2,m} & \Omega_{m,q}/2\\
+0 & 0 & \Omega_{m,q}/2 & -\Delta_{3,m,q}
+\end{bmatrix}.
+\label{eq:annex_four_level_hamiltonian}
+\end{equation}
+The density matrix evolves according to
+\begin{equation}
+\dot{\rho}_{m,q}
+=
+-\frac{i}{\hbar}
+[H_{m,q},\rho_{m,q}]
++
+\mathcal{L}(\rho_{m,q}),
+\label{eq:annex_master_equation_pathway}
+\end{equation}
+where \(\mathcal{L}(\rho)\) includes spontaneous decay, dephasing, transit-time broadening, laser linewidth, and phenomenological loss.
+
+For numerical implementation, the density matrix can be vectorized:
+\begin{equation}
+\mathbf{x}_{m,q}
+=
+\mathrm{vec}(\rho_{m,q}),
+\label{eq:annex_vectorized_state}
+\end{equation}
+giving
+\begin{equation}
+\dot{\mathbf{x}}_{m,q}
+=
+\mathbf{A}_{m,q}
+(\mathbf{u},B_0,\boldsymbol{\eta})
+\mathbf{x}_{m,q}
++
+\mathbf{b}_{m,q}.
+\label{eq:annex_state_space}
+\end{equation}
+At steady state, \(\dot{\mathbf{x}}_{m,q}=0\). This form separates the modelling inputs into optical detuning, RF detuning, RF Rabi frequency, magnetic bias, and polarization pathway.
+
+\subsection{Weak-Probe Optical Response}
+\label{annex:weak_probe_response}
+
+For initial design studies, a compact weak-probe expression is sufficient. The coherence can be written using auxiliary denominators:
+\begin{subequations}
+\label{eq:annex_weak_probe_model}
+\begin{align}
+\rho_{ge}^{(m,q)}
+&\approx
+\frac{i\Omega_p/2}
+{\gamma_{ge}-i\Delta_p+\dfrac{|\Omega_c|^2}{4D_{r,m,q}}},
+\label{eq:annex_rho_ge_compact}\\
+D_{r,m,q}
+&=
+\gamma_{gr}
+-
+i\Delta_{2,m}
++
+\frac{|\Omega_{m,q}|^2}{4D_{s,m,q}},
+\label{eq:annex_Dr}\\
+D_{s,m,q}
+&=
+\gamma_{gs}
+-
+i\Delta_{3,m,q}.
+\label{eq:annex_Ds}
+\end{align}
+\end{subequations}
+Here \(\gamma_{ge}\), \(\gamma_{gr}\), and \(\gamma_{gs}\) are effective coherence decay rates. The susceptibility is proportional to the optical coherence:
+\begin{equation}
+\chi(\Delta_p)
+\propto
+\sum_{m,q}
+a_m
+\frac{\rho_{ge}^{(m,q)}(\Delta_p)}{\Omega_p},
+\label{eq:annex_susceptibility_sum}
+\end{equation}
+where \(a_m\) represents population or pathway weighting. The transmitted probe intensity is represented as
+\begin{equation}
+T(\Delta_p)
+=
+\exp
+\left[
+-\mathrm{OD}\,
+\mathrm{Im}
+\{
+\chi(\Delta_p)
+\}
+\right].
+\label{eq:annex_transmission_model}
+\end{equation}
+
+For a compact design-level model, multiple RF polarization pathways may be approximated by weighted pathway contributions:
+\begin{equation}
+\chi_{\mathrm{eff}}(\Delta_p)
+=
+\sum_{q=-1}^{+1}
+w_q
+\chi_q(\Delta_p),
+\label{eq:annex_weighted_chi}
+\end{equation}
+where
+\begin{equation}
+w_q
+=
+\frac{|E_q|^2}
+{|E_{+1}|^2+|E_0|^2+|E_{-1}|^2}.
+\label{eq:annex_pathway_weights}
+\end{equation}
+This weighted model is not a substitute for a full coherent multilevel simulation, but it is useful for showing how changing the incident polarization changes the relative contribution of \(\sigma^+\), \(\pi\), and \(\sigma^-\) pathways.
+
+\subsection{Feature Vector and Future Inference}
+\label{annex:feature_vector}
+
+The output of the model is not the full spectrum alone. Each spectrum is reduced to a feature vector,
+\begin{equation}
+\mathbf{y}
+=
+\begin{bmatrix}
+\nu_0 &
+\Gamma &
+C &
+\Delta f_{\mathrm{AT}} &
+R_A &
+\mathcal{A} &
+M
+\end{bmatrix}^{T},
+\label{eq:annex_feature_vector}
+\end{equation}
+where \(\nu_0\) is the line centre, \(\Gamma\) is linewidth, \(C\) is EIT contrast, \(\Delta f_{\mathrm{AT}}\) is resolved Autler--Townes splitting, \(R_A\) is a relative peak-amplitude metric, \(\mathcal{A}\) is spectral asymmetry, and \(M\) is a measured level or modulation metric.
+
+A normalized contrast can be written as
+\begin{equation}
+C
+=
+\frac{T_{\mathrm{peak}}-T_{\mathrm{base}}}{T_{\mathrm{base}}},
+\label{eq:annex_contrast}
+\end{equation}
+and one possible asymmetry metric is
+\begin{equation}
+\mathcal{A}
+=
+\frac{A_{+}-A_{-}}{A_{+}+A_{-}}.
+\label{eq:annex_asymmetry}
+\end{equation}
+For exploratory measurements that do not yet show clean spectra, the reduced metric
+\begin{equation}
+\Delta P(B_0)
+=
+P(B_0)-P_{\mathrm{ref}}
+\label{eq:annex_deltaP}
+\end{equation}
+is used.
+
+A future classifier for a finite set of known polarization classes \(c\) may be written as
+\begin{equation}
+\widehat{c}
+=
+\arg\min_c
+\left\|
+\mathbf{y}_{\mathrm{meas}}
+-
+\boldsymbol{\mu}_c
+\right\|^2_{\mathbf{\Sigma}_c^{-1}},
+\label{eq:annex_classifier}
+\end{equation}
+where \(\boldsymbol{\mu}_c\) and \(\mathbf{\Sigma}_c\) are the feature mean and covariance for each calibrated class. Full Stokes reconstruction should only be attempted if the measurement architecture provides enough independent and repeatable features:
+\begin{equation}
+\widehat{\mathbf{S}}
+=
+\arg\min_{\mathbf{S}}
+\left\|
+\mathbf{y}_{\mathrm{meas}}
+-
+f(\mathbf{S},B_0,\theta_{\mathrm{RF}},\boldsymbol{\eta})
+\right\|_{\mathbf{\Sigma}^{-1}}^{2}
++
+\lambda\mathcal{R}(\mathbf{S}),
+\label{eq:annex_stokes_estimator}
+\end{equation}
+subject to
+\begin{equation}
+S_1^2+S_2^2+S_3^2
+\leq
+S_0^2.
+\label{eq:annex_stokes_constraint}
+\end{equation}
+This constraint prevents nonphysical Stokes estimates.
+
+\section{Simulation and Transition-Screening Parameters}
+\label{annex:simulation_parameters}
+
+This annex documents the simulation workflow retained from the discarded main-body forward-model section. The purpose of simulation is to guide experimental decisions, not to force agreement with preliminary data. ARC is used for transition screening, and RydIQule or an equivalent optical-Bloch model is used for EIT-response simulation.
+
+\subsection{ARC Transition Screening}
+\label{annex:arc_candidates}
+
+ARC screening is used to identify candidate \(^{87}\mathrm{Rb}\) Rydberg transitions with transition frequencies near the available RF range and with sufficiently large dipole moments to generate a measurable response. For a candidate transition \(|r\rangle\rightarrow|s\rangle\),
+\begin{equation}
+f_{rs}
+=
+\frac{E_s-E_r}{h}.
+\label{eq:annex_arc_transition_frequency}
+\end{equation}
+
+\begin{table*}[!t]
+\caption{Transition-screening criteria for ARC-based candidate selection.}
+\label{tab:annex_arc_screening}
+\centering
+\renewcommand{\arraystretch}{1.12}
+\scriptsize
+\begin{tabular}{p{0.22\textwidth} p{0.34\textwidth} p{0.34\textwidth}}
+\hline
+\textbf{Criterion} & \textbf{Reason} & \textbf{Effect on experiment} \\
+\hline
+Frequency proximity &
+The RF source must be close enough to the selected Rydberg--Rydberg transition. &
+Large detuning may produce only weak shifts or no measurable response. \\
+
+Dipole matrix element &
+The transition must have sufficient coupling strength for the available RF field. &
+Weak coupling reduces Rabi frequency and optical contrast. \\
+
+Allowed polarization pathways &
+The transition should retain useful \(\sigma^+\), \(\pi\), or \(\sigma^-\) sensitivity. &
+Poor state choice can suppress the polarization dependence required for this thesis. \\
+
+Sensitivity to stray fields &
+High-\(n\) states can be strongly affected by stray electric and magnetic fields. &
+Excess sensitivity can broaden, shift, or destabilize spectra. \\
+
+Spectral isolation &
+Nearby unwanted transitions can overlap with the desired pathway. &
+Overlapping manifolds can make feature extraction ambiguous. \\
+
+Optical accessibility &
+The selected Rydberg state must be compatible with the available \(780~\mathrm{nm}\) and \(480~\mathrm{nm}\) ladder. &
+A theoretically attractive transition may not be experimentally practical. \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{ARC transition-screening data fields for final-thesis continuation.}
+\label{tab:annex_arc_screening_template}
+\centering
+\renewcommand{\arraystretch}{1.12}
+\scriptsize
+\begin{tabular}{p{0.18\textwidth} p{0.15\textwidth} p{0.16\textwidth} p{0.16\textwidth} p{0.25\textwidth}}
+\hline
+\textbf{Candidate transition} & \textbf{Frequency} & \textbf{Dipole moment} & \textbf{Selection rule} & \textbf{Reason for inclusion or exclusion} \\
+\hline
+Candidate 1 & To be filled from ARC & To be filled & \(\Delta m=q\) & Candidate near available RF band. \\
+Candidate 2 & To be filled from ARC & To be filled & \(\Delta m=q\) & Alternative state if main transition is weak. \\
+Candidate 3 & To be filled from ARC & To be filled & \(\Delta m=q\) & Detuned or higher-coupling fallback. \\
+\hline
+\end{tabular}
+\end{table*}
+
+\subsection{Simulation Hierarchy}
+\label{annex:simulation_hierarchy}
+
+The simulation framework uses multiple levels of fidelity so that model complexity only increases when the data justify it.
+
+\begin{table*}[!t]
+\caption{Simulation hierarchy used in the forward-modelling framework.}
+\label{tab:annex_simulation_levels}
+\centering
+\renewcommand{\arraystretch}{1.12}
+\scriptsize
+\begin{tabular}{p{0.16\textwidth} p{0.30\textwidth} p{0.25\textwidth} p{0.20\textwidth}}
+\hline
+\textbf{Level} & \textbf{Purpose} & \textbf{Main inputs} & \textbf{Main outputs} \\
+\hline
+Level 0: RF projection &
+Convert laboratory RF polarization into atomic spherical-basis components. &
+Antenna orientation, polarizer state, magnetic-bias axis, propagation direction. &
+\(E_{+1}\), \(E_0\), \(E_{-1}\), pathway weights \(w_q\). \\
+
+Level 1: Compact EIT model &
+Predict qualitative EIT response to RF coupling, detuning, and magnetic bias. &
+\(\Omega_p\), \(\Omega_c\), \(\Omega_{\mathrm{RF}}\), \(\Delta_{\mathrm{RF}}\), \(B_0\), effective linewidths. &
+EIT spectra, RF response maps, magnetic-bias maps, idealized polarization signatures. \\
+
+Level 2: Multilevel OBE model &
+Model Zeeman manifolds and realistic pathway competition. &
+ARC transition data, Zeeman shifts, dipole matrix elements, Doppler averaging, dephasing. &
+State-specific spectra, feature predictions, separability metrics. \\
+
+Level 3: Calibrated receiver model &
+Fit experimental data and support inference. &
+Measured RF field, measured \(B_0\), measured optical parameters, covariance model. &
+Feature prediction, classification model, partial or full Stokes estimator. \\
+\hline
+\end{tabular}
+\end{table*}
+
+The interim report mainly supports Levels 0 and 1, with ARC transition screening preparing for Level 2. Level 3 is a future stage because it requires repeated Rydberg datasets under known polarization states.
+
+\subsection{Baseline Simulation Cases}
+\label{annex:simulation_cases}
+
+\begin{table*}[!t]
+\caption{Simulation cases used to guide the experimental programme.}
+\label{tab:annex_simulation_cases}
+\centering
+\renewcommand{\arraystretch}{1.12}
+\scriptsize
+\begin{tabular}{p{0.19\textwidth} p{0.36\textwidth} p{0.35\textwidth}}
+\hline
+\textbf{Simulation case} & \textbf{Question answered} & \textbf{Planned output} \\
+\hline
+Baseline EIT &
+Does the optical ladder produce a clear EIT feature without RF? &
+Probe transmission versus detuning for coupling off and coupling on. \\
+
+RF Rabi sweep &
+How does the EIT spectrum change as RF coupling strength increases? &
+RF-off and RF-on spectra; extracted splitting or contrast change. \\
+
+RF detuning map &
+How sensitive is the response to RF frequency mismatch? &
+\(\Delta T_{\mathrm{RF}}(\Delta_p,\Delta_{\mathrm{RF}})\) map. \\
+
+Magnetic-bias map &
+How does \(B_0\) reshape the optical response? &
+\(\Delta T_{B}(\Delta_p,B_0)\) map. \\
+
+Polarization-basis response &
+Do \(\sigma^+\), \(\pi\), and \(\sigma^-\) pathways produce distinguishable features? &
+Differential spectra for idealized basis states. \\
+
+Feature separability &
+Which features are most useful for classification? &
+Distance or separability metrics between simulated polarization classes. \\
+
+Sensitivity sweep &
+Which parameters dominate the response? &
+Parameter sensitivity to \(B_0\), \(\Omega_{\mathrm{RF}}\), linewidth, detuning, and optical depth. \\
+\hline
+\end{tabular}
+\end{table*}
+
+The differential RF response is
+\begin{equation}
+\Delta T_{\mathrm{RF}}
+(\Delta_p,\Delta_{\mathrm{RF}})
+=
+T(\Delta_p;\Omega_{\mathrm{RF}},\Delta_{\mathrm{RF}})
+-
+T(\Delta_p;\Omega_{\mathrm{RF}}=0),
+\label{eq:annex_deltaT_rf}
+\end{equation}
+the differential magnetic-bias response is
+\begin{equation}
+\Delta T_{B}
+(\Delta_p,B_0)
+=
+T(\Delta_p;B_0)
+-
+T(\Delta_p;B_0=0),
+\label{eq:annex_deltaT_B}
+\end{equation}
+and the differential polarization response is
+\begin{equation}
+\Delta T_{\mathrm{pol}}
+(\Delta_p;\mathbf{w})
+=
+T(\Delta_p;\mathbf{w},B_0)
+-
+T(\Delta_p;\Omega_{\mathrm{RF}}=0).
+\label{eq:annex_deltaT_pol}
+\end{equation}
+
+\subsection{Illustrative Compact-Model Parameters}
+\label{annex:baseline_parameters}
+
+The parameters in Table~\ref{tab:annex_baseline_parameters} are illustrative design values, not final experimental fit parameters. They should be replaced or constrained in the final thesis using measured optical powers, beam waists, vapor-cell temperature, linewidth estimates, RF field estimates, and magnetic-field mapping.
+
+\begin{table}[!t]
+\caption{Illustrative parameters for compact forward-model simulations.}
+\label{tab:annex_baseline_parameters}
+\centering
+\renewcommand{\arraystretch}{1.10}
+\begin{tabular}{p{0.43\linewidth} p{0.42\linewidth}}
+\hline
+\textbf{Parameter} & \textbf{Illustrative value} \\
+\hline
+Probe Rabi frequency, \(\Omega_p\) & \(0.05~\mathrm{MHz}\) \\
+Coupling Rabi frequency, \(\Omega_c\) & \(5~\mathrm{MHz}\) \\
+Optical coherence decay, \(\gamma_{ge}\) & \(6~\mathrm{MHz}\) \\
+Rydberg coherence decay, \(\gamma_{gr}\) & \(0.45~\mathrm{MHz}\) \\
+RF coherence decay, \(\gamma_{gs}\) & \(0.45~\mathrm{MHz}\) \\
+Effective optical depth, \(\mathrm{OD}\) & 2 \\
+Illustrative Zeeman slope & \(2.8~\mathrm{MHz/mT}\) \\
+RF Rabi-frequency sweep & \(0\text{--}15~\mathrm{MHz}\) \\
+Magnetic-bias sweep & \(0\text{--}2.5~\mathrm{mT}\) \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Minimum RydIQule / Optical-Bloch Reporting Parameters}
+\label{annex:rydiqule_parameters}
+
+\begin{table*}[!t]
+\caption{Minimum simulation parameters to report for Rydberg-EIT receiver modelling.}
+\label{tab:annex_simulation_parameters}
+\centering
+\renewcommand{\arraystretch}{1.12}
+\scriptsize
+\begin{tabular}{p{0.25\textwidth} p{0.25\textwidth} p{0.38\textwidth}}
+\hline
+\textbf{Parameter} & \textbf{Status} & \textbf{Reason for inclusion} \\
+\hline
+Probe wavelength and detuning & Measured or set value & Defines the optical readout axis. \\
+Coupling wavelength and detuning & Measured or set value & Defines the Rydberg excitation condition. \\
+Probe/coupling Rabi frequencies & Estimate or measured calibration & Controls linewidth, contrast, and EIT response. \\
+RF frequency and detuning & Measured source setting & Determines whether a candidate Rydberg transition is addressed. \\
+RF Rabi frequency or field estimate & Estimated from RF geometry or fit & Links RF field strength to atomic response. \\
+Magnetic bias \(B_0\) & From calibration & Defines Zeeman splitting and quantization axis. \\
+Decay and dephasing rates & Literature or fitted values & Controls linewidth and observable contrast. \\
+Doppler averaging & Future refinement & Needed for quantitative vapor-cell agreement. \\
+Spatial field variation & Future refinement & Needed if RF or magnetic fields are nonuniform. \\
+Detector-noise model & Future refinement & Needed for quantitative feature covariance and classification. \\
+\hline
+\end{tabular}
+\end{table*}
+
+The final thesis should include simulation results only after the operating regime is experimentally defensible. At the interim stage, simulation supports transition selection, expected feature types, and experimental planning.
+
+\section{RF Front-End Supporting Measurements}
+\label{annex:rf_support}
+
+This annex documents supporting definitions and data products for RF-front-end validation. The main report presents only the key figures and operating-band conclusions. This annex preserves how each metric was obtained.
+
+\subsection{Antenna Return-Loss Metrics}
+\label{annex:rf_s11_support}
+
+The return-loss analysis uses the measured \(S_{11}\) traces for the circular antenna, LPDA 1, and LPDA 2. The reflection coefficient and reflected-power fraction are
+\begin{equation}
+|\Gamma|
+=
+10^{S_{11}/20},
+\qquad
+|\Gamma|^2
+=
+10^{S_{11}/10},
+\label{eq:annex_gamma}
+\end{equation}
+where \(S_{11}\) is expressed in dB. The accepted-power fraction is
+\begin{equation}
+P_{\mathrm{acc}}
+=
+1-|\Gamma|^2.
+\label{eq:annex_accepted_power}
+\end{equation}
+The operating band used in the report is \(1.7\text{--}1.9~\mathrm{GHz}\), centred on the \(1.8~\mathrm{GHz}\) test frequency.
+
+\begin{table*}[!t]
+\caption{RF return-loss data products used for antenna validation.}
+\label{tab:annex_s11_data_products}
+\centering
+\renewcommand{\arraystretch}{1.12}
+\scriptsize
+\begin{tabular}{p{0.22\textwidth} p{0.23\textwidth} p{0.36\textwidth} p{0.10\textwidth}}
+\hline
+\textbf{Quantity} & \textbf{Definition} & \textbf{Purpose} & \textbf{Source} \\
+\hline
+\(S_{11}(f)\) & Measured return loss in dB & Identifies impedance match and reflected power & VNA CSV \\
+\(|\Gamma|^2\) & \(10^{S_{11}/10}\) & Estimates reflected-power fraction & MATLAB export \\
+\(P_{\mathrm{acc}}\) & \(1-|\Gamma|^2\) & Estimates accepted-power fraction & MATLAB export \\
+Band median & Median over \(1.7\text{--}1.9~\mathrm{GHz}\) & Robust operating-band summary & MATLAB export \\
+IQR & \(Q_3-Q_1\) over the operating band & Indicates frequency sensitivity across the band & MATLAB export \\
+\hline
+\end{tabular}
+\end{table*}
+
+\subsection{LPDA Polarization Validation}
+\label{annex:rf_lpda_support}
+
+The LPDA validation uses co-polar, \(45^\circ\), and cross-polar \(S_{21}\) measurements. The cross-polar isolation is
+\begin{equation}
+\mathrm{XPI}(f)
+=
+S_{21,\mathrm{co}}(f)
+-
+S_{21,\mathrm{cross}}(f),
+\label{eq:annex_xpi}
+\end{equation}
+and the \(45^\circ\) loss relative to the co-polar case is
+\begin{equation}
+L_{45}(f)
+=
+S_{21,\mathrm{co}}(f)
+-
+S_{21,45^\circ}(f).
+\label{eq:annex_l45}
+\end{equation}
+These metrics show whether the LPDA pair can provide useful linear-polarization reference states for later Rydberg testing.
+
+\subsection{Steel-Rod Linear Polarizer Validation}
+\label{annex:rf_polarizer_support}
+
+The custom polarizer was fabricated using 17 steel rods, each approximately \(6~\mathrm{mm}\) in diameter with \(15~\mathrm{mm}\) centre-to-centre spacing in a polymer holder. The measured states are no-polarizer, pass, \(45^\circ\), and reject orientations. The extinction ratio is
+\begin{equation}
+\mathrm{ER}(f)
+=
+S_{21,\mathrm{pass}}(f)
+-
+S_{21,\mathrm{reject}}(f),
+\label{eq:annex_er}
+\end{equation}
+and the pass-state insertion penalty is
+\begin{equation}
+L_{\mathrm{pass}}(f)
+=
+S_{21,\mathrm{no\ pol.}}(f)
+-
+S_{21,\mathrm{pass}}(f).
+\label{eq:annex_pass_loss}
+\end{equation}
+The polarizer is treated as a practical RF analyzer, not an ideal wire-grid polarizer.
+
+\subsection{Circular-Antenna Orientation Sensitivity}
+\label{annex:rf_circular_support}
+
+The circular-antenna validation uses two in-plane orientations separated by \(90^\circ\). The orientation-sensitivity metric is
+\begin{equation}
+\Delta S_{21,\mathrm{CP}}(f)
+=
+\left|
+S_{21,0^\circ}(f)
+-
+S_{21,90^\circ}(f)
+\right|.
+\label{eq:annex_cp_delta}
+\end{equation}
+A small value of \(\Delta S_{21,\mathrm{CP}}\) near \(1.8~\mathrm{GHz}\) is consistent with reduced in-plane orientation sensitivity, but it does not prove circular handedness or axial ratio. The circular antenna is therefore treated as a candidate circular or weakly elliptical source until a calibrated circular-polarization measurement is performed.
+
+\section{Magnetic-Bias Calibration Data}
+\label{annex:magnetic_calibration}
+
+This annex gives the magnetic-field calibration data used to convert coil drive voltage into magnetic bias \(B_0\). The main report presents the fitted calibration and residuals; this annex preserves the measured values and uncertainty assumptions.
+
+\subsection{Calibration Model}
+\label{annex:magnetic_model}
+
+The coil current was estimated using
+\begin{equation}
+I
+=
+\frac{V}{R_{\mathrm{nom}}},
+\label{eq:annex_current_from_voltage}
+\end{equation}
+where \(R_{\mathrm{nom}}=20~\Omega\). The fitted magnetic-bias calibration used in the report is
+\begin{equation}
+B_0(I)
+=
+2.302I+0.028
+\quad [\mathrm{mT}],
+\label{eq:annex_b0_calibration}
+\end{equation}
+with \(I\) in amperes. The interim fit gives \(R^2\approx0.981\) and an RMSE of approximately \(0.103~\mathrm{mT}\). This calibration is sufficient for an interim current-to-field mapping, but a final polarimetric experiment should also map field uniformity across the vapor-cell interaction region.
+
+\begin{table}[!t]
+\caption{Magnetic-bias calibration data used for the interim analysis.}
+\label{tab:annex_magnetic_calibration_data}
+\centering
+\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{c c c}
+\hline
+\textbf{\(V\) (V)} & \textbf{\(I\) (A)} & \textbf{Measured \(B_0\) (mT)} \\
+\hline
+0  & 0.00 & 0.00 \\
+1  & 0.05 & 0.26 \\
+2  & 0.10 & 0.40 \\
+3  & 0.15 & 0.46 \\
+4  & 0.20 & 0.56 \\
+5  & 0.25 & 0.58 \\
+6  & 0.30 & 0.70 \\
+7  & 0.35 & 0.72 \\
+8  & 0.40 & 0.83 \\
+9  & 0.45 & 0.98 \\
+10 & 0.50 & 1.02 \\
+11 & 0.55 & 1.21 \\
+12 & 0.60 & 1.30 \\
+13 & 0.65 & 1.50 \\
+14 & 0.70 & 1.63 \\
+15 & 0.75 & 1.70 \\
+16 & 0.80 & 2.10 \\
+17 & 0.85 & 2.00 \\
+18 & 0.90 & 2.20 \\
+19 & 0.95 & 2.30 \\
+20 & 1.00 & 2.30 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Calibration Uncertainty}
+\label{annex:magnetic_uncertainty}
+
+The interim uncertainty model combines an absolute magnetic-field reading term and a proportional term:
+\begin{equation}
+u_B
+=
+0.05~\mathrm{mT}
++
+0.03|B_0|.
+\label{eq:annex_magnetic_uncertainty}
+\end{equation}
+This model is conservative for the interim report. The final thesis should replace or refine it if a formal instrument uncertainty, repeated calibration, or spatial magnetic-field map becomes available.
+
+\section{Representative Raw Rydberg Traces}
+\label{annex:raw_traces}
+
+This annex contains the available raw oscilloscope traces associated with the exploratory Rydberg measurements. These traces are included as supporting evidence only. They show acquisition quality and possible noise/artifact behaviour before reduced metrics are extracted.
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=\textwidth]{Fig13_Annex_Raw_Rydberg_Time_Domain_Traces.pdf}
+    \caption{Representative raw oscilloscope traces used to support the exploratory Rydberg-response analysis. 
+    (Left) Raw measured voltage traces from the available \(1.5~\mathrm{GHz}\) Rydberg-related oscilloscope captures without coils. 
+    (Right) The same traces after DC removal and vertical offsetting for visual comparison. These traces are included as supporting annex data only and are not used to claim a definitive magnetic-bias trend.}
+    \label{fig:annex_raw_traces}
+\end{figure*}
+
+The raw traces should be interpreted conservatively. They are useful for identifying baseline drift, electrical pickup, photodetector offset, oscilloscope trigger behaviour, saturation, clipping, and possible acquisition artifacts. They do not by themselves demonstrate a Rydberg polarimetric response.
+
+\section{Notebook-Derived Spectral Peak Readings}
+\label{annex:spectral_peaks}
+
+This annex documents the notebook-derived spectral peak readings used to support the diagnostic spectral analysis. These readings are not continuous FFT spectra. They are discrete peak readings transcribed from laboratory notes and should therefore be treated as supporting evidence rather than calibrated spectrum-analyser data.
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=\columnwidth]{Fig14_Annex_Notebook_Spectral_Peaks_vs_B0.pdf}
+    \caption{Notebook-derived spectral peak readings used to identify the dominant \(1.5\text{--}1.56~\mathrm{GHz}\) component and the secondary \(2.4~\mathrm{GHz}\)-region cluster. The \(2.4~\mathrm{GHz}\)-region data are shown as median levels with min--max spread where multiple notebook readings were available at the same magnetic-bias setting.}
+    \label{fig:annex_fft}
+\end{figure}
+
+\begin{table*}[!t]
+\caption{Notebook-derived spectral peak summary used for Annex Fig.~\ref{fig:annex_fft}.}
+\label{tab:annex_notebook_spectral_data}
+\centering
+\renewcommand{\arraystretch}{1.10}
+\scriptsize
+\begin{tabular}{c c c c c c}
+\hline
+\textbf{\(V\) (V)} & \textbf{\(I\) (A)} & \textbf{\(B_0\) (mT)} & \textbf{Main level (dBm)} & \textbf{HF median (dBm)} & \textbf{HF readings} \\
+\hline
+0  & 0.00 & 0.028 & -29.06 & -28.57 & 2 \\
+2  & 0.10 & 0.258 & -28.20 & --     & 0 \\
+4  & 0.20 & 0.488 & -26.92 & --     & 0 \\
+6  & 0.30 & 0.719 & -26.07 & -44.95 & 1 \\
+8  & 0.40 & 0.949 & -24.46 & -48.55 & 1 \\
+10 & 0.50 & 1.179 & -25.61 & -48.55 & 1 \\
+12 & 0.60 & 1.409 & -25.36 & -48.09 & 3 \\
+14 & 0.70 & 1.639 & -26.30 & -46.62 & 3 \\
+16 & 0.80 & 1.870 & -26.31 & -48.31 & 3 \\
+18 & 0.90 & 2.100 & -23.83 & -47.70 & 2 \\
+20 & 1.00 & 2.330 & -25.90 & -47.27 & 4 \\
+\hline
+\end{tabular}
+\end{table*}
+
+The \(1.5\text{--}1.56~\mathrm{GHz}\) component is the main exploratory response tracked in the interim report. The \(2.4~\mathrm{GHz}\)-region cluster is included because it indicates additional spectral content or acquisition artifacts that must be considered when interpreting reduced measurements. These data do not establish a monotonic Rydberg response versus \(B_0\).
+
+\section{Additional Experimental Setup Photographs}
+\label{annex:setup_photos}
+
+This annex preserves additional setup photographs that support the experimental description but are not essential in the main results section. Photographs should be included only if they clarify the apparatus, alignment, RF path, optical path, magnetic-bias hardware, or detector chain.
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=0.78\textwidth]{IMG-20260429-WA0002.jpg}
+    \caption{Additional zoomed-out experimental setup photograph included for apparatus traceability. The photograph supports the description of the Rydberg optical-table arrangement, sensing region, magnetic-bias hardware, and supporting measurement chain.}
+    \label{fig:annex_setup_photo_wa0002}
+\end{figure*}
+
+If additional photographs are included in the final thesis, each should be labelled with arrows or callouts identifying the RF source path, antenna or polarizer, vapor-cell region, magnetic-bias coil, optical beam path, photodetector, and acquisition hardware. Unlabelled photographs that do not add technical value should be omitted.
+
+\section{Standard Operating Procedures}
+\label{annex:sop}
+
+This annex provides standard operating procedures for the main experimental workflows. The purpose is to show repeatability and support continuation of the project in the final thesis stage.
+
+\subsection{RF \(S\)-Parameter Measurement Procedure}
+\label{annex:sop_sparameters}
+
+\begin{enumerate}
+    \item Inspect RF cables, adapters, antenna mounts, and connectors for damage.
+    \item Configure the VNA sweep to cover the operating band around \(1.8~\mathrm{GHz}\).
+    \item Perform or verify VNA calibration before the measurement sequence.
+    \item Fix cable routing to minimize motion-induced variation.
+    \item Record \(S_{11}\) for each antenna.
+    \item Record \(S_{21}\) for co-polar, \(45^\circ\), and cross-polar LPDA orientations.
+    \item Insert the steel-rod polarizer and record no-polarizer, pass, \(45^\circ\), and reject orientations.
+    \item Record circular-antenna \(0^\circ\) and \(90^\circ\) orientations.
+    \item Export raw CSV files with clear file names and metadata.
+    \item Process all traces using the same MATLAB scripts, smoothing settings, and \(1.7\text{--}1.9~\mathrm{GHz}\) operating-band definition.
+\end{enumerate}
+
+\subsection{Magnetic-Field Calibration Procedure}
+\label{annex:sop_magnetic}
+
+\begin{enumerate}
+    \item Place the magnetic-field probe at the intended sensing-region position.
+    \item Record the ambient or zero-current magnetic field.
+    \item Increase coil drive voltage in defined steps.
+    \item Convert voltage to current using measured or nominal coil resistance.
+    \item Record magnetic flux density at each current.
+    \item Repeat selected points to check drift and positioning repeatability.
+    \item Fit \(B_0(I)=\alpha I+\beta\).
+    \item Plot residuals and compare them with the uncertainty model.
+    \item Export raw data, fitted data, residuals, and summary statistics.
+\end{enumerate}
+
+\subsection{Exploratory Rydberg Measurement Procedure}
+\label{annex:sop_rydberg}
+
+\begin{enumerate}
+    \item Confirm laser-safety permissions, beam enclosures, interlocks, and laboratory access conditions before optical work.
+    \item Align the \(780~\mathrm{nm}\) probe and \(480~\mathrm{nm}\) coupling beams to obtain a stable EIT feature.
+    \item Record coupling-off and coupling-on optical references.
+    \item Record no-RF and no-bias baseline traces.
+    \item Apply the selected RF frequency and source power.
+    \item Record RF-on traces at zero magnetic bias.
+    \item Step the coil current through the calibrated \(B_0\) range.
+    \item Record trace or spectral data at each \(B_0\) setting.
+    \item Repeat the no-bias reference after the sweep.
+    \item Repeat the sweep where possible to estimate repeatability.
+    \item Extract \(\Delta P(B_0)\), spectral peak levels, or EIT feature vectors using the same processing script for all conditions.
+\end{enumerate}
+
+\section{Supporting Uncertainty, Repeatability, and Decision Calculations}
+\label{annex:uncertainty}
+
+This annex provides uncertainty and repeatability calculations used to support the interim interpretation. The main report should present only the essential conclusions.
+
+\subsection{RF Operating-Band Statistics}
+\label{annex:rf_statistics}
+
+For a measured \(S\)-parameter trace \(S(f)\), the operating-band median is
+\begin{equation}
+\widetilde{S}_{\mathrm{band}}
+=
+\mathrm{median}
+\left[
+S(f):1.7~\mathrm{GHz}\leq f\leq1.9~\mathrm{GHz}
+\right].
+\label{eq:annex_band_median}
+\end{equation}
+The interquartile range is
+\begin{equation}
+\mathrm{IQR}_{\mathrm{band}}
+=
+Q_3(S_{\mathrm{band}})
+-
+Q_1(S_{\mathrm{band}}).
+\label{eq:annex_band_iqr}
+\end{equation}
+The median is used because it is less sensitive to narrowband ripple or isolated measurement artifacts than a single-frequency value.
+
+\subsection{Magnetic-Field Fit Quality}
+\label{annex:magnetic_fit_quality}
+
+For the linear magnetic calibration\begin{equation}
+B_0(I)=\alpha I+\beta,
+\label{eq:annex_bfit}
+\end{equation}
+the residual at each measured current is
+\begin{equation}
+r_i
+=
+B_{0,i}
+-
+\widehat{B}_{0,i}.
+\label{eq:annex_b_residual}
+\end{equation}
+The RMSE is
+\begin{equation}
+\mathrm{RMSE}
+=
+\sqrt{
+\frac{1}{N-2}
+\sum_{i=1}^{N}r_i^2
+}.
+\label{eq:annex_rmse}
+\end{equation}
+The coefficient of determination is
+\begin{equation}
+R^2
+=
+1-
+\frac{\sum_i r_i^2}
+{\sum_i(B_{0,i}-\overline{B}_0)^2}.
+\label{eq:annex_r2}
+\end{equation}
+
+\subsection{Exploratory Rydberg Relative Response}
+\label{annex:rydberg_relative_response}
+
+The exploratory Rydberg response is expressed relative to a reference reading:
+\begin{equation}
+\Delta P(B_0)
+=
+P(B_0)-P_{\mathrm{ref}}.
+\label{eq:annex_relative_delta_p}
+\end{equation}
+For the interim analysis, \(\Delta P(B_0)\) is interpreted only as an exploratory level-change metric. It should not be interpreted as a calibrated RF electric-field measurement or as evidence of polarization sensitivity unless repeated measurements show separability above baseline drift, readout noise, and RF-coupling variation.
+
+\subsection{Feature Separability}
+\label{annex:feature_separability}
+
+A simulated or measured polarization response is useful only if different input states produce distinguishable feature vectors. A separability metric between candidate states \(i\) and \(j\) is the Mahalanobis distance:
+\begin{equation}
+D_{ij}^{2}
+=
+(\boldsymbol{\mu}_{i}-\boldsymbol{\mu}_{j})^{T}
+\mathbf{\Sigma}^{-1}
+(\boldsymbol{\mu}_{i}-\boldsymbol{\mu}_{j}),
+\label{eq:annex_mahalanobis}
+\end{equation}
+where \(\boldsymbol{\mu}_{i}\) and \(\boldsymbol{\mu}_{j}\) are feature means, and \(\mathbf{\Sigma}\) represents expected measurement covariance. If the feature separation is smaller than measurement variation, the receiver cannot reliably distinguish the corresponding polarization states.
+
+\subsection{Minimum Evidence Required for Final Polarization Claims}
+\label{annex:claim_gates}
+
+Table~\ref{tab:annex_decision_gates} defines the decision gates that should be used before escalating from subsystem validation to polarimetric inference.
+
+\begin{table*}[!t]
+\caption{Evidence gates for final-thesis polarization claims.}
+\label{tab:annex_decision_gates}
+\centering
+\renewcommand{\arraystretch}{1.12}
+\scriptsize
+\begin{tabular}{p{0.14\textwidth} p{0.34\textwidth} p{0.36\textwidth} p{0.08\textwidth}}
+\hline
+\textbf{Gate} & \textbf{Required evidence} & \textbf{Interpretation if passed} & \textbf{Stage} \\
+\hline
+1 & Stable baseline EIT or detector response. & Raw optical readout is suitable for feature extraction. & Required \\
+2 & Repeatable RF-coupled response at fixed \(B_0\). & RF field is producing a measurable optical change. & Required \\
+3 & Repeatable response variation with calibrated \(B_0\). & Magnetic bias is a useful control variable. & Required \\
+4 & Known linear polarization states are separable in feature space. & Receiver can discriminate at least one polarization basis. & Strong result \\
+5 & Candidate circular or elliptical states are distinguishable from linear states. & Receiver may contain useful \(S_3\)-related information. & Stronger result \\
+6 & Feature covariance is low enough for classification. & Polarization-state classification is defensible. & Final goal \\
+7 & Enough independent analyzer states or features constrain \(\mathbf{S}\). & Partial or full Stokes estimation may be attempted. & Only if justified \\
+\hline
+\end{tabular}
+\end{table*}
+
+This staged approach prevents overclaiming. If the final data support only RF-front-end validation, magnetic-bias calibration, and exploratory Rydberg response, that is still a meaningful engineering outcome. Classification or Stokes reconstruction should only be claimed if the measured feature space genuinely supports it.
+
+\section{Annex Summary}
+\label{annex:summary}
+
+The annexes preserve the evidence and technical reasoning behind the interim report. They document the extended receiver model, simulation workflow, RF-front-end validation metrics, magnetic-bias calibration data, exploratory Rydberg traces, notebook-derived spectral readings, SOPs, uncertainty calculations, and decision gates. Their role is traceability: the main report can remain concise while the annex demonstrates that the conclusions are grounded in measured data, explicit assumptions, and a reproducible workflow.
+
+\EOD
+
+\end{document}
