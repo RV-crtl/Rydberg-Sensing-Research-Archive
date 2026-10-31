@@ -11,7 +11,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parent.parent
 ORIGINAL = ROOT / "docs/traceability/ASSET_REGISTER.csv"
 CURATED = ROOT / "docs/traceability/CURATED_DOCUMENT_BLOBS.csv"
-TEXT_EOL_TYPES = {".csv", ".json", ".md", ".py", ".tex"}
+TEXT_EOL_TYPES = {".csv", ".json", ".md", ".py", ".tex", ".svg"}
 
 
 def sha256_bytes(data):
