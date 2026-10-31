@@ -5,7 +5,7 @@
 
 **Research portfolio / source evidence / reproducible analysis / technical handover**
 
-[**Explore the Research**](docs/START_HERE.md) · [**Engineering Handover**](docs/handover/HANDOVER.md) · [**Evidence Catalogue**](docs/results/EVIDENCE_INDEX.md) · [**Browse the Website**](site/index.html)
+[**Explore the Research**](docs/START_HERE.md) · [**Engineering Handover**](docs/handover/HANDOVER.md) · [**Evidence Catalogue**](docs/results/EVIDENCE_INDEX.md) · [**Browse the Website**](site/index.html) · [**Interactive Explorer**](site/explorer.html)
 
 ![Experimental Rydberg optical bench, from the manuscript's documented laboratory figure](site/assets/lab-optical-bench.png)
 
@@ -34,6 +34,16 @@ The original source-backed article and V44 numerical evidence are only part of t
 | [Evidence status](docs/traceability/RECORD_STATUS_POLICY.md) · [research stream matrix](docs/traceability/RESEARCH_STREAM_STATUS.csv) | Explicit measured vs simulated vs proposed vs fabricated/purchased/published controls |
 
 **Archive count clarity:** the original release contained 290 actual files. The discovery catalogue lists 1,280 *additional historical source records*, many overlapping/versioned. Their filenames are not automatically original GitHub assets; consult the source-completeness register before claiming a complete byte-for-byte historical mirror.
+
+## Interactive research, technical work packages and archive search
+
+**[Open the scientific explorer](site/explorer.html)** — a responsive, dependency-free research website with a rotatable Poincaré sphere, ideal-polarisation controls, actual HFSS-derived six-state response calculations, model CSV export, interactive research milestones, **search across 314 original tracked-source records** and a separate searchable index of **1,280 historical Library-discovery records**. The scientific calculations are offline demonstrations, never represented as physical atomic measurements or new solver runs.
+
+**[Master research work-package register](docs/handover/MASTER_WORK_PACKAGE_REGISTER.md)** — 55 detailed atomic, RF, hardware, HFSS, software, publication and research administration tasks with source anchors and status boundaries. This is the most complete cross-disciplinary work index in the archive.
+
+[Native HFSS and field-reconstruction playbook](docs/methods/HFSS_NATIVE_RESULT_REPRODUCTION.md) · [Experimental calibration and recovery protocol](docs/methods/CALIBRATION_AND_RECOVERY_PROTOCOL.md) · [GitHub research operations](docs/governance/GITHUB_RESEARCH_OPERATIONS.md) · [Website setup and publishing rules](site/README.md).
+
+> **Website publication:** the Pages workflow is deliberately manual and packages only the reviewed `site/` folder, never the private archive's raw paper, lab, supplier or solver directories. Publishing remains subject to institutional and asset release approval.
 
 ## The research in one minute
 

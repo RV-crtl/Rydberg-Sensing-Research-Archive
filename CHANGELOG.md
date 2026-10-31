@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-31 — Interactive source-backed research website and engineering deep-dive
+
+- Added standalone scientific explorer with live Poincaré sphere, real six-row HFSS-derived instrument responses, polarisation presets and model CSV export.
+- Added dual-mode search for 314 source-indexed GitHub files and 1,280 historical discovery-only filenames, provenance-linked research milestones and accessible mobile layouts.
+- Corrected site-only deployment links and moved Pages publication to manual release of `site/` exclusively, eliminating the earlier entire-repository Pages publication risk.
+- Added Python scientific-source and link audits plus Node model/unit tests in automated CI.
+- Expanded technical handover to a 55-work-package register and standalone calibration and native HFSS reproduction playbooks.
+- Added research project issue forms, CODEOWNERS, GitHub Actions dependency updates, release automation metadata, and a security/release policy.
+
+
 ## 2026-10-31 — Comprehensive research history expansion
 
 - Reconstructed March–October 2026 programme chronology and disciplined measured/simulated/proposed evidence policy.
