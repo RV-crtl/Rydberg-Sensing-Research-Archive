@@ -1,0 +1,329 @@
+{
+  "sources": [
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_P_1p4750.fld",
+      "sha256": "df97fc92c5317c0056b85d881342cda3332f7737d5ebecc426f6579ecc35b032"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_M_1p4750.fld",
+      "sha256": "9d54e4d8faa44e2287029e13e88ab07da42b13dee085f5fa61738b87c32fcdd4"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_P_1p5250.fld",
+      "sha256": "00f29698c7bab2ddde546a71d56abe8ec5c97d95f7ced93d2136ae07c38d91b9"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_M_1p5250.fld",
+      "sha256": "6989c4992ea488d2bbb85ca67be327d3ca9ed2e65eec5d769b7106fb222a5a7c"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_P_1p5750.fld",
+      "sha256": "83df5335460af43a411dd01d8912fef8e34ccc7da06c63882c6d342c8a9e27b6"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_M_1p5750.fld",
+      "sha256": "ffd02a8e0cb56f269cdf9b92cce249863de06a60e53dbb03579fa4f0d27ee51b"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_P_1p6250.fld",
+      "sha256": "ed60be823e452c04fc19d4e37597ae65178575a8cc8e9dd2a2cc7027f096768a"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_M_1p6250.fld",
+      "sha256": "07d082be26c77944d706a1d8e1671be743812f46593768fcb94a8ec244062c4f"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_P_1p6750.fld",
+      "sha256": "94ca16f346f6dd40716eafaed2dfa120c731c726ddabea15ae1878a6a417d351"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_M_1p6750.fld",
+      "sha256": "27d3eb3eb60fe96c56a451e23f2fb13a0968b6362c36ded0196af21bf8acd903"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_P_1p7250.fld",
+      "sha256": "13292c5fad5094038ea1617b4160a54727d2077e6d5321d7b77f34e554c3a96d"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_M_1p7250.fld",
+      "sha256": "2d2f187ec99647a97abdd21db0379c26b9bc07d196c8ba3edfd03cf809318214"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_P_1p7750.fld",
+      "sha256": "92e7e2a2e7a03808c3d5de63c3a48ab03ec214cec3aa6a4baca05689118d6b68"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_M_1p7750.fld",
+      "sha256": "26c8b4b20ca97df0c5863196f8e21a7dd72753dd07d3a11e1e4b737e8505d3fa"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_P_1p8250.fld",
+      "sha256": "a2b500309326d9bce7c5cdf21617985281e6932491169135723661f61eda37a7"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_M_1p8250.fld",
+      "sha256": "4eb36458858edf4909b3da404bc1f881df363883f24c8158825e18c8b5e6feb7"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_P_1p8750.fld",
+      "sha256": "a020e680dc8f51846e102828149e55d507e921a5eb7fbe4b9fada35417cce523"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_M_1p8750.fld",
+      "sha256": "94e92653793f7476ffa5103620af3a285c5d42c74a578995cc962a0664b4e71f"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_P_1p4750.fld",
+      "sha256": "b18e5aa12cbfd6b0da866ad8118da5cf1e05bb5740fb947b3c104b63fce1bde4"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_M_1p4750.fld",
+      "sha256": "2b4b1139e41b102797926860be5d232e81adcefaec806c598dadc77e36560421"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_P_1p5250.fld",
+      "sha256": "c8a07a0fb63359c7fed1019b3397321dcf543e2bcf760673dfb11a7da54a6051"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_M_1p5250.fld",
+      "sha256": "93587ec15faaac451e664fc0aa9fbc96f8f547edc5c6d4622a4a709ea4e05d08"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_P_1p5750.fld",
+      "sha256": "2129d3e4eda8f1a136b662cfea64354477f7d84f6f7901448cb640b35556dab5"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_M_1p5750.fld",
+      "sha256": "df9d84d826fa305968faebe5562b4ae3ebf5f5b6b5b56069c89dcf78fbf241e1"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_P_1p6250.fld",
+      "sha256": "7923c5d6723e838ca8ce802622625c620437564fce4e20f332730c8c948f8614"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_M_1p6250.fld",
+      "sha256": "4d8d2ede0c6e3cdaf4e5028240e7c4e46ae1c0c0f2c6154cf67802f0c863a0f7"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_P_1p6750.fld",
+      "sha256": "4df7a56ce59d2a6c71f5e09929f07c4b87daad9df10618a3dd49865ca8e09f01"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_M_1p6750.fld",
+      "sha256": "b816e409615ac2338f9ca1fdd5d42812c7ecb1e3ec0ad2d299d6e6aaa7129fbf"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_P_1p7250.fld",
+      "sha256": "a14d1aa72b53ca09db8f8e5b4bc013d6431d72faf58f89f7324ed26e7e6280bc"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_M_1p7250.fld",
+      "sha256": "1ef47d9f7b0addd0bf140f0dbf812943aafc5deb039a7d846df67c7cc87184b2"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_P_1p7750.fld",
+      "sha256": "bac1be0c5ade41242d78da0846ff9ea82a19bac0ddbaf899be29dc63cadc604f"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_M_1p7750.fld",
+      "sha256": "6c71762cbb9ba9111b3c597845f62094ed8f8fb3f3d951152a5e56220501d7b1"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_P_1p8250.fld",
+      "sha256": "4f73e463c95114bd64db1f38a1704f8971c17a59e6defbefe25f16638f33cc30"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_M_1p8250.fld",
+      "sha256": "bb472b8fc015f0875a53750ce2a7dc186847901c27c96a850107ba5a81c3b64f"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_P_1p8750.fld",
+      "sha256": "93a46f1c3edc09509d3dbaac54d9ed9aa354cdabd8f5914b8f0b1c76c36e6196"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_M_1p8750.fld",
+      "sha256": "d10a9897f3e7042d4b123b8aef644bb97d4d1badf831593aab658c6a44986785"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_P_1p4750.fld",
+      "sha256": "a74e59ce8cceb0c7b03e91c7d629794b6d2c006d08d72e7b9db1085241fa4393"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_M_1p4750.fld",
+      "sha256": "1654865a91418d264a09428b5adecbed6e18472d96a6b49148b1115c1e5fa641"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_P_1p5250.fld",
+      "sha256": "c07e99544a0282e20f9a5969d2dd97a75d02d9526ae34a588d645642c30369aa"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_M_1p5250.fld",
+      "sha256": "b7997987ca2e69c9734fd263df55063bf988a23f8a1490b6f9247a1a3c700707"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_P_1p5750.fld",
+      "sha256": "b1570fb2157315381146fa27a8a0af24d70e261b65d5175cd17cbcbb97d345f9"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_M_1p5750.fld",
+      "sha256": "64cf1fb3a3dbbb726c8bc9c6e18da517525b1c404e2166464347cb47c1db0a26"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_P_1p6250.fld",
+      "sha256": "06c21dfadb910910552b4a8066ea401986a05ea5448cdb7189a9605423d3b0f8"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_M_1p6250.fld",
+      "sha256": "492e47dd6b89a792cf21b3046d88cd4c26e434404c95de5c36819109d7e362f8"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_P_1p6750.fld",
+      "sha256": "2a409f254a9f59691d6dad7bdbbbd2a130c89e5fb21a614a7931f29e92e08b2e"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_M_1p6750.fld",
+      "sha256": "b6397f6705117e72c0201b39cc3caa747992ef1d4356e59ff8d54bebf3a4672e"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_P_1p7250.fld",
+      "sha256": "2b86da93a5a2607ad68b966fcc75e6f6183170b5591707ba19879327d1f35e37"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_M_1p7250.fld",
+      "sha256": "90bc65ac5ecd81a2e7255a87af381d5ed33a514cec3670fff28f84f1ff50253a"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_P_1p7750.fld",
+      "sha256": "c7c3d0ea107aee7f5857d70ef21fa924c0d6bd1c283abef257816c2789409f36"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_M_1p7750.fld",
+      "sha256": "deab41b8238689eeef0b7e27b6f16f04c367294866e787c5a3325a2ae072c35c"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_P_1p8250.fld",
+      "sha256": "759a4a2becd65880565a7e936dff544fb5bd9618271056e6135f81812646ca90"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_M_1p8250.fld",
+      "sha256": "81952d9fbb769aeb1ad70087fe41c48ddbe979e1271d21284899054b00a66388"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_P_1p8750.fld",
+      "sha256": "3a93a7d7c1e91a373e05410b3b8fa10a26b64a1edf424f974660db091948fe7a"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_M_1p8750.fld",
+      "sha256": "2d68a8980fae34bd7b7b3031e22abc82ba59c7cded47cc160addbd4a96fa510e"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_P_1p4750.fld",
+      "sha256": "2e17cc031a35f3d88fcaf2f35711e84bb6cca13d4af50ccee1b33a39716d273d"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_M_1p4750.fld",
+      "sha256": "2328fd03cc8f853fdf76fb97d95d24d88c6b8f0c1cbe45f0b9429efb7a304ef0"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_P_1p5250.fld",
+      "sha256": "4ab85335328f9bcb2117928888aff8e748be690b23323a8b61c5f89197cc3262"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_M_1p5250.fld",
+      "sha256": "55214fb01a544c1ae03ad3adc2e8042a0af1507abeb3de58efd8b9d53e6977c7"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_P_1p5750.fld",
+      "sha256": "0b22cf930d35416f82a22cb5a899c8b7ad9d3deea7e4f3b1c40509d63e988903"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_M_1p5750.fld",
+      "sha256": "2c82fb12ef102e6461bdf865fd27dad71eb22069db0968c4963d9453c7eb1a3b"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_P_1p6250.fld",
+      "sha256": "9a3b737ac4445426dd25c57ac43807289dd551565c1e53965cf04f03211a3b7b"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_M_1p6250.fld",
+      "sha256": "3a10fb809b291aca4567b092c217c3daee227b9ea28d37036ee1480e0a22a737"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_P_1p6750.fld",
+      "sha256": "d8e12abc0524231c0f19e1576c4484c8f6188509ee1f37980bf594d0d9f921f3"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_M_1p6750.fld",
+      "sha256": "61a65327650ec9a00a621f5b57b47a7bdb71c2fbd3401dd438ec73a400e4ad31"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_P_1p7250.fld",
+      "sha256": "5f98d1e74e8ddda74a0684afb3f3562b8dfa16452ef5e215d9025fad40ce0e30"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_M_1p7250.fld",
+      "sha256": "e9259918d9d1d57d9cb8610aecb60dae5cc716c660910f1e5478454a57f05243"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_P_1p7750.fld",
+      "sha256": "8bfa86f84c16b97722ab05c8c0c7eb6bc2175e6c755545143bac94d343854cad"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_M_1p7750.fld",
+      "sha256": "42bfaa9a1761aa41b3ec355ae06700ea799bb5d5ab68c08d60d24257726814e1"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_P_1p8250.fld",
+      "sha256": "1f2c013f6c062fde90645947981500a5fbd689f463211d135fb33a744c2cb901"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_M_1p8250.fld",
+      "sha256": "eef47602a863fb7cd6e9457c2f7db2a3faff012b607e0f51065c7d6103c51408"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_P_1p8750.fld",
+      "sha256": "6ea0988fdccff21b4e3b767f15d28d720f8348cd68e5ca850a247831f9c656c8"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_M_1p8750.fld",
+      "sha256": "494052584e408385f7f899e8290e68dbfbbbaa801d8ed6e87b67355fb9ac5d39"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/V8_PAPER_PLANE_E_P_1p8250.fld",
+      "sha256": "52736edfba66e3f543b3fe64e2882bfd718e87f2a321bf91212d2be0285ae5c7"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/V8_PAPER_PLANE_E_M_1p8250.fld",
+      "sha256": "7e011fdc5799a084ded4dc66c7bdadd75d89bfe84e3bad8580004280cc916c37"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/V8_PAPER_PLANE_E_P_1p8250.fld",
+      "sha256": "84aebdd1dfc43728b27ef9430248bc4e4c099dc7f8d741bbcb263a74cae03910"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/V8_PAPER_PLANE_E_M_1p8250.fld",
+      "sha256": "8b0059b6399dfe09231fa38a6802d3d9880040d219c0e7291e8146ad55526f95"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/V8_PAPER_PLANE_E_P_1p8250.fld",
+      "sha256": "8e5f1a04b58562945b149db90b56587f0d89d69b6b125c7a118b9d1dbb48c0a1"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/V8_PAPER_PLANE_E_M_1p8250.fld",
+      "sha256": "cd6f3784e77ee07e12a7e12c856c5c78810872934432130060a7819a1d58a622"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/V8_PAPER_PLANE_E_P_1p8250.fld",
+      "sha256": "8ed8670bb92854f59133d9a3fc75b7eb95e519db0be9dc96fe5155aae73d2bf9"
+    },
+    {
+      "source_path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/V8_PAPER_PLANE_E_M_1p8250.fld",
+      "sha256": "6be4750e89443d7e82b0450417ca420182ef08f69be3e54904ac913038be9c87"
+    }
+  ],
+  "number_of_original_sources": 80,
+  "solver": "Ansys HFSS V15, idealized switch model",
+  "number_of_discrete_frequencies": 9,
+  "frequency_spacing_MHz": 50,
+  "dense_hfss_sweep": "not yet executed"
+}

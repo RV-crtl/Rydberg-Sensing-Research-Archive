@@ -1,0 +1,18 @@
+{
+  "stokes_sampling": "1231 deterministic Fibonacci points on pure-state Poincare sphere",
+  "observation": "HFSS native finite 3x3 matrices, 5 mm, 1.850 GHz",
+  "calibration": "P24 to P27 and P27 to P24",
+  "relative_norm_definition": "100*||S_est-S_true||_2/||S_true||_2",
+  "errors": {
+    "P24_calibration_P27_observation": {
+      "max_percent": 165.17621320915345,
+      "p95_percent": 156.79853923482653,
+      "median_percent": 82.52199120621957
+    },
+    "P27_calibration_P24_observation": {
+      "max_percent": 76.64820471627212,
+      "p95_percent": 72.22138289072838,
+      "median_percent": 32.83118777770264
+    }
+  }
+}

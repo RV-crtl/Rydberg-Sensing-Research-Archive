@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite the research manuscripts and sources relevant to the specific results you reuse."
+title: "Rydberg RF Sensing — Research Archive and Engineering Handover"
+type: dataset
+authors:
+  - family-names: Verghese
+    given-names: Ryan N.
+date-released: 2026-10-31
+abstract: >
+  Curated Rydberg-EIT microwave sensing and HFSS metasurface polarimetry research archive,
+  including original scientific evidence, editable manuscript source and reproducibility documentation.

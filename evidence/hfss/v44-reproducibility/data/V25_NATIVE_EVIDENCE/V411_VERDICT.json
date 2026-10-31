@@ -1,0 +1,214 @@
+{
+  "version": "V4.11",
+  "created_utc": "2026-10-23T11:56:08.065575+00:00",
+  "source": "HFSS complex 2x2 Floquet Jones matrices",
+  "existing_1p850_GHz": {
+    "status": "PASS_UNIFORM_PERIODIC_DUAL_MESH",
+    "condition_fine": 22.056032610763502,
+    "matrix_difference_pct": 0.7493175592889552,
+    "worst_stokes_transfer_pct": 3.7061352615842194
+  },
+  "existing_1p825_GHz": {
+    "source": "V4.9 native HFSS archive; externally validated",
+    "condition_fine": 32.03490350094846,
+    "matrix_difference_pct": 0.2608710207162955,
+    "worst_stokes_transfer_pct": 3.080060444885371
+  },
+  "new_results": [
+    {
+      "frequency_GHz": 1.8375,
+      "states": [
+        3,
+        6,
+        8,
+        10,
+        12,
+        13
+      ],
+      "status": "PASS_PERIODIC_SCREEN",
+      "thresholds": {
+        "condition_max": 35,
+        "matrix_change_max_pct": 5,
+        "stokes_transfer_max_pct": 10
+      },
+      "physics": "infinite periodic PEC sheets; ideal metal bridges; fixed-X power projection (not EIT)",
+      "B125": {
+        "status": "CONVERGED",
+        "rank": 4,
+        "condition": 24.965404199946036,
+        "minimum_gain": 0.1376011566298433,
+        "maximum_tetrahedra": 23270,
+        "analyser": [
+          [
+            0.41463416933821595,
+            0.33628910792519817,
+            0.019082142238448643,
+            0.24179950810797438
+          ],
+          [
+            0.17623996824853386,
+            0.15066683070801815,
+            -0.042580995850403515,
+            -0.08091286254381026
+          ],
+          [
+            0.43454669936707624,
+            0.4317582236072356,
+            -0.02559132150870067,
+            -0.04196134580519087
+          ],
+          [
+            0.1376011566298433,
+            -0.01752172954443025,
+            -0.13183981437452852,
+            -0.035289242629055834
+          ],
+          [
+            0.4284259068612063,
+            0.4261836770695776,
+            -0.02574852106057405,
+            -0.035401196766411666
+          ],
+          [
+            0.400872362308572,
+            0.3840923136799809,
+            0.09291706272505326,
+            0.06736590301749568
+          ]
+        ],
+        "source_cases": [
+          "EMPTY_V00_M00_B125_F1838",
+          "SINGLEPCB_V01_M03_B125_F1838",
+          "SINGLEPCB_V01_M06_B125_F1838",
+          "SINGLEPCB_V01_M08_B125_F1838",
+          "SINGLEPCB_V01_M10_B125_F1838",
+          "SINGLEPCB_V01_M12_B125_F1838",
+          "SINGLEPCB_V01_M13_B125_F1838"
+        ]
+      },
+      "B110": {
+        "status": "CONVERGED",
+        "rank": 4,
+        "condition": 25.47046676954721,
+        "minimum_gain": 0.1370042995449835,
+        "maximum_tetrahedra": 23015,
+        "analyser": [
+          [
+            0.415501359167269,
+            0.33758923356276577,
+            0.018349048771239277,
+            0.24153302312839733
+          ],
+          [
+            0.17674600028580956,
+            0.15186806992610108,
+            -0.041789360602222415,
+            -0.08018034231911021
+          ],
+          [
+            0.4350897979967317,
+            0.43221768038441793,
+            -0.02584892946820195,
+            -0.04269475294808335
+          ],
+          [
+            0.1370042995449835,
+            -0.018852475994132187,
+            -0.13148316302040788,
+            -0.033569928281887595
+          ],
+          [
+            0.4298747707789752,
+            0.42760881767696035,
+            -0.02560364082263536,
+            -0.03588134855066116
+          ],
+          [
+            0.40213183461705604,
+            0.3859076040436207,
+            0.09123128752037059,
+            0.06679959379492427
+          ]
+        ],
+        "source_cases": [
+          "EMPTY_V00_M00_B110_F1838",
+          "SINGLEPCB_V01_M03_B110_F1838",
+          "SINGLEPCB_V01_M06_B110_F1838",
+          "SINGLEPCB_V01_M08_B110_F1838",
+          "SINGLEPCB_V01_M10_B110_F1838",
+          "SINGLEPCB_V01_M12_B110_F1838",
+          "SINGLEPCB_V01_M13_B110_F1838"
+        ]
+      },
+      "matrix_difference_pct": 0.4041163981146963,
+      "worst_stokes_transfer_pct": 1.9709074268673274,
+      "comparison": {
+        "B125_to_B110": {
+          "matrix_frobenius_change_pct": 0.4041163981146963,
+          "max_normalized_analyzer_row_distance": 0.01544636390538789,
+          "row_change_distances": [
+            0.0029963401800492074,
+            0.008686073799566483,
+            0.0016590434333446766,
+            0.01544636390538789,
+            0.000997786623328466,
+            0.005497261810854178
+          ],
+          "stokes_s1_s3_error_p95_pct": 1.853270621839451,
+          "stokes_s1_s3_error_max_pct": 1.9409995779594995,
+          "stokes_full_vector_error_max_pct": 2.3567743461214494,
+          "test_stokes_count": 102,
+          "description": "Noiseless synthetic physical test Stokes vectors passed through actual HFSS-derived matrices; error is S1\u2013S3 Euclidean discrepancy as percent of S0, no clipping/denoising."
+        },
+        "B110_to_B125": {
+          "matrix_frobenius_change_pct": 0.4031930873949677,
+          "max_normalized_analyzer_row_distance": 0.01544636390538789,
+          "row_change_distances": [
+            0.0029963401800492074,
+            0.008686073799566483,
+            0.0016590434333446766,
+            0.01544636390538789,
+            0.000997786623328466,
+            0.005497261810854178
+          ],
+          "stokes_s1_s3_error_p95_pct": 1.8754333352339947,
+          "stokes_s1_s3_error_max_pct": 1.9709074268673274,
+          "stokes_full_vector_error_max_pct": 2.386462479358663,
+          "test_stokes_count": 102,
+          "description": "Noiseless synthetic physical test Stokes vectors passed through actual HFSS-derived matrices; error is S1\u2013S3 Euclidean discrepancy as percent of S0, no clipping/denoising."
+        }
+      }
+    },
+    {
+      "frequency_GHz": 1.875,
+      "states": [
+        3,
+        6,
+        8,
+        10,
+        12,
+        13
+      ],
+      "status": "INCOMPLETE",
+      "thresholds": {
+        "condition_max": 35,
+        "matrix_change_max_pct": 5,
+        "stokes_transfer_max_pct": 10
+      },
+      "physics": "infinite periodic PEC sheets; ideal metal bridges; fixed-X power projection (not EIT)",
+      "B125": {
+        "status": "INCOMPLETE",
+        "reason": "Missing converged empty reference: EMPTY_V00_M00_B125_F1875"
+      },
+      "B110": {
+        "status": "INCOMPLETE",
+        "reason": "Missing converged empty reference: EMPTY_V00_M00_B110_F1875"
+      }
+    }
+  ],
+  "cautions": [
+    "Passing isolated samples does not establish continuous bandwidth.",
+    "Synthetic cross-mesh transfer errors are not Rydberg experimental accuracy.",
+    "No finite panel, diode bias, realistic switch parasitics or EIT model is supplied."
+  ]
+}

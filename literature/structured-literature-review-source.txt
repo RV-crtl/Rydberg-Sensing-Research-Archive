@@ -1,0 +1,354 @@
+\section{Structured Literature Review and Research Gap}
+\label{sec:literature}
+
+Section~\ref{sec:background} introduced the technical foundations of microwave polarization, Rydberg-EIT readout, RF coupling, and magnetic-bias spectroscopy. This section now asks a different question: what has the published field already demonstrated, and what remains unresolved for a low-GHz, magnetically biased Rydberg microwave receiver intended for polarization estimation? The review is structured around capability rather than around atomic physics alone, because the thesis is an engineering receiver problem. A successful system must combine a validated RF polarization front end, a physically appropriate Rydberg transition, a controlled magnetic-bias field, a stable optical readout, and an inference method that links measured observables to polarization state.
+
+\subsection{Review Method and Scope}
+\label{subsec:lit_method}
+
+The literature review was conducted as a structured thematic survey rather than as a list of isolated papers. The search was organized around five linked concepts: Rydberg RF electrometry, Rydberg microwave receivers, vector or polarization-sensitive Rydberg sensing, magnetic-bias or Zeeman-resolved Rydberg spectroscopy, and RF polarization validation. The purpose was to identify not only what has been demonstrated, but also which assumptions, operating frequencies, observables, and calibration steps are required before a polarimetric claim is defensible.
+
+The review included peer-reviewed papers, preprints with clear experimental content, recent review articles, and published software papers relevant to modelling. The focus was placed on room-temperature vapor-cell platforms because the experimental system in this thesis uses a rubidium vapor cell rather than trapped atoms or cryogenic apparatus. Works were prioritized if they included one or more of the following: Rydberg-EIT microwave sensing, Autler--Townes field extraction, weak-field mixer or heterodyne operation, vector or polarization-sensitive measurement, magnetic-bias control, low-GHz operation, or explicit calibration and uncertainty discussion. Conventional antenna and polarization-engineering sources were included only where they directly informed ground-truth RF state preparation or validation.
+
+\begin{table}[!t]
+\caption{Structured search concepts used in the literature review.}
+\label{tab:lit_search_concepts}
+\centering
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{p{0.31\linewidth} p{0.58\linewidth}}
+\hline
+\textbf{Search concept} & \textbf{Purpose in this review} \\
+\hline
+Rydberg EIT electrometry & Establish the atom-based RF sensing foundation. \\
+Rydberg microwave receiver & Identify receiver-style architectures, observables, and performance metrics. \\
+Vector and polarization sensing & Determine how orientation, handedness, and field components have been measured. \\
+Magnetic bias and Zeeman splitting & Assess whether \(B_0\) can define a quantization axis and create useful spectral structure. \\
+Low-GHz operation & Determine whether the target frequency range is feasible and what limitations arise. \\
+RF polarizers and antennas & Establish how incident polarization states can be independently validated. \\
+ARC and RydIQule & Identify modelling tools for transition screening and density-matrix simulation. \\
+\hline
+\end{tabular}
+\end{table}
+
+This review is necessarily limited by the visibility of the field. Some Rydberg RF sensing and polarization-sensitive receiver work is likely to be defence- or government-linked and may not be fully available in the open academic literature. For this reason, the gap statement is framed carefully: it identifies what is not yet well established in publicly available research, rather than claiming that no such system has ever been attempted.
+
+\subsection{Research-Landscape Map}
+\label{subsec:lit_landscape_map}
+
+The project lies at the intersection of three mature areas and one emerging area. The mature areas are Rydberg RF sensing, magnetic-bias spectroscopy, and RF polarization engineering. The emerging area is Rydberg-based polarization estimation using receiver-style inference. This intersection is shown conceptually in Fig.~\ref{fig:lit_venn_placeholder}. The figure is important because the thesis is not simply trying to reproduce a Rydberg electrometer. It is investigating whether magnetic bias can be used as an analyzer degree of freedom inside a calibrated RF-to-optical receiver chain.
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=\textwidth]{fig03_research_intersection.pdf}
+    \caption{Research intersection addressed by this thesis. The project sits at the overlap of Rydberg RF sensing, magnetic-bias spectroscopy, RF polarization engineering, and receiver-level inference. This framing emphasizes that the work is not only an atomic-spectroscopy problem, but a calibrated RF-to-optical receiver-engineering problem for future microwave polarization estimation.}
+    \label{fig:research_intersection}
+\end{figure*}
+
+A conventional Rydberg electrometer may only require a reliable mapping from RF field amplitude to an optical response. A polarization-estimation receiver requires more. The RF input state must be known or controllably varied; the atomic quantization axis must be defined; the selected Rydberg transition must retain polarization sensitivity; and the measured optical features must contain enough independent information to distinguish candidate polarization states. The literature therefore has to be read through this receiver-level requirement rather than through sensitivity alone.
+
+\subsection{Temporal Development of the Field}
+\label{subsec:lit_temporal_summary}
+
+The first stage of the field established that highly excited Rydberg states can be optically detected in room-temperature alkali vapors using ladder-EIT. Early work showed that a weak probe beam could monitor a ground-to-intermediate transition while a coupling beam connected the intermediate state to a Rydberg level \cite{Mohapatra2007,Fleischhauer2005,Finkelstein2023PracticalGuide}. This made the vapor cell an optical readout medium for highly microwave-sensitive atomic states.
+
+The second stage transformed Rydberg spectroscopy into RF electrometry. Microwave fields coupling neighboring Rydberg states were shown to modify the EIT spectrum, particularly through Autler--Townes splitting \cite{Sedlacek2012,Holloway2014}. This was significant because the RF electric field could be inferred from an optical frequency-domain feature rather than from a conventional antenna voltage. Later work developed broadband atom-based probes, uncertainty models, and SI-traceable field measurements \cite{Holloway2017Uncertainty,Simons2021Review,ArtusioGlimpse2022,Schlossberger2024Review}. This established the central metrological promise of Rydberg sensors: atoms can provide an absolute or near-absolute field response when the transition and measurement model are well understood.
+
+The third stage extended Rydberg sensors into receiver architectures. Atomic mixers, phase-sensitive receivers, communications receivers, and spectrum-analysis demonstrations showed that a vapor cell can do more than measure a static field amplitude \cite{Simons2019Mixer,Holloway2019PhaseModReceiver,Meyer2021Spectrum,Holloway2022Voltage}. These systems introduced receiver-style concepts such as bandwidth, linear dynamic range, phase response, signal demodulation, and heterodyne observables. This transition matters for the present thesis because polarization estimation is a receiver problem: it requires feature extraction and inference from a measurement chain, not only an isolated spectral line.
+
+The fourth stage introduced vector and polarization-sensitive operation. Vector electrometry showed that the atomic response depends on the projection of the microwave field onto allowed transition dipoles \cite{Sedlacek2013}. Later work demonstrated polarization-sensitive Rydberg measurements using Floquet states, mixer-based projection methods, polarization spectroscopy, and full three-dimensional vector polarimetry \cite{Jiao2017Floquet,Wang2023Polarization,Gomes2024PolSpec,Elgee2024Polarimetry,Yin2024Polarization}. These papers establish that Rydberg atoms can encode vector information, but they also show that polarization estimation normally requires multiple independent observables, careful RF geometry, or local-oscillator-assisted measurement.
+
+The fifth stage, which is most relevant to this thesis, uses magnetic fields and transition selection as design variables. Magnetic-bias studies show that Zeeman structure can split or reshape Rydberg-EIT and Autler--Townes spectra \cite{Naber2016Magnetic,Li2023Magnetic,Schlossberger2024Zeeman}. From a scalar-electrometry perspective, this complexity may be undesirable. From a polarimetry perspective, it may be valuable because it can separate \(\sigma^+\), \(\pi\), and \(\sigma^-\) transition pathways. State-selection studies also show that not all transitions are equally useful: some candidate transitions produce robust and interpretable splitting, while others become nonlinear, asymmetric, or effectively polarization insensitive \cite{Chopinaud2021Optimal,Cloutman2024PolarizationInsensitive}. This makes transition screening a central part of the thesis rather than an implementation detail.
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=\textwidth]{fig04_literature_timeline.pdf}
+    \caption{Temporal development of the literature relevant to magnetically biased Rydberg polarization estimation. The field has progressed from Rydberg-EIT vapor-cell readout to RF electrometry, atom-based RF receivers, vector and polarization-sensitive sensing, and magnetic-bias-assisted low-GHz receiver challenges. The gap addressed in this thesis is the integration of these developments into a calibrated RF-to-optical receiver pathway for future microwave polarization estimation.}
+    \label{fig:literature_timeline}
+\end{figure*}
+
+\subsection{Rydberg RF Electrometry: What Is Established}
+\label{subsec:lit_rydberg_electrometry}
+
+Rydberg RF electrometry is now well established as a method for measuring microwave electric fields using optically interrogated atoms. In the resolved Autler--Townes regime, the microwave field produces a splitting proportional to the RF Rabi frequency,
+\begin{equation}
+\Delta f_{\mathrm{AT}}
+\approx
+\frac{\Omega_{\mathrm{RF}}}{2\pi}.
+\label{eq:lit_at_splitting}
+\end{equation}
+Because
+\begin{equation}
+\Omega_{\mathrm{RF}}
+=
+\frac{|\mathbf{d}_{rs}\cdot \mathbf{E}_{\mathrm{RF}}|}{\hbar},
+\label{eq:lit_rf_rabi_projection}
+\end{equation}
+the atomic observable is directly linked to the projection of the RF electric field onto a transition dipole. This is the fundamental bridge from scalar electrometry to vector-sensitive measurement.
+
+However, the established scalar-electrometry literature does not by itself solve polarization estimation. A scalar field measurement can often treat the RF field as a magnitude. A polarimetric measurement must determine how that magnitude is distributed among basis components and, for full reconstruction, how those components are phased. The same Autler--Townes splitting that is excellent for field-amplitude measurement may be insufficient for polarization estimation if only one projection is measured.
+
+The most important lesson from the electrometry literature is therefore calibration discipline. Serious Rydberg RF measurement requires a known transition, known dipole moment, stable optical readout, controlled RF geometry, uncertainty treatment, and awareness of vapor-cell perturbations. This thesis extends that discipline to polarization: the RF analyzer hardware, magnetic bias, and atomic response must all be calibrated before any polarization-dependent interpretation can be trusted.
+
+\subsection{Receiver Architectures and Observable Regimes}
+\label{subsec:lit_receiver_architectures}
+
+Rydberg receiver demonstrations have expanded the field beyond static amplitude measurement. Atomic mixers and superheterodyne architectures show that weak RF fields can be detected through beat-note or intermediate-frequency observables, even when resolved Autler--Townes splitting is not available \cite{Simons2019Mixer,Holloway2019PhaseModReceiver,Jing2020Superhet}. Communication receiver demonstrations show that Rydberg atoms can detect modulated RF signals and extract information-bearing waveforms \cite{Anderson2018Receiver,Cox2018QuantumLimited}. Spectrum-analyzer demonstrations show that atom-based systems can operate over broad frequency ranges and can be evaluated using receiver metrics such as bandwidth, linearity, dynamic range, and sensitivity \cite{Meyer2021Spectrum,Hu2022Tunable}.
+
+These architectures are important because the present thesis operates in a regime where a clean resonant response at \(1\text{--}2~\mathrm{GHz}\) cannot be assumed. Depending on the actual Rydberg transition and available RF power, the measured response may appear as a small amplitude change, line shift, linewidth change, asymmetry, or mixer-like response rather than a textbook Autler--Townes doublet. A narrow interpretation of success would therefore be inappropriate. The correct receiver-level question is whether any feature vector,
+\begin{equation}
+\mathbf{y}
+=
+\left[
+\nu_0,\,
+\Gamma,\,
+C,\,
+\Delta f_{\mathrm{AT}},\,
+\mathcal{A},\,
+M
+\right]^T,
+\label{eq:lit_receiver_feature_vector}
+\end{equation}
+contains repeatable and polarization-dependent information. Here \(\nu_0\) is a line center, \(\Gamma\) is linewidth, \(C\) is contrast, \(\Delta f_{\mathrm{AT}}\) is splitting, \(\mathcal{A}\) is asymmetry, and \(M\) denotes a measured level or modulation metric.
+
+The receiver literature therefore supports a staged interpretation of the thesis. The interim objective is not to demonstrate a finished polarimeter. It is to determine whether the combination of RF polarization conditioning, magnetic bias, and Rydberg-EIT readout produces a measurable and repeatable feature space suitable for later inference.
+
+\subsection{Vector and Polarization-Sensitive Rydberg Measurements}
+\label{subsec:lit_vector_polarization}
+
+The vector and polarization literature is the most direct precedent for this thesis. Early vector electrometry demonstrated that Rydberg-EIT responses can depend on the angle between the microwave field and the atomic or optical basis, enabling microwave polarization information to be extracted from vapor-cell measurements \cite{Sedlacek2013}. This result established feasibility but also revealed a central dependency: the receiver is only vector sensitive when the atomic selection rules, optical geometry, and RF field basis are correctly modelled.
+
+Subsequent work demonstrated several routes to polarization-sensitive operation. Floquet-based measurements used strong-field spectral structure to infer field amplitude and polarization \cite{Jiao2017Floquet}. Mixer-based methods used local microwave fields to form beat notes whose amplitudes depend on field projection \cite{Wang2023Polarization,Yin2024Polarization}. Recent three-dimensional vector polarimetry used three orthogonal local oscillators to reconstruct the polarization ellipse of an RF field \cite{Elgee2024Polarimetry}. These demonstrations are significant because they show that Rydberg receivers can, in principle, move beyond scalar electrometry.
+
+The limitation is that the strongest demonstrations often rely on architectures or frequency ranges different from the present thesis. Some use higher microwave frequencies where suitable Rydberg transitions are more accessible. Some use local-oscillator arrangements that directly provide multiple independent projections. Some require careful phase-sensitive heterodyne calibration. The present thesis instead investigates a lower-GHz pathway in which magnetic bias and RF polarization conditioning are used to create or expose polarization-sensitive observables in a rubidium vapor-cell receiver.
+
+This distinction defines a useful research position. The project is not competing with full three-dimensional heterodyne polarimetry as a finished instrument at this stage. It is asking whether a simpler magnetically biased Rydberg-EIT platform can be developed toward polarization estimation by first validating its RF input states, magnetic-bias control, and bias-dependent atomic response.
+
+\subsection{Magnetic Bias and Zeeman-Resolved Rydberg Sensing}
+\label{subsec:lit_magnetic_bias}
+
+Magnetic bias is a recurring theme in Rydberg spectroscopy because it defines a quantization axis and shifts magnetic sublevels. Studies of Rydberg EIT under magnetic field show that optical spectra can be strongly affected by Zeeman structure, optical polarization, and microwave coupling \cite{Naber2016Magnetic,Li2023Magnetic}. Recent work has also shown that strong or controlled magnetic fields can simplify microwave sensing by separating transition pathways and enabling more interpretable Autler--Townes features \cite{Schlossberger2024Zeeman}. In polarization-sensitive mixer work, weak magnetic bias has been used to help distinguish angular ambiguities \cite{Yin2024Polarization}.
+
+These results support the core concept of the thesis: \(B_0\) can be more than a nuisance parameter. It can be treated as an engineered receiver variable. When \(B_0\) defines the quantization axis, the incident RF field can be decomposed into spherical components,
+\begin{equation}
+\mathbf{E}_{\mathrm{RF}}
+=
+E_{+1}\hat{\mathbf{e}}_{+1}
++
+E_{0}\hat{\mathbf{e}}_{0}
++
+E_{-1}\hat{\mathbf{e}}_{-1},
+\label{eq:lit_spherical_components}
+\end{equation}
+which drive \(\sigma^+\), \(\pi\), and \(\sigma^-\) pathways. In principle, different polarization states can produce different combinations of transition strengths, shifts, amplitudes, or asymmetries.
+
+The literature also warns that magnetic bias introduces risk. If the field is weak, nonuniform, or poorly aligned, the desired pathway separation may be unresolved. If the field is too strong or the transition manifold is too complex, the spectrum may become difficult to interpret. This is why the present thesis includes magnetic-field calibration and residual analysis as core results. A calibrated \(B_0\)-versus-current relationship is not merely an apparatus check; it is a prerequisite for treating magnetic bias as a controlled variable in a receiver model.
+
+\subsection{Low-GHz Operation and the State-Selection Problem}
+\label{subsec:lit_low_ghz_gap}
+
+The low-GHz regime is attractive because it overlaps practical L-band systems, available antennas, and accessible laboratory RF equipment. It is also challenging because Rydberg transition frequencies are set by atomic structure, not by engineering convenience. Low-GHz operation may require high principal quantum numbers, off-resonant coupling, Stark or Zeeman tuning, heterodyne schemes, or non-adjacent transition pathways. Each option introduces tradeoffs in sensitivity, linewidth, stability, and spectral interpretability.
+
+Recent low-frequency and continuous-frequency demonstrations show that Rydberg sensing can be extended into broad and low-frequency operating regimes \cite{Meyer2021Spectrum,Hu2022Tunable,Rotunno2023VHF}. However, these works are generally aimed at broadband field detection, spectrum analysis, or weak-field sensing rather than magnetically biased polarization estimation. They support the feasibility of low-GHz Rydberg sensing, but they do not close the specific gap addressed by this thesis.
+
+State-selection studies are especially important here. Some transitions produce clean and interpretable responses, while others suffer from multi-level coupling, nonlinear splitting, unwanted neighboring-state interactions, or weak polarization contrast \cite{Chopinaud2021Optimal}. Conversely, recent work on polarization-insensitive electrometry shows that some transition families can be deliberately insensitive to microwave polarization \cite{Cloutman2024PolarizationInsensitive}. That is useful for scalar field measurement, but it is a warning for this thesis: a poor transition choice could make the receiver blind to the very polarization information it is intended to measure.
+
+The implication is direct. ARC-based transition screening and RydIQule-based optical-Bloch simulations are not optional refinements. They are necessary to determine whether the available RF frequency, optical ladder, magnetic-bias range, and selected states are capable of producing a polarization-dependent observable.
+
+\subsection{Classical RF Polarization Validation as a Missing Link}
+\label{subsec:lit_rf_validation}
+
+A recurring weakness in many atomic sensing demonstrations is that the RF field is treated as known once an antenna orientation or source polarization is specified. For scalar electrometry, this may be acceptable if the only goal is to measure field magnitude. For polarimetry, it is not sufficient. The incident polarization state must be independently characterized because antenna mismatch, finite cross-polar isolation, axial-ratio error, chamber coupling, cable movement, and near-field geometry can all imitate or obscure polarization-dependent atomic response.
+
+Classical RF engineering provides the necessary tools: \(S_{11}\) verifies antenna matching, \(S_{21}\) measures transmission between known antenna states, cross-polar isolation verifies orthogonal linear discrimination, extinction ratio quantifies polarizer performance, and axial ratio or orientation sensitivity provides evidence for circular or elliptical polarization behavior \cite{Balanis2016}. These measurements are not outside the thesis; they establish the ground truth needed to interpret the Rydberg data.
+
+This is where the present work can be stronger than a purely atomic-spectroscopy study. The RF-front-end validation provides known co-polar, \(45^\circ\), cross-polar, linear-polarizer, and circular-antenna test states before those states are used to interrogate the vapor cell. In a final polarization-estimation experiment, the Rydberg receiver should be judged against these independently validated input states, not against assumed antenna behavior.
+
+\subsection{Representative Literature Comparison}
+\label{subsec:lit_representative_comparison}
+
+Table~\ref{tab:lit_representative_works} compares representative published works against the needs of this thesis. The purpose is not to list every Rydberg sensing paper. Instead, the table identifies the capabilities that have already been demonstrated and the missing combinations that motivate this project.
+
+\begin{table*}[!t]
+\caption{Representative published works relevant to magnetically biased Rydberg microwave polarization estimation.}
+\label{tab:lit_representative_works}
+\centering
+\renewcommand{\arraystretch}{1.12}
+\scriptsize
+\begin{tabular}{p{0.14\textwidth} p{0.13\textwidth} p{0.17\textwidth} p{0.18\textwidth} p{0.18\textwidth} p{0.12\textwidth}}
+\hline
+\textbf{Work} & \textbf{Main capability} & \textbf{Observable} & \textbf{Relevance to this thesis} & \textbf{Limitation for this thesis} & \textbf{Role in gap} \\
+\hline
+Mohapatra \emph{et al.} \cite{Mohapatra2007} &
+Room-temperature Rydberg-EIT readout &
+Optical EIT resonance &
+Foundation for vapor-cell Rydberg sensing &
+Not an RF receiver or polarimeter &
+Historical basis \\
+
+Sedlacek \emph{et al.} \cite{Sedlacek2012} &
+Rydberg RF electrometry &
+Autler--Townes splitting &
+Shows RF field can be measured optically &
+Primarily scalar field measurement &
+Metrology basis \\
+
+Sedlacek \emph{et al.} \cite{Sedlacek2013} &
+Vector microwave electrometry &
+Angle-dependent EIT response &
+Shows Rydberg atoms can encode field orientation &
+Depends strongly on geometry and model assumptions &
+Vector precedent \\
+
+Holloway \emph{et al.} \cite{Holloway2014,Holloway2017Uncertainty} &
+Broadband atom-based RF probing &
+AT splitting and calibration model &
+Establishes calibration and uncertainty discipline &
+Not focused on polarization estimation &
+Calibration precedent \\
+
+Jiao \emph{et al.} \cite{Jiao2017Floquet} &
+Floquet-based field and polarization measurement &
+Floquet spectral features &
+Shows polarization information can be extracted from line strengths &
+Strong-field and different operating regime &
+Polarization precedent \\
+
+Simons/Gordon/Holloway \cite{Simons2019Mixer,Holloway2019PhaseModReceiver} &
+Atomic mixer and weak-field reception &
+Heterodyne or IF response &
+Shows receiver-style signal extraction below resolved AT splitting &
+Usually not full polarimetry &
+Receiver precedent \\
+
+Meyer \emph{et al.} \cite{Meyer2021Spectrum} &
+Broadband spectrum analysis &
+Receiver output over broad frequency range &
+Supports low-frequency and receiver-style metrics &
+Not a polarization receiver &
+Low-frequency precedent \\
+
+Hu \emph{et al.} \cite{Hu2022Tunable} &
+Continuous-frequency weak-field sensing &
+Off-resonant heterodyne response &
+Supports low-GHz feasibility &
+Not magnetically biased polarimetry &
+Low-GHz precedent \\
+
+Li \emph{et al.} \cite{Li2023Magnetic} &
+Magnetic-field-induced splitting &
+Zeeman-resolved EIT/AT spectra &
+Shows \(B_0\) can restructure Rydberg response &
+Not a calibrated polarization-estimation receiver &
+Magnetic-bias precedent \\
+
+Schlossberger \emph{et al.} \cite{Schlossberger2024Zeeman} &
+Zeeman-resolved microwave sensing &
+Magnetically separated transition pathways &
+Supports use of \(B_0\) to define a robust quantization axis &
+Not low-GHz front-end polarimetry &
+Quantization-axis precedent \\
+
+Cloutman \emph{et al.} \cite{Cloutman2024PolarizationInsensitive} &
+Polarization-insensitive transition analysis &
+AT response under polarization rotation &
+Warns that transition family can suppress polarization sensitivity &
+Opposite objective to this thesis &
+State-selection caution \\
+
+Elgee \emph{et al.} \cite{Elgee2024Polarimetry} &
+Complete 3D Rydberg vector polarimetry &
+Three-axis heterodyne amplitudes and phases &
+Current benchmark for full Rydberg polarimetry &
+Requires multiple orthogonal local oscillators and higher-frequency architecture &
+Performance benchmark \\
+
+Yin \emph{et al.} \cite{Yin2024Polarization} &
+Polarization-angle measurement with local fields and weak bias &
+Beat-note amplitude ratio and bias-assisted ambiguity reduction &
+Closest conceptual link to magnetic-bias-assisted polarization sensing &
+Different frequency and receiver architecture &
+Adjacent method \\
+
+Gomes \emph{et al.} \cite{Gomes2024PolSpec} &
+Polarization spectroscopy and RF coupling enhancement &
+Polarization-dependent optical response &
+Shows sensitivity can be improved through optical/RF engineering &
+Not full unknown-polarization inference &
+Sensitivity-enhancement precedent \\
+\hline
+\end{tabular}
+\end{table*}
+
+Three observations follow from Table~\ref{tab:lit_representative_works}. First, scalar Rydberg electrometry and receiver architectures are mature enough that the project does not need to justify the general concept of atom-based RF sensing from first principles. Second, polarization-sensitive Rydberg measurement is real but usually depends on either multiple projections, special field geometries, local oscillators, or carefully chosen transition families. Third, magnetic bias has been used to restructure spectra and define a quantization axis, but it has not yet been widely developed as the central variable in a low-GHz, calibration-led polarization-estimation workflow.
+
+\subsection{Research Gap}
+\label{subsec:lit_research_gap}
+
+The gap addressed in this thesis can now be stated explicitly:
+
+\begin{quote}
+The open literature does not yet establish a practical low-GHz, room-temperature, magnetically biased Rydberg microwave receiver that is validated as a polarization-estimation system through a calibrated RF front end, explicit \(B_0\)-current calibration, transition-aware simulation, and receiver-style feature extraction.
+\end{quote}
+
+This gap has four parts.
+
+First, there is a frequency gap. Several advanced Rydberg polarimetry demonstrations operate at microwave frequencies where suitable transitions and local-oscillator methods are more accessible. Low-GHz Rydberg sensing has been demonstrated, but it is more often framed as broadband sensing, off-resonant detection, or spectrum analysis than as polarization estimation. The target frequency range of this thesis is therefore not automatically covered by existing polarimetry demonstrations.
+
+Second, there is a magnetic-bias integration gap. Magnetic fields have been used to tune, split, or simplify Rydberg spectra, and weak bias has been used to assist angular disambiguation in some receiver architectures. What remains less developed is a complete workflow in which \(B_0\) is calibrated as an engineering actuator, linked to spherical-basis RF coupling, and used deliberately to create polarization-sensitive observables in a low-GHz receiver experiment.
+
+Third, there is a transition-selection gap. The literature shows that some Rydberg transitions are useful for polarization sensitivity, while others may be nonlinear, asymmetric, or effectively polarization insensitive. Therefore, a polarization-estimation receiver cannot simply choose any transition near the available RF frequency. It must screen candidate transitions for dipole strength, linewidth, Zeeman behavior, and polarization contrast. This is why ARC and RydIQule modelling are part of the thesis methodology rather than supplementary analysis.
+
+Fourth, there is a front-end validation gap. Many atomic sensing studies assume a known RF polarization state from antenna orientation alone. For a receiver intended to estimate polarization, this is insufficient. The incident RF states must be characterized using antenna and polarizer measurements before the atomic response is interpreted. The LPDA, linear-polarizer, circular-antenna, and \(S\)-parameter validation performed in this thesis directly address this gap.
+
+\subsection{Novelty and Thesis Position}
+\label{subsec:lit_novelty_position}
+
+The novelty of the thesis is not that Rydberg atoms can sense microwaves. That is well established. The novelty is also not simply that microwave polarization can affect a Rydberg response. That has also been demonstrated in several forms. The novelty lies in the integrated receiver-engineering approach: using a calibrated magnetic-bias field as a controllable analysis axis inside a low-GHz Rydberg-EIT receiver, while independently validating the RF polarization states used to interrogate the atoms.
+
+In practical terms, the thesis investigates the mapping
+\begin{equation}
+\left(
+\mathbf{S},\,B_0,\,\theta_{\mathrm{RF}},\,\mathbf{x}
+\right)
+\longrightarrow
+\mathbf{y},
+\label{eq:lit_thesis_mapping}
+\end{equation}
+where \(\mathbf{S}\) is the incident polarization state, \(B_0\) is the magnetic-bias field, \(\theta_{\mathrm{RF}}\) represents the RF analyzer or antenna state, \(\mathbf{x}\) contains nuisance parameters, and \(\mathbf{y}\) is the measured Rydberg response feature vector. The research problem is not solved until this mapping is repeatable, identifiable, and calibrated.
+
+The interim contribution is therefore appropriately staged. The report should show that:
+\begin{enumerate}
+\item the RF polarization-conditioning hardware has been measured rather than assumed;
+\item the magnetic-bias field has been calibrated against coil current;
+\item the Rydberg response has been tested under magnetic bias, even if the current result is inconclusive;
+\item the modelling pathway exists to determine whether the frequency, transition, and bias range are physically suitable;
+\item the next experimental stage is guided by clear decision gates rather than trial-and-error.
+\end{enumerate}
+
+This positioning directly addresses the difference between reproducing known Rydberg electrometry and contributing a new receiver architecture. The thesis is not merely asking whether a vapor cell responds to RF fields. It is asking whether a magnetically biased vapor-cell receiver can be engineered into a calibrated low-GHz polarization-estimation platform.
+
+\subsection{Open Questions}
+\label{subsec:lit_open_questions}
+
+The literature review leads to several open questions that define the remainder of the thesis.
+
+\begin{enumerate}
+\item \textbf{Transition suitability:} Which rubidium Rydberg transitions near the accessible RF frequency range retain strong enough polarization dependence for estimation, rather than behaving as scalar or polarization-insensitive electrometers?
+
+\item \textbf{Magnetic-bias range:} What \(B_0\) magnitude is sufficient to separate useful \(\sigma^+\), \(\pi\), or \(\sigma^-\) pathways without broadening or distorting the spectrum beyond interpretation?
+
+\item \textbf{Observable selection:} Is the useful measured quantity an Autler--Townes splitting, a line shift, a contrast change, a spectral asymmetry, a power-domain level change, or a mixer-like feature?
+
+\item \textbf{RF-state validation:} How accurately can the available LPDA, steel-rod polarizer, and circular antenna produce known polarization states at the operating frequency?
+
+\item \textbf{Identifiability:} How many independent RF analyzer states, magnetic-bias settings, or optical observables are required before polarization classification, partial Stokes estimation, or full Stokes reconstruction becomes feasible?
+
+\item \textbf{Repeatability:} Are the measured Rydberg features stable enough under repeated sweeps to distinguish a true polarization-dependent response from laser drift, RF coupling variation, magnetic-field nonuniformity, and instrument repeatability?
+\end{enumerate}
+
+These questions structure the methodology and results that follow. They also define the difference between an exploratory interim result and a final thesis demonstration.
+
+\subsection{Section Summary}
+\label{subsec:lit_summary}
+
+The literature shows that Rydberg vapor cells can measure RF fields, operate as receivers, and encode vector or polarization information under suitable conditions. It also shows that magnetic bias can define a quantization axis and reshape the atomic response, while low-GHz operation and transition selection remain challenging. The unresolved gap is the integrated system problem: a calibrated low-GHz Rydberg receiver that combines RF polarization-state validation, magnetic-bias control, transition-aware simulation, and feature-based inference. This thesis addresses that gap by developing and testing the required receiver chain before attempting full polarization reconstruction.

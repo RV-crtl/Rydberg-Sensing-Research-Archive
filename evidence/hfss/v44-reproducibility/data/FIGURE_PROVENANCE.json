@@ -1,0 +1,10 @@
+{
+  "Fig01_Finite_geometry": "Original V15 JSON dimensions; HFSS generator v11_geometry.plan; exact copper rectangles, T3 ideal switch only.",
+  "Fig02_Search_condition": "7 real P8C candidate scores (V15); finalist P8E condition numbers from V15 independent HFSS mesh analysis.",
+  "Fig03_HFSS_high_density_fields": "V7401 HFSS P8E 1.825 GHz actual 3034-point complex E field cut-plane exports, 41x37 cells shown, no interpolation; z=min plane 8.1565 mm.",
+  "Fig04_Instrument_matrix": "Direct reconstruction from V7401 P8E X/Y complex HFSS E-field files at 1.625 GHz; S0 gain set to 1 per row.",
+  "Fig05_Convergence_reconstruction": "V15 P8D/P8E independent HFSS; calibration on P8E, synthetic coherent six-basis incidence on P8D, thresholds 5% and 10% prespecified.",
+  "Fig06_Circular_sensitivity": "V15 P8E independent mesh calibrated S3 coefficient; V15 P8D/P8E transfer at 1.625 GHz; independent reconstruction does not meet all gates.",
+  "Fig07_Six_state_reconstruction": "V7401 P8D fields create six independent-mesh reference-state responses; P8E matrix calibrates. Six axis endpoints, NOT dense independent-sphere validation.",
+  "FigS01_Assumed_noise": "Monte-Carlo angular precision using HFSS calibrated operator and assumed 0.2% independent intensity noise (source V15)."
+}

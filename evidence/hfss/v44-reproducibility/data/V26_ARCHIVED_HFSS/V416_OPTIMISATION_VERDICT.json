@@ -1,0 +1,44 @@
+{
+  "version": "V4.16",
+  "generated_utc": "2026-10-23T23:53:34.551207+00:00",
+  "completed_HFSS_screen_candidates": 36,
+  "top_5": [
+    {
+      "candidate": "C033",
+      "score": 30.53223484865835,
+      "sampled_span_MHz": 250.0,
+      "passing_samples": 11
+    },
+    {
+      "candidate": "C015",
+      "score": 30.446001816079182,
+      "sampled_span_MHz": 250.0,
+      "passing_samples": 11
+    },
+    {
+      "candidate": "C014",
+      "score": 28.763033901572914,
+      "sampled_span_MHz": 225.00000000000009,
+      "passing_samples": 10
+    },
+    {
+      "candidate": "C029",
+      "score": 28.711148826435274,
+      "sampled_span_MHz": 225.00000000000009,
+      "passing_samples": 10
+    },
+    {
+      "candidate": "C030",
+      "score": 28.707606346383564,
+      "sampled_span_MHz": 225.00000000000009,
+      "passing_samples": 10
+    }
+  ],
+  "limitations": [
+    "Native HFSS interpolating screening is not discrete mesh-converged at every frequency",
+    "PCB panel/switches and atomic EIT are not validated by periodic Floquet analysis",
+    "No artificial detector noise is added",
+    "Do not label any continuous band a measured validated bandwidth"
+  ],
+  "raw_data_storage": "V416_HFSS_PROJECTS (do not delete); .aedt and .aedtresults and RESULT.json per candidate/state"
+}

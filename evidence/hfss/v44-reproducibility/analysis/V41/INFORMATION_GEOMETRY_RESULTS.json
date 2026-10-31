@@ -1,0 +1,92 @@
+{
+  "frequency_GHz": 1.925,
+  "source": "V418_RESULTS/DATA/C033_EQUATION_VERDICT_1.9250.json",
+  "source_kind": "native HFSS independently adapted periodic field amplitudes; offline algebra",
+  "switch_masks": [
+    3,
+    6,
+    8,
+    10,
+    12,
+    13
+  ],
+  "P_normalised": [
+    [
+      1.0,
+      0.8898780136819389,
+      0.13246153464095642,
+      0.4365444566204565
+    ],
+    [
+      1.0,
+      -0.5685980445595459,
+      -0.8176698503320708,
+      -0.09006819405866498
+    ],
+    [
+      1.0,
+      0.9973821783363025,
+      -0.04885340650152803,
+      -0.05331167799205697
+    ],
+    [
+      1.0,
+      0.9584657213364006,
+      0.1436490892563499,
+      0.24639074694256344
+    ],
+    [
+      1.0,
+      0.9995112886539118,
+      -0.020570243663851195,
+      0.023538243966076712
+    ],
+    [
+      1.0,
+      0.7996176638568812,
+      0.571519710848942,
+      0.1843280004752543
+    ]
+  ],
+  "rank": 4,
+  "six_condition_row_normalised": 9.528217428109981,
+  "six_condition_raw": 18.482097646473115,
+  "trace_unit_variance_six": 13.940673684868568,
+  "best_four_masks_by_condition": [
+    3,
+    6,
+    8,
+    13
+  ],
+  "best_four_condition": 7.633721291756464,
+  "best_four_trace_unit_variance": 16.023599753502417,
+  "four_subset_condition_min": 7.633721291756464,
+  "four_subset_condition_median": 58.067229892958544,
+  "four_subset_condition_max": 1129.0422036264438,
+  "leave_one_out_leverage": {
+    "3": 0.7879593403042727,
+    "6": 0.9994686594334895,
+    "8": 0.5599832403304297,
+    "10": 0.26484336396392094,
+    "12": 0.39803125149780044,
+    "13": 0.9897141444700857
+  },
+  "leave_one_out_relative_variance": {
+    "3": 2.7350552086138653,
+    "6": 86.40851829329519,
+    "8": 1.2979816395304629,
+    "10": 1.0530227405687544,
+    "12": 1.101081753174987,
+    "13": 35.58844487123879
+  },
+  "leave_one_out_condition": {
+    "3": 16.06244138027821,
+    "6": 106.8656118107278,
+    "8": 9.533121566178071,
+    "10": 8.80533160788617,
+    "12": 8.616189213999796,
+    "13": 62.2793857295162
+  },
+  "numerical_identity_residual": 5.551115123125783e-16,
+  "model_note": "Unit-variance noise metric is purely an equal-variance analytic diagnostic after row normalisation, NOT measured noise; the Jones outputs share their calibration source, so self inversion does not validate accuracy."
+}

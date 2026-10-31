@@ -1,0 +1,13 @@
+{
+  "candidate": "C000",
+  "frequency_GHz": 1.825,
+  "source": "HFSS_INTERPOLATING_SCREEN",
+  "scope": "Periodic Floquet, X modal-projected quadratic detector; algebraic test",
+  "polarization_count": 1231,
+  "matrix_rank": 4,
+  "condition": 29.549226286138413,
+  "max_operator_identity_absolute": 4.440892098500626e-16,
+  "max_reconstruction_linear_algebra_L2": 9.67312671363864e-15,
+  "max_circular_ratio_identity_error": 2.220446049250313e-16,
+  "not_independent_em_simulations": true
+}

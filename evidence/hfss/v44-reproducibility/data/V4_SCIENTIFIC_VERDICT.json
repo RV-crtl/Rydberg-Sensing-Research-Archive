@@ -1,0 +1,33 @@
+{
+  "status": "INDEPENDENT_MESH_GATE_FAILED",
+  "success": false,
+  "timestamp_utc": "2026-10-23T02:11:42.353764+00:00",
+  "physical_design": "ONE_1P6MM_DOUBLE_SIDED_PCB",
+  "target_frequency_GHz": 1.8,
+  "claimed_HFSS_data": "NONE_UNTIL_NATIVE_SOLVER_FILES_EXIST",
+  "publication_ready": false,
+  "finite_panel_validated": false,
+  "real_diode_modeled": false,
+  "best_variant": 1,
+  "best_states": [
+    3,
+    6,
+    8,
+    10,
+    12,
+    13
+  ],
+  "best_detector_model": "axis_x",
+  "best_condition": 17.573332587972065,
+  "best_rank": 4,
+  "best_circular_sensitivity": 0.5741507749145561,
+  "passes_1p8": true,
+  "mesh": {
+    "source": "TWO_INDEPENDENT_HFSS_MESHES",
+    "relative_matrix_drift": 0.06095900738781518,
+    "p95_reconstruction_error": 0.2732796757278229,
+    "worst_reconstruction_error": 0.2995603999265326,
+    "status": "FAIL"
+  },
+  "finished_utc": "2026-10-23T02:55:48.816838+00:00"
+}

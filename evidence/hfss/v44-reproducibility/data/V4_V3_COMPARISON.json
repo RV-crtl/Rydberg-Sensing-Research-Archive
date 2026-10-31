@@ -1,0 +1,9 @@
+{
+  "frequency_GHz": 1.8,
+  "basis": "Each uses a six-state fixed-X, row-gain-normalized instrument matrix",
+  "v3_control_reference_condition": 120.91483446262401,
+  "v4_best_condition": 17.573332587972065,
+  "v4_best_family": "COMPLEMENTARY_SPLIT_LOOP",
+  "relative_condition_change_percent": -85.46635516967594,
+  "warning": "V3 reference from historical HFSS. V4 cases are new solver results only if the native RESULT.json projects exist."
+}

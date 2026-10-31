@@ -1,0 +1,235 @@
+{
+  "frequency_GHz": 1.85,
+  "states": [
+    3,
+    6,
+    8,
+    10,
+    12,
+    13
+  ],
+  "physical_model": "periodic PEC, ideal bridges; fixed-X intensity proxy",
+  "thresholds": {
+    "cond_max": 35,
+    "matrix_change_max_pct": 5,
+    "stokes_transfer_max_pct": 10
+  },
+  "status": "PASS_UNIFORM_PERIODIC_DUAL_MESH",
+  "timestamp_utc": "2026-10-23T11:17:21.059960+00:00",
+  "frequency_1825": "Previously verified by V4.9; 1.825 GHz, cond_fine=32.0349, cross-mesh worst error=3.0801%",
+  "warnings": [
+    "Neither isolated passing frequencies nor ideal PEC/bridge Floquet simulations establish physical UWB bandwidth, finite-panel or Rydberg detection."
+  ],
+  "hybrid_pilot": {
+    "status": "CONVERGED",
+    "source_cases": [
+      "EMPTY_V00_M00_L125_F1850",
+      "SINGLEPCB_V01_M03_L125_F1850",
+      "SINGLEPCB_V01_M06_L125_F1850",
+      "SINGLEPCB_V01_M08_L125_F1850",
+      "SINGLEPCB_V01_M10_R125_F1850",
+      "SINGLEPCB_V01_M12_R125_F1850",
+      "SINGLEPCB_V01_M13_R125_F1850"
+    ],
+    "condition": 21.565668020585896,
+    "rank": 4,
+    "min_intensity_gain": 0.1313245371899243,
+    "min_circular_response": -0.47047817343245757,
+    "max_circular_response": 0.5685585192229061,
+    "tetrahedra_max": 41366,
+    "A_real": [
+      [
+        0.41763821037028137,
+        0.34293885834560234,
+        0.020767154427265285,
+        0.23745176245903174
+      ],
+      [
+        0.1721472245363429,
+        0.14588167792725076,
+        -0.04235065505173408,
+        -0.08099151176132575
+      ],
+      [
+        0.4355684246402511,
+        0.43260936245244036,
+        -0.026149492048590895,
+        -0.043418845305741034
+      ],
+      [
+        0.1313245371899243,
+        -0.04390819540370624,
+        -0.12352743380900773,
+        0.007692694007886627
+      ],
+      [
+        0.42716628253828487,
+        0.42503368659122326,
+        -0.025608558879305195,
+        -0.03408225216115838
+      ],
+      [
+        0.39770482612865604,
+        0.3788128115840617,
+        0.10040377072596916,
+        0.06774264041067252
+      ]
+    ]
+  },
+  "uniform_pilot": {
+    "status": "CONVERGED",
+    "source_cases": [
+      "EMPTY_V00_M00_R125_F1850",
+      "SINGLEPCB_V01_M03_R125_F1850",
+      "SINGLEPCB_V01_M06_R125_F1850",
+      "SINGLEPCB_V01_M08_R125_F1850",
+      "SINGLEPCB_V01_M10_R125_F1850",
+      "SINGLEPCB_V01_M12_R125_F1850",
+      "SINGLEPCB_V01_M13_R125_F1850"
+    ],
+    "condition": 21.74271381317755,
+    "rank": 4,
+    "min_intensity_gain": 0.1313245448343643,
+    "min_circular_response": -0.49140151545386535,
+    "max_circular_response": 0.5690147588009943,
+    "tetrahedra_max": 22153,
+    "A_real": [
+      [
+        0.4150961727399205,
+        0.34052179065246124,
+        0.023691007010785026,
+        0.2361958486108217
+      ],
+      [
+        0.15896757868693767,
+        0.13194868131890763,
+        -0.04192833276424945,
+        -0.07811690907479275
+      ],
+      [
+        0.4333449610133318,
+        0.4305029340544369,
+        -0.026086628905771205,
+        -0.042125607396212246
+      ],
+      [
+        0.1313245448343643,
+        -0.04390819826653454,
+        -0.1235274407805009,
+        0.007692696221708981
+      ],
+      [
+        0.4271662830333762,
+        0.425033690658457,
+        -0.025608564496482713,
+        -0.03408220342394402
+      ],
+      [
+        0.3977048246617074,
+        0.37881280376489446,
+        0.10040377915872654,
+        0.06774266302430583
+      ]
+    ]
+  },
+  "uniform_fine": {
+    "status": "CONVERGED",
+    "source_cases": [
+      "EMPTY_V00_M00_R110_F1850",
+      "SINGLEPCB_V01_M03_R110_F1850",
+      "SINGLEPCB_V01_M06_R110_F1850",
+      "SINGLEPCB_V01_M08_R110_F1850",
+      "SINGLEPCB_V01_M10_R110_F1850",
+      "SINGLEPCB_V01_M12_R110_F1850",
+      "SINGLEPCB_V01_M13_R110_F1850"
+    ],
+    "condition": 22.056032610763502,
+    "rank": 4,
+    "min_intensity_gain": 0.13112603940677686,
+    "min_circular_response": -0.4812916453565359,
+    "max_circular_response": 0.567266725849325,
+    "tetrahedra_max": 26613,
+    "A_real": [
+      [
+        0.41560803416965764,
+        0.34150274526908353,
+        0.02286587823997239,
+        0.2357606087800961
+      ],
+      [
+        0.16444566490999665,
+        0.1379062567502399,
+        -0.041953549949868475,
+        -0.07914632463628185
+      ],
+      [
+        0.43405982728756587,
+        0.43117106916382186,
+        -0.026179684624657962,
+        -0.04259186417605728
+      ],
+      [
+        0.13112603940677686,
+        -0.04315830018652664,
+        -0.12370633872886135,
+        0.00530481798155914
+      ],
+      [
+        0.4283068722357473,
+        0.4260877734798714,
+        -0.025884334480310356,
+        -0.0350141017855082
+      ],
+      [
+        0.3985961667278665,
+        0.3801037105995629,
+        0.09921591270201029,
+        0.06750019248342896
+      ]
+    ]
+  },
+  "comparison": {
+    "basis": "UNIFORM_SOLVER_POLICY",
+    "matrix_change_pct": 0.7493175592889552,
+    "stokes_max_pct": 3.7061352615842194,
+    "condition_numbers": [
+      21.74271381317755,
+      22.056032610763502
+    ],
+    "passed_numerical_gates": true,
+    "A_to_B": {
+      "matrix_frobenius_change_pct": 0.7493175592889552,
+      "max_normalized_analyzer_row_distance": 0.019061739025973426,
+      "row_change_distances": [
+        0.0030172292714685015,
+        0.015821336404408613,
+        0.0009263911107777772,
+        0.019061739025973426,
+        0.002030912322029356,
+        0.003843483203136475
+      ],
+      "stokes_s1_s3_error_p95_pct": 3.4744085549263573,
+      "stokes_s1_s3_error_max_pct": 3.7061352615842194,
+      "stokes_full_vector_error_max_pct": 4.887752509545673,
+      "test_stokes_count": 102,
+      "description": "Noiseless synthetic physical test Stokes vectors passed through actual HFSS-derived matrices; error is S1\u2013S3 Euclidean discrepancy as percent of S0, no clipping/denoising."
+    },
+    "B_to_A": {
+      "matrix_frobenius_change_pct": 0.7470842214914202,
+      "max_normalized_analyzer_row_distance": 0.019061739025973426,
+      "row_change_distances": [
+        0.0030172292714685015,
+        0.015821336404408613,
+        0.0009263911107777772,
+        0.019061739025973426,
+        0.002030912322029356,
+        0.003843483203136475
+      ],
+      "stokes_s1_s3_error_p95_pct": 3.4130572534919175,
+      "stokes_s1_s3_error_max_pct": 3.6483997219604785,
+      "stokes_full_vector_error_max_pct": 4.8124860555666515,
+      "test_stokes_count": 102,
+      "description": "Noiseless synthetic physical test Stokes vectors passed through actual HFSS-derived matrices; error is S1\u2013S3 Euclidean discrepancy as percent of S0, no clipping/denoising."
+    }
+  }
+}

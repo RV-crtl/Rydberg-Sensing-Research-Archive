@@ -1,0 +1,39 @@
+\documentclass[border=4pt]{standalone}
+\usepackage[american]{circuitikz}
+\usepackage{amsmath}
+\begin{document}
+\begin{circuitikz}[scale=0.95, transform shape, line width=0.9pt]
+\ctikzset{bipoles/length=.78cm}
+\node[anchor=west,font=\fontsize{16}{17}\selectfont\bfseries] at (0,6.1) {(c) Reduced-order PIN-diode mode analogue};
+% --- FRONT LOOP ---
+\draw (0.0,0.2) to[sV,l_=$\mathcal E_f$] (0.0,4.0)
+      to[R,l=$R_f$] (1.3,4.0)
+      to[L,l=$L_f$] (2.7,4.0)
+      -- (3.0,4.0) to[C,l=$C_{g,f1}$] (4.2,4.0)
+      -- (4.5,4.0) to[C,l=$C_{g,f2}$] (5.7,4.0)
+      -- (6.0,4.0) -- (6.0,0.2) -- (0.0,0.2);
+% Front diode bypasses
+\draw (3.0,4.0) -- (3.0,5.0) to[D,l=$D_1$] (4.2,5.0) -- (4.2,4.0);
+\draw (4.5,4.0) -- (4.5,5.0) to[D,l=$D_2$] (5.7,5.0) -- (5.7,4.0);
+\node[font=\small\bfseries] at (3.0,-0.45) {Front-face current mode};
+
+% --- REAR LOOP ---
+\draw (8.3,0.2) to[sV,l_=$\mathcal E_r$] (8.3,4.0)
+      to[R,l=$R_r$] (9.6,4.0)
+      to[L,l=$L_r$] (11.0,4.0)
+      -- (11.3,4.0) to[C,l=$C_{g,r1}$] (12.5,4.0)
+      -- (12.8,4.0) to[C,l=$C_{g,r2}$] (14.0,4.0)
+      -- (14.3,4.0) -- (14.3,0.2) -- (8.3,0.2);
+% Rear diode bypasses
+\draw (11.3,4.0) -- (11.3,5.0) to[D,l=$D_4$] (12.5,5.0) -- (12.5,4.0);
+\draw (12.8,4.0) -- (12.8,5.0) to[D,l=$D_3$] (14.0,5.0) -- (14.0,4.0);
+\node[font=\small\bfseries] at (11.3,-0.45) {Rear-face current mode};
+
+% Coupling between loops: electric and magnetic
+\draw (6.0,4.0) -- (6.7,4.0) to[C,l=$C_{fr}$] (7.6,4.0) -- (8.3,4.0);
+\draw[<->,dashed,gray] (5.4,1.8) -- node[above,black] {$M_{fr}$} (8.9,1.8);
+
+% Notes
+\node[font=\footnotesize,align=center] at (7.15,0.55) {D$_1$, D$_2$: front-face PIN-diode bridges\\D$_3$, D$_4$: rear-face PIN-diode bridges};
+\end{circuitikz}
+\end{document}

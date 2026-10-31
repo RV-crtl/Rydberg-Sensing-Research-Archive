@@ -1,0 +1,12 @@
+claim_id,claim,primary_source,repo_path,modality,scope_and_qualification
+CL-001,2026 experimental report describes 780/480 nm Rb-87 EIT RF receiver architecture,experimental report,reports/2026-06-magnetically-biased-rydberg-receiver.pdf,experiment and design,optical architecture and reported observations
+CL-002,Interim RF reference linear polariser approximately 14–15 dB pass/reject,experimental report,reports/2026-06-magnetically-biased-rydberg-receiver.pdf,experiment,specific test conditions in experimental report; not same protocol as later figure
+CL-003,Magnetic calibration R² approximately 0.981 in interim report,experimental report,reports/2026-06-magnetically-biased-rydberg-receiver.pdf,experiment,"calibration context, not final full-Stokes validation"
+CL-004,A later linear-polarisation experiment presented ~9.7 dB discrimination,paper Figure 6 and poster,papers/manuscript-source/figures/FINAL_F06_LINEAR_EXPERIMENT.pdf,experiment,do not merge with interim 14–15 dB result
+CL-005,36 copper geometries explored,current manuscript abstract,papers/manuscript-source/main.tex,HFSS simulation / design search,paper-specific accepted candidate set
+CL-006,Accepted sampled interval increased 175 to 250 MHz,current manuscript abstract,papers/manuscript-source/main.tex,HFSS simulation,threshold and sampling defined in paper
+CL-007,At 1.925 GHz selected periodic matrix rank four and row-normalised kappa2 9.53,current manuscript abstract,papers/manuscript-source/main.tex,HFSS-derived analytical result,periodic model only
+CL-008,Independently adapted mesh discrepancy 0.551% at selected frequency,current manuscript abstract,papers/manuscript-source/main.tex,HFSS numerical verification,specific acceptance criterion only
+CL-009,40.8% inverse-trace uncertainty objective reduction from dwell allocation,current manuscript abstract / subset CSV,papers/manuscript-source/data/V44_FIXED_BUDGET_ALL_SUBSETS.csv,HFSS-derived offline information model,assumes fixed time/equal variance; not measured uncertainty improvement
+CL-010,3 x 3 finite-array observability retained with weaker S3 transfer,current manuscript,papers/manuscript-source/main.tex,HFSS finite-array simulation,geometry/mesh-dependent; not physical measurement
+CL-011,Invited ICTON conference publication in 2026 includes R. Verghese,UNSW research listing,docs/research/PUBLICATIONS.md,published conference,public DOI 10.1109/ICTON71309.2026.11704868

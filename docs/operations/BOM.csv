@@ -1,0 +1,13 @@
+id,item,system,evidence_status,quoted_amount,quoted_currency,notes,source
+OPT-001,780 nm probe laser DL PRO,optical / Rydberg EIT,reported experimental apparatus,,,reported in project apparatus,reports/2026-06-magnetically-biased-rydberg-receiver.pdf
+OPT-002,480 nm coupling laser,optical / Rydberg EIT,reported experimental apparatus,,,reported in project apparatus,reports/2026-06-magnetically-biased-rydberg-receiver.pdf
+OPT-003,Rubidium-87 vapour cell,atomic sensor,reported experimental apparatus,,,reported in project apparatus,reports/2026-06-magnetically-biased-rydberg-receiver.pdf
+RF-001,LPDA antenna(s),RF conditioning,reported RF experiments,,,report describes comparison measurements,reports/2026-06-magnetically-biased-rydberg-receiver.pdf
+RF-002,Custom steel-rod linear polariser,RF conditioning,reported test hardware,,,reported as characterised in interim report,reports/2026-06-magnetically-biased-rydberg-receiver.pdf
+RF-003,Helmholtz coils + driver,magnetic calibration,reported interim setup,,,experimental calibration stage,reports/2026-06-magnetically-biased-rydberg-receiver.pdf
+RF-004,"Oscilloscope, VNA, photodetector",instrumentation,reported experiment instruments,,,serial and model inventory pending,reports/2026-06-magnetically-biased-rydberg-receiver.pdf
+MAT-001,Rogers RO4350B substrate ~1.52 mm,PCB design material,design candidate,,,not proof of purchase / manufacture,docs/engineering/METASURFACE.md
+MAT-002,Double-sided copper 35 um,PCB material,design candidate,,,branch-dependent specification,docs/engineering/METASURFACE.md
+SW-001,PIN diodes / ideal conductor bridges,switching,implementation proposal / ideal HFSS model,,,no purchased or assembled units established,papers/manuscript-source/main.tex
+QUOTE-001,Thorlabs DBR 780 candidate,portable receiver proposal,quotation/proposal,7202.81,USD,historical price shown in design presentation; not an invoice,designs/portable-rydberg-system-proposal.pptx
+QUOTE-002,Thorlabs DET025AFC 2 GHz Si fiber photodetector,portable receiver proposal,quotation/proposal,359.72,USD,historical price shown in design presentation; not verified purchase,designs/portable-rydberg-system-proposal.pptx

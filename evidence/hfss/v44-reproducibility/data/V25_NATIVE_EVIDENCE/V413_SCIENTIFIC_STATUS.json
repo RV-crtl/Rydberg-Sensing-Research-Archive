@@ -1,0 +1,217 @@
+{
+  "version": "V4.13",
+  "scope": "V4.12 reused finite 3x3 results, HFSS field-type re-export",
+  "cases": {
+    "FINITE_V412_C3X3_MREF_PX_F1850": {
+      "status": "PASS_FIELD_IDENTITY_AND_POLARIZATION",
+      "case": "FINITE_V412_C3X3_MREF_PX_F1850",
+      "relative_total_minus_incident_minus_scattered": 1.639805201643091e-08,
+      "incident_transverse_rms_V_per_m": 0.9994954315213508,
+      "incident_expected_axis_rms_V_per_m": 0.9994954315213508,
+      "incident_orthogonal_axis_rms_V_per_m": 0.0,
+      "receiver_planes": {
+        "5mm": {
+          "transverse_rms_V_per_m": 1.0068465027847369,
+          "transverse_amp_cv": 0.02520007780440711,
+          "min_transverse_amp_V_per_m": 0.9504063268209806,
+          "max_transverse_amp_V_per_m": 1.034412543279,
+          "Ex_rms_V_per_m": 1.0067843048127318,
+          "Ey_rms_V_per_m": 0.0111912355260402,
+          "Ez_rms_V_per_m": 0.031246394931723744,
+          "coherent_to_incoherent_Ex_ratio": 0.999673569922104
+        },
+        "15mm": {
+          "transverse_rms_V_per_m": 1.0194117611654785,
+          "transverse_amp_cv": 0.005187034201307022,
+          "min_transverse_amp_V_per_m": 1.0081042477697044,
+          "max_transverse_amp_V_per_m": 1.0283359480520773,
+          "Ex_rms_V_per_m": 1.0193792444028227,
+          "Ey_rms_V_per_m": 0.008142166986287764,
+          "Ez_rms_V_per_m": 0.02518449026042001,
+          "coherent_to_incoherent_Ex_ratio": 0.9999823434974324
+        }
+      },
+      "legacy_export_comparison": {
+        "relative_to_NEW_scattered": 0.0,
+        "relative_to_NEW_total": 0.9861372556630535
+      },
+      "caution": "A field-identity pass is NOT mesh-independent finite-aperture validation."
+    },
+    "FINITE_V412_C3X3_MREF_PY_F1850": {
+      "status": "PASS_FIELD_IDENTITY_AND_POLARIZATION",
+      "case": "FINITE_V412_C3X3_MREF_PY_F1850",
+      "relative_total_minus_incident_minus_scattered": 1.4863639207796456e-08,
+      "incident_transverse_rms_V_per_m": 0.9983228499250226,
+      "incident_expected_axis_rms_V_per_m": 0.9983228499250226,
+      "incident_orthogonal_axis_rms_V_per_m": 0.0,
+      "receiver_planes": {
+        "5mm": {
+          "transverse_rms_V_per_m": 1.015449894703459,
+          "transverse_amp_cv": 0.011981330212185315,
+          "min_transverse_amp_V_per_m": 0.9884336648587366,
+          "max_transverse_amp_V_per_m": 1.0458749468332613,
+          "Ex_rms_V_per_m": 0.00871371959928688,
+          "Ey_rms_V_per_m": 1.0154125071831699,
+          "Ez_rms_V_per_m": 0.011285632203543639,
+          "coherent_to_incoherent_Ex_ratio": 0.002703333539474349
+        },
+        "15mm": {
+          "transverse_rms_V_per_m": 1.0157409934950763,
+          "transverse_amp_cv": 0.00807894500655514,
+          "min_transverse_amp_V_per_m": 0.9996202640963681,
+          "max_transverse_amp_V_per_m": 1.0341796740681042,
+          "Ex_rms_V_per_m": 0.008223226980226725,
+          "Ey_rms_V_per_m": 1.015707706185395,
+          "Ez_rms_V_per_m": 0.013834041146975135,
+          "coherent_to_incoherent_Ex_ratio": 0.06522988531918165
+        }
+      },
+      "legacy_export_comparison": {
+        "relative_to_NEW_scattered": 0.0,
+        "relative_to_NEW_total": 0.9829166999798008
+      },
+      "caution": "A field-identity pass is NOT mesh-independent finite-aperture validation."
+    },
+    "FINITE_V412_C3X3_M10_PX_F1850": {
+      "status": "PASS_FIELD_IDENTITY_AND_POLARIZATION",
+      "case": "FINITE_V412_C3X3_M10_PX_F1850",
+      "relative_total_minus_incident_minus_scattered": 1.8898511429260944e-08,
+      "incident_transverse_rms_V_per_m": 0.9999806973128075,
+      "incident_expected_axis_rms_V_per_m": 0.9999806973128075,
+      "incident_orthogonal_axis_rms_V_per_m": 0.0,
+      "receiver_planes": {
+        "5mm": {
+          "transverse_rms_V_per_m": 0.9738848263443296,
+          "transverse_amp_cv": 0.20352778097968222,
+          "min_transverse_amp_V_per_m": 0.5688684988484048,
+          "max_transverse_amp_V_per_m": 1.4537952665962868,
+          "Ex_rms_V_per_m": 0.9403251720162984,
+          "Ey_rms_V_per_m": 0.25345655615162904,
+          "Ez_rms_V_per_m": 0.3271164459924708,
+          "coherent_to_incoherent_Ex_ratio": 0.9730480724499069
+        },
+        "15mm": {
+          "transverse_rms_V_per_m": 0.9904964482236296,
+          "transverse_amp_cv": 0.08027655099362496,
+          "min_transverse_amp_V_per_m": 0.8370271326364339,
+          "max_transverse_amp_V_per_m": 1.1507945999654572,
+          "Ex_rms_V_per_m": 0.9731372041674485,
+          "Ey_rms_V_per_m": 0.18462718057963962,
+          "Ez_rms_V_per_m": 0.12872066735216725,
+          "coherent_to_incoherent_Ex_ratio": 0.9953514212828125
+        }
+      },
+      "legacy_export_comparison": {
+        "relative_to_NEW_scattered": 0.0,
+        "relative_to_NEW_total": 0.9869623954183012
+      },
+      "caution": "A field-identity pass is NOT mesh-independent finite-aperture validation."
+    },
+    "FINITE_V412_C3X3_M10_PY_F1850": {
+      "status": "PASS_FIELD_IDENTITY_AND_POLARIZATION",
+      "case": "FINITE_V412_C3X3_M10_PY_F1850",
+      "relative_total_minus_incident_minus_scattered": 1.6119503283563293e-08,
+      "incident_transverse_rms_V_per_m": 0.9999800747263989,
+      "incident_expected_axis_rms_V_per_m": 0.9999800747263989,
+      "incident_orthogonal_axis_rms_V_per_m": 0.0,
+      "receiver_planes": {
+        "5mm": {
+          "transverse_rms_V_per_m": 1.0152909374398738,
+          "transverse_amp_cv": 0.40207754166405413,
+          "min_transverse_amp_V_per_m": 0.3935696705309423,
+          "max_transverse_amp_V_per_m": 1.9453206861905523,
+          "Ex_rms_V_per_m": 0.37083793773178214,
+          "Ey_rms_V_per_m": 0.9451427995738935,
+          "Ez_rms_V_per_m": 0.44309228446782084,
+          "coherent_to_incoherent_Ex_ratio": 0.4333396145134095
+        },
+        "15mm": {
+          "transverse_rms_V_per_m": 0.9302056170346067,
+          "transverse_amp_cv": 0.17592640226990452,
+          "min_transverse_amp_V_per_m": 0.692996992281105,
+          "max_transverse_amp_V_per_m": 1.2445771102999086,
+          "Ex_rms_V_per_m": 0.2019321895848578,
+          "Ey_rms_V_per_m": 0.9080230618063608,
+          "Ez_rms_V_per_m": 0.12967843109681892,
+          "coherent_to_incoherent_Ex_ratio": 0.7378332053917729
+        }
+      },
+      "legacy_export_comparison": {
+        "relative_to_NEW_scattered": 0.0,
+        "relative_to_NEW_total": 0.9737394911104793
+      },
+      "caution": "A field-identity pass is NOT mesh-independent finite-aperture validation."
+    }
+  },
+  "all_four_field_checks_pass": true,
+  "scientific_status": "FINITE_3X3_FIELD_TYPE_VALIDATED_ONLY",
+  "finite_single_state_rows": {
+    "MREF_5mm": {
+      "spatial_incoherent_receiver_row": [
+        0.5068452826632553,
+        0.5067693537540005,
+        2.1766491338022793e-05,
+        5.504466761123787e-07
+      ],
+      "normalized_polarization_coefficients": [
+        0.9998501931223353,
+        4.294504078966501e-05,
+        1.0860250552594998e-06
+      ],
+      "Efield_weighting": "Uniform mean of local x-polarized squared field at 63 points; illustrative, not atomic-readout validated",
+      "receiver_detector_assumption": "X-projected quadratic field; not automatically equivalent to Rydberg EIT/AT response"
+    },
+    "MREF_15mm": {
+      "spatial_incoherent_receiver_row": [
+        0.5196008326906191,
+        0.5195332112286507,
+        0.0004423296871000173,
+        0.00031965519127976917
+      ],
+      "normalized_polarization_coefficients": [
+        0.9998698588267878,
+        0.0008512874869917488,
+        0.000615193762535978
+      ],
+      "Efield_weighting": "Uniform mean of local x-polarized squared field at 63 points; illustrative, not atomic-readout validated",
+      "receiver_detector_assumption": "X-projected quadratic field; not automatically equivalent to Rydberg EIT/AT response"
+    },
+    "M10_5mm": {
+      "spatial_incoherent_receiver_row": [
+        0.5108661025943212,
+        0.37334532653316,
+        0.08463306157700343,
+        -0.08806439468118636
+      ],
+      "normalized_polarization_coefficients": [
+        0.7308085712424602,
+        0.16566583914495997,
+        -0.17238253670378734
+      ],
+      "Efield_weighting": "Uniform mean of local x-polarized squared field at 63 points; illustrative, not atomic-readout validated",
+      "receiver_detector_assumption": "X-projected quadratic field; not automatically equivalent to Rydberg EIT/AT response"
+    },
+    "M10_15mm": {
+      "spatial_incoherent_receiver_row": [
+        0.4938863136626867,
+        0.45310970447215176,
+        0.10578198835357368,
+        -0.08582057917813071
+      ],
+      "normalized_polarization_coefficients": [
+        0.9174372561812182,
+        0.21418287048508983,
+        -0.17376585826337404
+      ],
+      "Efield_weighting": "Uniform mean of local x-polarized squared field at 63 points; illustrative, not atomic-readout validated",
+      "receiver_detector_assumption": "X-projected quadratic field; not automatically equivalent to Rydberg EIT/AT response"
+    }
+  },
+  "limitations": [
+    "No independent finite mesh comparison",
+    "Not a 7x7 finite full-Stokes result",
+    "Only a single switched mask (10) and a blank reference",
+    "No PIN diode impedances, bias lines, or atomic readout",
+    "3x3 board is 82 mm wide, with only 6 mm clearance from the 70 mm detector ROI sides"
+  ]
+}

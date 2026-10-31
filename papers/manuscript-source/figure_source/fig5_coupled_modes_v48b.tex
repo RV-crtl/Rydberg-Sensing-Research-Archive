@@ -1,0 +1,35 @@
+\documentclass[border=4pt]{standalone}
+\usepackage[american]{circuitikz}
+\usepackage{amsmath}
+\begin{document}
+\begin{circuitikz}[scale=0.90, transform shape, line width=0.9pt]
+\ctikzset{bipoles/length=.78cm}
+\node[anchor=west,font=\fontsize{13}{14}\selectfont\bfseries] at (0,10.4) {(c) Reduced-order PIN-diode mode analogue};
+% Top/front loop
+\draw (0.4,5.6) to[sV,l_=$\mathcal E_f$] (0.4,8.4)
+      to[R,l=$R_f$] (1.7,8.4)
+      to[L,l=$L_f$] (3.0,8.4)
+      -- (3.3,8.4) to[C,l=$C_{g,f1}$] (4.4,8.4)
+      -- (4.7,8.4) to[C,l=$C_{g,f2}$] (5.8,8.4)
+      -- (6.2,8.4) -- (6.2,5.6) -- (0.4,5.6);
+\draw (3.3,8.4) -- (3.3,9.35) to[D,l=$D_1$] (4.4,9.35) -- (4.4,8.4);
+\draw (4.7,8.4) -- (4.7,9.35) to[D,l=$D_2$] (5.8,9.35) -- (5.8,8.4);
+\node[font=\small\bfseries] at (3.3,5.1) {Front-face current mode};
+
+% Bottom/rear loop
+\draw (0.4,0.7) to[sV,l_=$\mathcal E_r$] (0.4,3.5)
+      to[R,l=$R_r$] (1.7,3.5)
+      to[L,l=$L_r$] (3.0,3.5)
+      -- (3.3,3.5) to[C,l=$C_{g,r1}$] (4.4,3.5)
+      -- (4.7,3.5) to[C,l=$C_{g,r2}$] (5.8,3.5)
+      -- (6.2,3.5) -- (6.2,0.7) -- (0.4,0.7);
+\draw (3.3,3.5) -- (3.3,4.45) to[D,l=$D_4$] (4.4,4.45) -- (4.4,3.5);
+\draw (4.7,3.5) -- (4.7,4.45) to[D,l=$D_3$] (5.8,4.45) -- (5.8,3.5);
+\node[font=\small\bfseries] at (3.3,0.2) {Rear-face current mode};
+
+% Coupling indications between loops
+\draw (6.2,7.1) to[C,l_=$C_{fr}$] (6.2,4.8);
+\draw[<->,dashed,gray] (2.45,6.0) -- node[right,black] {$M_{fr}$} (2.45,4.7);
+\node[font=\footnotesize,align=left] at (6.6,6.0) {D$_1$, D$_2$: front-face PIN-diode bridges\\D$_3$, D$_4$: rear-face PIN-diode bridges};
+\end{circuitikz}
+\end{document}

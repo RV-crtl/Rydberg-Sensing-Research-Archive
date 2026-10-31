@@ -1,0 +1,27 @@
+{
+  "status": "FIXED_AXIS_STOKES_GATE_FAILED",
+  "success": false,
+  "timestamp_utc": "2026-10-22T14:36:47.979787+00:00",
+  "physical_design": "ONE_1P6MM_DOUBLE_SIDED_PCB",
+  "target_frequency_GHz": 1.8,
+  "claimed_HFSS_data": "NONE_UNTIL_NATIVE_SOLVER_FILES_EXIST",
+  "publication_ready": false,
+  "finite_panel_validated": false,
+  "real_diode_modeled": false,
+  "best_variant": 2,
+  "best_states": [
+    2,
+    3,
+    5,
+    7,
+    8,
+    11
+  ],
+  "best_detector_model": "axis_x",
+  "best_condition": 120.91483446262401,
+  "best_rank": 4,
+  "best_circular_sensitivity": 0.13107623333391918,
+  "passes_1p8": false,
+  "reason": "No full-Stokes fixed-X readout with sufficiently low conditioning in tested ideal-bridge states; secondary detector models cannot substitute for the target",
+  "finished_utc": "2026-10-22T15:47:11.278090+00:00"
+}

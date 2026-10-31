@@ -1,0 +1,7 @@
+{
+  "source": "TWO_INDEPENDENT_HFSS_MESHES",
+  "relative_matrix_drift": 0.06095900738781518,
+  "p95_reconstruction_error": 0.2732796757278229,
+  "worst_reconstruction_error": 0.2995603999265326,
+  "status": "FAIL"
+}

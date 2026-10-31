@@ -1,0 +1,90 @@
+{
+  "name": "EMPTY_V00_M00_L110_F1825",
+  "status": "HFSS_SOLVED_COMPLEX_2X2",
+  "source": "HFSS_NATIVE_FLOQUET",
+  "design": "EMPTY",
+  "variant": 0,
+  "mask": 0,
+  "stage": "L110",
+  "primary_frequency_GHz": 1.825,
+  "mesh_policy": {
+    "max_surface_mm": 1.1
+  },
+  "adaptive_policy": {
+    "Frequency": "1.8GHz",
+    "MaximumPasses": 22,
+    "MinimumPasses": 7,
+    "MinimumConvergedPasses": 3,
+    "MaxDeltaS": 0.005,
+    "PercentRefinement": 15
+  },
+  "geometry_hash": "dc0ae34178bca19d27482bdbf95614e77a25e5045150edcd31cddc2e47c98e72",
+  "source_sha256": {
+    "scripts\\v49_native.py": "b42c76ff775af84fd17f33cc6ca0b2bd1413198ee68e0c93f71f8a5ffee14ef7",
+    "scripts\\hfss_compat_v21.py": "c836734711e9d1bfc03fc9c98af464b73c6fcc0a8a2cd0bcf342c2e96ab098d5",
+    "scripts\\pcb_geometry.py": "dc0ae34178bca19d27482bdbf95614e77a25e5045150edcd31cddc2e47c98e72",
+    "config.json": "99a171946e035ff2ede6f110834a0a1bbcc94f4c3b4af7d6f7fb1c41ec83d90f"
+  },
+  "copper_count": 0,
+  "project": "C:\\Users\\ryanv\\Downloads\\RYDBERG_SINGLE_PCB_HFSS_V4_1_WINDOWS_LAUNCH_FIXED_20261023\\HFSS_PROJECTS\\EMPTY_V00_M00_L110_F1825\\EMPTY_V00_M00_L110_F1825.aedt",
+  "assumptions": [
+    "PEC sheet copper",
+    "ideal switch bridge",
+    "infinite periodic boundary",
+    "not finite-panel nor Rydberg EIT validation"
+  ],
+  "frequency_results": [
+    {
+      "frequency_GHz": 1.825,
+      "t_jones_2x2_complex": [
+        [
+          [
+            -0.9967397751940683,
+            -0.006071762217848413
+          ],
+          [
+            1.900037712714738e-07,
+            1.374730484546572e-06
+          ]
+        ],
+        [
+          [
+            2.372527492815645e-07,
+            1.374995606368311e-06
+          ],
+          [
+            -0.9967399141782337,
+            -0.006070630637586182
+          ]
+        ]
+      ],
+      "max_transmitted_power_eigenvalue": 0.993527639140449
+    }
+  ],
+  "expressions": [
+    "S(DST:1,SRC:1)",
+    "S(DST:1,SRC:2)",
+    "S(DST:2,SRC:1)",
+    "S(DST:2,SRC:2)"
+  ],
+  "convergence_evidence": {
+    "convergence": {
+      "exported": true,
+      "path": "HFSS_PROJECTS\\EMPTY_V00_M00_L110_F1825\\ADAPTIVE_EVIDENCE\\convergence.conv",
+      "size_bytes": 674,
+      "warnings": []
+    },
+    "profile": {
+      "exported": true,
+      "path": "HFSS_PROJECTS\\EMPTY_V00_M00_L110_F1825\\ADAPTIVE_EVIDENCE\\profile.prof",
+      "size_bytes": 9336,
+      "warnings": []
+    },
+    "mesh_stats": {
+      "exported": true,
+      "path": "HFSS_PROJECTS\\EMPTY_V00_M00_L110_F1825\\ADAPTIVE_EVIDENCE\\mesh_stats.mesh",
+      "size_bytes": 700,
+      "warnings": []
+    }
+  }
+}

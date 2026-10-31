@@ -1,0 +1,29 @@
+section,figure_or_result,status,criterion,notes,present_paths
+historical,experimental linear power summary,AVAILABLE,prior experimentally reported oriented powers,Power summary from V25; does NOT substitute for the raw five-run traces,EVIDENCE_REFERENCE/LINEAR_LAB_SUMMARY_ONLY.json
+historical,experimental linear polarizer,MISSING_OR_INCOMPLETE,"RF dBm 9.7dB, measured five runs or raw traces if claimed",V25 has a power summary but original five-run traces are not bundled,
+historical,circular optical paper reproduction,AVAILABLE,original 900-1300nm data separated from GHz simulation,"Source paper optical Au/perovskite, not RF L-band",EVIDENCE_REFERENCE/USER_SUPPLIED_IMAGES/05_HFSS_Paper_LCP_RCP(2).png | EVIDENCE_REFERENCE/USER_SUPPLIED_IMAGES/06_HFSS_Paper_CD_gfactor(2).png
+historical,adapted old 200mm panel prior results,AVAILABLE,"old finite screenshots available, not project/convergence proof",Caution: observed circular discrimination decreases strongly with distance; not yet verified full-Stokes,EVIDENCE_REFERENCE/USER_SUPPLIED_IMAGES/10_HFSS_Adapted_200mm_Panel_TOP(2).jpg | EVIDENCE_REFERENCE/USER_SUPPLIED_IMAGES/19_VERIFIED_Finite_Discrimination_vs_Distance(2).png
+optimization,three structure parameters,AVAILABLE,"frozen C000,C033,C015 as optimised stage",,V416_CANDIDATES/C000/PARAMS.json | V416_CANDIDATES/C033/PARAMS.json | V416_CANDIDATES/C015/PARAMS.json
+optimization,exact HFSS screening results,AVAILABLE,all 41 frequencies and complex Jones matrix,,V416_CANDIDATES/C000/SCREEN.json | V416_CANDIDATES/C033/SCREEN.json | V416_CANDIDATES/C015/SCREEN.json
+optimization,three geometry CAD comparison,AVAILABLE,same scale mask10 original and two optimised,,V418_RESULTS/FIGURES/FIG_00_ORIGINAL_C033_C015_CAD.svg
+optimization,condition vs L-band frequency,AVAILABLE,native HFSS derived,,V418_RESULTS/FIGURES/FIG_01_3_GEOMETRIES_CONDITION.svg
+optimization,optimisation history,AVAILABLE,all 36 candidates and ranking,Native 36-candidate ranked outputs and optimisation-progress figure,V416_RESULTS/OPTIMISATION_RANKING.csv | V416_RESULTS/PLOTS/OPTIMISATION_PROGRESS.svg
+full-Stokes,native Jones-to-Stokes identities,AVAILABLE,"complete 6-state rank-four, circular/Gram residuals and inversion",,V418_RESULTS/DATA/V418_EQUATION_AUDIT.json
+full-Stokes,C000 Poincare sphere,AVAILABLE,"HFSS Jones-based reconstruction over full sphere, algebraic self consistency",,V418_RESULTS/FIGURES/FIG_03_C000_POINCARE.svg
+full-Stokes,C033 Poincare sphere,AVAILABLE,"HFSS Jones-based reconstruction over full sphere, algebraic self consistency",,V418_RESULTS/FIGURES/FIG_03_C033_POINCARE.svg
+full-Stokes,C015 Poincare sphere,AVAILABLE,"HFSS Jones-based reconstruction over full sphere, algebraic self consistency",,V418_RESULTS/FIGURES/FIG_03_C015_POINCARE.svg
+full-Stokes,independently confirmed design frequency interval,AVAILABLE,two native adapted meshes and per-state convergence,Interpolating grid alone cannot prove an independently adapted contiguous band,V417_RESULTS/V417_FULL_VERDICT.json
+finite,optimized C033 six-state 3x3 ROI,AVAILABLE,all masks under X/Y incident at four receiver planes,,V418_RESULTS/FINITE/C033_C3_FINITE_ROI_VERDICT.json
+finite,baseline C000 six-state 3x3 ROI,MISSING_OR_INCOMPLETE,"all masks under X/Y incident, direct finite baseline",,
+finite,optimized C015 six-state 3x3 ROI,MISSING_OR_INCOMPLETE,"OPTIONAL extended, not in default",,
+finite,full 178mm 7x7 C033,MISSING_OR_INCOMPLETE,very likely Student 64k tetra limit; optional full model,,
+paper-adaptation,PCB windmill normal-incidence circular spectra,AVAILABLE,"two handed geometries 40/60/100mm, 1.0–2.0GHz, native Jones data",,V418_RESULTS/PAPER_ADAPTATION/WINDMILL_CIRCULAR_SPECTRA.csv | V418_RESULTS/PAPER_ADAPTATION/WINDMILL_STATUS.json
+paper-adaptation,200mm windmill finite WM_R,MISSING_OR_INCOMPLETE,"2x2 90mm cells and 10mm margins, total fields at 5/10/20/50mm",,
+paper-adaptation,200mm windmill finite WM_L,MISSING_OR_INCOMPLETE,"2x2 90mm cells and 10mm margins, total fields at 5/10/20/50mm",,
+paper-adaptation,200mm windmill finite WM_REF,MISSING_OR_INCOMPLETE,"2x2 90mm cells and 10mm margins, total fields at 5/10/20/50mm",,
+equations,Gram matrix and positivity,AVAILABLE,mathematical identity + per-candidate native HFSS evaluation,,V418_RESULTS/DATA/V418_EQUATION_AUDIT.json
+equations,circular contrast operator,AVAILABLE,HFSS R/L circular superposition checked against Stokes column,,V418_RESULTS/DATA/V418_EQUATION_AUDIT.json
+equations,sampled information bandwidth,AVAILABLE,classification thresholds + HFSS 1.0–2.0GHz,,V418_RESULTS/DATA/C033_HFSS_DISCOVERY.json
+equations,Fresnel/aperture relation,AVAILABLE,standard dimensional regime; finite validation required,Fresnel number is NOT a newly derived minimum aperture law,V418_RESULTS/DATA/APERTURE_DIMENSIONLESS_DIAGNOSTICS.csv
+manufacturing,PCBWay Gerber drill switch layout,MISSING_OR_INCOMPLETE,"cannot claim until copper 2-layer, pads, bias and BOM exist","Current ideal PEC bridge geometry is only layout hypothesis, not ready-for-fabrication PCB file",
+publication,source traceability / native projects,AVAILABLE,"all source scripts, data CSV, adaptive convergence, full .aedt/aedtresults native backup",Full native backups may be gigabytes; compact return omits `.aedtresults` by design.,V418_CAMPAIGN_CONFIG.json

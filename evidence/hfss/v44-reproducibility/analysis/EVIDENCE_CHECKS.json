@@ -1,0 +1,26 @@
+{
+  "checks": "PASS",
+  "rank": [
+    4,
+    4
+  ],
+  "cond_row_gain_normalised": [
+    21.93417232190835,
+    24.724535285845086
+  ],
+  "cond_raw": [
+    21.152925757301222,
+    26.91069952009875
+  ],
+  "same_mesh_max_abs": [
+    4.6074255521944e-15,
+    5.051514762044462e-15
+  ],
+  "cross_mesh_p95": [
+    156.79853923482653,
+    72.22138289072838
+  ],
+  "n_states": 1231,
+  "gram_cone_check": "PASS",
+  "native_switch_masks": "PASS"
+}

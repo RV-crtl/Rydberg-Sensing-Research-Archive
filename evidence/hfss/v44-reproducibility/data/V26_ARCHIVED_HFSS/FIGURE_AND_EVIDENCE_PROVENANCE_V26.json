@@ -1,0 +1,30 @@
+{
+  "release": "V26",
+  "as_of": "2026-10-24",
+  "native_HFSS_source": "RETURN_TO_CHATGPT_V418_20261024_050541.zip",
+  "previous_manuscript": "APL_PHOTONICS_V25_REVISED_MANUSCRIPT_FULL_SOURCE_DATA_20261024.zip",
+  "status_v419": "not uploaded; no V419 EM result asserted",
+  "numerical_model": "periodic complex Floquet Jones, six sequential masks and fixed-x quadratic proxy",
+  "figure_map": {
+    "Fig27_C000_C033_C015_CAD": "FIG_00_ORIGINAL_C033_C015_CAD",
+    "Fig28_ThreeDesigns_Condition": "FIG_01_3_GEOMETRIES_CONDITION",
+    "Fig29_ThreeDesigns_Gain": "FIG_02_3_GEOMETRIES_GAIN",
+    "Fig30_C000_Poincare": "FIG_03_C000_POINCARE",
+    "Fig31_C033_Poincare": "FIG_03_C033_POINCARE",
+    "Fig32_C015_Poincare": "FIG_03_C015_POINCARE",
+    "Fig33_Windmill_Null": "FIG_WINDMILL_windmill_asymmetry",
+    "Fig34_Windmill_LCP": "FIG_WINDMILL_windmill_lcp",
+    "Fig35_Windmill_RCP": "FIG_WINDMILL_windmill_rcp"
+  },
+  "new_plots": [
+    "Fig36_Independently_Confirmed_Frequencies",
+    "Fig37_Optimisation_Search",
+    "Fig38_C033_Instrument_Evidence"
+  ],
+  "unsupported_claims": [
+    "experimentally calibrated full-Stokes Rydberg EIT",
+    "250 MHz continuous measured bandwidth",
+    "complete optimized finite six-state 7x7 PCB",
+    "manufacturing ready PIN diode Gerbers"
+  ]
+}

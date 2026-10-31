@@ -1,0 +1,21 @@
+name: Research archive checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  research-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate exact asset hashes and source links
+        run: python scripts/verify_archive.py
+      - name: Test Stokes mathematics and archive coherence
+        run: python -m unittest discover -s tests -v
+      - name: Evidence summary
+        run: python scripts/summarise_evidence.py

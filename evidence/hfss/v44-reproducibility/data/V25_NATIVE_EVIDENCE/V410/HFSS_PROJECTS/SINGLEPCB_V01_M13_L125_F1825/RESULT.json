@@ -1,0 +1,93 @@
+{
+  "name": "SINGLEPCB_V01_M13_L125_F1825",
+  "status": "HFSS_SOLVED_COMPLEX_2X2",
+  "source": "HFSS_NATIVE_FLOQUET",
+  "design": "SINGLEPCB",
+  "variant": 1,
+  "mask": 13,
+  "stage": "L125",
+  "primary_frequency_GHz": 1.825,
+  "mesh_policy": {
+    "max_surface_mm": 1.25
+  },
+  "adaptive_policy": {
+    "Frequency": "1.8GHz",
+    "MaximumPasses": 22,
+    "MinimumPasses": 7,
+    "MinimumConvergedPasses": 3,
+    "MaxDeltaS": 0.005,
+    "PercentRefinement": 15
+  },
+  "geometry_hash": "dc0ae34178bca19d27482bdbf95614e77a25e5045150edcd31cddc2e47c98e72",
+  "source_sha256": {
+    "scripts\\v49_native.py": "b42c76ff775af84fd17f33cc6ca0b2bd1413198ee68e0c93f71f8a5ffee14ef7",
+    "scripts\\hfss_compat_v21.py": "c836734711e9d1bfc03fc9c98af464b73c6fcc0a8a2cd0bcf342c2e96ab098d5",
+    "scripts\\pcb_geometry.py": "dc0ae34178bca19d27482bdbf95614e77a25e5045150edcd31cddc2e47c98e72",
+    "config.json": "99a171946e035ff2ede6f110834a0a1bbcc94f4c3b4af7d6f7fb1c41ec83d90f"
+  },
+  "copper_count": 9,
+  "project": "C:\\Users\\ryanv\\Downloads\\RYDBERG_SINGLE_PCB_HFSS_V4_1_WINDOWS_LAUNCH_FIXED_20261023\\HFSS_PROJECTS\\SINGLEPCB_V01_M13_L125_F1825\\SINGLEPCB_V01_M13_L125_F1825.aedt",
+  "assumptions": [
+    "PEC sheet copper",
+    "ideal switch bridge",
+    "infinite periodic boundary",
+    "not finite-panel nor Rydberg EIT validation"
+  ],
+  "mesh_operation_names": [
+    "V45_COPPER_SURFACE"
+  ],
+  "frequency_results": [
+    {
+      "frequency_GHz": 1.825,
+      "t_jones_2x2_complex": [
+        [
+          [
+            -0.845431392331166,
+            0.296983375088748
+          ],
+          [
+            -0.108107494552342,
+            -0.03841399948870916
+          ]
+        ],
+        [
+          [
+            -0.1247654730801881,
+            -0.01477544937601705
+          ],
+          [
+            -0.3490863775667804,
+            0.4157924008645856
+          ]
+        ]
+      ],
+      "max_transmitted_power_eigenvalue": 0.8445284287506658
+    }
+  ],
+  "expressions": [
+    "S(DST:1,SRC:1)",
+    "S(DST:1,SRC:2)",
+    "S(DST:2,SRC:1)",
+    "S(DST:2,SRC:2)"
+  ],
+  "convergence_evidence": {
+    "convergence": {
+      "exported": true,
+      "path": "HFSS_PROJECTS\\SINGLEPCB_V01_M13_L125_F1825\\ADAPTIVE_EVIDENCE\\convergence.conv",
+      "size_bytes": 909,
+      "warnings": []
+    },
+    "profile": {
+      "exported": true,
+      "path": "HFSS_PROJECTS\\SINGLEPCB_V01_M13_L125_F1825\\ADAPTIVE_EVIDENCE\\profile.prof",
+      "size_bytes": 13356,
+      "warnings": []
+    },
+    "mesh_stats": {
+      "exported": true,
+      "path": "HFSS_PROJECTS\\SINGLEPCB_V01_M13_L125_F1825\\ADAPTIVE_EVIDENCE\\mesh_stats.mesh",
+      "size_bytes": 706,
+      "warnings": []
+    }
+  }
+}

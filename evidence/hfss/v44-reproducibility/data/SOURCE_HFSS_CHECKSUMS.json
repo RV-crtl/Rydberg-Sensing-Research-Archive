@@ -1,0 +1,106 @@
+{
+  "verified_source": "RETURN_TO_CHATGPT_APL_V15_20261021_061155.zip",
+  "source_file_count": 20,
+  "files": [
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8D/SHARED_X_1p6250.fld",
+      "bytes": 217784,
+      "sha256": "b1ce897cb10787fa2bbafed261cc5630b948d424b22d29766bf7e6aac3924b2c"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8D/SHARED_Y_1p6250.fld",
+      "bytes": 218230,
+      "sha256": "a0f68192b9c0ec5ed4f58abe867e0140882fa1e8413e46bde88d2b5fd989fb02"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_X_1p6250.fld",
+      "bytes": 217779,
+      "sha256": "b891932c973f04962c0884ef5cb98a7346470eab329e9af7e1666969db6c4eae"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/SHARED_Y_1p6250.fld",
+      "bytes": 218216,
+      "sha256": "77f54d476c95ae5e4e0dcd899413677afdbd70026b73c5a76fe310e160e6104a"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8D/SHARED_X_1p6250.fld",
+      "bytes": 218579,
+      "sha256": "dad8ee877a43b362bed487d3fc3dc2125087aa6f4f30bab1c9e481e7f0a070d4"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8D/SHARED_Y_1p6250.fld",
+      "bytes": 219056,
+      "sha256": "0fce44904ae078123da737e870782532e1872a040a2f5a4319b41112d83bee75"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_X_1p6250.fld",
+      "bytes": 218613,
+      "sha256": "d24f3d5ac69cf6807efffe45876127fb688b675ddc63c979e6f96d7e56cda06c"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T2_R_P8E/SHARED_Y_1p6250.fld",
+      "bytes": 219059,
+      "sha256": "2e503150af76bcfae75393949fe05f11cc5d49069e377bfbb2016b66e097c313"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8D/SHARED_X_1p6250.fld",
+      "bytes": 218986,
+      "sha256": "e9344e066656571d36492c7f1dfbac06d8eaef2d80d41aadb23f15bb86271ae4"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8D/SHARED_Y_1p6250.fld",
+      "bytes": 219921,
+      "sha256": "61614277f46419fb6c3818b7847b4a2e6488aa28d1d38ff3cb596d293d5cce4d"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_X_1p6250.fld",
+      "bytes": 218980,
+      "sha256": "0148911fa9a8631ccbeb74ddb758c88c0fe03f350247caccfd01504f175063f7"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/SHARED_Y_1p6250.fld",
+      "bytes": 219920,
+      "sha256": "747f42ea232f2234d9f7d1713b3ce9e7fc75198dbe8a85bc5447f3c7fbaa233c"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8D/SHARED_X_1p6250.fld",
+      "bytes": 219667,
+      "sha256": "6fd32033c6dfc747c570519d65498296dd111a4a66577c02470f21e7cd12def4"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8D/SHARED_Y_1p6250.fld",
+      "bytes": 219679,
+      "sha256": "795d7a47d9b7617a09c3cee542c4d039a932ea371b2dccbd73075cd62a898ca9"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_X_1p6250.fld",
+      "bytes": 219643,
+      "sha256": "adb5febe87a0ca07fd734ab4b72b5e21a78fe5e42f2e5638984af8cfc7629342"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T4_R_P8E/SHARED_Y_1p6250.fld",
+      "bytes": 219678,
+      "sha256": "e352e026f79e2575add81eada476445fb13ddd82ebb96fa969bb1f6fc181a363"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/V8_PAPER_PLANE_E_P_1p8250.fld",
+      "bytes": 642174,
+      "sha256": "52736edfba66e3f543b3fe64e2882bfd718e87f2a321bf91212d2be0285ae5c7"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T1_R_P8E/V8_PAPER_PLANE_E_M_1p8250.fld",
+      "bytes": 647568,
+      "sha256": "7e011fdc5799a084ded4dc66c7bdadd75d89bfe84e3bad8580004280cc916c37"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/V8_PAPER_PLANE_E_P_1p8250.fld",
+      "bytes": 643379,
+      "sha256": "8e5f1a04b58562945b149db90b56587f0d89d69b6b125c7a118b9d1dbb48c0a1"
+    },
+    {
+      "path": "HFSS_ENGINE/results/V7401/SCAN_T3_R_P8E/V8_PAPER_PLANE_E_M_1p8250.fld",
+      "bytes": 648124,
+      "sha256": "cd6f3784e77ee07e12a7e12c856c5c78810872934432130060a7819a1d58a622"
+    }
+  ]
+}

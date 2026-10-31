@@ -1,0 +1,5 @@
+{
+  "Fig03_Actual_HFSS_frequency_responses": "V7401 P8E original HFSS discrete sweep: four switching states; P/M 9 points, 50 MHz spacing. Straight connecting segments, no numerical interpolation.",
+  "Fig04_HFSS_frequency_contrast": "Handedness-phase selectivity and mean RF response directly from V7401 HFSS P8E, 9 discrete frequencies; intensity-based proxy, not S21.",
+  "Fig05_HFSS_high_density_mechanism": "8 native 3034-point HFSS complex E-field cut-plane exports; one z slice from 41x37 nodes each; identical amplitude scale; local contrast masked for weak total fields; no interpolated field physics."
+}

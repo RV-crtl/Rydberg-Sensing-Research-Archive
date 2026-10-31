@@ -1,0 +1,68 @@
+{
+  "name": "SINGLEPCB_V01_M02_PILOT",
+  "status": "HFSS_SOLVED_COMPLEX_2X2",
+  "source": "NATIVE_ANSYS_HFSS_SOLVED_COMPLEX_S_PARAMETERS",
+  "design": "SINGLEPCB",
+  "variant": 1,
+  "mask": 2,
+  "stage": "PILOT",
+  "frequency_request_GHz": [
+    1.8
+  ],
+  "project": "C:\\Users\\ryanv\\Downloads\\RYDBERG_SINGLE_PCB_HFSS_V4_1_WINDOWS_LAUNCH_FIXED_20261023\\HFSS_PROJECTS\\SINGLEPCB_V01_M02_PILOT\\SINGLEPCB_V01_M02_PILOT.aedt",
+  "source_sha256": {
+    "scripts\\hfss_single_case.py": "a8cf0f063440c64725deab1bdf75e6df2f49b7e13ba4aa5181224fc69e4cd533",
+    "scripts\\pcb_geometry.py": "dc0ae34178bca19d27482bdbf95614e77a25e5045150edcd31cddc2e47c98e72",
+    "scripts\\v3_geometry_control.py": "f0afe8e14257aa914a6ecd3abf26e48b1b7302a64888ab88f77bb854f5231bb2",
+    "scripts\\hfss_compat_v21.py": "c836734711e9d1bfc03fc9c98af464b73c6fcc0a8a2cd0bcf342c2e96ab098d5",
+    "config.json": "99a171946e035ff2ede6f110834a0a1bbcc94f4c3b4af7d6f7fb1c41ec83d90f",
+    "V3_BASELINE_CONFIG.json": "2dd470f450327bc54165119d41d736b46690052e42acaac84e58473c04cbe367"
+  },
+  "models_excluded": [
+    "PIN equivalent-circuit parasitics",
+    "DC bias and vias",
+    "edge diffraction",
+    "finite Rb vapour-cell optical response",
+    "real metal conductivity and 35um finite thickness"
+  ],
+  "frequency_results": [
+    {
+      "frequency_GHz": 1.8,
+      "t_jones_2x2_complex": [
+        [
+          [
+            -0.4816937302623956,
+            0.3994674460580851
+          ],
+          [
+            0.1742282705572555,
+            0.05538718497675969
+          ]
+        ],
+        [
+          [
+            0.1739284406634214,
+            0.05839827712313783
+          ],
+          [
+            -0.7861302146755986,
+            0.3002720487098191
+          ]
+        ]
+      ],
+      "max_transmitted_power_eigenvalue": 0.8237952032251691
+    }
+  ],
+  "expressions": [
+    "S(DST:1,SRC:1)",
+    "S(DST:1,SRC:2)",
+    "S(DST:2,SRC:1)",
+    "S(DST:2,SRC:2)"
+  ],
+  "copper_polygon_count": 7,
+  "two_faces_mm": [
+    -0.8,
+    0.8
+  ],
+  "note": "Floquet axes and handedness require independent lab-frame calibration"
+}

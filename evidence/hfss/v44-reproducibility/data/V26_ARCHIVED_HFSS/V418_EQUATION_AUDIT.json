@@ -1,0 +1,1109 @@
+{
+  "HFSS_Jones_Gram_Stokes_circular_proofs": {
+    "C000@1.8250": {
+      "candidate": "C000",
+      "frequency_GHz": 1.825,
+      "source": "HFSS_INTERPOLATING_SCREEN",
+      "scope": "Periodic Floquet, X modal-projected quadratic detector; algebraic test",
+      "not_independent_em_simulations": true,
+      "no_added_noise": true,
+      "polarization_count": 1231,
+      "full_rank": true,
+      "matrix_rank": 4,
+      "condition": 29.549226286138413,
+      "singular_values": [
+        3.175522470364933,
+        1.2358397134974977,
+        0.6141729466394266,
+        0.10746550314430993
+      ],
+      "max_operator_identity_absolute": 4.440892098500626e-16,
+      "max_reconstruction_linear_algebra_L2": 9.67312671363864e-15,
+      "min_gram_residual": -5.551115123125783e-17,
+      "max_circular_ratio_identity_error": 2.220446049250313e-16,
+      "gram": [
+        {
+          "mask": 3,
+          "gram_positivity_residual": -2.7755575615628914e-17,
+          "a0": 0.41409304487883136,
+          "circular_ratio": 0.6002315274164249
+        },
+        {
+          "mask": 6,
+          "gram_positivity_residual": 1.3877787807814457e-17,
+          "a0": 0.19523662839939454,
+          "circular_ratio": -0.4208312038656906
+        },
+        {
+          "mask": 8,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.4353866254914163,
+          "circular_ratio": -0.09668672924155268
+        },
+        {
+          "mask": 10,
+          "gram_positivity_residual": 3.469446951953614e-18,
+          "a0": 0.15193807820954608,
+          "circular_ratio": -0.4545308693183529
+        },
+        {
+          "mask": 12,
+          "gram_positivity_residual": -5.551115123125783e-17,
+          "a0": 0.4301221274411137,
+          "circular_ratio": -0.08412601901769093
+        },
+        {
+          "mask": 13,
+          "gram_positivity_residual": 0.0,
+          "a0": 0.4046071406784996,
+          "circular_ratio": 0.16244618661542223
+        }
+      ],
+      "instrument": [
+        [
+          0.41409304487883136,
+          0.33097929614646004,
+          0.012157604979263995,
+          0.24855170082013917
+        ],
+        [
+          0.19523662839939454,
+          0.17211874789088843,
+          -0.041736535998972764,
+          -0.08216166536799568
+        ],
+        [
+          0.4353866254914163,
+          0.43260703507411075,
+          -0.02530977058872177,
+          -0.04209610877428187
+        ],
+        [
+          0.15193807820954608,
+          0.01835549896440443,
+          -0.1340854061687863,
+          -0.06906054677114487
+        ],
+        [
+          0.4301221274411137,
+          0.4278474786095818,
+          -0.02534293297753954,
+          -0.03618446227304081
+        ],
+        [
+          0.4046071406784996,
+          0.39015845540864963,
+          0.08463624682051454,
+          0.06572688708059195
+        ]
+      ],
+      "field_coefficient_provenance": "V4.16 native HFSS Jones complex amplitudes",
+      "important": "Small algebraic residual establishes internal consistency, not Rydberg experimental accuracy"
+    },
+    "C000@1.8500": {
+      "candidate": "C000",
+      "frequency_GHz": 1.85,
+      "source": "HFSS_INTERPOLATING_SCREEN",
+      "scope": "Periodic Floquet, X modal-projected quadratic detector; algebraic test",
+      "not_independent_em_simulations": true,
+      "no_added_noise": true,
+      "polarization_count": 1231,
+      "full_rank": true,
+      "matrix_rank": 4,
+      "condition": 21.7427138131752,
+      "singular_values": [
+        3.091989074003822,
+        1.3302588669624236,
+        0.8060966330289483,
+        0.1422080564814408
+      ],
+      "max_operator_identity_absolute": 4.440892098500626e-16,
+      "max_reconstruction_linear_algebra_L2": 7.701459557207635e-15,
+      "min_gram_residual": -1.0408340855860843e-17,
+      "max_circular_ratio_identity_error": 1.8041124150158794e-16,
+      "gram": [
+        {
+          "mask": 3,
+          "gram_positivity_residual": 5.551115123125783e-17,
+          "a0": 0.4150961727398995,
+          "circular_ratio": 0.5690147588011125
+        },
+        {
+          "mask": 6,
+          "gram_positivity_residual": -1.0408340855860843e-17,
+          "a0": 0.15896757868695904,
+          "circular_ratio": -0.49140151545368
+        },
+        {
+          "mask": 8,
+          "gram_positivity_residual": 0.0,
+          "a0": 0.43334496101333964,
+          "circular_ratio": -0.09721033168981516
+        },
+        {
+          "mask": 10,
+          "gram_positivity_residual": 3.469446951953614e-18,
+          "a0": 0.13132454483431227,
+          "circular_ratio": 0.05857774897813742
+        },
+        {
+          "mask": 12,
+          "gram_positivity_residual": 0.0,
+          "a0": 0.427166283033373,
+          "circular_ratio": -0.07978673593315712
+        },
+        {
+          "mask": 13,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.3977048246617136,
+          "circular_ratio": 0.17033402368683453
+        }
+      ],
+      "instrument": [
+        [
+          0.4150961727398995,
+          0.34052179065241317,
+          0.023691007010737366,
+          0.23619584861085885
+        ],
+        [
+          0.15896757868695904,
+          0.13194868131895038,
+          -0.04192833276423138,
+          -0.0781169090747738
+        ],
+        [
+          0.43334496101333964,
+          0.4305029340544444,
+          -0.026086628905770595,
+          -0.04212560739621676
+        ],
+        [
+          0.13132454483431227,
+          -0.04390819826666366,
+          -0.12352744078038327,
+          0.007692696221972497
+        ],
+        [
+          0.427166283033373,
+          0.42503369065845553,
+          -0.025608564496468998,
+          -0.034082203423931985
+        ],
+        [
+          0.3977048246617136,
+          0.3788128037649107,
+          0.10040377915869572,
+          0.0677426630242967
+        ]
+      ],
+      "field_coefficient_provenance": "V4.16 native HFSS Jones complex amplitudes",
+      "important": "Small algebraic residual establishes internal consistency, not Rydberg experimental accuracy"
+    },
+    "C000@1.9500": {
+      "candidate": "C000",
+      "frequency_GHz": 1.95,
+      "source": "HFSS_INTERPOLATING_SCREEN",
+      "scope": "Periodic Floquet, X modal-projected quadratic detector; algebraic test",
+      "not_independent_em_simulations": true,
+      "no_added_noise": true,
+      "polarization_count": 1231,
+      "full_rank": true,
+      "matrix_rank": 4,
+      "condition": 7.091621022140631,
+      "singular_values": [
+        3.0395166193566676,
+        1.4185900662926039,
+        0.7518225858823168,
+        0.42860674729614623
+      ],
+      "max_operator_identity_absolute": 4.440892098500626e-16,
+      "max_reconstruction_linear_algebra_L2": 5.41558442946623e-15,
+      "min_gram_residual": -2.7755575615628914e-17,
+      "max_circular_ratio_identity_error": 1.1102230246251565e-16,
+      "gram": [
+        {
+          "mask": 3,
+          "gram_positivity_residual": -2.7755575615628914e-17,
+          "a0": 0.41149486609389246,
+          "circular_ratio": 0.4755985365761655
+        },
+        {
+          "mask": 6,
+          "gram_positivity_residual": -1.0842021724855044e-19,
+          "a0": 0.02624195963588211,
+          "circular_ratio": 0.163035629859525
+        },
+        {
+          "mask": 8,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.4246766569953283,
+          "circular_ratio": -0.09804334751321535
+        },
+        {
+          "mask": 10,
+          "gram_positivity_residual": 5.551115123125783e-17,
+          "a0": 0.3979488881326144,
+          "circular_ratio": 0.7148799861637903
+        },
+        {
+          "mask": 12,
+          "gram_positivity_residual": 0.0,
+          "a0": 0.4111121600522325,
+          "circular_ratio": -0.04064391063307981
+        },
+        {
+          "mask": 13,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.3594875883815345,
+          "circular_ratio": 0.07635190273546748
+        }
+      ],
+      "instrument": [
+        [
+          0.41149486609389246,
+          0.35859058582808984,
+          0.04939472391065634,
+          0.19570635612286044
+        ],
+        [
+          0.02624195963588211,
+          -0.020285107372025993,
+          -0.016088827700493916,
+          0.004278374417984271
+        ],
+        [
+          0.4246766569953283,
+          0.421615714672659,
+          -0.029271754251336126,
+          -0.04163672106254353
+        ],
+        [
+          0.3979488881326144,
+          0.26760426084936906,
+          0.07628345899508633,
+          0.28448569564213916
+        ],
+        [
+          0.4111121600522325,
+          0.41009666688236546,
+          -0.023552800113802536,
+          -0.01670920589333534
+        ],
+        [
+          0.3594875883815345,
+          0.30157318588062276,
+          0.193730666473651,
+          0.027447561382714692
+        ]
+      ],
+      "field_coefficient_provenance": "V4.16 native HFSS Jones complex amplitudes",
+      "important": "Small algebraic residual establishes internal consistency, not Rydberg experimental accuracy"
+    },
+    "C033@1.7500": {
+      "candidate": "C033",
+      "frequency_GHz": 1.75,
+      "source": "HFSS_INDEPENDENT_ADAPTED_FINE_MESH_M110",
+      "scope": "Periodic Floquet, X modal-projected quadratic detector; algebraic test",
+      "not_independent_em_simulations": true,
+      "no_added_noise": true,
+      "polarization_count": 1231,
+      "full_rank": true,
+      "matrix_rank": 4,
+      "condition": 34.62001600321847,
+      "singular_values": [
+        3.1417605143555694,
+        1.308788897459884,
+        0.6388872834486193,
+        0.09074982848256033
+      ],
+      "max_operator_identity_absolute": 4.440892098500626e-16,
+      "max_reconstruction_linear_algebra_L2": 1.1066228403201744e-14,
+      "min_gram_residual": -2.7755575615628914e-17,
+      "max_circular_ratio_identity_error": 2.7755575615628914e-16,
+      "gram": [
+        {
+          "mask": 3,
+          "gram_positivity_residual": -2.7755575615628914e-17,
+          "a0": 0.4130460818064396,
+          "circular_ratio": 0.6452319205548037
+        },
+        {
+          "mask": 6,
+          "gram_positivity_residual": -1.3877787807814457e-17,
+          "a0": 0.2640010692374847,
+          "circular_ratio": -0.3840840593590006
+        },
+        {
+          "mask": 8,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.4415559013113975,
+          "circular_ratio": -0.06466287088171442
+        },
+        {
+          "mask": 10,
+          "gram_positivity_residual": 0.0,
+          "a0": 0.20540605920936453,
+          "circular_ratio": 0.7389501165444898
+        },
+        {
+          "mask": 12,
+          "gram_positivity_residual": -2.7755575615628914e-17,
+          "a0": 0.4367972704609985,
+          "circular_ratio": -0.05466516984680997
+        },
+        {
+          "mask": 13,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.4126638917187626,
+          "circular_ratio": 0.15724854800866486
+        }
+      ],
+      "instrument": [
+        [
+          0.4130460818064396,
+          0.3152799222904173,
+          -0.013333447252114284,
+          0.2665105166416056
+        ],
+        [
+          0.2640010692374847,
+          0.23591878366981514,
+          -0.06129612966731919,
+          -0.10139860234784968
+        ],
+        [
+          0.4415559013113975,
+          0.4401897734937678,
+          -0.019731828215519373,
+          -0.02855227223355793
+        ],
+        [
+          0.20540605920936453,
+          -0.02981993894826887,
+          -0.1351435731377352,
+          0.1517848313917043
+        ],
+        [
+          0.4367972704609985,
+          0.43569269507108066,
+          -0.01983913572753047,
+          -0.023877596978373473
+        ],
+        [
+          0.4126638917187626,
+          0.4023977928691391,
+          0.06447238311794859,
+          0.06489079778838032
+        ]
+      ],
+      "field_coefficient_provenance": "V4.16 native HFSS Jones complex amplitudes",
+      "important": "Small algebraic residual establishes internal consistency, not Rydberg experimental accuracy"
+    },
+    "C033@1.8750": {
+      "candidate": "C033",
+      "frequency_GHz": 1.875,
+      "source": "HFSS_INDEPENDENT_ADAPTED_FINE_MESH_M110",
+      "scope": "Periodic Floquet, X modal-projected quadratic detector; algebraic test",
+      "not_independent_em_simulations": true,
+      "no_added_noise": true,
+      "polarization_count": 1231,
+      "full_rank": true,
+      "matrix_rank": 4,
+      "condition": 15.20232245827617,
+      "singular_values": [
+        3.2291776746595593,
+        1.1996306296258938,
+        0.2969485252127213,
+        0.21241344429591347
+      ],
+      "max_operator_identity_absolute": 4.440892098500626e-16,
+      "max_reconstruction_linear_algebra_L2": 5.406925760894122e-15,
+      "min_gram_residual": -5.551115123125783e-17,
+      "max_circular_ratio_identity_error": 2.220446049250313e-16,
+      "gram": [
+        {
+          "mask": 3,
+          "gram_positivity_residual": 0.0,
+          "a0": 0.42040766457489565,
+          "circular_ratio": 0.4791851373560475
+        },
+        {
+          "mask": 6,
+          "gram_positivity_residual": 0.0,
+          "a0": 0.10329071643581259,
+          "circular_ratio": -0.6693241098708003
+        },
+        {
+          "mask": 8,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.43058249426915995,
+          "circular_ratio": -0.058371067554373185
+        },
+        {
+          "mask": 10,
+          "gram_positivity_residual": -2.7755575615628914e-17,
+          "a0": 0.4580288215834708,
+          "circular_ratio": 0.35376159013745234
+        },
+        {
+          "mask": 12,
+          "gram_positivity_residual": -5.551115123125783e-17,
+          "a0": 0.41627188439475205,
+          "circular_ratio": -0.012303541779414675
+        },
+        {
+          "mask": 13,
+          "gram_positivity_residual": -2.7755575615628914e-17,
+          "a0": 0.36959547781683494,
+          "circular_ratio": 0.2192333776558023
+        }
+      ],
+      "instrument": [
+        [
+          0.42040766457489565,
+          0.3660263863198122,
+          0.046732597192559094,
+          0.2014531044948565
+        ],
+        [
+          0.10329071643581259,
+          0.03796887241256377,
+          -0.06669102780796814,
+          -0.0691349668363175
+        ],
+        [
+          0.43058249426915995,
+          0.4293369360448488,
+          -0.020961485810895544,
+          -0.02513355986071564
+        ],
+        [
+          0.4580288215834708,
+          0.4213459375981786,
+          0.07748101576306801,
+          0.16203300425215209
+        ],
+        [
+          0.41627188439475205,
+          0.4159773920651889,
+          -0.014793919424033153,
+          -0.005121618521246507
+        ],
+        [
+          0.36959547781683494,
+          0.33340539391351126,
+          0.13739060390670504,
+          0.08102766496809488
+        ]
+      ],
+      "field_coefficient_provenance": "V4.16 native HFSS Jones complex amplitudes",
+      "important": "Small algebraic residual establishes internal consistency, not Rydberg experimental accuracy"
+    },
+    "C033@1.9250": {
+      "candidate": "C033",
+      "frequency_GHz": 1.925,
+      "source": "HFSS_INDEPENDENT_ADAPTED_FINE_MESH_M110",
+      "scope": "Periodic Floquet, X modal-projected quadratic detector; algebraic test",
+      "not_independent_em_simulations": true,
+      "no_added_noise": true,
+      "polarization_count": 1231,
+      "full_rank": true,
+      "matrix_rank": 4,
+      "condition": 9.528217428109983,
+      "singular_values": [
+        3.1065124295525677,
+        1.4101813482418222,
+        0.5046500108573859,
+        0.32603290730832696
+      ],
+      "max_operator_identity_absolute": 5.551115123125783e-16,
+      "max_reconstruction_linear_algebra_L2": 5.7918777414010455e-15,
+      "min_gram_residual": -2.7755575615628914e-17,
+      "max_circular_ratio_identity_error": 1.942890293094024e-16,
+      "gram": [
+        {
+          "mask": 3,
+          "gram_positivity_residual": 0.0,
+          "a0": 0.41730875596965405,
+          "circular_ratio": 0.4365444566204565
+        },
+        {
+          "mask": 6,
+          "gram_positivity_residual": 4.336808689942018e-19,
+          "a0": 0.055019430532340666,
+          "circular_ratio": -0.09006819405866498
+        },
+        {
+          "mask": 8,
+          "gram_positivity_residual": -2.7755575615628914e-17,
+          "a0": 0.42536080031888374,
+          "circular_ratio": -0.05331167799205697
+        },
+        {
+          "mask": 10,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.45080817444063165,
+          "circular_ratio": 0.24639074694256344
+        },
+        {
+          "mask": 12,
+          "gram_positivity_residual": -2.7755575615628914e-17,
+          "a0": 0.4029350845779209,
+          "circular_ratio": 0.023538243966076712
+        },
+        {
+          "mask": 13,
+          "gram_positivity_residual": 1.3877787807814457e-17,
+          "a0": 0.3359039173176169,
+          "circular_ratio": 0.1843280004752543
+        }
+      ],
+      "instrument": [
+        [
+          0.41730875596965405,
+          0.3713538868543567,
+          0.05527735823484876,
+          0.1821738241177313
+        ],
+        [
+          0.055019430532340666,
+          -0.031283940613468675,
+          -0.04498772952873476,
+          -0.004955500746184096
+        ],
+        [
+          0.42536080031888374,
+          0.42424728160092123,
+          -0.02078032408779372,
+          -0.022676698017043976
+        ],
+        [
+          0.45080817444063165,
+          0.43208418209958593,
+          0.06475818368771445,
+          0.11107496282824067
+        ],
+        [
+          0.4029350845779209,
+          0.40273816563035064,
+          -0.008288472870482321,
+          0.009484384323286856
+        ],
+        [
+          0.3359039173176169,
+          0.2685947056458878,
+          0.19197570969839134,
+          0.06191649743096146
+        ]
+      ],
+      "field_coefficient_provenance": "V4.16 native HFSS Jones complex amplitudes",
+      "important": "Small algebraic residual establishes internal consistency, not Rydberg experimental accuracy"
+    },
+    "C033@2.0000": {
+      "candidate": "C033",
+      "frequency_GHz": 2.0,
+      "source": "HFSS_INDEPENDENT_ADAPTED_FINE_MESH_M110",
+      "scope": "Periodic Floquet, X modal-projected quadratic detector; algebraic test",
+      "not_independent_em_simulations": true,
+      "no_added_noise": true,
+      "polarization_count": 1231,
+      "full_rank": true,
+      "matrix_rank": 4,
+      "condition": 26.58315433668201,
+      "singular_values": [
+        3.2399139702664,
+        0.9699308150889523,
+        0.7398224920018315,
+        0.12187846217315351
+      ],
+      "max_operator_identity_absolute": 4.440892098500626e-16,
+      "max_reconstruction_linear_algebra_L2": 9.987688754437923e-15,
+      "min_gram_residual": -2.7755575615628914e-17,
+      "max_circular_ratio_identity_error": 1.6653345369377348e-16,
+      "gram": [
+        {
+          "mask": 3,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.4111851063559095,
+          "circular_ratio": 0.3879175898458014
+        },
+        {
+          "mask": 6,
+          "gram_positivity_residual": -6.938893903907228e-18,
+          "a0": 0.16804220234084066,
+          "circular_ratio": 0.8548860644935061
+        },
+        {
+          "mask": 8,
+          "gram_positivity_residual": -2.7755575615628914e-17,
+          "a0": 0.41740269129535035,
+          "circular_ratio": -0.04439103161930211
+        },
+        {
+          "mask": 10,
+          "gram_positivity_residual": -2.7755575615628914e-17,
+          "a0": 0.4317929179804933,
+          "circular_ratio": 0.14685646300692323
+        },
+        {
+          "mask": 12,
+          "gram_positivity_residual": -1.3877787807814457e-17,
+          "a0": 0.353464557612257,
+          "circular_ratio": 0.16424550051317738
+        },
+        {
+          "mask": 13,
+          "gram_positivity_residual": 0.0,
+          "a0": 0.29271005425779234,
+          "circular_ratio": -0.3323805644954454
+        }
+      ],
+      "instrument": [
+        [
+          0.4111851063559095,
+          0.37371896755118467,
+          0.06296968748074061,
+          0.15950593543807393
+        ],
+        [
+          0.16804220234084066,
+          0.08063836829506328,
+          0.033140907803015644,
+          0.1436569370279827
+        ],
+        [
+          0.41740269129535035,
+          0.4165046138370254,
+          -0.020139311837467744,
+          -0.018528936067273693
+        ],
+        [
+          0.4317929179804933,
+          0.42444557219682083,
+          0.047645059507974805,
+          0.06341158068605375
+        ],
+        [
+          0.353464557612257,
+          0.3477358589347838,
+          0.02542807796977938,
+          0.05805496317869397
+        ],
+        [
+          0.29271005425779234,
+          0.1463305608484438,
+          0.23409608764732315,
+          -0.09729113306769746
+        ]
+      ],
+      "field_coefficient_provenance": "V4.16 native HFSS Jones complex amplitudes",
+      "important": "Small algebraic residual establishes internal consistency, not Rydberg experimental accuracy"
+    },
+    "C015@1.7500": {
+      "candidate": "C015",
+      "frequency_GHz": 1.75,
+      "source": "HFSS_INDEPENDENT_ADAPTED_FINE_MESH_M110",
+      "scope": "Periodic Floquet, X modal-projected quadratic detector; algebraic test",
+      "not_independent_em_simulations": true,
+      "no_added_noise": true,
+      "polarization_count": 1231,
+      "full_rank": true,
+      "matrix_rank": 4,
+      "condition": 33.5871341026631,
+      "singular_values": [
+        3.14239789061979,
+        1.298725979728493,
+        0.6556622096001987,
+        0.09355957197820672
+      ],
+      "max_operator_identity_absolute": 4.440892098500626e-16,
+      "max_reconstruction_linear_algebra_L2": 1.0483564193841807e-14,
+      "min_gram_residual": -5.551115123125783e-17,
+      "max_circular_ratio_identity_error": 1.6653345369377348e-16,
+      "gram": [
+        {
+          "mask": 3,
+          "gram_positivity_residual": 0.0,
+          "a0": 0.4180311674659234,
+          "circular_ratio": 0.6165154644857748
+        },
+        {
+          "mask": 6,
+          "gram_positivity_residual": -1.3877787807814457e-17,
+          "a0": 0.27860330439033004,
+          "circular_ratio": -0.3249414910342887
+        },
+        {
+          "mask": 8,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.44010155185521144,
+          "circular_ratio": -0.06839218900437119
+        },
+        {
+          "mask": 10,
+          "gram_positivity_residual": -6.938893903907228e-18,
+          "a0": 0.18352739445161242,
+          "circular_ratio": 0.584160196222577
+        },
+        {
+          "mask": 12,
+          "gram_positivity_residual": -5.551115123125783e-17,
+          "a0": 0.4363142837129209,
+          "circular_ratio": -0.06275956931354401
+        },
+        {
+          "mask": 13,
+          "gram_positivity_residual": 5.551115123125783e-17,
+          "a0": 0.4083367350601937,
+          "circular_ratio": 0.17087818646159844
+        }
+      ],
+      "instrument": [
+        [
+          0.4180311674659234,
+          0.329084971331298,
+          -0.005670903817427456,
+          0.25772267937978444
+        ],
+        [
+          0.27860330439033004,
+          0.25887957772595266,
+          -0.049046158153792416,
+          -0.09052977313567363
+        ],
+        [
+          0.44010155185521144,
+          0.43860206206152236,
+          -0.02028858516174136,
+          -0.030099508515598686
+        ],
+        [
+          0.18352739445161242,
+          -0.03957529284643742,
+          -0.14360447600577214,
+          0.1072093987550722
+        ],
+        [
+          0.4363142837129209,
+          0.43492213067165164,
+          -0.02151909388225455,
+          -0.027382896531170365
+        ],
+        [
+          0.4083367350601937,
+          0.39627973892909957,
+          0.06951683077609534,
+          0.0697758407527361
+        ]
+      ],
+      "field_coefficient_provenance": "V4.16 native HFSS Jones complex amplitudes",
+      "important": "Small algebraic residual establishes internal consistency, not Rydberg experimental accuracy"
+    },
+    "C015@1.8750": {
+      "candidate": "C015",
+      "frequency_GHz": 1.875,
+      "source": "HFSS_INDEPENDENT_ADAPTED_FINE_MESH_M110",
+      "scope": "Periodic Floquet, X modal-projected quadratic detector; algebraic test",
+      "not_independent_em_simulations": true,
+      "no_added_noise": true,
+      "polarization_count": 1231,
+      "full_rank": true,
+      "matrix_rank": 4,
+      "condition": 19.436500654812747,
+      "singular_values": [
+        3.2866827467655777,
+        1.0319582335501627,
+        0.32277612964651664,
+        0.16909848151867551
+      ],
+      "max_operator_identity_absolute": 4.440892098500626e-16,
+      "max_reconstruction_linear_algebra_L2": 5.277940006822452e-15,
+      "min_gram_residual": -2.7755575615628914e-17,
+      "max_circular_ratio_identity_error": 1.6653345369377348e-16,
+      "gram": [
+        {
+          "mask": 3,
+          "gram_positivity_residual": -2.7755575615628914e-17,
+          "a0": 0.42206808365385867,
+          "circular_ratio": 0.4501126388305424
+        },
+        {
+          "mask": 6,
+          "gram_positivity_residual": 0.0,
+          "a0": 0.12673972882689963,
+          "circular_ratio": -0.6097480929935677
+        },
+        {
+          "mask": 8,
+          "gram_positivity_residual": 5.551115123125783e-17,
+          "a0": 0.42921704697751756,
+          "circular_ratio": -0.0630464867585804
+        },
+        {
+          "mask": 10,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.45877535203395353,
+          "circular_ratio": 0.32802520991777123
+        },
+        {
+          "mask": 12,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.41592029648230444,
+          "circular_ratio": -0.021271820123312846
+        },
+        {
+          "mask": 13,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.3544890763763931,
+          "circular_ratio": 0.21560481623203281
+        }
+      ],
+      "instrument": [
+        [
+          0.42206808365385867,
+          0.3740394574158917,
+          0.04630597237141229,
+          0.18997817889958846
+        ],
+        [
+          0.12673972882689963,
+          0.08386916902409074,
+          -0.0552886056230871,
+          -0.07727930795872395
+        ],
+        [
+          0.42921704697751756,
+          0.42780395428633106,
+          -0.021880872618464497,
+          -0.027060626868825044
+        ],
+        [
+          0.45877535203395353,
+          0.4272589851165319,
+          0.07264557068886586,
+          0.150489881156037
+        ],
+        [
+          0.41592029648230444,
+          0.4154294498389338,
+          -0.018160095509932403,
+          -0.00884738173240653
+        ],
+        [
+          0.3544890763763931,
+          0.30244232026975154,
+          0.16837360759743736,
+          0.07642955216839528
+        ]
+      ],
+      "field_coefficient_provenance": "V4.16 native HFSS Jones complex amplitudes",
+      "important": "Small algebraic residual establishes internal consistency, not Rydberg experimental accuracy"
+    },
+    "C015@1.9500": {
+      "candidate": "C015",
+      "frequency_GHz": 1.95,
+      "source": "HFSS_INDEPENDENT_ADAPTED_FINE_MESH_M110",
+      "scope": "Periodic Floquet, X modal-projected quadratic detector; algebraic test",
+      "not_independent_em_simulations": true,
+      "no_added_noise": true,
+      "polarization_count": 1231,
+      "full_rank": true,
+      "matrix_rank": 4,
+      "condition": 8.639275010016426,
+      "singular_values": [
+        3.0493272865519914,
+        1.4089189458930833,
+        0.7693952329288213,
+        0.3529610161751517
+      ],
+      "max_operator_identity_absolute": 5.551115123125783e-16,
+      "max_reconstruction_linear_algebra_L2": 3.901707402204126e-15,
+      "min_gram_residual": -2.7755575615628914e-17,
+      "max_circular_ratio_identity_error": 1.942890293094024e-16,
+      "gram": [
+        {
+          "mask": 3,
+          "gram_positivity_residual": -2.7755575615628914e-17,
+          "a0": 0.4162364868587852,
+          "circular_ratio": 0.3909699066046737
+        },
+        {
+          "mask": 6,
+          "gram_positivity_residual": 0.0,
+          "a0": 0.040536934625391666,
+          "circular_ratio": -0.19022826238458768
+        },
+        {
+          "mask": 8,
+          "gram_positivity_residual": 0.0,
+          "a0": 0.4216100703549105,
+          "circular_ratio": -0.05567257272118785
+        },
+        {
+          "mask": 10,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.4426950243917731,
+          "circular_ratio": 0.1833309025154222
+        },
+        {
+          "mask": 12,
+          "gram_positivity_residual": -2.7755575615628914e-17,
+          "a0": 0.38706832922723616,
+          "circular_ratio": 0.06398395921941459
+        },
+        {
+          "mask": 13,
+          "gram_positivity_residual": 1.3877787807814457e-17,
+          "a0": 0.30548060907253444,
+          "circular_ratio": -0.18113884998072205
+        }
+      ],
+      "instrument": [
+        [
+          0.4162364868587852,
+          0.3789765739258075,
+          0.05609441248934544,
+          0.16273594039263675
+        ],
+        [
+          0.040536934625391666,
+          -0.02385558300635071,
+          -0.0318542074681805,
+          -0.007711270636185884
+        ],
+        [
+          0.4216100703549105,
+          0.4203791866263714,
+          -0.022032943184981425,
+          -0.02347211730181888
+        ],
+        [
+          0.4426950243917731,
+          0.4320289367593456,
+          0.052373552793260336,
+          0.0811596783608306
+        ],
+        [
+          0.38706832922723616,
+          0.386260139392755,
+          -0.003410765053261276,
+          0.02476616419240242
+        ],
+        [
+          0.30548060907253444,
+          0.1772228510788897,
+          0.24258723598575435,
+          -0.05533440621880942
+        ]
+      ],
+      "field_coefficient_provenance": "V4.16 native HFSS Jones complex amplitudes",
+      "important": "Small algebraic residual establishes internal consistency, not Rydberg experimental accuracy"
+    },
+    "C015@2.0000": {
+      "candidate": "C015",
+      "frequency_GHz": 2.0,
+      "source": "HFSS_INDEPENDENT_ADAPTED_FINE_MESH_M110",
+      "scope": "Periodic Floquet, X modal-projected quadratic detector; algebraic test",
+      "not_independent_em_simulations": true,
+      "no_added_noise": true,
+      "polarization_count": 1231,
+      "full_rank": true,
+      "matrix_rank": 4,
+      "condition": 18.6878089796297,
+      "singular_values": [
+        3.160985969501205,
+        1.2530846193519471,
+        0.6397936739655413,
+        0.16914695419600975
+      ],
+      "max_operator_identity_absolute": 4.440892098500626e-16,
+      "max_reconstruction_linear_algebra_L2": 6.2108643554758805e-15,
+      "min_gram_residual": -2.7755575615628914e-17,
+      "max_circular_ratio_identity_error": 1.3877787807814457e-16,
+      "gram": [
+        {
+          "mask": 3,
+          "gram_positivity_residual": -2.7755575615628914e-17,
+          "a0": 0.41116056329095013,
+          "circular_ratio": 0.3625106014553153
+        },
+        {
+          "mask": 6,
+          "gram_positivity_residual": 0.0,
+          "a0": 0.08577255769153004,
+          "circular_ratio": 0.970044235689821
+        },
+        {
+          "mask": 8,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.41575853401115037,
+          "circular_ratio": -0.04854209814235795
+        },
+        {
+          "mask": 10,
+          "gram_positivity_residual": 2.7755575615628914e-17,
+          "a0": 0.43056861946415903,
+          "circular_ratio": 0.12996684936999459
+        },
+        {
+          "mask": 12,
+          "gram_positivity_residual": 0.0,
+          "a0": 0.3342589023549703,
+          "circular_ratio": 0.21308655703899224
+        },
+        {
+          "mask": 13,
+          "gram_positivity_residual": 1.3877787807814457e-17,
+          "a0": 0.3274078391676678,
+          "circular_ratio": -0.6887052493109762
+        }
+      ],
+      "instrument": [
+        [
+          0.41116056329095013,
+          0.3785280406143307,
+          0.05961216290563315,
+          0.14905006309330857
+        ],
+        [
+          0.08577255769153004,
+          0.017506927289867386,
+          0.01129915003900592,
+          0.08320317516904134
+        ],
+        [
+          0.41575853401115037,
+          0.4147106415591779,
+          -0.021515986383254065,
+          -0.020181791561492128
+        ],
+        [
+          0.43056861946415903,
+          0.42483123926732347,
+          0.04214584353934988,
+          0.05595964690934487
+        ],
+        [
+          0.3342589023549703,
+          0.32503740928608665,
+          0.031726047445412665,
+          0.07122607866245331
+        ],
+        [
+          0.3274078391676678,
+          0.17472655750386312,
+          0.16069197777837665,
+          -0.22548749750033667
+        ]
+      ],
+      "field_coefficient_provenance": "V4.16 native HFSS Jones complex amplitudes",
+      "important": "Small algebraic residual establishes internal consistency, not Rydberg experimental accuracy"
+    }
+  },
+  "status": "HFSS_DERIVED_MODEL_IDENTITIES_PASS_IF_SMALL_RESIDUAL",
+  "not_new_universal_laws": true,
+  "aperture_formula": "F=a^2/(lambda_0 z) is only a standard regime descriptor, not a proof of polarimetry",
+  "input_model": "S3=2*Im(Ex*conjugate(Ey))",
+  "no_synthetic_EM_or_added_noise": true
+}

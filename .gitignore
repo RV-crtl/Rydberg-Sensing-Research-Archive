@@ -1,0 +1,24 @@
+# Local engineering tools
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+
+# Potential native Ansys transient / local proprietary files
+*.aedt.lock
+*.lck
+*.aedtresults/
+*.cache/
+*.tmp
+*.log.local
+
+# Do not commit private procurement, correspondence or personal data
+private/
+procurement-private/
+collaborations-private/
+secrets/
+.env
+*.key
