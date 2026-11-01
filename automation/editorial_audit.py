@@ -37,7 +37,9 @@ def assess(path):
  if values["figures"]<MIN_IMAGES:deficits.append("Create original, physically reviewed figures: "+str(values["figures"])+"/"+str(MIN_IMAGES))
  if values["direct_external_citation_links"]<1:deficits.append("Add exact source citations next to nontrivial claims/equations")
  if values["section_headings"]<7:deficits.append("Increase conceptual/derivation structure: "+str(values["section_headings"])+"/7 sections")
- return {"path":str(path.relative_to(ROOT)),"title":text.splitlines()[0][2:],
+ try: rel=str(path.relative_to(ROOT))
+ except ValueError:rel=str(path)
+ return {"path":rel,"title":text.splitlines()[0][2:],
          "metrics":values,"editorial_status":"draft" if deficits else "needs_human_peer_review",
          "deficits":deficits}
 
