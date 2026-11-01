@@ -26,7 +26,7 @@ jobs:
       - name: Fetch approved authoritative public sources and create dated review report
         run: python automation/australia_watch.py
       - name: Preserve transparent evidence and retrieval diagnostics
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: australian-quantum-defence-opportunities
           path: |

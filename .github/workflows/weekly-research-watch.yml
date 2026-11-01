@@ -21,7 +21,7 @@ jobs:
       - name: Retrieve source metadata and identify review candidates
         run: python scripts/research_watch.py
       - name: Preserve the complete cited research watch
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: rydberg-literature-review-candidates
           path: research_updates/*.md
