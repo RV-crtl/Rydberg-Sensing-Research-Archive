@@ -1,0 +1,49 @@
+name: Australian quantum and Defence collaboration watch
+on:
+  schedule:
+    - cron: '15 8 * * 5'
+      timezone: 'Australia/Sydney'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: australian-science-opportunity-watch
+  cancel-in-progress: false
+jobs:
+  review-official-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Fetch approved authoritative public sources and create dated review report
+        run: python automation/australia_watch.py
+      - name: Preserve transparent evidence and retrieval diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: australian-quantum-defence-opportunities
+          path: research_updates/australia/*
+          retention-days: 90
+      - name: Add source report to workflow summary
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat research_updates/australia/*.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Open one human-review issue, not a funding application
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          title="Australian quantum and Defence research opportunities — $(TZ=Australia/Sydney date +%Y-%m-%d)"
+          file="$(find research_updates/australia -name '*.md' -type f -print -quit)"
+          if gh issue list --state all --json title -q '.[].title' | grep -Fxq "$title"; then
+            echo "Dated review issue already exists" >> "$GITHUB_STEP_SUMMARY"
+          elif ! gh issue create --title "$title" --body-file "$file"; then
+            echo "::warning::Issue creation unavailable; report stays in workflow artifacts and run summary."
+          fi
