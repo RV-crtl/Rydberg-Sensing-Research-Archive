@@ -8,6 +8,18 @@ This book is written for a researcher starting from first principles. It is **no
 
 **Actual edition status, 1 November 2026:** 36 original instructional chapters, revised physics foundations, 1,000 distinct parameterised numerical problems, original interactive teaching figures, documented ARC and RydIQule Python examples, a reader with interactive questions, and a separate reproducible PDF workbook. The earlier 1,033-page output is predominantly one solved numerical exercise per page; **it is not 1,000 pages of original prose**. This manuscript is a substantially extended *first editorial edition*, not independently peer reviewed or ready for publisher acceptance. See the [honest editorial completion requirements](EDITORIAL_STANDARD.md).
 
+## Deep field guides — design and diagnose real systems
+
+The formal 36-chapter syllabus is supplemented by a practical three-volume, cross-platform reference series. These are **general Rydberg** resources, not examples presented as unique achievements of one laboratory.
+
+| Researcher's question | Start here | Includes |
+|---|---|---|
+| How do I design a complete atomic system from nothing? | [Design a Rydberg experiment from zero](field-guides/COMPLETE_EXPERIMENT_DESIGN.md) | Platform selection, optical/RF modelling, calibrations, metrology, design gates and 10 fully answered scenarios |
+| How do I use ARC and RydIQule correctly across problems? | [Computational decision and verification manual](field-guides/ARC_RYDIQULE_MODEL_VERIFICATION.md) | Frequency/units, state rules, numerical checks, thermal/Zeeman limits and 10 worked research diagnostics |
+| Why did my experiment, simulation or code fail? | [Universal fault-isolation atlas](field-guides/UNIVERSAL_DIAGNOSTIC_ATLAS.md) | Distinct vapour, tweezers, RF, numerical and finite geometry problems plus 15 answered challenges |
+
+The longer practical guides deliberately contain independent design logic, failure controls, implementation gates and source references instead of padding printed pages with repeated numerical variations. **They are substantial extensions, not evidence that the complete 36-chapter manuscript yet satisfies publisher-grade length or independent review.**
+
 ## Read the book by domain
 
 | Part | Chapter range | Graduate competencies |

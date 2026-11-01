@@ -29,3 +29,9 @@ Source-linked opportunities belong under **automation/** and **research_updates/
 ## Optional code-writing AI proposal assistant
 
 The [bounded co-author](AI_EDITORIAL_POLICY.md) can only be invoked manually by the repo owner, after an API secret and model variable are set. It drafts original source in an isolated new branch and raises a human-review PR. The workflow **never autonomously merges, executes its new Python output, submits a funding application or edits original HFSS data**. This review gate is intentional scientific safety, not a missing feature.
+
+## Deadline stale-data guard
+
+The [independent date-and-timezone triage](opportunity_triage.py) evaluates all seeded official opportunities and explicitly classifies expired deadlines as `PAST_RECORDED_DEADLINE`, future source deadlines as `FUTURE_ADVERTISED_DEADLINE_UNVERIFIED`, and undated calls as `REVIEW_CURRENT_SOURCE`. None of those categories guarantees that a funding stream is open or that the researcher qualifies. The CI regression tests include an expired October 2026 grant and a November 2026 future deadline.
+
+Current official examples to review before applying include the [Defence Industry Development Grants Program](https://business.gov.au/grants-and-programs/defence-industry-development-grants-program), whose new guidelines were anticipated for 3 November 2026. The stream-specific rules and eligibility may change; do not use a historic document as a current application form. The [Defence grants portal](https://www.defence.gov.au/about/governance/grants) routes to live GrantConnect opportunities. This is a project-specific intelligence workflow, not part of the general-purpose textbook.

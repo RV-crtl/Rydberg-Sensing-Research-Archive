@@ -21,13 +21,17 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.11'
+      - name: Classify advertised deadlines conservatively before external retrieval
+        run: python automation/opportunity_triage.py
       - name: Fetch approved authoritative public sources and create dated review report
         run: python automation/australia_watch.py
       - name: Preserve transparent evidence and retrieval diagnostics
         uses: actions/upload-artifact@v4
         with:
           name: australian-quantum-defence-opportunities
-          path: research_updates/australia/*
+          path: |
+            research_updates/australia/*
+            research_updates/opportunity_triage/*
           retention-days: 90
       - name: Add source report to workflow summary
         shell: bash

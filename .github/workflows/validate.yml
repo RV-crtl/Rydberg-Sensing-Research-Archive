@@ -21,6 +21,8 @@ jobs:
         run: python scripts/verify_history_sources.py
       - name: Verify canonical textbook exports match original chapter files
         run: python scripts/rebuild_academy.py --check
+      - name: Classify official Australian collaboration deadlines without claiming open status
+        run: python automation/opportunity_triage.py
       - name: Score textbook editorial depth without overstating maturity
         run: python automation/editorial_audit.py
       - name: Check current Rydberg research, source and book consistency
