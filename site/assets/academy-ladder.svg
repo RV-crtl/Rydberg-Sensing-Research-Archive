@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 600" role="img" aria-labelledby="t d">
+<title id="t">Rydberg RF sensing: two optical lasers plus RF-coupled Rydberg pair</title>
+<desc id="d">Original conceptual energy-level diagram for the project's Rb-87 780-nm probe and approximately 480-nm coupling ladder and an RF connected neighbouring Rydberg state. Levels are schematic, not actual spectroscopic energy spacings.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0e2936"/><stop offset="1" stop-color="#061620"/></linearGradient>
+<marker id="tip" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="context-stroke"/></marker></defs>
+<rect width="880" height="600" rx="20" fill="url(#bg)"/>
+<g fill="#9cb9bd" font-family="Arial,sans-serif"><text x="42" y="55" font-size="19" letter-spacing="2">ATOMIC OBSERVABLE / CONCEPTUAL Rb-87 LADDER</text><text x="45" y="554" font-size="17">Actual nℓj, F and m-state selection: verify using ARC + measured laser detuning</text></g>
+<g stroke="#d0e2df" stroke-width="4" stroke-linecap="round"><path d="M88 479 H405"/><path d="M88 332 H405"/><path d="M88 142 H405"/><path d="M522 202 H807"/></g>
+<g fill="#f4ffff" font-family="Arial,sans-serif" font-size="24"><text x="98" y="467">5S₁/₂ · |g⟩</text><text x="98" y="318">5P₃/₂ · |e⟩</text><text x="98" y="128">nℓj · |r⟩</text><text x="537" y="185">n′ℓ′j′ · |r′⟩</text></g>
+<g stroke-width="7" fill="none" stroke-linecap="round"><path d="M285 473 V338" stroke="#f18373" marker-end="url(#tip)"/><path d="M355 324 V152" stroke="#67cafa" marker-end="url(#tip)"/><path d="M440 152 C487 135 492 209 525 213" stroke="#b6f173" stroke-dasharray="9 8" marker-end="url(#tip)"/></g>
+<g font-family="Arial,sans-serif" font-weight="700" font-size="20"><text x="185" y="407" fill="#fca79a">780 nm</text><text x="372" y="250" fill="#8ce4fc">~480 nm</text><text x="515" y="115" fill="#b6f173">Microwave RF</text></g>
+<g font-family="Arial,sans-serif" font-size="17" fill="#a3c3c7"><text x="173" y="432">Probe Ωp</text><text x="373" y="276">Coupler Ωc</text><text x="562" y="138">ΩRF ∝ μ·E/ℏ</text></g>
+<rect x="498" y="307" width="310" height="153" rx="12" fill="#102f3c" stroke="#3e6870"/>
+<text x="515" y="344" fill="#b6f173" font-family="Arial,sans-serif" font-size="17" font-weight="700">WHAT WE DETECT</text><text x="515" y="379" fill="#e9faf8" font-family="Arial,sans-serif" font-size="19">Probe transmission</text><text x="515" y="410" fill="#aac8cc" font-family="Arial,sans-serif" font-size="16">EIT / dressed-state response</text><text x="515" y="438" fill="#aac8cc" font-family="Arial,sans-serif" font-size="15">Not direct RF-port voltage</text>
+</svg>

@@ -1,0 +1,45 @@
+name: Weekly Rydberg research candidate review
+on:
+  schedule:
+    # Friday ~08:00 AEDT / 07:00 AEST; UTC schedule cannot follow DST
+    - cron: '0 21 * * 4'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  literature:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Retrieve source metadata and identify review candidates
+        run: python scripts/research_watch.py
+      - name: Preserve the complete cited research watch
+        uses: actions/upload-artifact@v4
+        with:
+          name: rydberg-literature-review-candidates
+          path: research_updates/*.md
+          retention-days: 90
+      - name: Show the review candidates in the run summary
+        run: cat research_updates/*.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Create a review issue for human research triage
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          file="$(find research_updates -maxdepth 1 -name '*.md' -print -quit)"
+          title="Rydberg literature triage — $(date -u +%Y-%m-%d)"
+          if gh issue list --state all --search "in:title $title" --json title -q '.[].title' | grep -Fxq "$title"; then
+            echo "Issue already exists; skipping duplicate." >> "$GITHUB_STEP_SUMMARY"
+          elif gh issue create --title "$title" --body-file "$file"; then
+            echo "A bibliographic review issue was opened; the items are not automatically verified." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::warning::Issue creation disabled. The candidate list remains available as an artifact and workflow summary."
+          fi

@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-01 — Rydberg Academy, interactive lab and research agents
+
+- Authored 24 original quantum-to-engineering teaching chapters with answer-reveal questions, 10 reproducible practical exercises and a 21-entry scientific reference ledger.
+- Added 1,000 deterministic, per-question unique solved numerical problems spanning 20 physics topics, model/units/diagnosis explanations, and a separately verified printable 1,000+ page **worked-case book** build.
+- Built standalone searchable Academy reader, editable JavaScript sandbox with CSP and timeout, real-time weak-probe toy EIT curves and SI calculation workbench, reusing verified existing authentic experiment/HFSS images and introducing original editable scientific SVGs.
+- Implemented weekly DOI/arXiv bibliographic candidate monitor, human-review issue and source provenance; source and numeric quality assistant plus comprehensive CI tests.
+- Explicitly prioritised latest paper-periodic V44 source evidence versus historical finite-panel calibration failures and unpublished/unfinished hardware work; sources reflect 2026 Rydberg polarimetry literature.
+
+
 ## 2026-10-31 — Original research file recovery
 
 - Imported complete extracted original APL/ X-BSR plans, 2026 interim thesis LaTeX, experimental/atomic Python and MATLAB files, CST setup, Workbench verification, manuscript figure generators, historical HFSS numerical verdicts and review records.

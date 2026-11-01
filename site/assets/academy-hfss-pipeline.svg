@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 570" role="img" aria-labelledby="title desc"><title id="title">Physics and native HFSS evidence pipeline for the Rydberg Stokes analyser</title><desc id="desc">Source-aware engineering pipeline from Rb-87 optical receiver and incident Jones field, through two copper faces and six HFSS masks, to complex local fields, Stokes matrix, singular values, finite-mesh verification and optical calibration as a future gate.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#0b2633"/><stop offset="1" stop-color="#0a1a27"/></linearGradient><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10" fill="none" stroke="#b6f173" stroke-width="2"/></marker></defs>
+<rect width="1600" height="570" rx="28" fill="url(#bg)"/>
+<g fill="#c6e2e3" font-family="Arial,sans-serif"><text x="55" y="65" font-size="24" font-weight="700" fill="#b6f173">SOURCE-TO-CLAIM DATA FLOW</text><text x="55" y="99" font-size="16">Every calculation belongs to an identified HFSS solver case and physical coordinate frame</text></g>
+<g stroke="#3d6874" fill="#113440" stroke-width="2">
+<rect x="50" y="162" rx="20" width="255" height="200"/><rect x="363" y="162" rx="20" width="255" height="200"/><rect x="675" y="162" rx="20" width="255" height="200"/><rect x="988" y="162" rx="20" width="255" height="200"/><rect x="1300" y="162" rx="20" width="250" height="200"/></g>
+<g font-family="Arial,sans-serif" fill="#f3ffff" font-size="22" font-weight="700">
+<text x="72" y="208">Incident RF</text><text x="383" y="208">Two-face PCB</text><text x="696" y="208">HFSS fields</text><text x="1010" y="208">Instrument A</text><text x="1320" y="208">Stokes estimate</text>
+</g>
+<g font-family="Arial,sans-serif" fill="#b9d1d2" font-size="17">
+<text x="72" y="247">Jones Ex, Ey</text><text x="72" y="274">H and V excitations</text><text x="72" y="301">Known propagation axis</text>
+<text x="383" y="247">Six switch masks</text><text x="383" y="274">Material + aperture</text><text x="383" y="301">Ideal vs real diodes</text>
+<text x="696" y="247">Complex Ex, Ey, Ez</text><text x="696" y="274">Same physical ROI</text><text x="696" y="301">Independent mesh</text>
+<text x="1010" y="247">Six by four matrix</text><text x="1010" y="274">Rank / singular values</text><text x="1010" y="301">Noise assumptions</text>
+<text x="1320" y="247">Poincaré coordinates</text><text x="1320" y="274">Model / holdout test</text><text x="1320" y="301">Not optical proof</text>
+</g>
+<g stroke="#b6f173" stroke-width="4" fill="none" marker-end="url(#a)"><path d="M307 261 H356"/><path d="M621 261 H668"/><path d="M934 261 H980"/><path d="M1244 261 H1293"/></g>
+<rect x="54" y="411" rx="12" width="1492" height="103" fill="#09252d" stroke="#b6f173" stroke-width="2"/>
+<g font-family="Arial,sans-serif" font-size="20"><text x="80" y="454" fill="#b6f173" font-weight="700">EVIDENCE GATE:</text><text x="280" y="454" fill="#e2f6ef">Periodic κ₂ ≈ 9.53 at 1.925 GHz ≠ finite-array optical calibration</text><text x="80" y="487" fill="#bad2d5" font-size="17">Historical 3×3 mesh transfer failed; Rb-87 optical/full-Stokes validation is future experimental work.</text></g>
+</svg>

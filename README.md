@@ -51,6 +51,16 @@ The [historical source library](history/README.md) now preserves the actual text
 
 An additional [byte-level intake register](history/binary-imports/README.md) identifies 13 original binary HFSS, Rydberg Workbench and manuscript archives with exact SHA-256. **These binary archives are not yet uploaded to GitHub.** Follow the [completeness ledger](docs/handover/RESEARCH_COMPLETENESS_AND_IMPORTS.md) for untransferred raw data and the historical 1,280-name Library discovery index.
 
+## Rydberg Systems Engineering — interactive scientific textbook
+
+**[Open the Rydberg Academy](site/academy.html)** · **[Research diagnostic assistant](site/diagnostics.html)** · **[Live physics and code laboratory](site/lab.html)** · **[Complete GitHub book](book/README.md)** · **[Latest accepted results and historical limitations](book/CURRENT_STATE.md)** · **[Annotated research bibliography](book/REFERENCES.md)**
+
+The separate research-handbook section contains **24 authored quantum, atomic, optical, RF and metrology tutorial chapters** with answers, **1,000 reproducibly generated fully solved numeric questions**, ARC and RydIQule primers, 10 hands-on source-aware labs, original editable physics diagrams and a browser-based safe JavaScript calculation workbench. Its optional print workflow creates a 1,000+ page **worked-problem PDF**, not a 1,000-page prose monograph. Teaching calculations are not new measurements or HFSS simulations.
+
+**Research maintenance:** `scripts/research_assistant.py` audits current source, browser/book consistency and project evidence; a weekly [bibliographic metadata watch](.github/workflows/weekly-research-watch.yml) raises review candidates without inventing article conclusions. Learn from books and compare methods against the current V44 *periodic* HFSS evidence while keeping the failing historical finite-panel transfer distinctly labelled.
+
+**Public repository caution:** The repository is currently public. Only authorised research documents and approved figures should be published; do not bulk-commit private laboratory records, purchase information or proprietary manuscripts.
+
 ## The research in one minute
 
 This archive documents a microwave sensing programme combining **rubidium-87 Rydberg electromagnetically induced transparency (EIT)**, RF polarisation conditioning and **HFSS-designed, switch-programmable metasurfaces**. The objective is to understand how multiple known analyser states can convert polarisation-dependent responses into a well-conditioned Stokes measurement basis compatible with an atomic receiver.
