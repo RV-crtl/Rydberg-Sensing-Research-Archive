@@ -7,8 +7,8 @@
     "book-part2.json",
     "book-part3.json"
   ],
-  "totalWords": 39365,
-  "totalAnswers": 291,
+  "totalWords": 41136,
+  "totalAnswers": 303,
   "chapterSummaries": [
     {
       "slug": "01-mathematical-language",
@@ -238,8 +238,8 @@
       "slug": "33-lasers-cooling-and-stabilisation",
       "title": "Laser systems, cooling and frequency metrology",
       "section": "Laser systems, research design and new frontiers",
-      "words": 820,
-      "answers": 6
+      "words": 2591,
+      "answers": 18
     },
     {
       "slug": "34-design-a-rydberg-system",
