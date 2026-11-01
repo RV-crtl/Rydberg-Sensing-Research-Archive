@@ -33,7 +33,10 @@ def audit():
                   ("##", "source", "question")), "CHAPTER_FORMAT",
               p.name + ": lesson, source and self-test present")
     pieces = []
-    for name in ["book-part1.json", "book-part2.json"]:
+    catalog = json.loads((SITE / "data/book-catalog.json").read_text(encoding="utf-8"))
+    check(catalog["schema"] == 2 and catalog["chapterCount"] >= 36,
+          "SYLLABUS_MANIFEST", "General Rydberg textbook curriculum has 36+ source-led chapters")
+    for name in catalog["parts"]:
         p = SITE / "data" / name
         if not p.exists():
             check(False, "SITE_BOOK", "Missing site source " + name)
@@ -82,7 +85,7 @@ def audit():
     for file in ["academy.html", "lab.html"]:
         check((SITE / file).is_file(), "SITE_PAGES", file)
     warn("PUBLICATION", "GitHub repository has been reported public; site and source rights must be reviewed before adding private content.")
-    warn("MATURITY", "Book has 24 authored concept chapters and 1000 parameterised exercises, not 1000 substantive textbook prose pages.")
+    warn("MATURITY", "Book has 36+ authored chapters and a 1000-case workbook; manuscript length and independent scholarly review must be checked before calling it publishable.")
     warn("NOT_SOLVER", "CI validates source-linked calculations; it does not run Ansys HFSS, ARC transition sweeps, RydIQule full spectra or atomic experiments.")
     failures = sum(x["status"] == "fail" for x in findings)
     result = {"schema": 1, "generated_utc": datetime.now(timezone.utc).isoformat(),

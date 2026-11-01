@@ -73,8 +73,11 @@ function renderMenu(){
  if(mode==="practice")root.append(mk("p","Showing at most 100 matches. Use search to locate more.", "study-note"));
 }
 async function start(){
- const rs=await Promise.all(["./data/book-part1.json","./data/book-part2.json"].map(async p=>{const r=await fetch(p);if(!r.ok)throw Error("Unable to load "+p+" ("+r.status+")");return r.json();}));
- chapters=rs.flat();if(chapters.length!==24)throw Error("Expected 24 chapters");
+ const metaResponse=await fetch("./data/book-catalog.json");if(!metaResponse.ok)throw Error("Cannot load source-verified curriculum");const meta=await metaResponse.json();
+ if(meta.schema!==2||!Array.isArray(meta.parts)||!meta.parts.length)throw Error("Invalid Academy catalog");
+ const rs=await Promise.all(meta.parts.map(async name=>{const r=await fetch("./data/"+name);if(!r.ok)throw Error("Unable to load "+name+" ("+r.status+")");return r.json();}));
+ chapters=rs.flat();if(chapters.length!==meta.chapterCount||chapters.length<24)throw Error("Textbook chapter inventory out of sync");
+ const count=document.getElementById("chapter-total");if(count)count.textContent=chapters.length+" reference chapters";
  let m=getBookMetrics();if(m.exercises!==1000||m.uniqueIds!==1000)throw Error("Workbook check failed");
  document.querySelectorAll("[data-mode]").forEach(b=>b.addEventListener("click",()=>{$("chapter-search").value="";location.hash=b.dataset.mode==="chapters"?"chapter/"+chapters[0].slug:"practice/0001";}));
  $("chapter-search").addEventListener("input",renderMenu);

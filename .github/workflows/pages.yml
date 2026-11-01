@@ -23,6 +23,8 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.11'
+      - name: Refresh canonical textbook chapter data for this release
+        run: python scripts/rebuild_academy.py
       - name: Refresh source index for this exact release
         run: python scripts/rebuild_research_atlas.py
       - name: Validate research website and source matrix
