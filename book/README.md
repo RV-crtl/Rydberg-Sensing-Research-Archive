@@ -15,6 +15,7 @@ The formal 36-chapter syllabus is supplemented by a practical three-volume, cros
 | Researcher's question | Start here | Includes |
 |---|---|---|
 | How do I design laser, vacuum, MOT or tweezer subsystems? | [Laser, vacuum and cold-atom engineering](field-guides/LASERS_VACUUM_AND_COLD_ATOM_SYSTEMS.md) | Optical architecture, calibration, traps, EIT and twelve worked tests |
+| What is the rigorous quantum mathematics behind the systems? | [Tensor products and control derivations](field-guides/TENSOR_PRODUCTS_AND_CONTROL_DERIVATIONS.md) | Entanglement, operators, time evolution, frame changes, density matrices and 12 worked answers |
 | How do I design a complete atomic system from nothing? | [Design a Rydberg experiment from zero](field-guides/COMPLETE_EXPERIMENT_DESIGN.md) | Platform selection, optical/RF modelling, calibrations, metrology, design gates and 10 fully answered scenarios |
 | How do I use ARC and RydIQule correctly across problems? | [Computational decision and verification manual](field-guides/ARC_RYDIQULE_MODEL_VERIFICATION.md) | Frequency/units, state rules, numerical checks, thermal/Zeeman limits and 10 worked research diagnostics |
 | How can I use blockade and interacting arrays? | [Interactions and neutral-atom design](field-guides/INTERACTING_RYDBERG_ARRAYS.md) | Pair-state models, collective Rabi dynamics, gate-readout considerations and 12 solved problems |

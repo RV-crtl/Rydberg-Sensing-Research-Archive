@@ -7,15 +7,15 @@
     "book-part2.json",
     "book-part3.json"
   ],
-  "totalWords": 41136,
-  "totalAnswers": 303,
+  "totalWords": 43437,
+  "totalAnswers": 315,
   "chapterSummaries": [
     {
       "slug": "01-mathematical-language",
       "title": "The mathematical language of quantum science",
       "section": "Quantum foundations",
-      "words": 2860,
-      "answers": 20
+      "words": 5161,
+      "answers": 32
     },
     {
       "slug": "02-operators-and-measurement",
