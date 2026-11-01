@@ -40,8 +40,9 @@ jobs:
         run: |
           node --check site/model.mjs
           node --input-type=module --check < site/explorer.js
-          node --test tests/test_site_model.mjs tests/test_academy.mjs
+          node --test tests/test_site_model.mjs tests/test_academy.mjs tests/test_academy_links.mjs
           node --check site/academy.js
+          node --check site/academy-links.mjs
           node --check site/lab.js
           node --check site/diagnostics.js
           node --check site/workbook.mjs
