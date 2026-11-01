@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1450 700" role="img" aria-labelledby="t d"><title id="t">Rydberg optical receiver fault isolation</title><desc id="d">Decision-flow original schematic for laboratory diagnostics, including laser reference, coupling off tests, RF chain, source harmonics and HFSS vs optical readout distinction.</desc>
+<rect width="1450" height="700" rx="26" fill="#0c2631"/>
+<g font-family="Arial,sans-serif"><text x="55" y="58" fill="#b6f173" font-size="27" font-weight="700">DIAGNOSE THE OBSERVABLE FIRST</text><text x="55" y="91" fill="#b4d0d2" font-size="18">Avoid changing five instruments before finding the broken reference</text></g>
+<g stroke="#4b7380" stroke-width="2" fill="#153744">
+<rect x="480" y="130" width="490" height="95" rx="16"/><rect x="60" y="335" width="385" height="150" rx="16"/><rect x="533" y="335" width="385" height="150" rx="16"/><rect x="1006" y="335" width="385" height="150" rx="16"/></g>
+<g fill="#edfafa" font-family="Arial,sans-serif" font-size="22" font-weight="700"><text x="520" y="170">Is the feature optical or RF-port?</text><text x="520" y="201" font-size="16" fill="#b0ced1">Record source, detector, unit and reference</text>
+<text x="80" y="376">No EIT / no optical change</text><text x="555" y="376">Unexpected spectral peak</text><text x="1028" y="376">Matrix transfer fails</text></g>
+<g fill="#b9d5d6" font-family="Arial,sans-serif" font-size="19">
+<text x="80" y="417">Check both laser locks, overlap,</text><text x="80" y="445">cell and detector gain.</text>
+<text x="555" y="417">RF off × coupling off; cable</text><text x="555" y="445">spur scan, aliasing and drift.</text>
+<text x="1028" y="417">Check finite geometry, complex</text><text x="1028" y="445">phase and independent mesh.</text>
+</g>
+<g stroke="#b6f173" stroke-width="4" fill="none"><path d="M725 225 V275 H253 V331"/><path d="M725 225 V331"/><path d="M725 225 V275 H1198 V331"/></g>
+<g fill="#b6f173" font-family="Arial,sans-serif" font-size="16" font-weight="700"><text x="244" y="309">OPTICAL</text><text x="740" y="310">UNASSIGNED</text><text x="1205" y="308">HFSS</text></g>
+<rect x="55" y="544" width="1335" height="107" fill="#102f36" rx="12" stroke="#b6f173"/>
+<text x="83" y="586" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#b6f173">ACCEPTANCE:</text><text x="270" y="586" font-family="Arial,sans-serif" font-size="21" fill="#e9f8f3">Independent control, source-native evidence, declared thresholds.</text>
+<text x="83" y="619" font-family="Arial,sans-serif" font-size="18" fill="#b9d5d6">Never call an HFSS rank-four return or an RF detector feature an atomic full-Stokes measurement.</text>
+</svg>
