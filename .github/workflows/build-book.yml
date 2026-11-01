@@ -1,0 +1,46 @@
+name: Build 1000-page Rydberg Academy workbook PDF
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'book/**'
+      - '.github/workflows/build-book.yml'
+permissions:
+  contents: read
+jobs:
+  book-export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+      - name: Install PDF generation and document verification
+        run: python -m pip install 'reportlab>=4.2,<5' 'pypdf>=5,<7'
+      - name: Build the source-derived complete PDF
+        run: python book/export_workbook_pdf.py
+      - name: Verify >1000 printed pages and final worked case
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from pypdf import PdfReader
+          path=Path('book/dist/Rydberg_Systems_Engineering_1000_Worked_Problems.pdf')
+          pdf=PdfReader(path)
+          pages=len(pdf.pages)
+          print('Printed PDF pages:',pages,'size:',path.stat().st_size)
+          assert pages >= 1025, 'The print book must include 1000 separate worked pages plus conceptual chapters'
+          assert 'Rydberg' in pdf.pages[0].extract_text()
+          assert '1000' in pdf.pages[-1].extract_text()
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Rydberg-Academy-1000-Worked-Cases-PDF
+          path: book/dist/*.pdf
+          retention-days: 90
