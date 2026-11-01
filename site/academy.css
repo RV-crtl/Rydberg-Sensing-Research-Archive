@@ -23,3 +23,5 @@
 .book-article .book-science-figure img{display:block;width:100%;height:auto;max-height:570px;object-fit:contain}
 .book-article .book-science-figure figcaption{font-size:.77rem;color:#b4d2d3;padding:10px 7px 3px;line-height:1.6}
 .book-article blockquote{margin:20px 0;padding:15px 22px;background:#0b2930;border-left:3px solid #b6f173}
+
+.book-platform-banner{margin:0;padding:26px clamp(24px,5vw,85px);border-bottom:1px solid #32505a;background:#081d27}.book-platform-banner img{width:100%;height:auto;max-height:490px;object-fit:contain;display:block;border:1px solid #45676e;border-radius:12px;background:#0c2531}.book-platform-banner figcaption{margin-top:12px;color:#aac9c9;font-size:.8rem}.book-science-figure{margin:30px 0;border-radius:12px;overflow:hidden;background:#0d2530;border:1px solid #41616d;padding:14px}.book-science-figure img{display:block;width:100%;height:auto;max-height:550px;object-fit:contain}.book-science-figure figcaption{color:#aac7c7;font-size:.81rem;line-height:1.6;padding:12px 8px 2px}

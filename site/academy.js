@@ -1,3 +1,4 @@
+import {resolveBookLink,resolveBookAsset} from "./academy-links.mjs";
 import {generateWorkbook,getBookMetrics} from "./workbook.mjs";
 const $=id=>document.getElementById(id),repo="https://github.com/RV-crtl/Rydberg-Sensing-Research-Archive";
 let chapters=[],questions=generateWorkbook(),mode="chapters",index=0;
@@ -10,10 +11,8 @@ function inline(parent,line){
   if(part.startsWith("**"))parent.append(mk("strong",part.slice(2,-2)));
   else if(part.charCodeAt(0)===96)parent.append(mk("code",part.slice(1,-1)));
   else {const r=part.match(/^\[([^\]]+)\]\(([^)]+)\)$/),a=mk("a",r[1]);const url=r[2];
-   if(url.startsWith("https://")||url.startsWith("http://"))a.href=url;
-   else if(url.startsWith("../"))a.href=repo+"/blob/main/"+url.replace(/^\.\.\//,"");
-   else a.href=repo+"/blob/main/book/chapters/"+url;
-   a.target="_blank";a.rel="noopener noreferrer";parent.append(a);
+   try{a.href=resolveBookLink(url);a.target="_blank";a.rel="noopener noreferrer";parent.append(a);}
+   catch(e){parent.append(document.createTextNode(r[1]+" (source link rejected)"));}
   }c=rx.lastIndex;
  }if(c<line.length)parent.append(document.createTextNode(line.slice(c)));
 }
@@ -28,11 +27,13 @@ function renderMarkdown(body,raw){
   if(s==="<details>"){details=mk("details");body.append(details);continue;}
   if(s==="</details>"){details=null;continue;}
   if(s.startsWith("<summary>")){append(mk("summary",s.replace(/<\/?summary>/g,"")));continue;}
-  if(s.startsWith("![") && s.includes("](../../site/assets/")){
-   const match=s.match(/^!\[([^\]]+)\]\(\.\.\/\.\.\/site\/assets\/([A-Za-z0-9_-]+\.svg)\)$/);
-   if(match){const figure=mk("figure",undefined,"book-science-figure"),img=mk("img");
-    img.src="./assets/"+match[2];img.alt=match[1];img.loading="lazy";
-    figure.append(img,mk("figcaption",match[1]));append(figure);continue;}
+  if(s.startsWith("![")){
+   const match=s.match(/^!\[([^\]]+)\]\(([^)]+)\)$/);
+   if(match){try{
+     const figure=mk("figure",undefined,"book-science-figure"),img=mk("img");
+     img.src=resolveBookAsset(match[2]);img.alt=match[1];img.loading="lazy";img.decoding="async";
+     figure.append(img,mk("figcaption",match[1]));append(figure);continue;
+   }catch(e){append(mk("p","Unavailable figure: "+match[1]));continue;}}
   }
 
   const h=s.match(/^(#{1,5})\s+(.+)$/);if(h){list=null;let el=mk("h"+Math.min(3,h[1].length));inline(el,h[2]);append(el);continue;}

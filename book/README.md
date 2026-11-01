@@ -8,6 +8,27 @@ This book is written for a researcher starting from first principles. It is **no
 
 **Actual edition status, 1 November 2026:** 36 original instructional chapters, revised physics foundations, 1,000 distinct parameterised numerical problems, original interactive teaching figures, documented ARC and RydIQule Python examples, a reader with interactive questions, and a separate reproducible PDF workbook. The earlier 1,033-page output is predominantly one solved numerical exercise per page; **it is not 1,000 pages of original prose**. This manuscript is a substantially extended *first editorial edition*, not independently peer reviewed or ready for publisher acceptance. See the [honest editorial completion requirements](EDITORIAL_STANDARD.md).
 
+## Deep field guides — design and diagnose real systems
+
+The formal 36-chapter syllabus is supplemented by a practical three-volume, cross-platform reference series. These are **general Rydberg** resources, not examples presented as unique achievements of one laboratory.
+
+| Researcher's question | Start here | Includes |
+|---|---|---|
+| How do I design laser, vacuum, MOT or tweezer subsystems? | [Laser, vacuum and cold-atom engineering](field-guides/LASERS_VACUUM_AND_COLD_ATOM_SYSTEMS.md) | Optical architecture, calibration, traps, EIT and twelve worked tests |
+| What is the rigorous quantum mathematics behind the systems? | [Tensor products and control derivations](field-guides/TENSOR_PRODUCTS_AND_CONTROL_DERIVATIONS.md) | Entanglement, operators, time evolution, frame changes, density matrices and 12 worked answers |
+| How do I design a complete atomic system from nothing? | [Design a Rydberg experiment from zero](field-guides/COMPLETE_EXPERIMENT_DESIGN.md) | Platform selection, optical/RF modelling, calibrations, metrology, design gates and 10 fully answered scenarios |
+| How do I do deeper state screening, Stark maps and physical solver verification? | [Advanced computational atomic methods](field-guides/ARC_DEEP_COMPUTATIONAL_METHODS.md) | Quantum defects, transition graphs, Doppler convergence, state tracking, fourteen additional worked problems |
+| How do I use ARC and RydIQule correctly across problems? | [Computational decision and verification manual](field-guides/ARC_RYDIQULE_MODEL_VERIFICATION.md) | Frequency/units, state rules, numerical checks, thermal/Zeeman limits and 10 worked research diagnostics |
+| How can I use blockade and interacting arrays? | [Interactions and neutral-atom design](field-guides/INTERACTING_RYDBERG_ARRAYS.md) | Pair-state models, collective Rabi dynamics, gate-readout considerations and 12 solved problems |
+| How do I quantify uncertainty and test model identifiability? | [Metrology and Bayesian inference](field-guides/STATISTICAL_METROLOGY_AND_INFERENCE.md) | Noise likelihoods, Fisher information, validation, inference and 12 full solutions |
+| Why did my experiment, simulation or code fail? | [Universal fault-isolation atlas](field-guides/UNIVERSAL_DIAGNOSTIC_ATLAS.md) | Distinct vapour, tweezers, RF, numerical and finite geometry problems plus 15 answered challenges |
+
+The longer practical guides deliberately contain independent design logic, failure controls, implementation gates and source references instead of padding printed pages with repeated numerical variations. **They are substantial extensions, not evidence that the complete 36-chapter manuscript yet satisfies publisher-grade length or independent review.**
+
+![Original Rydberg system selection diagram](../site/assets/book-platform-selection.svg)
+
+*Original research-platform decision diagram. Choose an observable before selecting vapour cells, cold atoms, tweezers or cavity/ionisation detection.*
+
 ## Read the book by domain
 
 | Part | Chapter range | Graduate competencies |

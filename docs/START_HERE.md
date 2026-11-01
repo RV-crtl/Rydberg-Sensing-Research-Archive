@@ -6,6 +6,12 @@
 
 **2. [Current and historical project evidence portal](research/CURRENT_PROJECT_EVIDENCE_PORTAL.md):** the right source for what was actually simulated, measured, proposed, published or rejected in the Rb-87 microwave Stokes work. Version precedence is based on model/observable and scientific validation, not filenames or upload dates.
 
+### Start from the physics — no project-specific prerequisites
+
+- [Design a complete Rydberg experiment from first principles](../book/field-guides/COMPLETE_EXPERIMENT_DESIGN.md)
+- [ARC and RydIQule source-verification manual](../book/field-guides/ARC_RYDIQULE_MODEL_VERIFICATION.md)
+- [Universal Rydberg experimental, numerical and RF fault atlas](../book/field-guides/UNIVERSAL_DIAGNOSTIC_ATLAS.md)
+
 ### Fast project navigation
 
 - [Latest source-backed scientific results](results/KEY_FINDINGS.md) and [V44 native simulation evidence](../evidence/hfss/v44-reproducibility/).

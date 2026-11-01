@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" role="img" aria-labelledby="title description">
+<title id="title">ARC and RydIQule scientific model provenance pipeline</title>
+<desc id="description">Conceptual, source-aware flow from an explicitly specified isotope and atomic state graph to ARC energies and matrix elements, then RydIQule coupled-state density matrices and optical observables, with independent numerical and physical calibration checks. No result is a measured atomic spectrum.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#091b27"/><stop offset="1" stop-color="#0f333f"/></linearGradient><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#b6f173" stroke-width="2"/></marker></defs>
+<rect width="1600" height="760" rx="27" fill="url(#bg)"/>
+<text x="55" y="69" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="700" fill="#b6f173">ATOMIC SOFTWARE: FROM STATES TO THE OBSERVABLE</text>
+<text x="55" y="109" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#bcd4d5">A source-oriented model hierarchy: calculate what each tool actually represents, then validate experimentally</text>
+<g fill="#113541" stroke="#537783" stroke-width="2">
+<rect x="50" y="173" width="310" height="344" rx="18"/>
+<rect x="449" y="173" width="310" height="344" rx="18"/>
+<rect x="848" y="173" width="310" height="344" rx="18"/>
+<rect x="1247" y="173" width="310" height="344" rx="18"/>
+</g>
+<g font-family="Arial,Helvetica,sans-serif">
+<g font-weight="700" font-size="23" fill="#e6faee"><text x="73" y="218">Isotope + state graph</text><text x="472" y="218">ARC atomic data</text><text x="871" y="218">RydIQule dynamics</text><text x="1270" y="218">Physical observable</text></g>
+<g font-size="18" fill="#bdd7d8"><text x="73" y="266">n, ℓ, j, m / F</text><text x="73" y="298">Laser / RF selection rules</text><text x="73" y="330">Polarisations / field axis</text><text x="73" y="362">Temperature and geometry</text>
+<text x="472" y="266">Level energies and defects</text><text x="472" y="298">Dipole matrix elements</text><text x="472" y="330">Stark / Zeeman maps</text><text x="472" y="362">Lifetime and rates</text>
+<text x="871" y="266">Hamiltonian + jumps</text><text x="871" y="298">Steady or time solution</text><text x="871" y="330">Density matrix ρ</text><text x="871" y="362">Doppler / decay model</text>
+<text x="1270" y="266">Probe susceptibility</text><text x="1270" y="298">Optical propagation</text><text x="1270" y="330">Detector transfer function</text><text x="1270" y="362">Measured counts / volts</text>
+</g>
+<g fill="#b6f173" font-family="Arial,Helvetica,sans-serif" font-size="16"><text x="73" y="445">GATE: physically possible</text><text x="472" y="445">GATE: levels and units</text><text x="871" y="445">GATE: trace / positivity</text><text x="1270" y="445">GATE: reference / noise</text></g>
+<g stroke="#b6f173" stroke-width="4" fill="none" marker-end="url(#arr)"><path d="M363 335H442"/><path d="M762 335H841"/><path d="M1161 335H1240"/></g>
+<rect x="52" y="560" width="1497" height="145" rx="18" fill="#0c2832" stroke="#b6f173" stroke-width="2"/>
+<text x="82" y="606" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#b6f173">VALIDATION IS NOT AN API CALL</text>
+<text x="82" y="644" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="#e3f7f3">Converge the basis and Doppler grid. Verify Hz ↔ rad/s. Reproduce simple limits. Calibrate the detector.</text>
+<text x="82" y="677" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#bed3d6">A density matrix and an experimental trace are different evidence classes. Keep source version, units and raw references.</text>
+</svg>

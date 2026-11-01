@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 840" role="img" aria-labelledby="ttl desc">
+<title id="ttl">Selecting a Rydberg research platform by measured observable and physical constraints</title>
+<desc id="desc">Original decision map. The researcher first defines an observable, then selects thermal vapour spectroscopy, cold atom clouds, optical tweezer arrays, or cavity and ionisation platforms. Each path identifies quantitative calibration and validation gates, and every path feeds an evidence and uncertainty record. Conceptual, not a photograph or a published numerical result.</desc>
+<defs><linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0c2432"/><stop offset="1" stop-color="#06131f"/></linearGradient><linearGradient id="top" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#b6f173"/><stop offset="1" stop-color="#8de3bd"/></linearGradient><marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L11 6L1 11" fill="none" stroke="#b6f173" stroke-width="2"/></marker></defs>
+<rect width="1680" height="840" rx="30" fill="url(#background)"/>
+<g font-family="Arial,Helvetica,sans-serif"><text x="65" y="74" font-size="32" font-weight="700" fill="#b6f173">CHOOSE THE OBSERVABLE BEFORE THE APPARATUS</text><text x="65" y="109" font-size="19" fill="#b1cbd0">A general Rydberg platform design map · no particular lab or quantum-state manifold assumed</text></g>
+<rect x="495" y="151" width="690" height="120" rx="22" fill="#174451" stroke="url(#top)" stroke-width="3"/>
+<text x="840" y="193" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" text-anchor="middle" fill="#eaffed">Scientific question + required observable</text>
+<text x="840" y="231" font-family="Arial,Helvetica,sans-serif" font-size="19" text-anchor="middle" fill="#c1dadc">Field? Spectrum? Gate fidelity? Correlations? Ion counts?</text>
+<g fill="none" stroke="#b6f173" stroke-width="3" marker-end="url(#arrow)"><path d="M840 271V330H235V365"/><path d="M840 271V330H639V365"/><path d="M840 271V330H1041V365"/><path d="M840 271V330H1445V365"/></g>
+<g stroke-width="2" stroke="#4d7881">
+<rect x="49" y="367" width="374" height="273" rx="20" fill="#102f3b"/>
+<rect x="452" y="367" width="374" height="273" rx="20" fill="#102f3b"/>
+<rect x="855" y="367" width="374" height="273" rx="20" fill="#102f3b"/>
+<rect x="1258" y="367" width="374" height="273" rx="20" fill="#102f3b"/>
+</g>
+<g font-family="Arial,Helvetica,sans-serif">
+<g font-size="24" font-weight="700" fill="#e7f6ee"><text x="74" y="414">Thermal vapour cell</text><text x="477" y="414">Cold atom cloud</text><text x="880" y="414">Optical tweezers</text><text x="1283" y="414">Cavity / ionisation</text></g>
+<g font-size="17" fill="#c1dadc"><text x="74" y="456">Continuous probe / EIT</text><text x="74" y="485">Density + Doppler averaging</text><text x="74" y="514">Optical depth + detection</text><text x="74" y="560" fill="#b6f173">Gate: RF-off / coupling-off</text><text x="74" y="589" fill="#b6f173">Calibrated optical response</text>
+<text x="477" y="456">MOT, molasses, state prep</text><text x="477" y="485">Trap lifetime + B-field</text><text x="477" y="514">Time-gated spectroscopy</text><text x="477" y="560" fill="#b6f173">Gate: density / temperature</text><text x="477" y="589" fill="#b6f173">Coherent optical reference</text>
+<text x="880" y="456">Individual sites + blockade</text><text x="880" y="485">Loss, leakage and SPAM</text><text x="880" y="514">State-resolved readout</text><text x="880" y="560" fill="#b6f173">Gate: pair-distance sweep</text><text x="880" y="589" fill="#b6f173">Fidelity + held-out tests</text>
+<text x="1283" y="456">Mode coupling / field ionisation</text><text x="1283" y="485">Resonator or extraction fields</text><text x="1283" y="514">State-to-detector transfer</text><text x="1283" y="560" fill="#b6f173">Gate: response / timing</text><text x="1283" y="589" fill="#b6f173">Calibrated loss / counts</text>
+</g></g>
+<g fill="none" stroke="#b6f173" stroke-width="3" marker-end="url(#arrow)"><path d="M235 640V697H840V723"/><path d="M639 640V697"/><path d="M1041 640V697"/><path d="M1445 640V697H840"/></g>
+<rect x="348" y="724" width="984" height="73" rx="15" fill="#143d45" stroke="#b6f173" stroke-width="2"/>
+<text x="840" y="756" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#e6f7ed">Independent calibration · uncertainty · native source record</text>
+<text x="840" y="785" font-family="Arial,Helvetica,sans-serif" font-size="17" text-anchor="middle" fill="#afc9c8">Every result belongs to a stated physical model, observable and acceptance test</text>
+</svg>

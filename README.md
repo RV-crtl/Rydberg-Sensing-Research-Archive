@@ -59,7 +59,7 @@ An additional [byte-level intake register](history/binary-imports/README.md) ide
 
 ## Rydberg Systems Engineering — interactive scientific textbook
 
-**[Open the Rydberg Academy](site/academy.html)** · **[Research diagnostic assistant](site/diagnostics.html)** · **[Live physics and code laboratory](site/lab.html)** · **[Complete GitHub book](book/README.md)** · **[Latest accepted results and historical limitations](book/CURRENT_STATE.md)** · **[Annotated research bibliography](book/REFERENCES.md)**
+**[Open the Rydberg Academy](site/academy.html)** · **[Research diagnostic assistant](site/diagnostics.html)** · **[Live physics and code laboratory](site/lab.html)** · **[Complete GitHub book](book/README.md)** · **[Design from zero](book/field-guides/COMPLETE_EXPERIMENT_DESIGN.md)** · **[Universal fault atlas](book/field-guides/UNIVERSAL_DIAGNOSTIC_ATLAS.md)** · **[Latest accepted results and historical limitations](book/CURRENT_STATE.md)** · **[Annotated research bibliography](book/REFERENCES.md)**
 
 The separate research-handbook section contains **36 original chapters across quantum, atomic, optical, RF and emerging Rydberg research** with answers, **1,000 reproducibly generated fully solved numeric questions**, ARC and RydIQule primers, 16 platform-independent lab tutorials, original editable physics diagrams and a browser-based safe JavaScript calculation workbench. Its optional print workflow creates a 1,000+ page **worked-problem PDF**, not a 1,000-page prose monograph. Teaching calculations are not new measurements or HFSS simulations.
 

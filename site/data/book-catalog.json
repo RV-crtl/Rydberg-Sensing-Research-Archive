@@ -7,15 +7,15 @@
     "book-part2.json",
     "book-part3.json"
   ],
-  "totalWords": 28544,
-  "totalAnswers": 220,
+  "totalWords": 45690,
+  "totalAnswers": 329,
   "chapterSummaries": [
     {
       "slug": "01-mathematical-language",
       "title": "The mathematical language of quantum science",
       "section": "Quantum foundations",
-      "words": 1189,
-      "answers": 8
+      "words": 5161,
+      "answers": 32
     },
     {
       "slug": "02-operators-and-measurement",
@@ -98,8 +98,8 @@
       "slug": "13-quantum-defect-and-arc",
       "title": "Practical atomic calculations with ARC",
       "section": "ARC, RydIQule and sublevels",
-      "words": 819,
-      "answers": 6
+      "words": 4780,
+      "answers": 30
     },
     {
       "slug": "14-rydiqule-lab",
@@ -126,8 +126,8 @@
       "slug": "17-spectroscopy-diagnostics",
       "title": "Spectroscopy troubleshooting and fault isolation",
       "section": "Lab diagnosis",
-      "words": 743,
-      "answers": 6
+      "words": 2290,
+      "answers": 21
     },
     {
       "slug": "18-hfss-metasurface",
@@ -182,8 +182,8 @@
       "slug": "25-rydberg-blockade",
       "title": "Rydberg blockade and interacting-atom Hamiltonians",
       "section": "Rydberg interactions and quantum platforms",
-      "words": 849,
-      "answers": 6
+      "words": 2373,
+      "answers": 18
     },
     {
       "slug": "26-optical-tweezers-and-atom-arrays",
@@ -238,22 +238,22 @@
       "slug": "33-lasers-cooling-and-stabilisation",
       "title": "Laser systems, cooling and frequency metrology",
       "section": "Laser systems, research design and new frontiers",
-      "words": 820,
-      "answers": 6
+      "words": 2591,
+      "answers": 18
     },
     {
       "slug": "34-design-a-rydberg-system",
       "title": "Designing a Rydberg experiment from zero",
       "section": "Laser systems, research design and new frontiers",
-      "words": 874,
-      "answers": 6
+      "words": 3294,
+      "answers": 16
     },
     {
       "slug": "35-inverse-modelling-and-bayesian-inference",
       "title": "Inverse modelling, Bayesian inference and experimental design",
       "section": "Laser systems, research design and new frontiers",
-      "words": 771,
-      "answers": 6
+      "words": 2722,
+      "answers": 18
     },
     {
       "slug": "36-frontiers-and-cross-disciplinary-research",
