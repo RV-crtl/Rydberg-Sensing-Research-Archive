@@ -1,0 +1,9 @@
+# Optional AI co-author — safe scope and owner-controlled review
+
+The [AI research co-author workflow](../.github/workflows/ai-curator.yml) can generate **one educational Python example** or **one editorial research proposal** from a non-sensitive task supplied in GitHub Actions by the repository owner. It only works after the owner configures a GitHub Actions **secret** named `OPENAI_API_KEY` and a repository **variable** named `RESEARCH_AGENT_MODEL`. The agent uses the [OpenAI Responses API](https://developers.openai.com/api/reference/resources/responses/methods/create) without storing responses for retrieval. Never commit API credentials.
+
+The model output is treated as untrusted text. New files may be created only under `book/examples/agent_*.py` or `book/editorial-proposals/agent_*.md`. Existing files, original solver results, all workflows, security policy, manuscripts and current research data are **not writable** through this agent. Educational Python is parsed for syntax but is never run in this generation workflow. Each change is made on a dedicated branch, a separate pull request is requested and no automatic merge is performed. If GitHub repository settings forbid workflow-created pull requests, inspect the pushed branch manually.
+
+Research agents can draft explanations, suggest further controls and propose numerical experiments. They **cannot** grant research or ethics approvals, certify grant eligibility, run unperformed HFSS projects, validate experimental data or reproduce books without checking primary sources. A code-producing agent must always be reviewed and tested by its scientific owner before use.
+
+See the [Australian official-source monitor](README.md), the original [research-source QA assistant](../scripts/research_assistant.py) and [current evidence priority](../docs/results/KEY_FINDINGS.md). Those project-specific capabilities are outside the general textbook manuscript.

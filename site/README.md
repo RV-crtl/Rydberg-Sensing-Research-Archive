@@ -23,7 +23,7 @@ Visit `http://localhost:8000/` or `http://localhost:8000/explorer.html`. **Openi
 
 The Pages workflow is **manual**, not auto-published on every commit. It validates and deploys **only `site/`**. It does not expose raw `evidence/`, `papers/`, `reports/` or `docs/`. The site *does contain project figures, numerical source-derived data, and 1,280 historical file names*; review these for confidentiality and publication rights before manually deploying.
 
-In repository Settings → Pages, set **GitHub Actions** as the build source. The private-repository Pages availability, protection/visibility and deployment URL depend on the owner's GitHub account/settings. The hosted site links to original research sources at GitHub and may require sign-in for access; they are not broken relative parent paths.
+In repository Settings → Pages, set **GitHub Actions** as the build source. GitHub Pages availability, protection/visibility and deployment URL depend on the owner's GitHub account/settings. The hosted site links to original research sources at GitHub and may require sign-in for access; they are not broken relative parent paths.
 
 ## Automated validation
 
@@ -35,13 +35,13 @@ node --test tests/test_site_model.mjs
 node --input-type=module --check < site/explorer.js
 ```
 
-`site/data/research-atlas.json` is a **snapshot** of tracked files before the website upgrade, not a live private GitHub index. `site/data/historical-index.json` is source-discovery metadata and must never be reported as 1,280 additional committed binary assets.
+`site/data/research-atlas.json` is a **snapshot** of tracked files from an earlier tagged research revision, not a live dynamic GitHub index. `site/data/historical-index.json` is source-discovery metadata and must never be reported as 1,280 additional committed binary assets.
 
 Sources: [matrix CSV](../papers/manuscript-source/data/V42_C033_INSTRUMENT_MATRIX.csv), [fixed-budget result](../evidence/hfss/v44-reproducibility/analysis/V44_FIXED_BUDGET_RESULTS.json), [record status policy](../docs/traceability/RECORD_STATUS_POLICY.md).
 
 ## Rydberg Academy and lab
 
-- [Textbook website](academy.html), 24 original educational chapters with 1,000 worked-case links.
+- [Textbook website](academy.html), 36 source-backed graduate chapters with 1,000 worked-case links.
 - [Interactive physics lab and JS code sandbox](lab.html), dimensionally defined weak-probe/EIT illustrative model and SI parameter controls. The sandbox uses an opaque-origin iframe with strict resource CSP and a watchdog; it does not give direct Python/ARC/RydIQule/HFSS execution or physical hardware access.
 - [Original diagrams](assets/academy-ladder.svg), [HFSS source workflow](assets/academy-hfss-pipeline.svg), [diagnosis tree](assets/academy-diagnostic-tree.svg), plus authentic archive images already on this site.
 - [Research book source](../book/README.md) (in GitHub), [PDF print workflow](../.github/workflows/build-book.yml), [citations](../book/REFERENCES.md).

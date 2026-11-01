@@ -1,0 +1,5 @@
+# Optional research dependencies for real ARC and RydIQule calculations.
+# Tested by atomic-software-smoke.yml; keep major versions stable.
+numpy>=1.26,<3
+ARC-Alkali-Rydberg-Calculator>=3.5,<4
+rydiqule>=2.0,<3

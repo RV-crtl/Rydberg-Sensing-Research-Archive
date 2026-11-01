@@ -1,0 +1,266 @@
+{
+  "schema": 2,
+  "chapterCount": 36,
+  "sourceOfTruth": "book/chapters/",
+  "parts": [
+    "book-part1.json",
+    "book-part2.json",
+    "book-part3.json"
+  ],
+  "totalWords": 28544,
+  "totalAnswers": 220,
+  "chapterSummaries": [
+    {
+      "slug": "01-mathematical-language",
+      "title": "The mathematical language of quantum science",
+      "section": "Quantum foundations",
+      "words": 1189,
+      "answers": 8
+    },
+    {
+      "slug": "02-operators-and-measurement",
+      "title": "Operators, observables and quantum measurement",
+      "section": "Quantum foundations",
+      "words": 746,
+      "answers": 6
+    },
+    {
+      "slug": "03-hamiltonians",
+      "title": "Hamiltonians, rotating frames and coherent control",
+      "section": "Quantum foundations",
+      "words": 707,
+      "answers": 6
+    },
+    {
+      "slug": "04-density-matrices",
+      "title": "Density matrices and open quantum systems",
+      "section": "Quantum foundations",
+      "words": 1132,
+      "answers": 8
+    },
+    {
+      "slug": "05-angular-momentum",
+      "title": "Atomic angular momentum and transition selection rules",
+      "section": "Rydberg atomic physics",
+      "words": 769,
+      "answers": 6
+    },
+    {
+      "slug": "06-rydberg-scaling",
+      "title": "Rydberg energy levels, lifetimes and scaling laws",
+      "section": "Rydberg atomic physics",
+      "words": 714,
+      "answers": 6
+    },
+    {
+      "slug": "07-rubidium-energy-ladder",
+      "title": "Alkali excitation ladders and spectroscopic access",
+      "section": "Rydberg atomic physics",
+      "words": 856,
+      "answers": 6
+    },
+    {
+      "slug": "08-eit-and-autler-townes",
+      "title": "Electromagnetically induced transparency and dressed-state spectroscopy",
+      "section": "Laser and atomic receiver",
+      "words": 825,
+      "answers": 6
+    },
+    {
+      "slug": "09-optics-lab",
+      "title": "Optical engineering, detection and alignment",
+      "section": "Laser and atomic receiver",
+      "words": 731,
+      "answers": 6
+    },
+    {
+      "slug": "10-microwave-fundamentals",
+      "title": "Electromagnetic waves, RF hardware and atomic field coupling",
+      "section": "RF and polarimetry",
+      "words": 747,
+      "answers": 6
+    },
+    {
+      "slug": "11-stokes-jones",
+      "title": "Jones, Stokes, Mueller and full-vector polarisation",
+      "section": "RF and polarimetry",
+      "words": 757,
+      "answers": 6
+    },
+    {
+      "slug": "12-identifiability",
+      "title": "Parameter identifiability, matrices and stable reconstruction",
+      "section": "RF and polarimetry",
+      "words": 714,
+      "answers": 6
+    },
+    {
+      "slug": "13-quantum-defect-and-arc",
+      "title": "Practical atomic calculations with ARC",
+      "section": "ARC, RydIQule and sublevels",
+      "words": 819,
+      "answers": 6
+    },
+    {
+      "slug": "14-rydiqule-lab",
+      "title": "RydIQule: open-system modelling and optical observables",
+      "section": "ARC, RydIQule and sublevels",
+      "words": 788,
+      "answers": 6
+    },
+    {
+      "slug": "15-zeeman",
+      "title": "Magnetic structure, field tuning and precision diagnosis",
+      "section": "ARC, RydIQule and sublevels",
+      "words": 726,
+      "answers": 6
+    },
+    {
+      "slug": "16-doppler-and-linewidth",
+      "title": "Doppler dynamics, laser linewidth and spectral broadening",
+      "section": "ARC, RydIQule and sublevels",
+      "words": 847,
+      "answers": 6
+    },
+    {
+      "slug": "17-spectroscopy-diagnostics",
+      "title": "Spectroscopy troubleshooting and fault isolation",
+      "section": "Lab diagnosis",
+      "words": 743,
+      "answers": 6
+    },
+    {
+      "slug": "18-hfss-metasurface",
+      "title": "Computational electromagnetics and polarization-selective structures",
+      "section": "Metasurface and inference",
+      "words": 798,
+      "answers": 6
+    },
+    {
+      "slug": "19-information-matrix",
+      "title": "Information theory, optimal measurement and experimental design",
+      "section": "Metasurface and inference",
+      "words": 821,
+      "answers": 6
+    },
+    {
+      "slug": "20-finite-calibration",
+      "title": "Model transfer, finite geometry and independent validation",
+      "section": "Metasurface and inference",
+      "words": 760,
+      "answers": 6
+    },
+    {
+      "slug": "21-pcb-materials",
+      "title": "RF fabrication, switching and material characterization",
+      "section": "Metasurface and inference",
+      "words": 730,
+      "answers": 6
+    },
+    {
+      "slug": "22-inverse-problems",
+      "title": "Reliable inversion, regularisation and physical parameter inference",
+      "section": "Metasurface and inference",
+      "words": 778,
+      "answers": 6
+    },
+    {
+      "slug": "23-code-quality",
+      "title": "Scientific software engineering and reproducible computing",
+      "section": "Research engineering",
+      "words": 815,
+      "answers": 6
+    },
+    {
+      "slug": "24-publication-and-future",
+      "title": "Scientific publication, peer review and future directions",
+      "section": "Research engineering",
+      "words": 763,
+      "answers": 6
+    },
+    {
+      "slug": "25-rydberg-blockade",
+      "title": "Rydberg blockade and interacting-atom Hamiltonians",
+      "section": "Rydberg interactions and quantum platforms",
+      "words": 849,
+      "answers": 6
+    },
+    {
+      "slug": "26-optical-tweezers-and-atom-arrays",
+      "title": "Optical tweezers, cold atoms and array assembly",
+      "section": "Rydberg interactions and quantum platforms",
+      "words": 744,
+      "answers": 6
+    },
+    {
+      "slug": "27-multichannel-quantum-defect-theory",
+      "title": "Quantum defects, channel mixing and MQDT",
+      "section": "Rydberg interactions and quantum platforms",
+      "words": 768,
+      "answers": 6
+    },
+    {
+      "slug": "28-rydberg-cavity-qed",
+      "title": "Rydberg cavity QED and microwave photons",
+      "section": "Rydberg interactions and quantum platforms",
+      "words": 719,
+      "answers": 6
+    },
+    {
+      "slug": "29-precision-rydberg-electrometry",
+      "title": "Precision Rydberg electrometry and traceability",
+      "section": "Metrology, many-body and detection",
+      "words": 832,
+      "answers": 6
+    },
+    {
+      "slug": "30-rydberg-many-body-models",
+      "title": "Many-body Hamiltonians and quantum simulation",
+      "section": "Metrology, many-body and detection",
+      "words": 732,
+      "answers": 6
+    },
+    {
+      "slug": "31-rydberg-molecules-and-collisions",
+      "title": "Ultralong-range Rydberg molecules, scattering and collisions",
+      "section": "Metrology, many-body and detection",
+      "words": 730,
+      "answers": 6
+    },
+    {
+      "slug": "32-field-ionisation-and-particle-detection",
+      "title": "Field ionisation, electron imaging and state-selective detection",
+      "section": "Metrology, many-body and detection",
+      "words": 665,
+      "answers": 6
+    },
+    {
+      "slug": "33-lasers-cooling-and-stabilisation",
+      "title": "Laser systems, cooling and frequency metrology",
+      "section": "Laser systems, research design and new frontiers",
+      "words": 820,
+      "answers": 6
+    },
+    {
+      "slug": "34-design-a-rydberg-system",
+      "title": "Designing a Rydberg experiment from zero",
+      "section": "Laser systems, research design and new frontiers",
+      "words": 874,
+      "answers": 6
+    },
+    {
+      "slug": "35-inverse-modelling-and-bayesian-inference",
+      "title": "Inverse modelling, Bayesian inference and experimental design",
+      "section": "Laser systems, research design and new frontiers",
+      "words": 771,
+      "answers": 6
+    },
+    {
+      "slug": "36-frontiers-and-cross-disciplinary-research",
+      "title": "Rydberg frontiers: quantum networks, hybrid materials and emerging science",
+      "section": "Laser systems, research design and new frontiers",
+      "words": 765,
+      "answers": 6
+    }
+  ]
+}

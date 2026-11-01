@@ -1,0 +1,63 @@
+name: Owner-controlled AI research coauthor (human-review PR only)
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        required: true
+        options: [editorial_proposal, python_example]
+      task:
+        description: 'Non-sensitive research or educational code task'
+        type: string
+        required: true
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  propose:
+    if: github.actor == github.repository_owner
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      RESEARCH_AGENT_MODEL: ${{ vars.RESEARCH_AGENT_MODEL }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Produce bounded untrusted source proposal
+        id: proposal
+        shell: bash
+        env:
+          MODE: ${{ inputs.mode }}
+          TASK: ${{ inputs.task }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$OPENAI_API_KEY" || -z "$RESEARCH_AGENT_MODEL" ]]; then
+            echo "### Agent disabled until configured" >> "$GITHUB_STEP_SUMMARY"
+            echo "Add OPENAI_API_KEY as a secret and RESEARCH_AGENT_MODEL as a repository variable." >> "$GITHUB_STEP_SUMMARY"
+            echo "generated=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python automation/curator_agent.py "$MODE" "$TASK"
+          echo "generated=true" >> "$GITHUB_OUTPUT"
+      - name: Propose branch and pull request (never auto-merge)
+        if: steps.proposal.outputs.generated == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Rydberg Research Agent"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          branch="agent/research-proposal-${{ github.run_id }}"
+          git switch -c "$branch"
+          git add -- book/examples/ book/editorial-proposals/ automation/AI_AGENT_OUTPUT.md
+          git diff --cached --quiet && { echo "No proposed change was produced"; exit 1; }
+          git commit -m "agent: propose unreviewed educational content or code"
+          git push origin "$branch"
+          if ! gh pr create --base main --head "$branch" --title "Human review: Rydberg agent proposal ${{ github.run_id }}" --body "New optional AI-generated educational source. Unverified science and code. Review calculations, citations, tests and source before merging. Never automatically merge."; then
+            echo "::warning::PR creation may be disabled by repository Actions settings. Inspect the pushed branch; no merge was attempted."
+          fi

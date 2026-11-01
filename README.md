@@ -51,11 +51,17 @@ The [historical source library](history/README.md) now preserves the actual text
 
 An additional [byte-level intake register](history/binary-imports/README.md) identifies 13 original binary HFSS, Rydberg Workbench and manuscript archives with exact SHA-256. **These binary archives are not yet uploaded to GitHub.** Follow the [completeness ledger](docs/handover/RESEARCH_COMPLETENESS_AND_IMPORTS.md) for untransferred raw data and the historical 1,280-name Library discovery index.
 
+## Two distinct research products: a general textbook and this evidence archive
+
+**[Rydberg Systems Engineering — 36-chapter general physics textbook](book/README.md)** covers first principles, state selection, optical spectroscopy, EIT, laser construction, RF hardware, cold atom arrays, Rydberg blockade, cavity QED, molecules, precision sensing and computational methods. The book is independent of this individual project's experimental history; its [honest editorial quality gates](book/EDITORIAL_STANDARD.md) explain what remains before publication.
+
+**[Where to find the latest verified work — project evidence portal](docs/research/CURRENT_PROJECT_EVIDENCE_PORTAL.md)** is the single best starting point for experimental and HFSS conclusions, source files, historic designs, candidate status and current technical limitations. **[Australian research, Defence and collaboration watch](automation/README.md)** monitors verified official sources and produces review-only opportunities. The optional [AI co-author](automation/AI_EDITORIAL_POLICY.md) can draft proposals or educational code on branches, never silently rewrite evidence or merge itself.
+
 ## Rydberg Systems Engineering — interactive scientific textbook
 
 **[Open the Rydberg Academy](site/academy.html)** · **[Research diagnostic assistant](site/diagnostics.html)** · **[Live physics and code laboratory](site/lab.html)** · **[Complete GitHub book](book/README.md)** · **[Latest accepted results and historical limitations](book/CURRENT_STATE.md)** · **[Annotated research bibliography](book/REFERENCES.md)**
 
-The separate research-handbook section contains **24 authored quantum, atomic, optical, RF and metrology tutorial chapters** with answers, **1,000 reproducibly generated fully solved numeric questions**, ARC and RydIQule primers, 10 hands-on source-aware labs, original editable physics diagrams and a browser-based safe JavaScript calculation workbench. Its optional print workflow creates a 1,000+ page **worked-problem PDF**, not a 1,000-page prose monograph. Teaching calculations are not new measurements or HFSS simulations.
+The separate research-handbook section contains **36 original chapters across quantum, atomic, optical, RF and emerging Rydberg research** with answers, **1,000 reproducibly generated fully solved numeric questions**, ARC and RydIQule primers, 16 platform-independent lab tutorials, original editable physics diagrams and a browser-based safe JavaScript calculation workbench. Its optional print workflow creates a 1,000+ page **worked-problem PDF**, not a 1,000-page prose monograph. Teaching calculations are not new measurements or HFSS simulations.
 
 **Research maintenance:** `scripts/research_assistant.py` audits current source, browser/book consistency and project evidence; a weekly [bibliographic metadata watch](.github/workflows/weekly-research-watch.yml) raises review candidates without inventing article conclusions. Learn from books and compare methods against the current V44 *periodic* HFSS evidence while keeping the failing historical finite-panel transfer distinctly labelled.
 

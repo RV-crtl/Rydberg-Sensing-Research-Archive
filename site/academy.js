@@ -28,6 +28,13 @@ function renderMarkdown(body,raw){
   if(s==="<details>"){details=mk("details");body.append(details);continue;}
   if(s==="</details>"){details=null;continue;}
   if(s.startsWith("<summary>")){append(mk("summary",s.replace(/<\/?summary>/g,"")));continue;}
+  if(s.startsWith("![") && s.includes("](../../site/assets/")){
+   const match=s.match(/^!\[([^\]]+)\]\(\.\.\/\.\.\/site\/assets\/([A-Za-z0-9_-]+\.svg)\)$/);
+   if(match){const figure=mk("figure",undefined,"book-science-figure"),img=mk("img");
+    img.src="./assets/"+match[2];img.alt=match[1];img.loading="lazy";
+    figure.append(img,mk("figcaption",match[1]));append(figure);continue;}
+  }
+
   const h=s.match(/^(#{1,5})\s+(.+)$/);if(h){list=null;let el=mk("h"+Math.min(3,h[1].length));inline(el,h[2]);append(el);continue;}
   if(s.startsWith("- ")){if(!list){list=mk("ul");append(list);}const li=mk("li");inline(li,s.slice(2));list.append(li);continue;}
   if(s==="---"){append(mk("hr"));continue;}
@@ -73,8 +80,11 @@ function renderMenu(){
  if(mode==="practice")root.append(mk("p","Showing at most 100 matches. Use search to locate more.", "study-note"));
 }
 async function start(){
- const rs=await Promise.all(["./data/book-part1.json","./data/book-part2.json"].map(async p=>{const r=await fetch(p);if(!r.ok)throw Error("Unable to load "+p+" ("+r.status+")");return r.json();}));
- chapters=rs.flat();if(chapters.length!==24)throw Error("Expected 24 chapters");
+ const metaResponse=await fetch("./data/book-catalog.json");if(!metaResponse.ok)throw Error("Cannot load source-verified curriculum");const meta=await metaResponse.json();
+ if(meta.schema!==2||!Array.isArray(meta.parts)||!meta.parts.length)throw Error("Invalid Academy catalog");
+ const rs=await Promise.all(meta.parts.map(async name=>{const r=await fetch("./data/"+name);if(!r.ok)throw Error("Unable to load "+name+" ("+r.status+")");return r.json();}));
+ chapters=rs.flat();if(chapters.length!==meta.chapterCount||chapters.length<24)throw Error("Textbook chapter inventory out of sync");
+ const count=document.getElementById("chapter-total");if(count)count.textContent=chapters.length+" reference chapters";
  let m=getBookMetrics();if(m.exercises!==1000||m.uniqueIds!==1000)throw Error("Workbook check failed");
  document.querySelectorAll("[data-mode]").forEach(b=>b.addEventListener("click",()=>{$("chapter-search").value="";location.hash=b.dataset.mode==="chapters"?"chapter/"+chapters[0].slug:"practice/0001";}));
  $("chapter-search").addEventListener("input",renderMenu);

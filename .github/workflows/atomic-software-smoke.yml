@@ -1,0 +1,55 @@
+name: Run actual ARC and RydIQule scientific benchmarks
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'book/examples/**'
+      - '.github/workflows/atomic-software-smoke.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'book/examples/**'
+      - '.github/workflows/atomic-software-smoke.yml'
+permissions:
+  contents: read
+jobs:
+  numerical-science:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Install actual official atomic modelling libraries
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r book/examples/requirements-science.txt
+      - name: Compute a real ARC alkali Rydberg transition table
+        run: python book/examples/arc_transition_atlas.py --run --species Rb87 --n 60 --output scientific_outputs/arc_theoretical_transitions.csv
+      - name: Solve the real RydIQule 3-state open-system example
+        run: python book/examples/rydiqule_three_level.py --output scientific_outputs/rydiqule_theoretical_solution.json
+      - name: Validate that outputs are real finite solver results
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, json, math, pathlib
+          file=pathlib.Path('scientific_outputs/arc_theoretical_transitions.csv')
+          rows=list(csv.DictReader(file.open()))
+          assert rows, 'ARC returned no allowed candidates'
+          for row in rows:
+              assert math.isfinite(float(row['transition_hz_signed']))
+              assert math.isfinite(float(row['dipole_ea0_signed']))
+              assert 'not measured' in row['status']
+          obj=json.loads(pathlib.Path('scientific_outputs/rydiqule_theoretical_solution.json').read_text())
+          assert obj['solution_shape'][-1] == 8, 'Unexpected N²-1 density-matrix basis'
+          assert 'toy 3-state Sensor' in obj['mode']
+          print('PASS: genuine ARC and RydIQule numerical API outputs, no experimental claims')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verified-arc-rydiqule-theoretical-calculations
+          path: scientific_outputs/*
+          retention-days: 90

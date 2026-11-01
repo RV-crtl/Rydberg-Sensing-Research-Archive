@@ -1,0 +1,43 @@
+name: Rydberg textbook editorial quality sentinel
+on:
+  schedule:
+    - cron: '30 9 * * 1'
+      timezone: 'Australia/Sydney'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  editorial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Audit every source chapter against graduate publication targets
+        run: python automation/editorial_audit.py
+      - name: Publish complete quality matrix as an inspectable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rydberg-book-chapter-depth-figures-and-reference-audit
+          path: research_updates/editorial/*
+          retention-days: 90
+      - name: Show maturity report in run summary
+        run: cat research_updates/editorial/textbook_editorial_audit.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Open dated source-review issue, no source rewrite or auto-merge
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          date="$(TZ=Australia/Sydney date +%Y-%m-%d)"
+          title="Textbook editorial review — $date"
+          if gh issue list --state all --json title -q '.[].title' | grep -Fxq "$title"; then
+            echo "Dated audit issue already created" >> "$GITHUB_STEP_SUMMARY"
+          elif ! gh issue create --title "$title" --body-file research_updates/editorial/textbook_editorial_audit.md; then
+            echo "::warning::Issue creation unavailable; see the downloadable audit artifact."
+          fi

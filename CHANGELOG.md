@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-01 — General Rydberg treatise expansion and controlled research automation
+
+- Separated the general 36-chapter quantum/Rydberg/optics/RF handbook from the project-specific HFSS and laboratory research evidence portal.
+- Expanded all 24 earlier short chapters into longer source-linked expositions with original equations, worked intuition, diagnostics and answered questions; added 12 genuinely general chapters on neutral-atom arrays, blockade, cavity QED, MQDT, sensing, molecules, ionisation, laser engineering and future fields.
+- Added a strict original-text editorial standard, reference cross-index, dynamically generated website chapter catalog, safe original SVG diagrams and chapter SVG rendering.
+- Added actual-package ARC and RydIQule educational scripts, offline model/selection tests, official Australian Defence and ARC research-opportunity checker, and optional owner-controlled AI code/editorial PR proposals that never auto-merge.
+- Maintained latest-source precedence and original field evidence while retaining historic failed finite HFSS transfer cases and nonimported-source warnings.
+
+
+
 ## 2026-11-01 — Rydberg Academy, interactive lab and research agents
 
 - Authored 24 original quantum-to-engineering teaching chapters with answer-reveal questions, 10 reproducible practical exercises and a 21-entry scientific reference ledger.

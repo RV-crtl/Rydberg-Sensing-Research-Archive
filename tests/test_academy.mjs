@@ -35,10 +35,12 @@ test("browser and book exercise engines are byte identical",()=>{
  assert.deepEqual(source,site);
 });
 test("site-bound textbook chapters equal exact originals",()=>{
- const first=JSON.parse(readFileSync(new URL("../site/data/book-part1.json",import.meta.url)));
- const second=JSON.parse(readFileSync(new URL("../site/data/book-part2.json",import.meta.url)));
- const all=[...first,...second];assert.equal(all.length,24);
- assert.equal(new Set(all.map(x=>x.slug)).size,24);
+ const catalog=JSON.parse(readFileSync(new URL("../site/data/book-catalog.json",import.meta.url)));
+ assert.equal(catalog.schema,2);
+ const all=catalog.parts.flatMap(name=>JSON.parse(readFileSync(new URL("../site/data/"+name,import.meta.url))));
+ assert.equal(all.length,catalog.chapterCount);assert.ok(all.length>=36);
+ assert.equal(new Set(all.map(x=>x.slug)).size,all.length);
+ assert.equal(catalog.totalWords,all.reduce((sum,x)=>sum+x.words,0));
  for(const x of all){
   const md=readFileSync(new URL("../book/chapters/"+x.slug+".md",import.meta.url),"utf8");
   assert.equal(x.markdown.trim(),md.trim());

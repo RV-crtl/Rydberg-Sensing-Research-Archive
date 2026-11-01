@@ -1,36 +1,46 @@
-# Rydberg Systems Engineering — the open research handbook
+# Rydberg Systems Engineering
 
-**Atomic physics · Optics · RF · Rydberg electrometry · Metasurfaces · Scientific computation · Troubleshooting**
+## A general-purpose, open graduate textbook and laboratory reference
 
-This is an original, evolving research handbook authored to accompany the [actual Rydberg RF sensing archive](../README.md). It connects first principles to the user's 780/480 nm Rb-87 receiver, historic field/Zeeman studies, six-state HFSS Stokes analysis and evidence-status decisions.
+**Quantum fundamentals · atomic structure · coherent optics · Rydberg states · microwave/optical sensing · quantum simulation · scientific computing · reproducible experiment design**
 
-**Current coverage, 1 November 2026:** 24 conceptual chapters, 1,000 deterministic worked numerical practice cases across 20 mathematical themes, a browser-based reader/quiz/workbench, source-linked original figures, tutorials and a latest-versus-historical research ledger. **It is not yet 1,000 pages of written textbook prose.** The educational workbook has 1,000 separately addressable problems, not a 1,000-page scholarly textbook; expanding to that substantive prose length is an editorial project and requires ongoing scientific peer review.
+This book is written for a researcher starting from first principles. It is **not** a thesis, not an advertisement for one laboratory, and not a vehicle for presenting one project's HFSS results as universal conclusions. Its chapters apply to alkalis, cold atoms, vapour cells, neutral-atom arrays, cavity-QED platforms and cross-disciplinary quantum research.
 
-## Reading path (concept → use → diagnose)
+**Actual edition status, 1 November 2026:** 36 original instructional chapters, revised physics foundations, 1,000 distinct parameterised numerical problems, original interactive teaching figures, documented ARC and RydIQule Python examples, a reader with interactive questions, and a separate reproducible PDF workbook. The earlier 1,033-page output is predominantly one solved numerical exercise per page; **it is not 1,000 pages of original prose**. This manuscript is a substantially extended *first editorial edition*, not independently peer reviewed or ready for publisher acceptance. See the [honest editorial completion requirements](EDITORIAL_STANDARD.md).
 
-| Part | Chapters | Purpose |
+## Read the book by domain
+
+| Part | Chapter range | Graduate competencies |
 |---|---|---|
-| I. Mathematical and quantum tools | [01–04](chapters/01-mathematical-language.md) | Vectors, operators, Hamiltonians, density matrices |
-| II. Atomic and Rydberg properties | [05–07](chapters/05-angular-momentum.md) and [13–16](chapters/13-quantum-defect-and-arc.md) | Selection rules, quantum defects, Rb-87 laser access, ARC, RydIQule, Zeeman, Doppler |
-| III. Optical RF receiver | [08–09](chapters/08-eit-and-autler-townes.md) and [17](chapters/17-spectroscopy-diagnostics.md) | EIT, Autler–Townes, optical alignment, false-peak controls |
-| IV. Microwave and polarisation | [10–12](chapters/10-microwave-fundamentals.md) and [18–22](chapters/18-hfss-metasurface.md) | Antennas, Jones/Stokes, inverse problems, HFSS, finite aperture and information metrics |
-| V. Research engineering | [23–24](chapters/23-code-quality.md) | Scientific software, source evidence, novelty and publication |
-| VI. Project implementation | [Current state and technical lineage](CURRENT_STATE.md) | Latest evidence, older superseded studies, remaining gates |
-| VII. Labs and solutions | [Tutorials](TUTORIAL_LABS.md) · [1,000-case workbook](workbook.mjs) | Repeatable hands-on examples, self-tests and parameter sensitivity |
-| VIII. Bibliography | [References](REFERENCES.md) | Peer-reviewed scientific papers, books, official APIs and original project evidence |
+| I — Mathematics and quantum science | [01](chapters/01-mathematical-language.md)–[04](chapters/04-density-matrices.md) | Dirac notation, observables, uncertainty, driven Hamiltonians, coherence and Lindblad |
+| II — Atomic structure and alkali physics | [05](chapters/05-angular-momentum.md)–[08](chapters/08-eit-and-autler-townes.md) | Selection rules, quantum defects, state ladders, Rydberg scaling, EIT and dressed atoms |
+| III — Optical/microwave experiments and polarization | [09](chapters/09-optics-lab.md)–[12](chapters/12-identifiability.md) | Gaussian optics, detectors, RF engineering, Jones/Stokes, inverse sensing |
+| IV — Numerical atomic modelling and diagnosis | [13](chapters/13-quantum-defect-and-arc.md)–[17](chapters/17-spectroscopy-diagnostics.md) | Actual ARC and RydIQule workflows, Zeeman maps, Doppler, spectroscopy fault isolation |
+| V — Electromagnetic/sensor and research methodology | [18](chapters/18-hfss-metasurface.md)–[24](chapters/24-publication-and-future.md) | HFSS theory, information metrics, finite verification, fabrication, numerical inference, publications |
+| VI — Interacting Rydberg systems | [25](chapters/25-rydberg-blockade.md)–[28](chapters/28-rydberg-cavity-qed.md) | Blockade and gates, tweezers, multichannel quantum-defect theory, cavity-QED |
+| VII — Advanced Rydberg environments | [29](chapters/29-precision-rydberg-electrometry.md)–[32](chapters/32-field-ionisation-and-particle-detection.md) | Quantum electrometry, spin models, Rydberg molecules/collisions, ionisation detectors |
+| VIII — Designing the next experiment | [33](chapters/33-lasers-cooling-and-stabilisation.md)–[36](chapters/36-frontiers-and-cross-disciplinary-research.md) | Laser systems, apparatus requirements, Bayesian inference, quantum/Defence research frontier |
 
-Open the [**interactive textbook and worked quiz**](../site/academy.html) and [**parameter explorer/code lab**](../site/lab.html). [**Scientific diagnostics**](../site/diagnostics.html) includes 10 reproducible symptom playbooks and exportable troubleshooting worksheets. [**Visual source atlas**](FIGURE_ATLAS.md) distinguishes authentic lab/HFSS graphics from original diagrams. [**2026 research horizon**](../docs/literature/RESEARCH_FRONTIER_2026.md) tracks the current novelty boundary.
+## Learn interactively
 
-The website contains original drawings and references to authentic project research photos; never confuse teaching graphics with actual laboratory photographs or HFSS native output.
+The [Academy reader](../site/academy.html) contains the actual chapter text, full-text search, collapsible explanations, navigation and worked-case practice. The [live calculation lab](../site/lab.html) demonstrates equations with adjustable settings in an isolated browser sandbox—no native HFSS, ARC or RydIQule is claimed to run in the browser. The [diagnostic companion](../site/diagnostics.html) uses grounded checklists. [Original figure provenance](FIGURE_ATLAS.md) explicitly distinguishes diagrams from photographs or native solver results.
 
-## Research method and signs of a good chapter
+The [source-of-truth chapter generator](../scripts/rebuild_academy.py) builds website text directly from Markdown, so edited chapters cannot silently diverge from the site. [Printable workbook](export_workbook_pdf.py) compiles the chapters and 1,000 individually numbered solved problems. Each exercise has its exact inputs and physical limitations; 1,000 variations do not replace scientific conceptual depth.
 
-Every chapter should answer: (1) what system is studied, (2) which variables and units are used, (3) how the equations arise, (4) what observable is actually measured or computed, (5) which experiment or solver case can falsify a claim, (6) the most frequent diagnostic failures, (7) review questions with answers and (8) a citable source.
+## Real runnable code
 
-**Explicit scientific limitations:** A project-specific six-state HFSS instrument matrix is not a functioning, fully calibrated Rb-87 four-coordinate optical polarimeter. The earlier linear analyser probes equatorial Stokes coordinates, and finite-panel local-field transfer still needs verification.
+[ARC state and dipole atlas](examples/arc_transition_atlas.py) uses real installed ARC numerical functions with sign- and units-conscious quantum selection. [RydIQule three-state example](examples/rydiqule_three_level.py) runs the real installed density-matrix solver but explicitly does not claim a calibrated species-specific optical transmission measurement. The software programs are separate from the in-browser illustrative equations. Their offline physics/API interface tests run in CI even without installed scientific packages.
 
-## Contribution and safety
+## How to read and use this book responsibly
 
-Use original prose, authored SVG diagrams, public reference links and sources from our existing research repository. Do not copy a textbook's copyrighted chapter or redistribute licensed figures. The repository is currently **public**: do not commit private lab credentials, personal correspondence, unpublished proprietary designs, quote details or unapproved raw data. Actual laser, RF, electrical, vapour-cell or PCB work requires lab-specific safety approvals and skilled supervision.
+Start by deriving the core equations and solving the chapter review questions, then test the numerical code and decide what observable a physical experiment would actually acquire. Check primary reference values and current software documentation for the selected species and apparatus. An unverified simulation, a toy spectrum and a measured signal are different evidence categories. Original scientific sources and textbooks are listed in [REFERENCES](REFERENCES.md); equations and figures are reviewed continuously rather than assumed perfect.
 
-[Source-status policy](../docs/traceability/RECORD_STATUS_POLICY.md) · [Research assistant](../scripts/research_assistant.py) · [Research updates](../docs/literature/) · [Complete source archive](../history/README.md).
+### Separate real research archive
+
+The **actual project's** rubidium atomic receiver, HFSS six-state metasurface, experimental rod-grid results, failed finite-mesh cases, manuscript history and version-precedence matrix belong in the [project-specific evidence portal](../docs/research/CURRENT_PROJECT_EVIDENCE_PORTAL.md), and the [historical source library](../history/README.md). They are *not* used as universal evidence in this general book.
+
+### Collaboration, AI and public disclosure
+
+The [automated Australian opportunity monitor](../automation/README.md) watches official ARC/Defence/DSI sources, while a [bounded optional AI co-author](../automation/AI_EDITORIAL_POLICY.md) may create review-only PRs when explicitly configured. Neither verifies unpublished physics, silently changes accepted results or submits applications. This repository is currently public: publication rights and sensitive material must be reviewed.
+
+[Contents and editorial roadmap](EDITORIAL_STANDARD.md) · [General source references](REFERENCES.md) · [Guided labs](TUTORIAL_LABS.md) · [Return to project](../README.md).

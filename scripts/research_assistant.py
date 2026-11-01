@@ -29,11 +29,15 @@ def audit():
     for p in chapters:
         text = p.read_text(encoding="utf-8")
         raw_chapters.append(text)
-        check(all(token in text.lower() for token in
-                  ("##", "source", "question")), "CHAPTER_FORMAT",
+        check("##" in text and "<details>" in text and
+              ("reference" in text.lower() or "source" in text.lower()),
+              "CHAPTER_FORMAT",
               p.name + ": lesson, source and self-test present")
     pieces = []
-    for name in ["book-part1.json", "book-part2.json"]:
+    catalog = json.loads((SITE / "data/book-catalog.json").read_text(encoding="utf-8"))
+    check(catalog["schema"] == 2 and catalog["chapterCount"] >= 36,
+          "SYLLABUS_MANIFEST", "General Rydberg textbook curriculum has 36+ source-led chapters")
+    for name in catalog["parts"]:
         p = SITE / "data" / name
         if not p.exists():
             check(False, "SITE_BOOK", "Missing site source " + name)
@@ -62,7 +66,7 @@ def audit():
     check(index["matrix"]["sourcePath"] ==
           "papers/manuscript-source/data/V42_C033_INSTRUMENT_MATRIX.csv",
           "HFSS_SOURCE", "Site model still tied to specific imported HFSS source")
-    report = BOOK / "CURRENT_STATE.md"
+    report = ROOT / "docs/research/PRIOR_CURRENT_STATE_HISTORY.md"
     status = report.read_text(encoding="utf-8")
     check(all(item in status for item in ["1.925 GHz", "9.53", "76.92%", "55.09%",
                                            "2024", "2026", "finite"]),
@@ -82,7 +86,7 @@ def audit():
     for file in ["academy.html", "lab.html"]:
         check((SITE / file).is_file(), "SITE_PAGES", file)
     warn("PUBLICATION", "GitHub repository has been reported public; site and source rights must be reviewed before adding private content.")
-    warn("MATURITY", "Book has 24 authored concept chapters and 1000 parameterised exercises, not 1000 substantive textbook prose pages.")
+    warn("MATURITY", "Book has 36+ authored chapters and a 1000-case workbook; manuscript length and independent scholarly review must be checked before calling it publishable.")
     warn("NOT_SOLVER", "CI validates source-linked calculations; it does not run Ansys HFSS, ARC transition sweeps, RydIQule full spectra or atomic experiments.")
     failures = sum(x["status"] == "fail" for x in findings)
     result = {"schema": 1, "generated_utc": datetime.now(timezone.utc).isoformat(),
