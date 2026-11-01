@@ -1,38 +1,89 @@
-# Optical alignment, power and detection
+# Optical engineering, detection and alignment
 
-**Book:** Rydberg Systems Engineering · **Part:** Laboratory · **Status:** original educational text, not new experimental evidence.
+**General Rydberg and optical physics chapter.** Species and apparatus choices are examples, not a report of one project.
 
-## Why this matters in our project
+## Competencies
 
-Laser alignment should begin with documented interlocks, beam paths, eyewear requirements and instrument reference settings. A photodetector's voltage is related to optical power via responsivity R(λ) and transimpedance gain; electronic bandwidth, saturation and offset must be checked. Optical density OD=−log10(T) and Beer–Lambert intensity T≈exp(−αL) are different expressions of the same attenuation when the assumptions hold. For an Rb vapour-cell EIT system, document laser locks, power drift, polarisation, temperature and probe coupling before changing RF geometry. Never infer line strength from a plot with uncalibrated vertical scaling.
+Derive the optical and atomic response, identify the real observable, use state-specific data, design controls, and discriminate physical behaviour from technical artefacts.
 
-## Worked problem / research exercise
+## 1. Optical power and field amplitude
 
-For an illustrative diode with R=0.55 A/W and 10 µW detected, calculate 5.5 µA photocurrent. At 100 kΩ ideal transimpedance, the signal magnitude is 0.55 V before bandwidth, feedback stability and offset constraints.
+A Gaussian TEM00 beam with optical power P and waist w0 has peak intensity I0=2P/(πw0²) under the standard 1/e² intensity radius definition. In free space the root-mean-square electric field relates to intensity through I=cε0 E_rms². A Rabi rate follows the transition dipole projection times field amplitude divided by ℏ. If the quoted power is measured before an acousto-optic modulator, cell window or fibre, include losses before predicting on-atom coupling.
 
-## Lab / solver decision checklist
+## 2. Beam propagation and overlap
 
-- Record relevant units, basis, frequency, coordinate frame and exact source version.
-- Calculate the expected limiting-case behaviour before running expensive software.
-- Keep the experimental or solver-native result separate from a numerical illustration.
-- Test at least one independent reference, off-state or convergence criterion.
+Gaussian beam radius evolves as w(z)=w0√(1+(z/zR)²), where zR=πw0²/λ. Lens aberration, astigmatism and clipping can invalidate an ideal paraxial model. In a vapour cell, optical probe and coupling overlap must be maintained over an adequate interaction length; crossing angle affects both volume and Doppler geometry. In a tweezer experiment, high numerical aperture and accurate intensity distribution define trap confinement and addressing fidelity.
 
-## Questions (attempt before opening the answer)
+## 3. Polarisation preparation
 
-**Q. Why should detector bandwidth be recorded for Rydberg optical spectra?**
+Waveplates produce phase delays between orthogonal optical axes, while polarising beam splitters and analysers distinguish projections. A quarter-wave plate generates ideal circular light only for the correct incident linear state, axis setting and wavelength. Birefringent windows, stress and magnetic-field orientation can change the actual polarisation at the atoms. For magnetic sublevel selection, polarisation must be defined relative to the quantisation axis, not just the appearance of a laboratory arrow.
 
-<details><summary>Reveal worked answer and explanation</summary>
+## 4. Photodetection and electronics
 
-A bandwidth limit filters transmitted intensity variations and may alter observed modulation/spectral scan dynamics; it is not interchangeable with RF carrier reception bandwidth.
+A photodiode current is I_pd=R(λ)P_opt in its linear regime. Transimpedance gain converts current to voltage, while amplifier bandwidth and noise contribute to the measured time series. Overload, feedback instability or a dark offset may distort spectroscopy. Determine whether the oscilloscope is sampling slowly varying optical scan intensity, RF-beat modulation or the raw optical carrier; ordinary photodiodes do not time-resolve hundreds of terahertz optical oscillations.
+
+## 5. Laser frequency stability and diagnostics
+
+Separate fast and slow frequency noise, free-running linewidth, long-term lock drift and absolute reference uncertainty. Saturation absorption, etalon, beat note and wavemeter measurements probe different properties; an in-loop error signal does not independently establish an out-of-loop optical linewidth. Document frequency calibration, scan direction, dwell time, servo state, optical powers and reference frequency for every scientific trace.
+
+## 6. A practical alignment validation sequence
+
+With institutional laser safety controls, identify probe and coupling beam paths separately; verify power, mode quality and detector gain. Establish baseline absorption with probe only, then add coupling at a known resonance and adjust overlap while retaining raw references. Repeat at lower power to test saturation and broadenings. For an RF-controlled experiment, introduce RF only after stable EIT is confirmed, so optical and RF faults do not become entangled in diagnosis.
+
+## End-of-chapter questions with answers
+
+### Question 1. How does peak Gaussian intensity change when w0 halves?
+
+<details><summary>Reveal the worked answer</summary>
+
+It increases fourfold at constant power under an ideal TEM00 model.
 
 </details>
 
-**Advanced discussion.** State the approximations used in the section, which observable could falsify the current explanation, and which source data you would need to validate a stronger claim. Compare this against the relevant source below.
+### Question 2. Why is a detector output not an optical carrier waveform?
 
-## Troubleshooting pitfall
+<details><summary>Reveal the worked answer</summary>
 
-Detector saturation, ADC clipping, false laser lock, wavelength mismatch or a changed neutral-density filter.
+Photodiode bandwidth generally follows envelope/modulation, not the optical hundreds-of-terahertz carrier.
 
-## Source and extension
+</details>
 
-../../docs/laboratory/OPTICAL_AND_ATOMIC_RECEIVER.md. [Read the central book reference ledger](../REFERENCES.md). [Return to the syllabus](../README.md).
+### Question 3. What changes a waveplate's ideal phase retardance?
+
+<details><summary>Reveal the worked answer</summary>
+
+Wavelength, crystal properties, incidence and temperature may shift the designed retardance.
+
+</details>
+
+### Question 4. Why does a laser lock's error trace not prove absolute frequency stability?
+
+<details><summary>Reveal the worked answer</summary>
+
+It can remain quiet while its reference drifts or common-mode errors occur.
+
+</details>
+
+### Question 5. What optical measurements should precede RF coupling?
+
+<details><summary>Reveal the worked answer</summary>
+
+Stable probe absorption, laser references, coupling-dependent EIT, power, overlap and linear detector response.
+
+</details>
+
+### Question 6. Why can reducing waist worsen EIT in a vapour?
+
+<details><summary>Reveal the worked answer</summary>
+
+Transit time shortens, increasing motional decoherence despite greater intensity.
+
+</details>
+
+## Practical scientific assignment
+
+Construct a species-labelled excitation ladder and optical-signal model, calculate the required photon or RF frequency using verified data, and design a control sequence that separates optical drift, detector effects and atomic response. Record assumptions, uncertainties, raw data provenance and expected failure signatures.
+
+## Sources
+
+Foot, *Atomic Physics*; Scully and Zubairy, *Quantum Optics*; Steck spectroscopy data; RydIQule and ARC official guides; and the [book bibliography](../REFERENCES.md).
