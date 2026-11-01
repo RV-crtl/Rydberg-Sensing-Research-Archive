@@ -1,5 +1,8 @@
 name: Owner-controlled AI research coauthor (human-review PR only)
 on:
+  schedule:
+    # Monthly review proposal, never an automatic edit of accepted scientific text.
+    - cron: '30 4 1 * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -15,7 +18,7 @@ permissions:
   pull-requests: write
 jobs:
   propose:
-    if: github.actor == github.repository_owner
+    if: github.event_name == 'schedule' || github.actor == github.repository_owner
     runs-on: ubuntu-latest
     timeout-minutes: 12
     env:
@@ -33,8 +36,8 @@ jobs:
         id: proposal
         shell: bash
         env:
-          MODE: ${{ inputs.mode }}
-          TASK: ${{ inputs.task }}
+          MODE: ${{ inputs.mode || 'editorial_proposal' }}
+          TASK: ${{ inputs.task || 'Propose a specific original textbook expansion of one underdeveloped general Rydberg physics topic. Cite at least one official primary scientific source or textbook reference. Include a derivation, a misleading limiting case, three new answered problems, and a reproducibility/validation plan. No invented experimental results, project-private data or autonomous publication claims.' }}
         run: |
           set -euo pipefail
           if [[ -z "$OPENAI_API_KEY" || -z "$RESEARCH_AGENT_MODEL" ]]; then
