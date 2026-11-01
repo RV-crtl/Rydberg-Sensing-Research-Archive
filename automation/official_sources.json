@@ -1,0 +1,151 @@
+{
+  "schema": 1,
+  "lastReviewed": "2026-11-01",
+  "purpose": "Official Australian scheme/Defence/quantum research monitoring; status must be rechecked against each page at time of reading.",
+  "sources": [
+    {
+      "id": "ARC-2027-ITRP",
+      "name": "Industrial Transformation Research Hubs and Training Centres 2027",
+      "url": "https://www.arc.gov.au/news-and-publications/media/now-open-applications-arc-industrial-transformation-research-program-2027-grant-opportunities",
+      "publisher": "Australian Research Council",
+      "type": "funding",
+      "statedDeadline": "2026-11-25",
+      "deadlineTimezone": "Australia/Sydney",
+      "eligibility": "Research administering organisations and eligible partners; verify official guidelines",
+      "tags": [
+        "quantum",
+        "photonics",
+        "research collaboration"
+      ],
+      "sourceStatus": "open per official ARC notice at 2026-11-01"
+    },
+    {
+      "id": "ARC-2027-FT",
+      "name": "ARC Future Fellowships 2027",
+      "url": "https://www.arc.gov.au/news-and-publications/media/closing-soon-applications-future-fellowships-2027",
+      "publisher": "Australian Research Council",
+      "type": "fellowship",
+      "statedDeadline": "2026-11-06",
+      "deadlineTimezone": "Australia/Sydney",
+      "eligibility": "Eligible mid-career researchers and administering organisations; verify ARC guidelines",
+      "tags": [
+        "research",
+        "fellowship"
+      ],
+      "sourceStatus": "open per ARC notice at 2026-11-01"
+    },
+    {
+      "id": "ARC-CALENDAR",
+      "name": "ARC NCGP 2026–27 scheme calendar",
+      "url": "https://www.arc.gov.au/funding-research/scheme-calendar",
+      "publisher": "Australian Research Council",
+      "type": "calendar",
+      "statedDeadline": null,
+      "deadlineTimezone": null,
+      "eligibility": "Scheme specific",
+      "tags": [
+        "quantum",
+        "academic grants"
+      ],
+      "sourceStatus": "official rolling calendar"
+    },
+    {
+      "id": "DEFENCE-IST",
+      "name": "Defence Innovation, Science and Technology Strategy 2026",
+      "url": "https://www.minister.defence.gov.au/media-releases/2026-08-04/launch-2026-defence-innovation-science-technology-strategy",
+      "publisher": "Australian Department of Defence",
+      "type": "strategic priorities",
+      "statedDeadline": null,
+      "deadlineTimezone": null,
+      "eligibility": "Not an application call",
+      "tags": [
+        "quantum",
+        "defence",
+        "sensing",
+        "AI"
+      ],
+      "sourceStatus": "published strategy"
+    },
+    {
+      "id": "DSI-COLLAB",
+      "name": "Defence Science Institute collaborative research and unsolicited expressions of interest",
+      "url": "https://defencescienceinstitute.com/collaborative-research-grants-2/",
+      "publisher": "Defence Science Institute",
+      "type": "collaboration",
+      "statedDeadline": null,
+      "deadlineTimezone": null,
+      "eligibility": "University/industry participants; see DSI call and eligibility",
+      "tags": [
+        "quantum",
+        "defence",
+        "research collaboration"
+      ],
+      "sourceStatus": "advertised collaborative grant round closed; unsolicited proposals described"
+    },
+    {
+      "id": "DSI-FUNDING",
+      "name": "Defence Science Institute opportunities",
+      "url": "https://defencescienceinstitute.com/funding-opportunity/",
+      "publisher": "Defence Science Institute",
+      "type": "opportunities",
+      "statedDeadline": null,
+      "deadlineTimezone": null,
+      "eligibility": "Per call; not all calls are accessible to all researchers",
+      "tags": [
+        "RF",
+        "defence",
+        "sensing"
+      ],
+      "sourceStatus": "list may change; individual opportunities require verification"
+    },
+    {
+      "id": "QDSA-SENSING",
+      "name": "QDSA / DIN Quantum Sensing for Extreme Environments",
+      "url": "https://qdsa.au/qdsa-funding/",
+      "publisher": "Queensland Defence Science Alliance",
+      "type": "funding",
+      "statedDeadline": "2026-07-20",
+      "deadlineTimezone": "Australia/Brisbane",
+      "eligibility": "Specified Australian Defence Science and Universities Network universities",
+      "tags": [
+        "quantum",
+        "sensing",
+        "extreme environments",
+        "RF"
+      ],
+      "sourceStatus": "2026 application deadline has passed; monitor future rounds only"
+    },
+    {
+      "id": "BUSINESS-DEFENCE",
+      "name": "Defence Industry Development Grants Program",
+      "url": "https://business.gov.au/grants-and-programs/defence-industry-development-grants-program",
+      "publisher": "Australian Government business.gov.au",
+      "type": "SME funding",
+      "statedDeadline": null,
+      "deadlineTimezone": "Australia/Sydney",
+      "eligibility": "Australian SMEs and defence industry associations under specific streams; not an academic grant by default",
+      "tags": [
+        "defence",
+        "industry",
+        "commercialisation"
+      ],
+      "sourceStatus": "changing streams and batch dates; official guidelines override recorded snapshot"
+    },
+    {
+      "id": "DSTG-COLLAB",
+      "name": "Defence Science and Technology partnership framework",
+      "url": "https://www.dst.defence.gov.au/strategy/strategic-pillars/one-defence-science-technology-capability",
+      "publisher": "Defence Science and Technology Group",
+      "type": "partnership",
+      "statedDeadline": null,
+      "deadlineTimezone": null,
+      "eligibility": "Engagement opportunities differ from grant programs",
+      "tags": [
+        "quantum",
+        "defence",
+        "collaboration"
+      ],
+      "sourceStatus": "policy context, not grant offer"
+    }
+  ]
+}
