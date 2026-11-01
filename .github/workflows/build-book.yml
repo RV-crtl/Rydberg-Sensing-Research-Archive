@@ -43,7 +43,7 @@ jobs:
           assert 'Rydberg' in pdf.pages[0].extract_text()
           assert '1000' in pdf.pages[-1].extract_text()
           PY
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: Rydberg-Academy-1000-Worked-Cases-PDF
           path: book/dist/*.pdf
