@@ -1,73 +1,33 @@
-# Visual atlas: exact project evidence versus original teaching diagrams
+# General textbook figures — editable and scientifically qualified
 
-**Priority:** use the actual source images already in the research archive. Do not use unrelated stock laboratory imagery, random CAD copper topology or a fabricated spectral trace to fill visual space.
+This book uses **original concept diagrams**, labelled as theoretical visualisations; they are not stock photographs, measured spectra, actual equipment or HFSS solutions.
 
-## A — Actual optical and RF experiments
+## Quantum-state geometry
 
-### Optical laboratory apparatus (experimental photograph)
+![Bloch sphere for an ideal two-state quantum system](../site/assets/book-quantum-bloch.svg)
 
-![Optical Rb-87 laser and RF research setup from documented lab source](../site/assets/lab-optical-bench.png)
+**Source:** [Editable original SVG](../site/assets/book-quantum-bloch.svg). **Physics:** the Bloch sphere maps complex, normalised pure two-level amplitudes modulo global phase to polar/azimuthal coordinates. It is not an electron orbit. Discussed in [Chapter 1](chapters/01-mathematical-language.md).
 
-**Source:** [Original manuscript laboratory Figure 1](../papers/manuscript-source/figures/F01_REAL_LAB_PHOTO.pdf). **Claim supported:** documented apparatus layout. It is not by itself evidence of a fully calibrated optical full-Stokes receiver.
+## Thermal atomic motion and laser beams
 
-### Measured linear-polarisation response
+![Counter-propagating probe/coupling lasers through thermal atomic vapour with velocity classes](../site/assets/book-doppler-geometry.svg)
 
-![Measured linear polariser experiment in the research manuscript](../site/assets/linear-polarisation-experiment.png)
+**Source:** [Editable original SVG](../site/assets/book-doppler-geometry.svg). **Physics:** signed two-photon Doppler shift, beam wavevector and atomic velocity projection. Unequal wavelengths leave a residual Doppler term. This is not a measured spectral line. [Chapter 16](chapters/16-doppler-and-linewidth.md).
 
-**Source:** [Original measured linear polariser research figure](../papers/manuscript-source/figures/FINAL_F06_LINEAR_EXPERIMENT.pdf). **Claim supported:** linear polarisation only. A physical S3 state is not independently measured by rotating a linear reference.
+## Two-atom Rydberg blockade
 
-## B — Native HFSS and derived scientific figures
+![Two Rydberg atoms with interaction shift and blockade-radius scale](../site/assets/book-rydberg-blockade.svg)
 
-### Candidate optimisation
+**Source:** [Editable original SVG](../site/assets/book-rydberg-blockade.svg). **Physics:** illustrates the van der Waals (C_6/R^6) regime and an approximate (V(R_b)simhbarOmega) blockade criterion. Other interaction regimes and angular-state mixing exist. [Chapter 25](chapters/25-rydberg-blockade.md).
 
-![HFSS electromagnetic candidate optimisation figure](../site/assets/hfss-optimisation.png)
+## Additional teaching diagrams
 
-**Source:** [Paper figure F07](../papers/manuscript-source/figures/FINAL_F07_OPTIMISATION.pdf). Model-based 36-candidate screening with frequencies and criteria tied to the versioned source.
+[Conceptual RF-dressed ladder](../site/assets/academy-ladder.svg), [RF/HFSS source-to-claim flow](../site/assets/academy-hfss-pipeline.svg), and [experimental diagnosis flow](../site/assets/academy-diagnostic-tree.svg) are instructional and may use specific example equipment or architectures. They are not independently observed experimental data.
 
-### Independently adapted periodic mesh
+## Visual production requirements
 
-![HFSS mesh validation study](../site/assets/hfss-adapted-mesh.png)
+Every future general-physics chapter should have at least three original scientific diagrams: (i) conceptual mechanism, (ii) equation/variable geometry, (iii) a source-verified plot or quantitative limiting case. Units, signs, legible accessible labels and alt text are mandatory. Native complex source fields must remain attached to actual simulation plots and laboratory data to measurement photographs.
 
-**Source:** [Paper figure F08](../papers/manuscript-source/figures/FINAL_F08_ADAPTED_RESULTS.pdf). This is the specific periodic mesh result; it cannot replace a failed finite-array cross-calibration check.
+**Project-specific images**, including the actual rubidium optical bench, HFSS figures and experimental polarisers, belong in the separate [project figure atlas](../docs/results/PROJECT_FIGURE_ATLAS.md). The general textbook should not be turned into an illustrated report on one experiment.
 
-### Stokes instrument response
-
-![Derived six-state complex field Stokes response](../site/assets/stokes-instrument-response.png)
-
-**Source:** [Paper figure F09](../papers/manuscript-source/figures/FINAL_F09_STOKES_AB_VECTOR.pdf). Source-determined simulation-derived response, not a measured Rb-87 optical output.
-
-### Finite observation distance
-
-![Numerical finite-panel distance and response analysis](../site/assets/finite-distance-sensitivity.png)
-
-**Source:** [Paper figure F10](../papers/manuscript-source/figures/FINAL_F10_FINITE_DISTANCE.pdf). Check actual cell observation plane, mask and mesh before claiming finite transfer.
-
-## C — New original and editable research-teaching schematics
-
-### Quantum optical / microwave ladder
-
-![Original conceptual Rydberg EIT optical and microwave ladder](../site/assets/academy-ladder.svg)
-
-**Type:** conceptual SVG. Illustrates 780/480 nm steps, an RF-coupled neighbouring level and the measured optical observable. The exact measured nℓj and magnetic states must be obtained from ARC and experiment; line spacing is not to scale.
-
-### Source-to-claim analysis pipeline
-
-![Original source-aware HFSS to Stokes data flow](../site/assets/academy-hfss-pipeline.svg)
-
-**Type:** conceptual SVG with grounded project metrics and limitations. Source complex fields, instrument A, periodic and finite cases must not be conflated.
-
-### Original laboratory diagnosis decision tree
-
-![Source-aware atomic/RF/HFSS fault isolation](../site/assets/academy-diagnostic-tree.svg)
-
-**Type:** workflow SVG derived from source-specific calibration and verification protocols, not a screenshot of a completed experiment.
-
-## Rules for adding the next figure
-
-1. Add the native image/drawing and source project path; if a personal/supplier photo, obtain release approval first.
-2. Record **measured, HFSS-native, derived, proposed or illustrative** modality, date, design revision, frequency and actual observation plane.
-3. Associate code, original complex fields/raw trace, figure units, and source checksum in [the figure provenance ledger](../docs/results/FIGURE_PROVENANCE.md).
-4. Use meaningful screen-reader alt text and avoid mismatched captions.
-5. In publication, a unit cell artwork is not proof that a full finite board was fabricated or calibrated.
-
-[Book home](README.md) · [Project figure provenance](../docs/results/FIGURE_PROVENANCE.md) · [Lab diagrams](../site/lab.html) · [Current status](CURRENT_STATE.md).
+[Book home](README.md) · [Editorial standard](EDITORIAL_STANDARD.md).

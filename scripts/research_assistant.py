@@ -66,7 +66,7 @@ def audit():
     check(index["matrix"]["sourcePath"] ==
           "papers/manuscript-source/data/V42_C033_INSTRUMENT_MATRIX.csv",
           "HFSS_SOURCE", "Site model still tied to specific imported HFSS source")
-    report = BOOK / "CURRENT_STATE.md"
+    report = ROOT / "docs/research/PRIOR_CURRENT_STATE_HISTORY.md"
     status = report.read_text(encoding="utf-8")
     check(all(item in status for item in ["1.925 GHz", "9.53", "76.92%", "55.09%",
                                            "2024", "2026", "finite"]),
