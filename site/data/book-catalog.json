@@ -7,8 +7,8 @@
     "book-part2.json",
     "book-part3.json"
   ],
-  "totalWords": 18015,
-  "totalAnswers": 110,
+  "totalWords": 28462,
+  "totalAnswers": 220,
   "chapterSummaries": [
     {
       "slug": "01-mathematical-language",
@@ -19,17 +19,17 @@
     },
     {
       "slug": "02-operators-and-measurement",
-      "title": "Operators, eigenstates and uncertainty",
+      "title": "Operators, observables and quantum measurement",
       "section": "Quantum foundations",
-      "words": 295,
-      "answers": 1
+      "words": 746,
+      "answers": 6
     },
     {
       "slug": "03-hamiltonians",
-      "title": "Hamiltonians and rotating frames",
+      "title": "Hamiltonians, rotating frames and coherent control",
       "section": "Quantum foundations",
-      "words": 302,
-      "answers": 1
+      "words": 707,
+      "answers": 6
     },
     {
       "slug": "04-density-matrices",
@@ -40,143 +40,143 @@
     },
     {
       "slug": "05-angular-momentum",
-      "title": "Angular momentum, fine structure and selection rules",
+      "title": "Atomic angular momentum and transition selection rules",
       "section": "Rydberg atomic physics",
-      "words": 336,
-      "answers": 1
+      "words": 769,
+      "answers": 6
     },
     {
       "slug": "06-rydberg-scaling",
-      "title": "Rydberg quantum defects and scaling laws",
+      "title": "Rydberg energy levels, lifetimes and scaling laws",
       "section": "Rydberg atomic physics",
-      "words": 313,
-      "answers": 1
+      "words": 714,
+      "answers": 6
     },
     {
       "slug": "07-rubidium-energy-ladder",
-      "title": "780/480 nm rubidium EIT ladder",
+      "title": "Alkali excitation ladders and spectroscopic access",
       "section": "Rydberg atomic physics",
-      "words": 319,
-      "answers": 1
+      "words": 856,
+      "answers": 6
     },
     {
       "slug": "08-eit-and-autler-townes",
-      "title": "EIT dark states, absorption and Autler–Townes splitting",
+      "title": "Electromagnetically induced transparency and dressed-state spectroscopy",
       "section": "Laser and atomic receiver",
-      "words": 339,
-      "answers": 1
+      "words": 825,
+      "answers": 6
     },
     {
       "slug": "09-optics-lab",
-      "title": "Optical alignment, power and detection",
+      "title": "Optical engineering, detection and alignment",
       "section": "Laser and atomic receiver",
-      "words": 325,
-      "answers": 1
+      "words": 731,
+      "answers": 6
     },
     {
       "slug": "10-microwave-fundamentals",
-      "title": "Microwave fields, antennas and reference planes",
+      "title": "Electromagnetic waves, RF hardware and atomic field coupling",
       "section": "RF and polarimetry",
-      "words": 321,
-      "answers": 1
+      "words": 747,
+      "answers": 6
     },
     {
       "slug": "11-stokes-jones",
-      "title": "Jones vectors, Stokes coordinates and conventions",
+      "title": "Jones, Stokes, Mueller and full-vector polarisation",
       "section": "RF and polarimetry",
-      "words": 328,
-      "answers": 1
+      "words": 757,
+      "answers": 6
     },
     {
       "slug": "12-identifiability",
-      "title": "Matrix rank, singular values and reconstruction",
+      "title": "Parameter identifiability, matrices and stable reconstruction",
       "section": "RF and polarimetry",
-      "words": 338,
-      "answers": 1
+      "words": 714,
+      "answers": 6
     },
     {
       "slug": "13-quantum-defect-and-arc",
-      "title": "ARC: an auditable transition atlas",
+      "title": "Practical atomic calculations with ARC",
       "section": "ARC, RydIQule and sublevels",
-      "words": 301,
-      "answers": 1
+      "words": 819,
+      "answers": 6
     },
     {
       "slug": "14-rydiqule-lab",
-      "title": "RydIQule: optical Bloch and Doppler modelling",
+      "title": "RydIQule: open-system modelling and optical observables",
       "section": "ARC, RydIQule and sublevels",
-      "words": 312,
-      "answers": 1
+      "words": 788,
+      "answers": 6
     },
     {
       "slug": "15-zeeman",
-      "title": "Zeeman bias, sublevel structure and failure modes",
+      "title": "Magnetic structure, field tuning and precision diagnosis",
       "section": "ARC, RydIQule and sublevels",
-      "words": 282,
-      "answers": 1
+      "words": 726,
+      "answers": 6
     },
     {
       "slug": "16-doppler-and-linewidth",
-      "title": "Doppler averaging, linewidth and coherence",
+      "title": "Doppler dynamics, laser linewidth and spectral broadening",
       "section": "ARC, RydIQule and sublevels",
-      "words": 254,
-      "answers": 1
+      "words": 818,
+      "answers": 6
     },
     {
       "slug": "17-spectroscopy-diagnostics",
-      "title": "Spectral diagnosis: false peaks and controls",
+      "title": "Spectroscopy troubleshooting and fault isolation",
       "section": "Lab diagnosis",
-      "words": 269,
-      "answers": 1
+      "words": 743,
+      "answers": 6
     },
     {
       "slug": "18-hfss-metasurface",
-      "title": "HFSS modelling from a unit cell to a finite sensor",
+      "title": "Computational electromagnetics and polarization-selective structures",
       "section": "Metasurface and inference",
-      "words": 300,
-      "answers": 1
+      "words": 798,
+      "answers": 6
     },
     {
       "slug": "19-information-matrix",
-      "title": "Fisher information, time budgets and conditioning",
+      "title": "Information theory, optimal measurement and experimental design",
       "section": "Metasurface and inference",
-      "words": 264,
-      "answers": 1
+      "words": 821,
+      "answers": 6
     },
     {
       "slug": "20-finite-calibration",
-      "title": "Finite-aperture transfer and verification gates",
+      "title": "Model transfer, finite geometry and independent validation",
       "section": "Metasurface and inference",
-      "words": 262,
-      "answers": 1
+      "words": 760,
+      "answers": 6
     },
     {
       "slug": "21-pcb-materials",
-      "title": "Fabrication: Rogers, copper, spacing and switches",
+      "title": "RF fabrication, switching and material characterization",
       "section": "Metasurface and inference",
-      "words": 257,
-      "answers": 1
+      "words": 730,
+      "answers": 6
     },
     {
       "slug": "22-inverse-problems",
-      "title": "Reconstruction regularisation and error bars",
+      "title": "Reliable inversion, regularisation and physical parameter inference",
       "section": "Metasurface and inference",
-      "words": 248,
-      "answers": 1
+      "words": 778,
+      "answers": 6
     },
     {
       "slug": "23-code-quality",
-      "title": "Scientific code, environments and reproducibility",
+      "title": "Scientific software engineering and reproducible computing",
       "section": "Research engineering",
-      "words": 252,
-      "answers": 1
+      "words": 815,
+      "answers": 6
     },
     {
       "slug": "24-publication-and-future",
-      "title": "Research communication and evidence maturity",
+      "title": "Scientific publication, peer review and future directions",
       "section": "Research engineering",
-      "words": 261,
-      "answers": 1
+      "words": 763,
+      "answers": 6
     },
     {
       "slug": "25-rydberg-blockade",
