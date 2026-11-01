@@ -1,6 +1,10 @@
 name: Build 1000-page Rydberg Academy workbook PDF
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - 'book/**'
+      - '.github/workflows/build-book.yml'
   push:
     branches: [main]
     paths:
