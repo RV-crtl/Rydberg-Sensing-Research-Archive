@@ -7,14 +7,14 @@
     "book-part2.json",
     "book-part3.json"
   ],
-  "totalWords": 28462,
+  "totalWords": 28544,
   "totalAnswers": 220,
   "chapterSummaries": [
     {
       "slug": "01-mathematical-language",
       "title": "The mathematical language of quantum science",
       "section": "Quantum foundations",
-      "words": 1161,
+      "words": 1189,
       "answers": 8
     },
     {
@@ -119,7 +119,7 @@
       "slug": "16-doppler-and-linewidth",
       "title": "Doppler dynamics, laser linewidth and spectral broadening",
       "section": "ARC, RydIQule and sublevels",
-      "words": 818,
+      "words": 847,
       "answers": 6
     },
     {
@@ -182,7 +182,7 @@
       "slug": "25-rydberg-blockade",
       "title": "Rydberg blockade and interacting-atom Hamiltonians",
       "section": "Rydberg interactions and quantum platforms",
-      "words": 824,
+      "words": 849,
       "answers": 6
     },
     {
