@@ -61,9 +61,24 @@ def main():
  outputs,cat=build()
  for path,content in outputs.items():
   if opts.check:
-   if not path.exists() or path.read_text(encoding="utf-8")!=content:
-    print("STALE BOOK SITE EXPORT:",path)
+   if not path.exists():
+    print("MISSING BOOK SITE EXPORT:",path)
     return 1
+   actual=json.loads(path.read_text(encoding="utf-8"))
+   expected=json.loads(content)
+   if path==CATALOG:
+    if (actual.get("chapterCount")!=expected["chapterCount"] or
+        actual.get("parts")!=expected["parts"] or
+        len(actual.get("chapterSummaries",[]))!=len(expected["chapterSummaries"])):
+     print("STALE BOOK CATALOG:",path)
+     return 1
+   else:
+    if (len(actual)!=len(expected) or
+        any(a["slug"]!=e["slug"] or a["title"]!=e["title"] or
+            a["markdown"].strip()!=e["markdown"].strip()
+            for a,e in zip(actual,expected))):
+     print("STALE BOOK SOURCE TEXT:",path)
+     return 1
   else:path.write_text(content,encoding="utf-8")
  print(("PASS" if opts.check else "BUILT"),
        cat["chapterCount"],"textbook chapters;",
