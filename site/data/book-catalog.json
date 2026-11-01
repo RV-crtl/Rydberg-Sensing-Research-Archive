@@ -7,8 +7,8 @@
     "book-part2.json",
     "book-part3.json"
   ],
-  "totalWords": 37414,
-  "totalAnswers": 279,
+  "totalWords": 39365,
+  "totalAnswers": 291,
   "chapterSummaries": [
     {
       "slug": "01-mathematical-language",
@@ -252,8 +252,8 @@
       "slug": "35-inverse-modelling-and-bayesian-inference",
       "title": "Inverse modelling, Bayesian inference and experimental design",
       "section": "Laser systems, research design and new frontiers",
-      "words": 771,
-      "answers": 6
+      "words": 2722,
+      "answers": 18
     },
     {
       "slug": "36-frontiers-and-cross-disciplinary-research",
