@@ -124,14 +124,24 @@
       "bytes": 474
     },
     {
+      "p": ".github/workflows/build-book.yml",
+      "g": "Repository",
+      "bytes": 1666
+    },
+    {
       "p": ".github/workflows/pages.yml",
       "g": "Repository",
-      "bytes": 3263
+      "bytes": 3375
     },
     {
       "p": ".github/workflows/validate.yml",
       "g": "Repository",
-      "bytes": 1037
+      "bytes": 1602
+    },
+    {
+      "p": ".github/workflows/weekly-research-watch.yml",
+      "g": "Repository",
+      "bytes": 1844
     },
     {
       "p": ".gitignore",
@@ -139,9 +149,169 @@
       "bytes": 363
     },
     {
+      "p": "book/chapters/01-mathematical-language.md",
+      "g": "Repository",
+      "bytes": 2265
+    },
+    {
+      "p": "book/chapters/02-operators-and-measurement.md",
+      "g": "Repository",
+      "bytes": 2222
+    },
+    {
+      "p": "book/chapters/03-hamiltonians.md",
+      "g": "Repository",
+      "bytes": 2248
+    },
+    {
+      "p": "book/chapters/04-density-matrices.md",
+      "g": "Repository",
+      "bytes": 2364
+    },
+    {
+      "p": "book/chapters/05-angular-momentum.md",
+      "g": "Repository",
+      "bytes": 2412
+    },
+    {
+      "p": "book/chapters/06-rydberg-scaling.md",
+      "g": "Repository",
+      "bytes": 2389
+    },
+    {
+      "p": "book/chapters/07-rubidium-energy-ladder.md",
+      "g": "Repository",
+      "bytes": 2419
+    },
+    {
+      "p": "book/chapters/08-eit-and-autler-townes.md",
+      "g": "Repository",
+      "bytes": 2518
+    },
+    {
+      "p": "book/chapters/09-optics-lab.md",
+      "g": "Repository",
+      "bytes": 2456
+    },
+    {
+      "p": "book/chapters/10-microwave-fundamentals.md",
+      "g": "Repository",
+      "bytes": 2235
+    },
+    {
+      "p": "book/chapters/11-stokes-jones.md",
+      "g": "Repository",
+      "bytes": 2345
+    },
+    {
+      "p": "book/chapters/12-identifiability.md",
+      "g": "Repository",
+      "bytes": 2435
+    },
+    {
+      "p": "book/chapters/13-quantum-defect-and-arc.md",
+      "g": "Repository",
+      "bytes": 2298
+    },
+    {
+      "p": "book/chapters/14-rydiqule-lab.md",
+      "g": "Repository",
+      "bytes": 2400
+    },
+    {
+      "p": "book/chapters/15-zeeman.md",
+      "g": "Repository",
+      "bytes": 2078
+    },
+    {
+      "p": "book/chapters/16-doppler-and-linewidth.md",
+      "g": "Repository",
+      "bytes": 1976
+    },
+    {
+      "p": "book/chapters/17-spectroscopy-diagnostics.md",
+      "g": "Repository",
+      "bytes": 2075
+    },
+    {
+      "p": "book/chapters/18-hfss-metasurface.md",
+      "g": "Repository",
+      "bytes": 2146
+    },
+    {
+      "p": "book/chapters/19-information-matrix.md",
+      "g": "Repository",
+      "bytes": 1953
+    },
+    {
+      "p": "book/chapters/20-finite-calibration.md",
+      "g": "Repository",
+      "bytes": 2017
+    },
+    {
+      "p": "book/chapters/21-pcb-materials.md",
+      "g": "Repository",
+      "bytes": 1940
+    },
+    {
+      "p": "book/chapters/22-inverse-problems.md",
+      "g": "Repository",
+      "bytes": 1860
+    },
+    {
+      "p": "book/chapters/23-code-quality.md",
+      "g": "Repository",
+      "bytes": 1899
+    },
+    {
+      "p": "book/chapters/24-publication-and-future.md",
+      "g": "Repository",
+      "bytes": 2056
+    },
+    {
+      "p": "book/CURRENT_STATE.md",
+      "g": "Repository",
+      "bytes": 5057
+    },
+    {
+      "p": "book/export_workbook_pdf.py",
+      "g": "Repository",
+      "bytes": 5201
+    },
+    {
+      "p": "book/FIGURE_ATLAS.md",
+      "g": "Repository",
+      "bytes": 4315
+    },
+    {
+      "p": "book/README.md",
+      "g": "Repository",
+      "bytes": 4591
+    },
+    {
+      "p": "book/REFERENCES.md",
+      "g": "Repository",
+      "bytes": 5227
+    },
+    {
+      "p": "book/TUTORIAL_LABS.md",
+      "g": "Repository",
+      "bytes": 5174
+    },
+    {
+      "p": "book/VALIDATION.md",
+      "g": "Repository",
+      "bytes": 1320
+    },
+    {
+      "p": "book/workbook.mjs",
+      "g": "Repository",
+      "bytes": 11145
+    },
+    {
       "p": "CHANGELOG.md",
       "g": "Repository",
-      "bytes": 2591
+      "bytes": 4498
     },
     {
       "p": "CITATION.cff",
@@ -257,6 +427,11 @@
       "p": "docs/laboratory/POLARISATION_MEASUREMENTS.md",
       "g": "Research documentation",
       "bytes": 4542
+    },
+    {
+      "p": "docs/literature/RESEARCH_FRONTIER_2026.md",
+      "g": "Research documentation",
+      "bytes": 6593
     },
     {
       "p": "docs/literature/THEMATIC_LITERATURE_AND_RESEARCH_GAP.md",
@@ -384,6 +559,16 @@
       "bytes": 2021
     },
     {
+      "p": "docs/results/HFSS_HISTORICAL_NUMERICAL_GATES.csv",
+      "g": "Research documentation",
+      "bytes": 783
+    },
+    {
+      "p": "docs/results/HFSS_V411_V422_ORIGINAL_DIAGNOSTIC_EVIDENCE.md",
+      "g": "Research documentation",
+      "bytes": 3465
+    },
+    {
       "p": "docs/results/KEY_FINDINGS.md",
       "g": "Research documentation",
       "bytes": 3140
@@ -406,7 +591,7 @@
     {
       "p": "docs/START_HERE.md",
       "g": "Research documentation",
-      "bytes": 4194
+      "bytes": 5916
     },
     {
       "p": "docs/traceability/ASSET_REGISTER.csv",
@@ -1361,7 +1546,12 @@
     {
       "p": "history/README.md",
       "g": "Research history",
-      "bytes": 8023
+      "bytes": 8426
+    },
+    {
+      "p": "history/RECOVERED_SOURCE_PROVENANCE.csv",
+      "g": "Research history",
+      "bytes": 7942
     },
     {
       "p": "history/recovered-code/arc/README_rydberg_tqe_simulations.md",
@@ -1791,7 +1981,7 @@
     {
       "p": "README.md",
       "g": "Repository",
-      "bytes": 11038
+      "bytes": 13653
     },
     {
       "p": "reports/2026-06-magnetically-biased-rydberg-receiver.pdf",
@@ -1811,7 +2001,17 @@
     {
       "p": "scripts/rebuild_research_atlas.py",
       "g": "Verification",
-      "bytes": 4463
+      "bytes": 4449
+    },
+    {
+      "p": "scripts/research_assistant.py",
+      "g": "Verification",
+      "bytes": 5384
+    },
+    {
+      "p": "scripts/research_watch.py",
+      "g": "Verification",
+      "bytes": 5516
     },
     {
       "p": "scripts/summarise_evidence.py",
@@ -1824,6 +2024,11 @@
       "bytes": 4055
     },
     {
+      "p": "scripts/verify_history_sources.py",
+      "g": "Verification",
+      "bytes": 2616
+    },
+    {
       "p": "scripts/verify_site.py",
       "g": "Verification",
       "bytes": 5215
@@ -1834,9 +2039,39 @@
       "bytes": 1684
     },
     {
+      "p": "site/academy.css",
+      "g": "Website",
+      "bytes": 5511
+    },
+    {
+      "p": "site/academy.html",
+      "g": "Website",
+      "bytes": 4106
+    },
+    {
+      "p": "site/academy.js",
+      "g": "Website",
+      "bytes": 6847
+    },
+    {
       "p": "site/app.js",
       "g": "Website",
       "bytes": 337
+    },
+    {
+      "p": "site/assets/academy-diagnostic-tree.svg",
+      "g": "Website",
+      "bytes": 2689
+    },
+    {
+      "p": "site/assets/academy-hfss-pipeline.svg",
+      "g": "Website",
+      "bytes": 3275
+    },
+    {
+      "p": "site/assets/academy-ladder.svg",
+      "g": "Website",
+      "bytes": 2769
     },
     {
       "p": "site/assets/finite-distance-sensitivity.png",
@@ -1874,6 +2109,21 @@
       "bytes": 119705
     },
     {
+      "p": "site/data/book-part1.json",
+      "g": "Website",
+      "bytes": 30721
+    },
+    {
+      "p": "site/data/book-part2.json",
+      "g": "Website",
+      "bytes": 27161
+    },
+    {
+      "p": "site/data/diagnostic-playbooks.json",
+      "g": "Website",
+      "bytes": 9093
+    },
+    {
       "p": "site/data/historical-index.json",
       "g": "Website",
       "bytes": 120117
@@ -1881,7 +2131,17 @@
     {
       "p": "site/data/research-atlas.json",
       "g": "Website",
-      "bytes": 52567
+      "bytes": 60373
+    },
+    {
+      "p": "site/diagnostics.html",
+      "g": "Website",
+      "bytes": 5020
+    },
+    {
+      "p": "site/diagnostics.js",
+      "g": "Website",
+      "bytes": 3969
     },
     {
       "p": "site/explorer.css",
@@ -1891,17 +2151,32 @@
     {
       "p": "site/explorer.html",
       "g": "Website",
-      "bytes": 10097
+      "bytes": 10119
     },
     {
       "p": "site/explorer.js",
       "g": "Website",
-      "bytes": 11143
+      "bytes": 11234
     },
     {
       "p": "site/index.html",
       "g": "Website",
-      "bytes": 15814
+      "bytes": 19045
+    },
+    {
+      "p": "site/lab.css",
+      "g": "Website",
+      "bytes": 3715
+    },
+    {
+      "p": "site/lab.html",
+      "g": "Website",
+      "bytes": 8381
+    },
+    {
+      "p": "site/lab.js",
+      "g": "Website",
+      "bytes": 7105
     },
     {
       "p": "site/model.mjs",
@@ -1911,12 +2186,22 @@
     {
       "p": "site/README.md",
       "g": "Website",
-      "bytes": 2932
+      "bytes": 3893
     },
     {
       "p": "site/style.css",
       "g": "Website",
       "bytes": 7883
+    },
+    {
+      "p": "site/workbook.mjs",
+      "g": "Website",
+      "bytes": 11145
+    },
+    {
+      "p": "tests/test_academy.mjs",
+      "g": "Verification",
+      "bytes": 2439
     },
     {
       "p": "tests/test_immutable_sources.py",
@@ -1927,6 +2212,11 @@
       "p": "tests/test_research_archive.py",
       "g": "Verification",
       "bytes": 1505
+    },
+    {
+      "p": "tests/test_research_watch.py",
+      "g": "Verification",
+      "bytes": 1079
     },
     {
       "p": "tests/test_site_model.mjs",
@@ -2020,5 +2310,5 @@
       "path": "docs/handover/HANDOVER.md"
     }
   ],
-  "sourceIndexNote": "Git-tracked file metadata from indexed research branch; historical Library discovery data is listed separately and is not a byte-for-byte source mirror."
+  "sourceIndexNote": "Snapshot generated from Git-tracked files at 2026-11-01 main after Academy merge. The optional manual Pages workflow regenerates from exact release checkout. Historical discovery records are not imported assets."
 }
