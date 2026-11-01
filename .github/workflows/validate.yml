@@ -37,6 +37,7 @@ jobs:
           node --test tests/test_site_model.mjs tests/test_academy.mjs
           node --check site/academy.js
           node --check site/lab.js
+          node --check site/diagnostics.js
           node --check site/workbook.mjs
           node --check book/workbook.mjs
       - name: Evidence summary

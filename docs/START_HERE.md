@@ -50,3 +50,5 @@ Keep HFSS results, experiment measurements, numerical models and design proposal
 [**Rydberg Academy textbook**](../book/README.md) · [**24 reference-led chapters**](../book/chapters/) · [**1,000-question solved workbook**](../book/workbook.mjs) · [**live code laboratory**](../site/lab.html) · [**interactive book reader**](../site/academy.html) · [**current evidence state**](../book/CURRENT_STATE.md) · [**research bibliography**](../book/REFERENCES.md).
 
 Automated scientific quality checking is implemented in [the research QA assistant](../scripts/research_assistant.py), and weekly literature metadata review in [GitHub Actions](../.github/workflows/weekly-research-watch.yml). The full print-workbook generator has its own [PDF build workflow](../.github/workflows/build-book.yml).
+
+[**Scientific diagnostic assistant**](../site/diagnostics.html) · [**Original figures and provenance atlas**](../book/FIGURE_ATLAS.md) · [**Recent Rydberg research frontier (verified DOI sources)**](literature/RESEARCH_FRONTIER_2026.md).

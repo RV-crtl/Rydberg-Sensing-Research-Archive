@@ -67,6 +67,16 @@ def audit():
     check(all(item in status for item in ["1.925 GHz", "9.53", "76.92%", "55.09%",
                                            "2024", "2026", "finite"]),
           "CURRENT_EVIDENCE", "Current reference and negative finite findings retained")
+    playbooks = json.loads((SITE / "data/diagnostic-playbooks.json").read_text(encoding="utf-8"))
+    check(playbooks["schema"] == 1 and len(playbooks["playbooks"]) >= 10
+          and all(len(item["checks"]) >= 5 for item in playbooks["playbooks"]),
+          "DIAGNOSTICS", "10 or more source-linked playbooks with 5 diagnostic checks each")
+    check((SITE / "diagnostics.html").is_file() and (SITE / "diagnostics.js").is_file(),
+          "DIAGNOSTICS_UI", "Research fault isolation UI present")
+    check((BOOK / "FIGURE_ATLAS.md").is_file(),
+          "FIGURE_ATLAS", "Primary experiment/HFSS figure-source and teaching SVG atlas present")
+    check((ROOT / "docs/literature/RESEARCH_FRONTIER_2026.md").is_file(),
+          "RESEARCH_FRONTIER", "Dated 2026 peer-reviewed novelty comparison present")
     watcher = ROOT / "scripts/research_watch.py"
     check(watcher.is_file(), "LITERATURE_MONITOR", "Citation-only watch installed")
     for file in ["academy.html", "lab.html"]:

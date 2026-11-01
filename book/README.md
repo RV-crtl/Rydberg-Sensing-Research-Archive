@@ -19,7 +19,9 @@ This is an original, evolving research handbook authored to accompany the [actua
 | VII. Labs and solutions | [Tutorials](TUTORIAL_LABS.md) · [1,000-case workbook](workbook.mjs) | Repeatable hands-on examples, self-tests and parameter sensitivity |
 | VIII. Bibliography | [References](REFERENCES.md) | Peer-reviewed scientific papers, books, official APIs and original project evidence |
 
-Open the [**interactive textbook and worked quiz**](../site/academy.html) and [**parameter explorer/code lab**](../site/lab.html). The website contains original drawings and references to authentic project research photos; never confuse teaching graphics with actual laboratory photographs or HFSS native output.
+Open the [**interactive textbook and worked quiz**](../site/academy.html) and [**parameter explorer/code lab**](../site/lab.html). [**Scientific diagnostics**](../site/diagnostics.html) includes 10 reproducible symptom playbooks and exportable troubleshooting worksheets. [**Visual source atlas**](FIGURE_ATLAS.md) distinguishes authentic lab/HFSS graphics from original diagrams. [**2026 research horizon**](../docs/literature/RESEARCH_FRONTIER_2026.md) tracks the current novelty boundary.
+
+The website contains original drawings and references to authentic project research photos; never confuse teaching graphics with actual laboratory photographs or HFSS native output.
 
 ## Research method and signs of a good chapter
 
