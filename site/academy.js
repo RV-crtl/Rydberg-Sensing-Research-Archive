@@ -29,7 +29,7 @@ function renderMarkdown(body,raw){
   if(s==="</details>"){details=null;continue;}
   if(s.startsWith("<summary>")){append(mk("summary",s.replace(/<\/?summary>/g,"")));continue;}
   if(s.startsWith("![") && s.includes("](../../site/assets/")){
-   const match=s.match(/^!\\[([^\\]]+)\\]\\(\\.\\.\\/\\.\\.\\/site\\/assets\\/([A-Za-z0-9_-]+\\.svg)\\)$/);
+   const match=s.match(/^!\[([^\]]+)\]\(\.\.\/\.\.\/site\/assets\/([A-Za-z0-9_-]+\.svg)\)$/);
    if(match){const figure=mk("figure",undefined,"book-science-figure"),img=mk("img");
     img.src="./assets/"+match[2];img.alt=match[1];img.loading="lazy";
     figure.append(img,mk("figcaption",match[1]));append(figure);continue;}
