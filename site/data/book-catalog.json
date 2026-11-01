@@ -7,8 +7,8 @@
     "book-part2.json",
     "book-part3.json"
   ],
-  "totalWords": 30215,
-  "totalAnswers": 232,
+  "totalWords": 35890,
+  "totalAnswers": 267,
   "chapterSummaries": [
     {
       "slug": "01-mathematical-language",
@@ -98,8 +98,8 @@
       "slug": "13-quantum-defect-and-arc",
       "title": "Practical atomic calculations with ARC",
       "section": "ARC, RydIQule and sublevels",
-      "words": 819,
-      "answers": 6
+      "words": 2558,
+      "answers": 16
     },
     {
       "slug": "14-rydiqule-lab",
@@ -126,8 +126,8 @@
       "slug": "17-spectroscopy-diagnostics",
       "title": "Spectroscopy troubleshooting and fault isolation",
       "section": "Lab diagnosis",
-      "words": 743,
-      "answers": 6
+      "words": 2290,
+      "answers": 21
     },
     {
       "slug": "18-hfss-metasurface",
@@ -245,8 +245,8 @@
       "slug": "34-design-a-rydberg-system",
       "title": "Designing a Rydberg experiment from zero",
       "section": "Laser systems, research design and new frontiers",
-      "words": 874,
-      "answers": 6
+      "words": 3263,
+      "answers": 16
     },
     {
       "slug": "35-inverse-modelling-and-bayesian-inference",
