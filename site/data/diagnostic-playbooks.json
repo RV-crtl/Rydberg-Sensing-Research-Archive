@@ -1,0 +1,157 @@
+{
+  "schema": 1,
+  "lastReviewed": "2026-11-01",
+  "evidencePolicy": "Rules are tutorial decision support, not scientific measurements or automated safety certificates.",
+  "playbooks": [
+    {
+      "id": "D01",
+      "title": "No EIT transparency window",
+      "group": "optical",
+      "symptom": "The probe transmission is smooth or absorption dominates; an EIT contrast cannot be identified.",
+      "checks": [
+        "Record raw probe scan, scan direction and laser frequencies; do not use a cropped plot.",
+        "Verify both laser locks and cell temperature, 780/480 nm beam overlap and relative propagation.",
+        "Compare coupling-off, coupling-on with RF off, and dark detector references using identical gain.",
+        "Check photodiode/oscilloscope bandwidth, clipping and scan time base.",
+        "Only after optical controls pass, compare with a state-specific RydIQule weak-probe model."
+      ],
+      "acceptance": "Expected: a reproducible coupling-dependent optical feature, with recorded detunings, not merely an RF-port peak.",
+      "source": "../../docs/laboratory/OPTICAL_AND_ATOMIC_RECEIVER.md"
+    },
+    {
+      "id": "D02",
+      "title": "RF source peak at the wrong frequency",
+      "group": "rf",
+      "symptom": "An unexplained 1.5–2.4 GHz feature appears or changes without matching the synthesiser setting.",
+      "checks": [
+        "Measure source into a calibrated 50 Ω spectrum reference with attenuation and correct RBW.",
+        "Disable RF, coupling laser and bias current independently to isolate electronics/optics.",
+        "Check cable coupling, harmonic leakage, compression, aliasing and acquisition sampling.",
+        "Repeat with changed source frequency/power and verify the feature tracks a lawful transition.",
+        "Only assign an atomic line after laser-state/Zeeman selection rules and full optical controls."
+      ],
+      "acceptance": "Expected: independently verified carrier/artefact attribution and RF-off optical baseline.",
+      "source": "../../docs/methods/CALIBRATION_AND_RECOVERY_PROTOCOL.md"
+    },
+    {
+      "id": "D03",
+      "title": "No circular Stokes coordinate",
+      "group": "polarimetry",
+      "symptom": "A strong linear angle sweep exists but S3 cannot be reconstructed.",
+      "checks": [
+        "State the time-sign and propagation convention for Jones and Stokes.",
+        "Verify an actual handedness-sensitive reference channel or analyser state exists.",
+        "Calculate A rank and singular values with the exact six source states and normalisation.",
+        "Test physically known ±circular and elliptical input states, not only equator points.",
+        "Avoid treating simulated rank four as proof of optical atomic S3 measurement."
+      ],
+      "acceptance": "Expected: a calibration that separately responds to +S3 and −S3 and passes holdout cases.",
+      "source": "../../docs/simulations/VERIFICATION_AND_INFORMATION_MATRIX.md"
+    },
+    {
+      "id": "D04",
+      "title": "HFSS mesh converged but recovery fails",
+      "group": "hfss",
+      "symptom": "An AEDT adaptive convergence flag passes while finite field/Jones calibration transfer fails.",
+      "checks": [
+        "Reopen exact .aedt and geometry/state version; record solver, boundary and excitation reference.",
+        "Check independent adaptive mesh settings and physical cell observation ROI.",
+        "Export complex Ex,Ey/Ez at matching physical points, both input bases and each mask.",
+        "Compare A-matrix norm and cross-mesh heldout Stokes errors in both directions.",
+        "Keep the historical finite failure visible; do not quote periodic 0.551% as finite transfer."
+      ],
+      "acceptance": "Expected: rank four plus separately passing complex-field, gain/conditioning and transfer gates.",
+      "source": "../../docs/results/HFSS_V411_V422_ORIGINAL_DIAGNOSTIC_EVIDENCE.md"
+    },
+    {
+      "id": "D05",
+      "title": "ARC transition looks plausible but cannot be excited",
+      "group": "arc",
+      "symptom": "An RF dipole pair appears strong but the optical 780/480 nm ladder is inaccessible.",
+      "checks": [
+        "Write n,l,j,mj,F,mF where appropriate for every optical and RF state.",
+        "Calculate actual optical transition wavelengths and measured laser coarse/fine ranges.",
+        "Enforce Δl=±1, parity, Δm=q and field quantisation-axis conventions.",
+        "Check dipole strength and lifetime/thermal mixing with explicit ARC version.",
+        "Reject candidate or document extra required lasers/spectroscopic state changes."
+      ],
+      "acceptance": "Expected: fully labelled accessible ladder and physically allowed RF neighbour with source values.",
+      "source": "../../docs/software/ATOMIC_MODELLING_AND_WORKBENCH.md"
+    },
+    {
+      "id": "D06",
+      "title": "RydIQule numerical solution fails",
+      "group": "rydiqule",
+      "symptom": "Density-matrix steady state is singular, unstable or inconsistent with expected limits.",
+      "checks": [
+        "Reduce to official three-state Sensor benchmark and documented units.",
+        "Check couplings, decay/dephasing paths and that the driven system has a unique steady state.",
+        "Verify trace-one/positive populations and solver dimensional conventions.",
+        "Add Doppler classes and actual Rb-87 Cell parameters only after simple regression passes.",
+        "Test coupling-off and RF-off limits, then compare measured optical observable."
+      ],
+      "acceptance": "Expected: stable, physical density-matrix and source-linked optical observable.",
+      "source": "../../book/chapters/14-rydiqule-lab.md"
+    },
+    {
+      "id": "D07",
+      "title": "Polariser reports contradictory extinction",
+      "group": "rf",
+      "symptom": "Two project figures give substantially different pass/reject values.",
+      "checks": [
+        "Identify the physical grid, antenna/reference plane and measurement date for each.",
+        "Check 10 log10 for power vs 20 log10 for voltage under equal impedance.",
+        "Verify frequency, source power, angle, distance, gains and background subtraction.",
+        "Keep the 14–15 dB rod-grid and 9.7 dB later experiment separate.",
+        "Reproduce each from native readings; do not average across setups."
+      ],
+      "acceptance": "Expected: condition-specific contrast with units and original trace provenance.",
+      "source": "../../docs/laboratory/POLARISATION_MEASUREMENTS.md"
+    },
+    {
+      "id": "D08",
+      "title": "HFSS frequency bandwidth appears too good",
+      "group": "hfss",
+      "symptom": "A reported accepted frequency span is larger than isolated verified solves.",
+      "checks": [
+        "Distinguish selected discrete-frequency samples from continuously swept GHz band.",
+        "Inspect each frequency-specific mesh, complex fields, state set and gain.",
+        "Check rank, κ, S3 leverage, absolute response and acceptance thresholds at all points.",
+        "Use an independent sweep and finite geometry; do not interpolate across missing evidence.",
+        "Report sampled 250 MHz result only within its declared acceptance definition."
+      ],
+      "acceptance": "Expected: clear sampled-versus-continuous bandwidth qualification and source table.",
+      "source": "../../docs/results/KEY_FINDINGS.md"
+    },
+    {
+      "id": "D09",
+      "title": "Atomic field estimate changes with coil polarity",
+      "group": "atomic",
+      "symptom": "The receiver's apparent field shifts under reversed Helmholtz-coil current.",
+      "checks": [
+        "Record actual field B vector and current, not just supply command.",
+        "Measure laser frequency/optical baseline across reversal and thermal stabilisation.",
+        "Use ARC or Breit–Rabi model for the correct selected manifold and quantisation axis.",
+        "Check source RF phase/coupling and any nearby magnetic contamination.",
+        "Separate a physical Zeeman origin from artefacts before attributing spectral lines."
+      ],
+      "acceptance": "Expected: reproducible field-dependent shift with controls and a state-specific prediction.",
+      "source": "../../docs/methods/CALIBRATION_AND_RECOVERY_PROTOCOL.md"
+    },
+    {
+      "id": "D10",
+      "title": "Page plot or manuscript claim has no source",
+      "group": "provenance",
+      "symptom": "A figure is attractive but cannot be traced to the actual run/measurement case.",
+      "checks": [
+        "Find original raw oscilloscope/HFSS/derived-data filename and source hash.",
+        "Record geometry, frequency, mask, mesh, field coordinate, units and algorithm version.",
+        "Verify the plot title, axes, legends and caption match that same case.",
+        "Classify measured, HFSS-native, algebraic-derived, proposed or externally published.",
+        "Remove/mark illustrative figures if raw provenance is unavailable."
+      ],
+      "acceptance": "Expected: end-to-end claim → figure → script → original source chain.",
+      "source": "../../docs/results/FIGURE_PROVENANCE.md"
+    }
+  ]
+}
