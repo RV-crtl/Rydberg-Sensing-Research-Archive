@@ -38,3 +38,12 @@ node --input-type=module --check < site/explorer.js
 `site/data/research-atlas.json` is a **snapshot** of tracked files before the website upgrade, not a live private GitHub index. `site/data/historical-index.json` is source-discovery metadata and must never be reported as 1,280 additional committed binary assets.
 
 Sources: [matrix CSV](../papers/manuscript-source/data/V42_C033_INSTRUMENT_MATRIX.csv), [fixed-budget result](../evidence/hfss/v44-reproducibility/analysis/V44_FIXED_BUDGET_RESULTS.json), [record status policy](../docs/traceability/RECORD_STATUS_POLICY.md).
+
+## Rydberg Academy and lab
+
+- [Textbook website](academy.html), 24 original educational chapters with 1,000 worked-case links.
+- [Interactive physics lab and JS code sandbox](lab.html), dimensionally defined weak-probe/EIT illustrative model and SI parameter controls. The sandbox uses an opaque-origin iframe with strict resource CSP and a watchdog; it does not give direct Python/ARC/RydIQule/HFSS execution or physical hardware access.
+- [Original diagrams](assets/academy-ladder.svg), [HFSS source workflow](assets/academy-hfss-pipeline.svg), [diagnosis tree](assets/academy-diagnostic-tree.svg), plus authentic archive images already on this site.
+- [Research book source](../book/README.md) (in GitHub), [PDF print workflow](../.github/workflows/build-book.yml), [citations](../book/REFERENCES.md).
+
+On GitHub Pages the book and website are site-only; the printed 1,000-case PDF is a verified Actions artifact, not automatically part of the public site.
