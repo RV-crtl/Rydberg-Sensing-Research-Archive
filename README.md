@@ -37,7 +37,7 @@ The original source-backed article and V44 numerical evidence are only part of t
 
 ## Interactive research, technical work packages and archive search
 
-**[Open the scientific explorer](site/explorer.html)** — a responsive, dependency-free research website with a rotatable Poincaré sphere, ideal-polarisation controls, actual HFSS-derived six-state response calculations, model CSV export, interactive research milestones, **search across 314 original tracked-source records** and a separate searchable index of **1,280 historical Library-discovery records**. The scientific calculations are offline demonstrations, never represented as physical atomic measurements or new solver runs.
+**[Open the scientific explorer](site/explorer.html)** — a responsive, dependency-free research website with a rotatable Poincaré sphere, ideal-polarisation controls, actual HFSS-derived six-state response calculations, model CSV export, interactive research milestones, **search across the tracked research source inventory** and a separate searchable index of **1,280 historical Library-discovery records**. The scientific calculations are offline demonstrations, never represented as physical atomic measurements or new solver runs.
 
 **[Master research work-package register](docs/handover/MASTER_WORK_PACKAGE_REGISTER.md)** — 55 detailed atomic, RF, hardware, HFSS, software, publication and research administration tasks with source anchors and status boundaries. This is the most complete cross-disciplinary work index in the archive.
 
