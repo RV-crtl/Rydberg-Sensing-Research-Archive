@@ -29,8 +29,9 @@ def audit():
     for p in chapters:
         text = p.read_text(encoding="utf-8")
         raw_chapters.append(text)
-        check(all(token in text.lower() for token in
-                  ("##", "source", "question")), "CHAPTER_FORMAT",
+        check("##" in text and "<details>" in text and
+              ("reference" in text.lower() or "source" in text.lower()),
+              "CHAPTER_FORMAT",
               p.name + ": lesson, source and self-test present")
     pieces = []
     catalog = json.loads((SITE / "data/book-catalog.json").read_text(encoding="utf-8"))
