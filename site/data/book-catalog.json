@@ -7,8 +7,8 @@
     "book-part2.json",
     "book-part3.json"
   ],
-  "totalWords": 35890,
-  "totalAnswers": 267,
+  "totalWords": 37414,
+  "totalAnswers": 279,
   "chapterSummaries": [
     {
       "slug": "01-mathematical-language",
@@ -182,8 +182,8 @@
       "slug": "25-rydberg-blockade",
       "title": "Rydberg blockade and interacting-atom Hamiltonians",
       "section": "Rydberg interactions and quantum platforms",
-      "words": 849,
-      "answers": 6
+      "words": 2373,
+      "answers": 18
     },
     {
       "slug": "26-optical-tweezers-and-atom-arrays",

@@ -16,6 +16,7 @@ The formal 36-chapter syllabus is supplemented by a practical three-volume, cros
 |---|---|---|
 | How do I design a complete atomic system from nothing? | [Design a Rydberg experiment from zero](field-guides/COMPLETE_EXPERIMENT_DESIGN.md) | Platform selection, optical/RF modelling, calibrations, metrology, design gates and 10 fully answered scenarios |
 | How do I use ARC and RydIQule correctly across problems? | [Computational decision and verification manual](field-guides/ARC_RYDIQULE_MODEL_VERIFICATION.md) | Frequency/units, state rules, numerical checks, thermal/Zeeman limits and 10 worked research diagnostics |
+| How can I use blockade and interacting arrays? | [Interactions and neutral-atom design](field-guides/INTERACTING_RYDBERG_ARRAYS.md) | Pair-state models, collective Rabi dynamics, gate-readout considerations and 12 solved problems |
 | Why did my experiment, simulation or code fail? | [Universal fault-isolation atlas](field-guides/UNIVERSAL_DIAGNOSTIC_ATLAS.md) | Distinct vapour, tweezers, RF, numerical and finite geometry problems plus 15 answered challenges |
 
 The longer practical guides deliberately contain independent design logic, failure controls, implementation gates and source references instead of padding printed pages with repeated numerical variations. **They are substantial extensions, not evidence that the complete 36-chapter manuscript yet satisfies publisher-grade length or independent review.**
