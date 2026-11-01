@@ -25,3 +25,7 @@ It is designed to reduce missed calls, **not** to autonomously write and submit 
 For a candidate, require fields: responsible organisation, official URL, verified status/date, geographic/institution eligibility, research capability fit, distinct deliverable, required partners, security/IP sensitivity, funding ceiling and cost-share, supervisor contact route, strategic fit, next action and decision owner. A collaborative idea is a proposal opportunity, not an agreed partnership.
 
 Source-linked opportunities belong under **automation/** and **research_updates/**, not alongside universal textbook physics.
+
+## Optional code-writing AI proposal assistant
+
+The [bounded co-author](AI_EDITORIAL_POLICY.md) can only be invoked manually by the repo owner, after an API secret and model variable are set. It drafts original source in an isolated new branch and raises a human-review PR. The workflow **never autonomously merges, executes its new Python output, submits a funding application or edits original HFSS data**. This review gate is intentional scientific safety, not a missing feature.
