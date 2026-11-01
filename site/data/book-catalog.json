@@ -7,8 +7,8 @@
     "book-part2.json",
     "book-part3.json"
   ],
-  "totalWords": 43437,
-  "totalAnswers": 315,
+  "totalWords": 45626,
+  "totalAnswers": 329,
   "chapterSummaries": [
     {
       "slug": "01-mathematical-language",
@@ -98,8 +98,8 @@
       "slug": "13-quantum-defect-and-arc",
       "title": "Practical atomic calculations with ARC",
       "section": "ARC, RydIQule and sublevels",
-      "words": 2558,
-      "answers": 16
+      "words": 4747,
+      "answers": 30
     },
     {
       "slug": "14-rydiqule-lab",
