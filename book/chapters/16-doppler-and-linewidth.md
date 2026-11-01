@@ -2,6 +2,11 @@
 
 **Independent general reference chapter.** Discusses universally applicable physics and engineering; no project-specific numerical HFSS result is asserted.
 
+
+![Signed wavevector geometry for two-photon Doppler shifts in an atomic vapor (original educational schematic)](../../site/assets/book-doppler-geometry.svg)
+
+*Original scientifically labelled illustration; pedagogical geometry rather than acquired atomic data.*
+
 ## Competencies
 
 Model the system, specify a measurement chain and units, choose appropriate numerical tools, reproduce limiting cases and debug signal/solver failures.

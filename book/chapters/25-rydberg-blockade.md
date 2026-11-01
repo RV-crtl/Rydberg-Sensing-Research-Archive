@@ -2,6 +2,11 @@
 
 **Graduate reference volume:** many-body. **Scope:** species-agnostic fundamentals; assumptions and equipment conditions must be specified before applying any formula. [Reference index](../REFERENCES.md).
 
+
+![Two-atom blockade scale and interaction criterion, original conceptual physics drawing](../../site/assets/book-rydberg-blockade.svg)
+
+*Original scientifically labelled illustration; pedagogical geometry rather than acquired atomic data.*
+
 ## Competencies
 
 Derive the basic model, assess approximations, calculate limiting cases, select suitable numerical methods and design a falsifiable experimental check.

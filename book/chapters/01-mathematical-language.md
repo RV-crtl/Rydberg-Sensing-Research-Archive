@@ -2,6 +2,11 @@
 
 *General graduate reference · original educational exposition · no project-specific data used as universal physics.*
 
+
+![A fully coherent two-level state represented by its Bloch-sphere angles (original educational diagram)](../../site/assets/book-quantum-bloch.svg)
+
+*Original scientifically labelled illustration; pedagogical geometry rather than acquired atomic data.*
+
 ## Learning goals
 
 Develop the physical and mathematical background to derive a model, choose observables, test its limiting cases and recognise invalid numerical results. Prerequisites: complex numbers, linear algebra, calculus and SI units. See the [scholarly bibliography](../REFERENCES.md).
