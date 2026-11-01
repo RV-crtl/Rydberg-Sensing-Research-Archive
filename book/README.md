@@ -25,6 +25,10 @@ The formal 36-chapter syllabus is supplemented by a practical three-volume, cros
 
 The longer practical guides deliberately contain independent design logic, failure controls, implementation gates and source references instead of padding printed pages with repeated numerical variations. **They are substantial extensions, not evidence that the complete 36-chapter manuscript yet satisfies publisher-grade length or independent review.**
 
+![Original Rydberg system selection diagram](../site/assets/book-platform-selection.svg)
+
+*Original research-platform decision diagram. Choose an observable before selecting vapour cells, cold atoms, tweezers or cavity/ionisation detection.*
+
 ## Read the book by domain
 
 | Part | Chapter range | Graduate competencies |

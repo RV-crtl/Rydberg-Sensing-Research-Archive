@@ -1,5 +1,10 @@
 # Designing a Rydberg experiment from zero
 
+![Rydberg research platform selection from observable to validation gates; original general scientific concept map](../../site/assets/book-platform-selection.svg)
+
+*General educational schematic. It is not a laboratory photograph or measured field map.*
+
+
 **Graduate general reference / systems engineering.** This chapter develops transferable principles rather than an individual laboratory project.
 
 ## Competencies

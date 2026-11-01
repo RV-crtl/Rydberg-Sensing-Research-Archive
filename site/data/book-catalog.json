@@ -7,7 +7,7 @@
     "book-part2.json",
     "book-part3.json"
   ],
-  "totalWords": 45626,
+  "totalWords": 45690,
   "totalAnswers": 329,
   "chapterSummaries": [
     {
@@ -98,7 +98,7 @@
       "slug": "13-quantum-defect-and-arc",
       "title": "Practical atomic calculations with ARC",
       "section": "ARC, RydIQule and sublevels",
-      "words": 4747,
+      "words": 4780,
       "answers": 30
     },
     {
@@ -245,7 +245,7 @@
       "slug": "34-design-a-rydberg-system",
       "title": "Designing a Rydberg experiment from zero",
       "section": "Laser systems, research design and new frontiers",
-      "words": 3263,
+      "words": 3294,
       "answers": 16
     },
     {

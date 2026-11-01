@@ -1,5 +1,10 @@
 # Practical atomic calculations with ARC
 
+![Original model provenance diagram linking atomic states, ARC data, RydIQule density matrices and physical optical detection](../../site/assets/book-atomic-computation.svg)
+
+*General educational schematic. It is not a laboratory photograph or measured field map.*
+
+
 **General advanced atomic science reference.** No particular laboratory result is asserted. Primary numerical APIs are linked in the [bibliography](../REFERENCES.md).
 
 ## Learning objectives
